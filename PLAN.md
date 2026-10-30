@@ -1,6 +1,6 @@
-# Pokecode: plán stavby
+# langwhy: plán stavby
 
-Stav: návrh, 2026-10-29. Autor plánu: Claude pre Karchiho. Verejný README bude po anglicky, tento plán je pracovný.
+Stav: F0 v behu, 2026-10-30 (meno langwhy, org github.com/langwhy, doména langwhy.dev kúpené 2026-10-29). Autor plánu: Claude pre Karchiho. Verejný README bude po anglicky, tento plán je pracovný.
 
 ## 1. Čo staviame
 
@@ -160,16 +160,15 @@ Jednoduchý a použiteľný, podľa Karchiho vkusu:
 
 ## 7. GitHub
 
-- **Meno:** `github.com/pokecode` je obsadené nečinným účtom (1 repo, naposledy 2016). GitHub má
-  pravidlo proti držaniu mien, dá sa požiadať support o uvoľnenie. Záloha: `pokecode-dev`.
-- **Jedno repo** `pokecode` s `data/` a `site/`. Dve licencie: dáta CC0 (`LICENSE-DATA`), kód MIT
+- **Meno:** `langwhy` (vybrané 2026-10-30; `langwhy` na GitHube drží nečinný účet a GitHub mená
+  neuvoľňuje). Organizácia github.com/langwhy, repo `langwhy/langwhy`.
+- **Jedno repo** s `data/` a Astro webom v koreni. Dve licencie: dáta CC0 (`LICENSE-DATA`), kód MIT
   (`LICENSE`). Rozdelíme až keď bude mať `data/` vlastný život.
-- **Actions:** na PR validácia schémy + build; na `main` build + deploy na Pages; týždenne import
-  PLDB a leaderboardov ako automatický PR.
-- **Issues:** dve šablóny, „navrhnúť jazyk“ (agent z neho urobí draft PR) a „oprava faktu“.
-  Discussions zapnuté.
-- **Doména:** `pokecode.dev` sa k 2026-10-29 javí voľná (aj `.io`, `.org`, `.app`), `.com` a `.net`
-  sú obsadené. Overiť u registrátora, ~12 € ročne.
+- **Actions:** `.github/workflows/deploy.yml`: na PR validácia a build; na `main` build + deploy na
+  Pages. Týždenný import PLDB a leaderboardov príde vo F1/F3.
+- **Issues:** šablóny „navrhnúť jazyk“ a „oprava faktu“ prídu vo F2. Discussions zapnúť.
+- **Doména:** `langwhy.dev` kúpená 2026-10-29 na Cloudflare Registrar, DNS na Cloudflare, web na
+  GitHub Pages (CNAME v `public/`, custom domain nastavená cez API).
 
 ## 8. Agenti
 
@@ -206,7 +205,7 @@ PHP, Ruby, Swift, Dart, SQL, Bash, Lua, Haskell, Elixir.
 | Položka | Cena | Poznámka |
 |---|---|---|
 | Hosting | 0 € | GitHub Pages, CDN v cene |
-| Doména | ~12 €/rok | pokecode.dev |
+| Doména | ~12 €/rok | langwhy.dev |
 | Agent drafty | haliere za kartu | API model; 5 000 kariet je rádovo desiatky eur, jednorazovo |
 | Nočná úloha | 0 € | asus, žiadne GPU |
 | Build | 0 € | GitHub Actions, free tier stačí |
@@ -214,17 +213,13 @@ PHP, Ruby, Swift, Dart, SQL, Bash, Lua, Haskell, Elixir.
 ## 11. Riziká
 
 - **Tenký obsah.** Jediná reálna hrozba. Rieši to prísny formát karty, `verified` a `noindex`.
-- **Meno.** Pokédex je ochranná známka, používame len „pokecode“ a slovo „pokédex“ ako bežné
+- **Meno.** Pokédex je ochranná známka, používame len „langwhy“ a slovo „pokédex“ ako bežné
   slovo pre pohľad, nie v názve. Žiadne pokémon assety.
 - **Čerstvosť.** Čísla z benchmarkov starnú. Každé má dátum a zdroj; týždenný import.
 - **Licencie.** PLDB CC0, arjaythedev MIT (uviesť autora), TechEmpower a Benchmarks Game majú
   vlastné podmienky, citujeme, nekopírujeme kód. roadmap.sh obsah neberieme (copyright).
 
-## 12. Rozhodnutia pre Karchiho
+## 12. Rozhodnutia
 
-1. Meno GitHub organizácie: požiadať o `pokecode`, alebo rovno `pokecode-dev`.
-2. Doména: `pokecode.dev` kúpiť.
-3. Licencia dát: CC0 (odporúčam, kompatibilné s PLDB a bezpečné pre vyhľadávače a modely) alebo CC BY-SA.
-4. Zoznam prvých 20 jazykov: schváliť alebo vymeniť.
-
-Po bode 1 a 2 štartuje F0.
+Hotové 2026-10-30: meno langwhy, organizácia aj doména kúpené, dáta CC0, prvých 20 jazykov
+podľa §9. Ďalšie rozhodnutia idú do inboxu.

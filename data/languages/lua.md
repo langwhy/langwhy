@@ -1,0 +1,11 @@
+## Why it exists
+
+In 1992 Petrobras, the Brazilian oil company, asked Tecgraf, the computer graphics group at PUC-Rio, for graphical data-entry front-ends for its engineers. Tecgraf answered with two small languages, DEL for data entry and SOL for configurable reports. DEL grew heavier each time users asked for conditionals and loops ([Lua HOPL paper](https://www.lua.org/doc/hopl.pdf)). Brazil's market reserve, in force from 1977 to 1992, made buying customized software from abroad slow, so Tecgraf built its own tools. Around mid-1993 Roberto Ierusalimschy, Luiz Henrique de Figueiredo and Waldemar Celes decided that a single, broader language could replace both, and Lua was born ([Lua HOPL paper](https://www.lua.org/doc/hopl.pdf)). Because other Tecgraf products would need to embed a scripting language too, the new one was to be a library with a C API ([Lua HOPL paper](https://www.lua.org/doc/hopl.pdf)).
+
+## What it trades away
+
+Lua stays small on purpose. Its official distribution ships only a few libraries, because it is built to be embedded in a host application that supplies the rest of the tools ([Lua HOPL paper](https://www.lua.org/doc/hopl.pdf)). Values are dynamically typed, so type mistakes surface at run time. Until Lua 5.0 the garbage collector ran in one atomic step and could pause a program for a long time ([Lua HOPL paper](https://www.lua.org/doc/hopl.pdf)). Coroutines are cooperative: the authors chose non-preemptive, collaborative multithreading over shared-memory threads, so a coroutine that never yields holds up everything else in its thread ([Lua HOPL paper](https://www.lua.org/doc/hopl.pdf)).
+
+## Where it won
+
+Lua's wins are mostly inside other products. The 2007 history paper reports that over 40 percent of Adobe Lightroom was written in Lua, about 100,000 lines ([Lua HOPL paper](https://www.lua.org/doc/hopl.pdf)). Roblox's Luau is derived from Lua 5.1 and is the scripting language creators use in Roblox Studio ([Roblox](https://create.roblox.com/docs/scripting/luau)). Redis runs Lua 5.1 scripts inside the server, atomically ([Redis](https://redis.io/docs/latest/develop/programmability/eval-intro/)). Neovim reads its configuration from `init.lua` ([Neovim](https://neovim.io/doc/user/lua-guide/)), and Wireshark lets users write dissectors in Lua ([Wireshark](https://wiki.wireshark.org/Lua)).

@@ -1,0 +1,11 @@
+## Why it exists
+
+In 1970 Edgar Codd, a researcher at IBM's laboratory in San Jose, published a relational model for large shared data banks. His central demand was that users should not have to know how the data is organized in the machine. He criticised the tree and network systems of the day, where programs had to follow fixed access paths through the data ([Codd, 1970](https://www.engineering.upenn.edu/~zives/03f/cis550/codd.pdf)). Donald Chamberlin and Raymond Boyce, also at IBM, set out to give that model a query language. Their 1974 paper called it SEQUEL and aimed it at occasional database users as well as programmers ([IBM Research](https://research.ibm.com/publications/sequel-a-struciured-english-query-language)). Chamberlin later said they wanted to put Codd's ideas into plain English that anyone could follow ([interview](https://www.mappingthejourney.com/single-post/2017/10/12/episode-11-interview-with-don-chamberlin-designer-of-sql-database-language/)).
+
+## What it trades away
+
+SQL is mostly declarative. A query says which rows it wants, and the database decides how to fetch them, so tuning means learning the optimizer rather than writing loops ([Wikipedia](https://en.wikipedia.org/wiki/SQL)). The standard is also too large for any product to implement completely. PostgreSQL states that as of version 18 it conforms to at least 170 of the 177 mandatory SQL:2023 Core features, and that no relational database fully meets the standard yet. Products differ in syntax and function, so a query written for one database often needs edits before it runs on another ([PostgreSQL](https://www.postgresql.org/about/)).
+
+## Where it won
+
+SQLite is on every Android device and iPhone, every Mac and Windows 10/11 PC, and in Firefox, Chrome and Safari ([SQLite](https://sqlite.org/mostdeployed.html)). Oracle introduced the first commercially available SQL-based relational database in 1979 ([Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/21/cncpt/database-concepts.pdf)). Google's Spanner, a globally distributed system, moved to the SQL dialect shared across Google's other systems ([Google Research](https://research.google/pubs/spanner-becoming-a-sql-system/)). DuckDB brings SQL to analytics inside Python and R sessions ([DuckDB](https://duckdb.org/why_duckdb)).

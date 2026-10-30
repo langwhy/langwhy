@@ -1,0 +1,59 @@
+id: swift
+name: Swift
+appeared: 2014
+creators: [Chris Lattner]
+org: Apple
+type: mobile
+status: alive
+tagline: Programming language for building apps on Apple platforms such as iOS and macOS.
+born_from: >-
+  Chris Lattner started Swift at Apple in July 2010. Objective-C sat on top of C, with C's pointers and unchecked memory, and Lattner later said that memory safety could not be added to Objective-C without removing the C underneath, which would no longer be Objective-C.
+reacts_to: [objective-c, rust, haskell, ruby, python, csharp]
+tradeoffs:
+  memory: refcount
+  types: static
+  run: native
+  concurrency: [async, actors]
+  cost: "Tooling and libraries are strongest on Apple platforms, reference counting needs weak references to break cycles by hand, and the binary interface was only declared stable in 2019."
+slots:
+  - slot: mobile
+    fit: strong
+  - slot: server
+    fit: weak
+    note: "Server frameworks such as Vapor exist, but server use is small."
+  - slot: browser
+    fit: none
+    note: "Not a web page language."
+won_where:
+  - what: "Apple's platforms, for which Apple describes Swift as its language"
+    source: "https://developer.apple.com/swift/"
+  - what: "SwiftUI, Apple's framework for app interfaces on its platforms, available from iOS 13 and macOS 10.15"
+    source: "https://developer.apple.com/documentation/swiftui.md"
+alternatives: [objective-c, kotlin, dart, typescript]
+timeline:
+  - year: 2010
+    what: "Chris Lattner starts Swift at Apple in July 2010"
+    source: "https://nondot.org/sabre/"
+  - year: 2014
+    what: "Apple announces Swift at WWDC 2014 as a beta for iOS 8 and OS X Yosemite"
+    source: "https://www.infoq.com/news/2014/06/apple-swift"
+  - year: 2015
+    what: "Apple releases Swift as open source under Apache 2.0, with Linux support"
+    source: "https://www.apple.com/nz/newsroom/2015/12/03Apple-Releases-Swift-as-Open-Source/"
+  - year: 2019
+    what: "Swift 5 is declared ABI stable on Apple platforms"
+    source: "https://swift.org/blog/abi-stability-and-more/"
+links:
+  website: https://www.swift.org/
+pldb: swift
+sources:
+  - https://nondot.org/sabre/
+  - https://www.infoq.com/news/2014/06/apple-swift
+  - https://www.apple.com/nz/newsroom/2015/12/03Apple-Releases-Swift-as-Open-Source/
+  - https://swift.org/blog/abi-stability-and-more/
+  - https://developer.apple.com/swift/
+  - https://developer.apple.com/documentation/swiftui.md
+  - https://oleb.net/2019/chris-lattner-swift-origins/
+  - https://pldb.io/concepts/swift.html
+verified: false
+last_reviewed: "2026-10-30"

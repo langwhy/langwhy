@@ -1,0 +1,65 @@
+id: zig
+name: Zig
+appeared: 2016
+creators: [Andrew Kelley]
+org: Zig Software Foundation
+type: systems
+status: alive
+tagline: "Systems language meant to replace C, with no hidden control flow or hidden allocations."
+born_from: >-
+  Andrew Kelley designed Zig to replace C while keeping C's binary interface, so existing C libraries still link. The Zig project argues that C++, Rust and D have so many features that programmers end up debugging their knowledge of the language instead of the application.
+reacts_to: [c, cpp, rust, d]
+tradeoffs:
+  memory: manual
+  types: static
+  run: native
+  concurrency: [threads]
+  cost: "Still before 1.0, so the language changes between releases (0.16 in April 2026, 0.17 in October 2026), and every allocation and control path is written out by hand."
+slots:
+  - slot: systems
+    fit: strong
+  - slot: embedded
+    fit: ok
+  - slot: cli
+    fit: ok
+  - slot: wasm
+    fit: ok
+  - slot: browser
+    fit: none
+    note: "Compiles to WebAssembly, but is not a browser language."
+won_where:
+  - what: "Ghostty, a terminal emulator whose shared core and Linux app are written in Zig"
+    source: "https://ghostty.org/docs/about"
+  - what: "Uber, which has compiled all C and C++ in its Go monorepo with the Zig toolchain since January 2023"
+    source: "https://www.uber.com/en-KR/blog/bootstrapping-ubers-infrastructure-on-arm64-with-zig/"
+alternatives: [c, rust, cpp, go]
+timeline:
+  - year: 2016
+    what: "Zig is first released on 8 February 2016"
+    source: "https://github.com/topics/zig-lang"
+  - year: 2020
+    what: "The Zig Software Foundation is announced to promote and advance the language"
+    source: "https://ziglang.org/news/announcing-zig-software-foundation/"
+  - year: 2022
+    what: "The compiler moves from about 80,000 lines of C++ to a 250,000-line version written in Zig"
+    source: "https://ziglang.org/news/goodbye-cpp/"
+  - year: 2026
+    what: "Zig 0.17.0 is released, after 0.16.0 in April 2026"
+    source: "https://ziglang.org/news/"
+links:
+  website: https://ziglang.org
+  wikipedia: https://en.wikipedia.org/wiki/Zig_(programming_language)
+pldb: zig
+sources:
+  - https://ziglang.org/learn/overview/
+  - https://ziglang.org/learn/why_zig_rust_d_cpp/
+  - https://en.wikipedia.org/wiki/Zig_(programming_language)
+  - https://github.com/topics/zig-lang
+  - https://ziglang.org/news/announcing-zig-software-foundation/
+  - https://ziglang.org/news/goodbye-cpp/
+  - https://ziglang.org/news/
+  - https://ghostty.org/docs/about
+  - https://www.uber.com/en-KR/blog/bootstrapping-ubers-infrastructure-on-arm64-with-zig/
+  - https://pldb.io/concepts/zig.html
+verified: false
+last_reviewed: "2026-10-30"

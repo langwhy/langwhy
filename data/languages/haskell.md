@@ -1,0 +1,11 @@
+## Why it exists
+
+In September 1987 a meeting at the FPCA conference in Portland, Oregon, faced a problem: more than a dozen non-strict, purely functional languages existed, all similar in power, and their wider use was held back by the lack of a common language ([History of Haskell](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf)). The meeting agreed that a committee should design one common language. The most mature candidate, Miranda, was a product of David Turner's company, and Turner declined to let the committee adopt it as the starting point. The committee designed a new language and published version 1.0 of the report, dated 1 April 1990, edited by Paul Hudak and Philip Wadler ([History of Haskell](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf)).
+
+## What it trades away
+
+Laziness is the main price. Haskell evaluates an argument only when its value is needed, and the authors admit that it is very hard even for experienced programmers to predict the space a lazy program uses ([History of Haskell](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf)). The space leaks this caused led the designers to add strict features such as `seq` and strict data types ([History of Haskell](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf)). Its main compiler, GHC, uses a stop-the-world copying garbage collector by default ([GHC guide](https://downloads.haskell.org/ghc/latest/docs/users_guide/runtime_control.html); [Wikipedia](https://en.wikipedia.org/wiki/Haskell)).
+
+## Where it won
+
+Haskell's clearest production win is Facebook's Sigma, an anti-abuse rule engine. Facebook reported in 2015 that it had spent two years rewriting Sigma, replacing its in-house FXL language with Haskell, and that the Haskell version serves more than one million requests per second ([Facebook Engineering](https://engineering.fb.com/2015/06/26/security/fighting-spam-with-haskell/)). Pandoc is a Haskell library and a command-line tool for converting document formats ([Pandoc](https://github.com/jgm/pandoc)). xmonad, a tiling window manager, is written and configured in Haskell ([xmonad](https://xmonad.org/)), and the Cardano platform is written in Haskell too ([Cardano](https://docs.cardano.org/about-cardano/introduction)).

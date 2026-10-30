@@ -1,0 +1,82 @@
+id: lua
+name: Lua
+appeared: 1994
+creators:
+  - Roberto Ierusalimschy
+  - Luiz Henrique de Figueiredo
+  - Waldemar Celes
+org: "PUC-Rio, Rio de Janeiro"
+type: scripting
+status: alive
+tagline: "Embeddable scripting language for adding logic and configuration to a host program."
+born_from: >-
+  In 1992 Petrobras, the Brazilian oil company, asked Tecgraf, the graphics lab at PUC-Rio, for data-entry front-ends for its engineers, and by 1993 Tecgraf had two small languages, DEL and SOL, for the job. DEL grew heavier each time users asked for conditionals and loops, and Brazil's market reserve, in force from 1977 to 1992, made buying customized software from abroad hard, so Tecgraf built its own tools and merged the two into one embeddable language.
+reacts_to: [scheme, modula]
+tradeoffs:
+  memory: gc
+  types: dynamic
+  run: vm
+  concurrency: [green]
+  cost: "Small by design: the official distribution ships few libraries, so the host program supplies most tools, and until Lua 5.0 the garbage collector could pause the program for long stretches."
+slots:
+  - slot: embedded
+    fit: strong
+  - slot: games
+    fit: strong
+  - slot: config
+    fit: strong
+    note: "Neovim reads its configuration from init.lua."
+  - slot: scripts
+    fit: weak
+  - slot: browser
+    fit: none
+won_where:
+  - what: "Adobe Lightroom, where over 40 percent of the code was Lua, about 100,000 lines in 2007"
+    source: https://www.lua.org/doc/hopl.pdf
+  - what: "LucasArts planned to replace the scripting language of Grim Fandango with Lua in 1997"
+    source: https://www.lua.org/doc/hopl.pdf
+  - what: "Roblox Luau, derived from Lua 5.1, is the scripting language creators use in Roblox Studio"
+    source: https://create.roblox.com/docs/scripting/luau
+  - what: "Redis runs Lua 5.1 scripts inside the server with atomic execution"
+    source: https://redis.io/docs/latest/develop/programmability/eval-intro/
+  - what: "Neovim accepts init.lua as its configuration file"
+    source: https://neovim.io/doc/user/lua-guide/
+  - what: "Wireshark lets users write dissectors, post-dissectors and taps in Lua"
+    source: https://wiki.wireshark.org/Lua
+alternatives: [javascript, python, tcl, scheme]
+timeline:
+  - year: 1993
+    what: "Lua is born inside Tecgraf at PUC-Rio in Brazil"
+    source: https://www.lua.org/doc/hopl.pdf
+  - year: 1994
+    what: "Lua 1.1, the first public release"
+    source: https://www.lua.org/history.html
+  - year: 2003
+    what: "Lua 5.0 is released"
+    source: https://www.lua.org/versions.html
+  - year: 2006
+    what: "Lua 5.1 is released"
+    source: https://www.lua.org/versions.html
+  - year: 2020
+    what: "Lua 5.4 is released"
+    source: https://www.lua.org/versions.html
+  - year: 2025
+    what: "Lua 5.5 is released on 22 December 2025"
+    source: https://www.lua.org/versions.html
+links:
+  website: https://www.lua.org
+  repo: https://github.com/lua/lua
+  wikipedia: https://en.wikipedia.org/wiki/Lua_(programming_language)
+  docs: https://www.lua.org/manual/5.4/
+sources:
+  - https://www.lua.org/doc/hopl.pdf
+  - https://www.lua.org/history.html
+  - https://www.lua.org/versions.html
+  - https://create.roblox.com/docs/scripting/luau
+  - https://redis.io/docs/latest/develop/programmability/eval-intro/
+  - https://neovim.io/doc/user/lua-guide/
+  - https://wiki.wireshark.org/Lua
+  - https://en.wikipedia.org/wiki/Lua_(programming_language)
+pldb: lua
+verified: false
+last_reviewed: "2026-10-30"

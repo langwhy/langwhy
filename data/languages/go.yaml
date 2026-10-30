@@ -1,0 +1,63 @@
+id: go
+name: Go
+appeared: 2009
+creators: [Robert Griesemer, Rob Pike, Ken Thompson]
+org: Google
+type: backend
+status: alive
+tagline: "Compiled language with garbage collection and goroutines, made for networked servers and cloud tools."
+born_from: >-
+  In 2007 a large Google program took 45 minutes to build, and Rob Pike's account of Go's origin puts its conception during one of those builds. The team wanted fast compilation, efficient execution and ease of programming, which its FAQ says no single mainstream language offered at the time.
+reacts_to: [c, cpp]
+tradeoffs:
+  memory: gc
+  types: static
+  run: native
+  concurrency: [green]
+  cost: "A garbage collector you cannot switch off and a deliberately small language, with fewer abstractions, in return for fast builds and code that is easy to read."
+slots:
+  - slot: server
+    fit: strong
+  - slot: cli
+    fit: strong
+  - slot: data
+    fit: ok
+  - slot: systems
+    fit: ok
+  - slot: mobile
+    fit: weak
+  - slot: embedded
+    fit: weak
+  - slot: browser
+    fit: none
+    note: "Compiles to WebAssembly, but is not a browser language."
+won_where:
+  - what: "Google's web indexing services and Chrome optimization guide service, which are written in Go"
+    source: "https://go.dev/solutions/google/"
+  - what: "CockroachDB, which was 89.6 percent Go code in October 2023"
+    source: "https://www.cockroachlabs.com/blog/why-go-was-the-right-choice-for-cockroachdb/"
+alternatives: [rust, java, csharp]
+timeline:
+  - year: 2007
+    what: "A large Google program takes 45 minutes to build, in the account of Rob Pike"
+    source: "https://go.dev/talks/2012/splash.article"
+  - year: 2009
+    what: "The Go project is launched publicly on 10 November 2009"
+    source: "https://go.dev/blog/1year"
+  - year: 2012
+    what: "Go 1 is released on 28 March 2012 with a compatibility promise"
+    source: "https://go.dev/doc/devel/release"
+links:
+  website: https://go.dev/
+pldb: go
+sources:
+  - https://go.dev/talks/2012/splash.article
+  - https://go.dev/doc/faq
+  - https://go.dev/blog/1year
+  - https://go.dev/doc/devel/release
+  - https://go.dev/solutions/google/
+  - https://www.cockroachlabs.com/blog/why-go-was-the-right-choice-for-cockroachdb/
+  - https://go.dev/
+  - https://pldb.io/concepts/go.html
+verified: false
+last_reviewed: "2026-10-30"

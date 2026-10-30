@@ -1,0 +1,65 @@
+id: c
+name: C
+appeared: 1972
+creators: [Dennis Ritchie]
+type: systems
+status: stable
+tagline: Programming language for operating systems and other code that has to work close to the hardware.
+born_from: >-
+  In 1969 Ken Thompson created the B language at Bell Labs, and B had no types. The PDP-11's byte addressing exposed B's limits, so Dennis Ritchie added types, int and char, and wrote C, and in 1973 the Unix kernel was rewritten in it.
+reacts_to: [b, bcpl]
+tradeoffs:
+  memory: manual
+  types: static
+  run: native
+  concurrency: [threads]
+  cost: "No bounds checks and no memory ownership rules, so buffer overflows and use-after-free bugs are the programmer's job, and undefined behaviour often compiles without an error."
+slots:
+  - slot: systems
+    fit: strong
+  - slot: embedded
+    fit: strong
+  - slot: server
+    fit: ok
+  - slot: cli
+    fit: ok
+  - slot: wasm
+    fit: ok
+  - slot: browser
+    fit: none
+    note: "Only through WebAssembly, not as a browser language."
+won_where:
+  - what: "Linux kernel, which its own documentation says is written in the C programming language"
+    source: "https://docs.kernel.org/process/programming-language.html"
+  - what: "Unix, whose kernel was rewritten in C in 1973"
+    source: "https://csapp.cs.cmu.edu/2e/docs/chistory.html"
+alternatives: [cpp, rust, zig]
+timeline:
+  - year: 1969
+    what: "Ken Thompson creates the B language at Bell Labs"
+    source: "https://csapp.cs.cmu.edu/2e/docs/chistory.html"
+  - year: 1972
+    what: "Ritchie calls 1972 the most creative period of C's development"
+    source: "https://csapp.cs.cmu.edu/2e/docs/chistory.html"
+  - year: 1973
+    what: "The Unix kernel is rewritten in C for the PDP-11"
+    source: "https://csapp.cs.cmu.edu/2e/docs/chistory.html"
+  - year: 1978
+    what: "Kernighan and Ritchie publish The C Programming Language"
+    source: "https://csapp.cs.cmu.edu/2e/docs/chistory.html"
+  - year: 1989
+    what: "The X3J11 committee finishes its ANSI C standard report"
+    source: "https://csapp.cs.cmu.edu/2e/docs/chistory.html"
+  - year: 2024
+    what: "C23 is adopted as the current ISO standard"
+    source: "https://www.open-std.org/jtc1/sc22/wg14/"
+links:
+  website: https://www.open-std.org/jtc1/sc22/wg14/
+pldb: c
+sources:
+  - https://csapp.cs.cmu.edu/2e/docs/chistory.html
+  - https://docs.kernel.org/process/programming-language.html
+  - https://www.open-std.org/jtc1/sc22/wg14/
+  - https://pldb.io/concepts/c.html
+verified: false
+last_reviewed: "2026-10-30"

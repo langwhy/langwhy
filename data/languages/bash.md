@@ -1,0 +1,11 @@
+## Why it exists
+
+In 1989 Brian Fox, who worked for the Free Software Foundation, wrote Bash as a free alternative to the Bourne shell for the GNU Project ([PLDB](https://pldb.io/concepts/bash.html)). The shell it replaced was sh, the direct ancestor of the Unix `/bin/sh`, written by Steve Bourne at Bell Labs ([Ramey](https://tiswww.case.edu/php/chet/bash/rose94.pdf)). Bash was meant to stay compatible with sh while borrowing the useful features of the Korn shell (ksh) and the C shell (csh), and the GNU Project's own description says it does exactly that ([GNU](https://www.gnu.org/software/bash/)). The most noticeable improvements over sh were for interactive use, such as job control, command-line editing and history ([Ramey](https://tiswww.case.edu/php/chet/bash/rose94.pdf)).
+
+## What it trades away
+
+Bash is an sh-compatible shell, so it keeps the Bourne shell's quirks. Its maintainer writes that the lesson repeated most often during Bash development is that the Bourne shell has dark corners and people use all of them, and that quoting and the grammar were poorly specified in the original Bourne shell description ([Ramey](https://tiswww.case.edu/php/chet/bash/article.pdf)). Scripts that look simple can therefore behave in ways their authors did not expect. Bash calls itself a command language interpreter, so it is the glue around programs rather than the place where most application code is written.
+
+## Where it won
+
+Bash is the default shell for scripts in several places where people never choose one. GitHub Actions runs `run:` steps in bash on Linux and macOS runners by default ([GitHub](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)). GitLab Runner uses Sh/Bash as the default shell on Unix systems, with sh as the fallback ([GitLab](https://docs.gitlab.com/runner/shells/)). It also shows where it lost ground: macOS 10.15 Catalina made zsh the default shell for new accounts, and Apple's support page says so directly ([Apple](https://support.apple.com/en-us/HT208050)). Bash has also been a security story, since the 2014 Shellshock bug let crafted environment variables run commands in Bash through version 4.3 ([Ubuntu](https://ubuntu.com/security/CVE-2014-6271)).

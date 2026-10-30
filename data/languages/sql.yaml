@@ -1,0 +1,75 @@
+id: sql
+name: SQL
+appeared: 1974
+creators:
+  - Donald D. Chamberlin
+  - Raymond F. Boyce
+org: ISO/IEC JTC 1/SC 32 (WG3)
+type: query
+status: alive
+tagline: "Declarative language for defining, changing and querying data in relational databases."
+born_from: >-
+  In 1970 Edgar Codd of the IBM Research Laboratory in San Jose argued that users of large data banks should not have to know how the data is organized, and he faulted the tree and network systems that made programs follow fixed access paths. In 1974 Donald Chamberlin and Raymond Boyce, also at IBM, published SEQUEL, a structured English query language aimed at occasional users as well as programmers.
+reacts_to: []
+tradeoffs:
+  memory: n/a
+  types: n/a
+  run: n/a
+  concurrency: [n/a]
+  cost: "Each database speaks its own dialect, and no relational database fully conforms to the SQL standard yet."
+slots:
+  - slot: database
+    fit: strong
+  - slot: data
+    fit: strong
+    note: "DuckDB embeds SQL in a host process and integrates with Python and R."
+  - slot: server
+    fit: none
+    note: "SQL runs inside the database server; it is not a language for writing the server."
+won_where:
+  - what: "SQLite, on every Android device, iPhone, Mac, Windows 10/11 PC, and in Firefox, Chrome and Safari"
+    source: https://sqlite.org/mostdeployed.html
+  - what: "Oracle Database, introduced in 1979 as the first commercially available SQL-based RDBMS"
+    source: https://docs.oracle.com/en/database/oracle/oracle-database/21/cncpt/database-concepts.pdf
+  - what: "Google Spanner, which moved to the SQL dialect shared by other Google systems"
+    source: https://research.google/pubs/spanner-becoming-a-sql-system/
+  - what: "DuckDB, an embedded analytics database that works inside Python and R sessions"
+    source: https://duckdb.org/why_duckdb
+alternatives: [python, r, julia]
+timeline:
+  - year: 1970
+    what: "Edgar Codd publishes the relational model and argues users should not need to know the data layout"
+    source: https://www.engineering.upenn.edu/~zives/03f/cis550/codd.pdf
+  - year: 1974
+    what: "Chamberlin and Boyce publish SEQUEL, the query language that became SQL"
+    source: https://research.ibm.com/publications/sequel-a-struciured-english-query-language
+  - year: 1979
+    what: "Oracle Version 2 is introduced as the first commercially available SQL-based RDBMS"
+    source: https://docs.oracle.com/en/database/oracle/oracle-database/21/cncpt/database-concepts.pdf
+  - year: 1986
+    what: "ANSI accepts SQL as a standard, ANSI X3.135-1986"
+    source: https://www.dbvis.com/thetable/standard-ansi-sql-what-it-is-and-why-it-matters/
+  - year: 2017
+    what: "Google publishes Spanner: Becoming a SQL System, moving Spanner to the SQL dialect shared across Google"
+    source: https://research.google/pubs/spanner-becoming-a-sql-system/
+  - year: 2023
+    what: "ISO/IEC 9075:2023 is published, the SQL:2023 edition of the standard"
+    source: https://www.dbvis.com/thetable/standard-ansi-sql-what-it-is-and-why-it-matters/
+links:
+  website: https://jtc1info.org/technology/subcommittees/data-mgmt-and-interchange/database-languages/
+  docs: https://www.sqlite.org/lang.html
+  wikipedia: https://en.wikipedia.org/wiki/SQL
+sources:
+  - https://www.engineering.upenn.edu/~zives/03f/cis550/codd.pdf
+  - https://research.ibm.com/publications/sequel-a-struciured-english-query-language
+  - https://www.mappingthejourney.com/single-post/2017/10/12/episode-11-interview-with-don-chamberlin-designer-of-sql-database-language/
+  - https://docs.oracle.com/en/database/oracle/oracle-database/21/cncpt/database-concepts.pdf
+  - https://www.dbvis.com/thetable/standard-ansi-sql-what-it-is-and-why-it-matters/
+  - https://research.google/pubs/spanner-becoming-a-sql-system/
+  - https://sqlite.org/mostdeployed.html
+  - https://duckdb.org/why_duckdb
+  - https://www.postgresql.org/about/
+  - https://en.wikipedia.org/wiki/SQL
+pldb: sql
+verified: false
+last_reviewed: "2026-10-30"

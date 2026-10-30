@@ -1,0 +1,73 @@
+id: bash
+name: Bash
+appeared: 1989
+creators:
+  - Brian Fox
+org: "GNU Project, maintained by Chet Ramey"
+type: shell
+status: stable
+tagline: "Command language and shell of the GNU Project, for running programs and writing scripts."
+born_from: >-
+  In 1989 Brian Fox, an employee of the Free Software Foundation, began Bash as a free alternative to the Bourne shell for the GNU Project. The Bourne shell, sh, came from Steve Bourne at Bell Labs, and Bash was meant to stay compatible with it while adding the interactive features of the Korn shell (ksh) and the C shell (csh).
+reacts_to: [sh, ksh]
+tradeoffs:
+  memory: n/a
+  types: n/a
+  run: interpreted
+  concurrency: [none]
+  cost: "It keeps the Bourne shell's quirks, quoting and grammar included, so old sh scripts still run and new ones inherit the dark corners."
+slots:
+  - slot: scripts
+    fit: strong
+  - slot: cli
+    fit: strong
+    note: "Built for interactive use: job control, command-line editing and history."
+  - slot: server
+    fit: ok
+  - slot: systems
+    fit: none
+won_where:
+  - what: "GitHub Actions runs run: steps in bash on Linux and macOS runners by default"
+    source: https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions
+  - what: "GitLab Runner uses Sh/Bash as the default shell on Unix, with sh as the fallback"
+    source: https://docs.gitlab.com/runner/shells/
+alternatives: [python, perl, ruby, awk]
+timeline:
+  - year: 1989
+    what: "Brian Fox begins Bash for the GNU Project as a free alternative to the Bourne shell"
+    source: https://pldb.io/concepts/bash.html
+  - year: 1996
+    what: "Bash 2.0 tarball is published on the GNU FTP server"
+    source: https://ftp.gnu.org/gnu/bash/
+  - year: 2009
+    what: "Chet Ramey announces the first public release of bash-4.0 on the info-gnu list"
+    source: https://lists.gnu.org/r/info-gnu/2009-02/msg00018.html
+  - year: 2014
+    what: "Shellshock, CVE-2014-6271, lets crafted environment variables run commands in Bash through 4.3"
+    source: https://ubuntu.com/security/CVE-2014-6271
+  - year: 2019
+    what: "Bash 5.0 tarball is published on the GNU FTP server"
+    source: https://ftp.gnu.org/gnu/bash/
+  - year: 2019
+    what: "Apple announces zsh as the default shell in macOS 10.15 Catalina"
+    source: https://www.scriptingosx.com/2019/06/moving-to-zsh/
+links:
+  website: https://www.gnu.org/software/bash/
+  docs: https://tiswww.case.edu/php/chet/bash/bashtop.html
+  wikipedia: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+sources:
+  - https://pldb.io/concepts/bash.html
+  - https://tiswww.case.edu/php/chet/bash/rose94.pdf
+  - https://tiswww.case.edu/php/chet/bash/article.pdf
+  - https://www.gnu.org/software/bash/
+  - https://ftp.gnu.org/gnu/bash/
+  - https://lists.gnu.org/r/info-gnu/2009-02/msg00018.html
+  - https://ubuntu.com/security/CVE-2014-6271
+  - https://www.scriptingosx.com/2019/06/moving-to-zsh/
+  - https://support.apple.com/en-us/HT208050
+  - https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions
+  - https://docs.gitlab.com/runner/shells/
+  - https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+pldb: bash
+verified: false
+last_reviewed: "2026-10-30"

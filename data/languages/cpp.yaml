@@ -1,0 +1,66 @@
+id: cpp
+name: C++
+appeared: 1985
+creators: [Bjarne Stroustrup]
+type: systems
+status: alive
+tagline: "Compiled language that adds classes, templates and manual memory control to C."
+born_from: >-
+  In 1979 Bjarne Stroustrup was using Simula, which had the classes he wanted, to simulate a distributed operating system. Simula ran too slowly for the job, so he set out to combine its classes with the speed of C, and the first version was called C with Classes.
+reacts_to: [c, simula]
+tradeoffs:
+  memory: manual
+  types: static
+  run: native
+  concurrency: [threads]
+  cost: "A large language that keeps C's undefined behaviour and offers many ways to misuse the same feature, and template-heavy code gives long compile times and error messages."
+slots:
+  - slot: systems
+    fit: strong
+  - slot: games
+    fit: strong
+  - slot: embedded
+    fit: ok
+  - slot: server
+    fit: ok
+  - slot: wasm
+    fit: ok
+  - slot: browser
+    fit: none
+    note: "Chrome's JavaScript engine is C++, but pages reach C++ only through WebAssembly."
+won_where:
+  - what: "V8, the JavaScript engine used in Chrome and Node.js, is written in C++"
+    source: "https://v8.dev/docs"
+  - what: "LLVM, the compiler framework, is written in the subset of C++ its coding standards define"
+    source: "https://llvm.org/docs/GettingStarted.html"
+alternatives: [rust, c, zig]
+timeline:
+  - year: 1979
+    what: "Work on C with Classes begins, the first version of C++"
+    source: "https://softwarepreservation.computerhistory.org/c_plus_plus/"
+  - year: 1984
+    what: "The name C++ is adopted"
+    source: "https://softwarepreservation.computerhistory.org/c_plus_plus/"
+  - year: 1985
+    what: "Cfront 1.0, the first commercial release of C++"
+    source: "https://softwarepreservation.computerhistory.org/c_plus_plus/"
+  - year: 1998
+    what: "ISO/IEC 14882:1998, the first ISO C++ standard, is published on 1 September 1998"
+    source: "https://www.stroustrup.com/iso_pressrelease2.html"
+  - year: 2023
+    what: "Technical work on C++23 is completed; the standard is published as ISO/IEC 14882:2024"
+    source: "https://isocpp.org/std/the-standard"
+links:
+  website: https://isocpp.org/
+pldb: cpp
+sources:
+  - https://www.stroustrup.com/bs_faq.html
+  - https://stroustrup.com/gillies.htm
+  - https://softwarepreservation.computerhistory.org/c_plus_plus/
+  - https://www.stroustrup.com/iso_pressrelease2.html
+  - https://isocpp.org/std/the-standard
+  - https://v8.dev/docs
+  - https://llvm.org/docs/GettingStarted.html
+  - https://pldb.io/concepts/cpp.html
+verified: false
+last_reviewed: "2026-10-30"

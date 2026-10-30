@@ -1,0 +1,81 @@
+id: haskell
+name: Haskell
+appeared: 1990
+creators:
+  - Haskell Committee
+  - Paul Hudak
+  - Philip Wadler
+org: haskell.org community
+type: functional
+status: alive
+tagline: "Purely functional, lazily evaluated language for writing programs as typed functions."
+born_from: >-
+  In September 1987 a meeting at the FPCA conference in Portland, Oregon, faced more than a dozen non-strict, purely functional languages with similar power and agreed that a committee should design one common language. The most mature of them, Miranda, was a commercial product of David Turner's company, and Turner declined to let the committee adopt it as the starting point.
+reacts_to: [miranda, ml]
+tradeoffs:
+  memory: gc
+  types: static
+  run: native
+  concurrency: [green]
+  cost: "Laziness makes space use hard to predict, and even experienced programmers struggle with it, so the language later gained strict features."
+slots:
+  - slot: server
+    fit: strong
+    note: "Facebook's Sigma rule engine runs in Haskell at more than one million requests per second."
+  - slot: cli
+    fit: strong
+    note: "Pandoc is a Haskell library and a command-line tool for converting document formats."
+  - slot: config
+    fit: ok
+    note: "xmonad, a tiling window manager, is written and configured in Haskell."
+  - slot: embedded
+    fit: none
+won_where:
+  - what: "Facebook Sigma, an anti-abuse rule engine rewritten in Haskell, serving over one million requests per second"
+    source: https://engineering.fb.com/2015/06/26/security/fighting-spam-with-haskell/
+  - what: "xmonad, a dynamically tiling X11 window manager written and configured in Haskell"
+    source: https://xmonad.org/
+  - what: "Cardano, whose platform is written in Haskell"
+    source: https://docs.cardano.org/about-cardano/introduction
+  - what: "Pandoc, a document converter that is a Haskell library and a command-line tool"
+    source: https://github.com/jgm/pandoc
+alternatives: [ocaml, scala, fsharp, rust]
+timeline:
+  - year: 1987
+    what: "A meeting at FPCA in Portland, Oregon, decides that a committee should design one common language"
+    source: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf
+  - year: 1990
+    what: "Haskell 1.0 report, dated 1 April 1990"
+    source: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf
+  - year: 1999
+    what: "Haskell 98 report published, a commitment to a stable language"
+    source: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf
+  - year: 2007
+    what: "A History of Haskell is presented at HOPL III in San Diego"
+    source: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf
+  - year: 2010
+    what: "Haskell 2010 Language Report is published"
+    source: https://www.haskell.org/onlinereport/haskell2010/
+  - year: 2015
+    what: "Facebook rewrites Sigma in Haskell, replacing its in-house FXL language"
+    source: https://engineering.fb.com/2015/06/26/security/fighting-spam-with-haskell/
+links:
+  website: https://www.haskell.org
+  repo: https://github.com/ghc/ghc
+  wikipedia: https://en.wikipedia.org/wiki/Haskell
+  docs: https://www.haskell.org/onlinereport/haskell2010/
+sources:
+  - https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf
+  - https://www.haskell.org/onlinereport/haskell2010/
+  - https://engineering.fb.com/2015/06/26/security/fighting-spam-with-haskell/
+  - https://xmonad.org/
+  - https://docs.cardano.org/about-cardano/introduction
+  - https://github.com/jgm/pandoc
+  - https://downloads.haskell.org/ghc/latest/docs/users_guide/runtime_control.html
+  - https://downloads.haskell.org/ghc/latest/docs/users_guide/codegens.html
+  - https://hackage-content.haskell.org/package/base-4.22.0.0/docs/Control-Concurrent.html
+  - https://pldb.io/concepts/haskell.html
+  - https://en.wikipedia.org/wiki/Haskell
+pldb: haskell
+verified: false
+last_reviewed: "2026-10-30"
