@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+import { icon } from "../lib/icons";
+import { SITE } from "../lib/vocab";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;           // canonical path, e.g. /lang/rust/
+  noindex?: boolean;
+  jsonld?: Record<string, unknown>;
+  pagefind?: boolean;     // index this page's <main> in search
+}
+const { title, description, path, noindex = false, jsonld, pagefind = false } = Astro.props;
+const canonical = `${SITE}${path}`;
+const nav = [["/", "Map"], ["/slot/server/", "Slots"], ["/all/", "All"], ["/about/", "About"]] as const;
+const current = (href: string) => (href === "/" ? path === "/" : path.startsWith("/" + href.split("/")[1] + "/")) ? "page" : undefined;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="langwhy" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="text/markdown" href={`${SITE}/llms.txt`} title="llms.txt" />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  </head>
+  <body>
+    <header class="site">
+      <a class="brand" href="/" set:html={icon("logo", 18) + " langwhy"} />
+      <nav aria-label="Main">
+        {nav.map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}
+        <a href="/search/" aria-current={current("/search/")}>Search</a>
+      </nav>
+    </header>
+    <main {...(pagefind ? { "data-pagefind-body": true } : {})}>
+      <slot />
+    </main>
+    <footer class="site">
+      <p>Why each language exists, what it trades away, where it won. Data is <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>, code is MIT, both on <a href="https://github.com/langwhy/langwhy">GitHub</a>.
+      For agents: <a href="/llms.txt">llms.txt</a>, <a href="/api/v1/languages.json">JSON</a>, every card as <code>.json</code> and <code>.md</code>.</p>
+      <p class="kbd"><kbd>/</kbd> search · <kbd>j</kbd> <kbd>k</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> back</p>
+    </footer>
+    <script is:inline>
+      // Keyboard: / search, j/k move through the main list, Enter opens, Esc goes back.
+      addEventListener("keydown", (e) => {
+        const t = e.target; if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA")) return;
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        const items = [...document.querySelectorAll(".list li a")];
+        const i = items.indexOf(document.activeElement);
+        if (e.key === "/") { e.preventDefault(); const s = document.querySelector("input[type=search], .pagefind-ui__search-input"); s ? s.focus() : (location.href = "/search/"); }
+        else if (e.key === "j" && items.length) { e.preventDefault(); items[Math.min(i + 1, items.length - 1)].focus(); }
+        else if (e.key === "k" && items.length) { e.preventDefault(); items[Math.max(i - 1, 0)].focus(); }
+        else if (e.key === "Escape") { history.length > 1 ? history.back() : (location.href = "/"); }
+      });
+    </script>
+  </body>
+</html>

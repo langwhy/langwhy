@@ -1,0 +1,61 @@
+:root {
+  --bg: #ffffff; --fg: #141414; --muted: #6b6b6b; --line: #e6e6e6; --soft: #f5f5f5;
+  --accent: #047857; --alive: #047857; --stable: #1d4ed8; --declining: #b45309; --dead: #6b6b6b;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111111; --fg: #e9e9e9; --muted: #9c9c9c; --line: #2a2a2a; --soft: #1a1a1a;
+    --accent: #34d399; --alive: #34d399; --stable: #60a5fa; --declining: #fbbf24; --dead: #9c9c9c; }
+}
+* { box-sizing: border-box; }
+html { font: 16px/1.55 var(--sans); background: var(--bg); color: var(--fg); -webkit-text-size-adjust: 100%; }
+body { margin: 0 auto; max-width: 720px; padding: 0 1rem 4rem; }
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; }
+code, kbd, .mono { font-family: var(--mono); font-size: .92em; }
+h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 .25rem; }
+h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; letter-spacing: .01em; }
+h3 { font-size: 1rem; margin: 1.25rem 0 .25rem; }
+p { margin: .5rem 0; }
+ul, ol { padding-left: 1.25rem; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { text-align: left; padding: .35rem .5rem .35rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; }
+.px { display: inline-block; vertical-align: -2px; }
+header.site { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); margin-bottom: 1.5rem; flex-wrap: wrap; }
+header.site .brand { display: inline-flex; align-items: center; gap: .4rem; font-weight: 600; color: var(--fg); }
+header.site nav { display: flex; gap: .9rem; margin-left: auto; font-size: .95rem; }
+header.site nav a { color: var(--muted); }
+header.site nav a[aria-current="page"] { color: var(--fg); }
+footer.site { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+footer.site a { color: var(--muted); text-decoration: underline; }
+.muted { color: var(--muted); }
+.tag { display: inline-block; padding: .05rem .45rem; border: 1px solid var(--line); border-radius: 999px; font-size: .8rem; color: var(--muted); margin-right: .25rem; white-space: nowrap; }
+.status { display: inline-flex; align-items: center; gap: .35rem; font-size: .85rem; color: var(--muted); }
+.status::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: var(--dead); }
+.status.alive::before { background: var(--alive); }
+.status.stable::before { background: var(--stable); }
+.status.declining::before { background: var(--declining); }
+.lead { font-size: 1.15rem; margin: .5rem 0 1rem; }
+.draft { background: var(--soft); border: 1px solid var(--line); border-radius: .5rem; padding: .5rem .75rem; font-size: .9rem; margin: 1rem 0; }
+.list { list-style: none; padding: 0; margin: 0; }
+.list li { display: flex; flex-wrap: wrap; gap: .2rem .6rem; align-items: baseline; padding: .4rem 0; border-bottom: 1px solid var(--line); }
+.list li a { font-weight: 500; color: var(--fg); }
+.list li a:focus-visible, .list li.focus a { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.list .meta { color: var(--muted); font-size: .9rem; }
+.axes { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .5rem; margin: .5rem 0; }
+.axes div { border: 1px solid var(--line); border-radius: .5rem; padding: .4rem .6rem; font-size: .9rem; }
+.axes small { display: block; color: var(--muted); }
+.timeline { list-style: none; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 3.5rem 1fr; gap: .5rem; padding: .25rem 0; }
+.timeline .year { font-family: var(--mono); color: var(--muted); }
+.src { color: var(--muted); font-size: .85rem; }
+.prose h2 { margin-top: 1.5rem; }
+.roads { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .5rem; }
+.roads div { border: 1px solid var(--line); border-radius: .5rem; padding: .5rem .75rem; }
+.roads strong { display: block; font-weight: 500; margin-bottom: .15rem; }
+.kbd { color: var(--muted); font-size: .8rem; margin-top: .5rem; }
+.kbd kbd { border: 1px solid var(--line); border-radius: .25rem; padding: 0 .3rem; }
+@media (max-width: 480px) { h1 { font-size: 1.45rem; } .timeline li { grid-template-columns: 3rem 1fr; } }

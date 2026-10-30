@@ -1,0 +1,5 @@
+Everything under data/ (the language cards, YAML and Markdown) is dedicated to the public domain
+under CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+You can copy, modify, distribute and use it, even commercially, without asking permission.
+Attribution is appreciated, not required. The code outside data/ is MIT licensed, see LICENSE.

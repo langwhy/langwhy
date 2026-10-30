@@ -1,0 +1,11 @@
+## Why it exists
+
+In 2006 Graydon Hoare, then a Mozilla engineer, came home to a broken elevator. The cause was a memory bug in its control software, the kind of crash he had spent years chasing in C and C++. He started a language in which that class of bug would not compile ([MIT Technology Review](https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/)). Mozilla had the same problem at a larger scale: Firefox was millions of lines of C++, and memory-safety bugs were the main source of its security holes. Garbage-collected languages fixed that but were too slow and too unpredictable for a browser engine. Mozilla began sponsoring Rust in 2009 and announced it in 2010 ([Hoare's intro talk](https://venge.net/graydon/talks/intro-talk-2.pdf)).
+
+## What it trades away
+
+Rust gets memory safety without a garbage collector by making the compiler track who owns every value and for how long. That is the ownership and borrowing system, and it is the cost: the borrow checker rejects many programs that would be fine in C++, and learning to write code it accepts takes weeks, not days. Compile times are long because the compiler does so much checking. In return you get no null-pointer crashes, no data races and C-level speed, all guaranteed at compile time rather than tested for at run time ([Rust 1.0 announcement](https://blog.rust-lang.org/2015/05/15/Rust-1.0.html)).
+
+## Where it won
+
+Rust won exactly where C and C++ were causing pain. Firefox shipped its CSS engine in Rust in 2017 ([Mozilla Hacks](https://hacks.mozilla.org/2017/11/entering-the-quantum-era-how-firefox-got-fast-again-and-where-its-going-to-get-faster/)). Google reported that as new Android native code moved to Rust, memory-safety vulnerabilities fell from 76 % to 35 % of the total ([Google Security Blog](https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html)). The Linux kernel accepted it as its second language in version 6.1 ([LWN](https://lwn.net/Articles/910762/)). AWS built Firecracker, the microVM under Lambda, in Rust, and Cloudflare replaced NGINX with its own Rust proxy. In 2024 a White House report told the industry to move to memory-safe languages and named Rust ([ONCD](https://bidenwhitehouse.archives.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/)).

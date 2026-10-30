@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro";
+import { allCards } from "../lib/data";
+import { icon } from "../lib/icons";
+import { TYPES } from "../lib/vocab";
+const cards = await allCards();
+---
+<Base title="All languages on langwhy" description="Every language card, in one list: name, year, type, status." path="/all/">
+  <h1>All cards</h1>
+  <p class="muted">{cards.length} languages. Thousands more will come from the PLDB import; a card is published to search engines only once a human verified it.</p>
+  <ul class="list">
+    {cards.map((c) => (
+      <li>
+        <a href={`/lang/${c.id}/`}>{c.name}</a>
+        <span class="meta"><Fragment set:html={icon(c.type, 12)} /> {TYPES[c.type]} · {c.appeared} · <span class={`status ${c.status}`}>{c.status}</span>{!c.verified && " · draft"}</span>
+      </li>
+    ))}
+  </ul>
+</Base>

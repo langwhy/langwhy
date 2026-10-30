@@ -1,0 +1,101 @@
+id: rust
+name: Rust
+appeared: 2010
+creators: [Graydon Hoare]
+org: Rust Foundation
+type: systems
+status: alive
+tagline: Memory-safe systems programming without a garbage collector.
+born_from: >-
+  Graydon Hoare started Rust as a personal project in 2006 after yet another memory-safety crash,
+  this time in the elevator software of his apartment building. Mozilla picked it up in 2009
+  because Firefox was written in C++ and memory bugs in C++ were the main source of its security
+  holes, while garbage-collected languages were too slow for a browser engine.
+reacts_to: [cpp, cyclone, ocaml, haskell, erlang]
+tradeoffs:
+  memory: ownership
+  types: static
+  run: native
+  concurrency: [threads, async]
+  cost: Slow compiles and a learning curve measured in weeks, because the borrow checker refuses programs that other languages accept.
+slots:
+  - slot: systems
+    fit: strong
+  - slot: server
+    fit: strong
+  - slot: cli
+    fit: strong
+  - slot: wasm
+    fit: strong
+    note: "The most used language for WebAssembly outside the browser."
+  - slot: embedded
+    fit: strong
+  - slot: games
+    fit: ok
+    note: "Engines exist (Bevy), studios still ship C++."
+  - slot: data
+    fit: ok
+    note: "Mostly as the fast core under Python tools (Polars, Ruff)."
+  - slot: mobile
+    fit: weak
+  - slot: browser
+    fit: none
+    note: "Only through WebAssembly, not as a browser language."
+won_where:
+  - what: "Linux kernel accepted Rust as a second language in 6.1"
+    source: "https://lwn.net/Articles/910762/"
+  - what: "Android, where new native code in Rust cut memory-safety bugs"
+    source: "https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html"
+  - what: "Firefox Quantum shipped the Stylo CSS engine written in Rust"
+    source: "https://hacks.mozilla.org/2017/11/entering-the-quantum-era-how-firefox-got-fast-again-and-where-its-going-to-get-faster/"
+  - what: "AWS Firecracker, the microVM behind Lambda and Fargate"
+    source: "https://aws.amazon.com/blogs/aws/firecracker-lightweight-virtualization-for-serverless-computing/"
+  - what: "Cloudflare replaced NGINX with Pingora, serving over a trillion requests a day"
+    source: "https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet/"
+alternatives: [zig, cpp, go, c]
+timeline:
+  - year: 2006
+    what: "Graydon Hoare begins Rust as a side project"
+    source: "https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/"
+  - year: 2009
+    what: "Mozilla starts sponsoring the project"
+    source: "https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/"
+  - year: 2010
+    what: "Rust announced publicly at the Mozilla Annual Summit"
+    source: "https://venge.net/graydon/talks/intro-talk-2.pdf"
+  - year: 2015
+    what: "Rust 1.0 with the stability promise"
+    source: "https://blog.rust-lang.org/2015/05/15/Rust-1.0.html"
+  - year: 2017
+    what: "Firefox 57 ships Stylo, the first large Rust component in a mass-market product"
+    source: "https://hacks.mozilla.org/2017/11/entering-the-quantum-era-how-firefox-got-fast-again-and-where-its-going-to-get-faster/"
+  - year: 2021
+    what: "Rust Foundation founded by AWS, Google, Huawei, Microsoft and Mozilla"
+    source: "https://foundation.rust-lang.org/news/2021-02-08-hello-world/"
+  - year: 2022
+    what: "Linux 6.1 merges initial Rust support"
+    source: "https://lwn.net/Articles/910762/"
+  - year: 2024
+    what: "The White House ONCD report urges moving to memory-safe languages and names Rust"
+    source: "https://bidenwhitehouse.archives.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/"
+hardware:
+  gpu: via-libraries
+  twelve_dollar_users: 264000
+  multicore_users: 130000
+  source: https://github.com/arjaythedev/twelve-dollar-server-challenge/blob/main/LEADERBOARD.md
+  measured: "2026-10-29"
+links:
+  website: https://www.rust-lang.org
+  repo: https://github.com/rust-lang/rust
+  wikipedia: https://en.wikipedia.org/wiki/Rust_(programming_language)
+  docs: https://doc.rust-lang.org/book/
+pldb: rust
+sources:
+  - https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/
+  - https://blog.rust-lang.org/2015/05/15/Rust-1.0.html
+  - https://lwn.net/Articles/910762/
+  - https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html
+  - https://venge.net/graydon/talks/intro-talk-2.pdf
+  - https://en.wikipedia.org/wiki/Rust_(programming_language)
+verified: false
+last_reviewed: "2026-10-30"
