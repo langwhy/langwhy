@@ -1,0 +1,76 @@
+id: elixir
+name: Elixir
+appeared: 2012
+creators: [José Valim]
+type: backend
+status: alive
+tagline: "Functional language for concurrent server applications that runs on the Erlang virtual machine (BEAM)."
+born_from: >-
+  In 2010 José Valim, a member of the Rails core team, was working on Rails thread-safety
+  guarantees and came out convinced that solving concurrency problems in Ruby was too hard to keep
+  its philosophy of programmer happiness. He went looking at other platforms, found the Erlang VM
+  and its concurrency and failure model, and at the beginning of 2011 his company Plataformatec
+  agreed he could spend all his time building a new language on top of it.
+reacts_to: [erlang, ruby]
+tradeoffs:
+  memory: gc
+  types: dynamic
+  run: vm
+  concurrency: [actors]
+  cost: "Dynamic typing and the process model make CPU-heavy loops slower than in native languages, and OTP's supervision model is a second thing to learn."
+slots:
+  - slot: server
+    fit: strong
+    note: "Discord's core services are written in Elixir."
+  - slot: embedded
+    fit: ok
+    note: "Nerves builds production embedded systems on the BEAM and Elixir."
+  - slot: browser
+    fit: weak
+    note: "Browsers still run JavaScript; Elixir sends updates to the page from the server."
+  - slot: mobile
+    fit: none
+    note: "Elixir has no mobile runtime; mobile apps use Swift, Kotlin or Dart."
+won_where:
+  - what: "Discord, whose core services run on Elixir and which reported scaling it to 11 million concurrent users"
+    source: https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users
+  - what: "Nerves, the open-source platform for production embedded systems on Elixir"
+    source: https://nerves-project.org/
+  - what: "Bleacher Report, which moved its Team Stream app from Ruby to Elixir"
+    source: https://www.erlang-solutions.com/case-studies/bleacher-report-case-study/
+alternatives: [erlang, go, ruby, python]
+timeline:
+  - year: 2010
+    what: "Valim works on Rails thread safety and concludes concurrency in Ruby is too hard"
+    source: "https://blog.plataformatec.com.br/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/"
+  - year: 2011
+    what: "Plataformatec agrees Valim can spend all his time on a new language for the Erlang VM"
+    source: "https://blog.plataformatec.com.br/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/"
+  - year: 2012
+    what: "Elixir v0.5.0 is announced on the Erlang mailing list on May 25"
+    source: https://erlang.org/pipermail/erlang-questions/2012-May/066994.html
+  - year: 2014
+    what: "Elixir 1.0 is released, built on the Erlang VM"
+    source: https://elixir-lang.org/blog/2014/09/18/elixir-v1-0-0-released/
+  - year: 2019
+    what: "Discord explains a Rust sorted set exposed to Elixir as a NIF, so its core services stay in Elixir"
+    source: https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users
+  - year: 2022
+    what: "Valim says in an interview that the BEAM was the main reason he built Elixir"
+    source: https://erlef.org/blog/eef/behind-elixir-interview-with-jose-valim
+links:
+  website: https://elixir-lang.org
+  repo: https://github.com/elixir-lang/elixir
+pldb: elixir
+sources:
+  - https://blog.plataformatec.com.br/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/
+  - https://erlef.org/blog/eef/behind-elixir-interview-with-jose-valim
+  - https://www.erlang-factory.com/euc2015/jose-valim
+  - https://erlang.org/pipermail/erlang-questions/2012-May/066994.html
+  - https://elixir-lang.org/blog/2014/09/18/elixir-v1-0-0-released/
+  - https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users
+  - https://nerves-project.org/
+  - https://www.erlang-solutions.com/case-studies/bleacher-report-case-study/
+  - https://pldb.io/concepts/elixir.html
+verified: false
+last_reviewed: "2026-10-30"

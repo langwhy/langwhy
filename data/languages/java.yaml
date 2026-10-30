@@ -1,0 +1,76 @@
+id: java
+name: Java
+appeared: 1995
+creators: [James Gosling]
+org: Oracle
+type: backend
+status: alive
+tagline: "Language for server and enterprise software, compiled to bytecode that runs on the Java virtual machine."
+born_from: >-
+  James Gosling started Oak at Sun Microsystems in April 1991 for the Green Project, which was looking for a use for smart consumer electronics such as cable set-top boxes. The devices used different processors and had very little memory. The team began with C++ with some fixes, and Gosling later said the way they addressed programming was causing cost issues for many of the manufacturers.
+reacts_to: [cpp]
+tradeoffs:
+  memory: gc
+  types: static
+  run: vm
+  concurrency: [threads, green]
+  cost: "The JVM adds startup time and memory overhead to every program, and the verbose syntax makes small scripts slow to write."
+slots:
+  - slot: server
+    fit: strong
+    note: "Netflix runs about 2,800 Java applications, mostly microservices."
+  - slot: data
+    fit: ok
+    note: "Apache Hadoop is implemented in Java, though jobs can be written in other languages."
+  - slot: mobile
+    fit: weak
+    note: "Android still supports Java, but Google calls Kotlin the first choice."
+  - slot: embedded
+    fit: weak
+  - slot: browser
+    fit: none
+    note: "Applets ran as browser plugins, and no major browser runs them now."
+won_where:
+  - what: "Netflix, which runs about 2,800 Java applications, mostly microservices"
+    source: https://www.infoq.com/presentations/netflix-java/
+  - what: "Apache Hadoop, whose framework is implemented in Java"
+    source: https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
+  - what: "Elasticsearch, which bundles its own OpenJDK in each distribution"
+    source: https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch
+  - what: "Android, whose platform SDK still supports Java next to Kotlin"
+    source: https://developer.android.com/kotlin/first
+alternatives: [kotlin, csharp, go, python]
+timeline:
+  - year: 1991
+    what: "Gosling starts Oak at Sun in April, first aimed at consumer electronics"
+    source: https://ibiblio.org/java/slides/hope/02.html
+  - year: 1995
+    what: "Java is made public on May 23, 1995"
+    source: https://www.azul.com/?p=72322
+  - year: 1996
+    what: "JavaSoft ships Java 1.0 as a free programming environment for developers"
+    source: https://diswww.mit.edu/charon.mit.edu/java-interest/5056
+  - year: 2006
+    what: "Sun releases Java under the GPL through the OpenJDK project"
+    source: https://www.theregister.com/2006/11/13/sun_opensources_java/
+  - year: 2010
+    what: "Oracle closes its $7.4 billion purchase of Sun, which owned Java"
+    source: https://www.eweek.com/news/oracle-completes-sun-acquisition/
+links:
+  website: https://www.java.com
+  repo: https://github.com/openjdk/jdk
+  docs: https://docs.oracle.com/en/java/
+pldb: java
+sources:
+  - https://ibiblio.org/java/slides/hope/02.html
+  - https://sdtimes.com/twenty-years-of-java-through-its-creators-eyes/
+  - https://www.azul.com/?p=72322
+  - https://diswww.mit.edu/charon.mit.edu/java-interest/5056
+  - https://www.theregister.com/2006/11/13/sun_opensources_java/
+  - https://www.eweek.com/news/oracle-completes-sun-acquisition/
+  - https://www.infoq.com/presentations/netflix-java/
+  - https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
+  - https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch
+  - https://developer.android.com/kotlin/first
+verified: false
+last_reviewed: "2026-10-30"

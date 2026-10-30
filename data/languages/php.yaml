@@ -1,0 +1,70 @@
+id: php
+name: PHP
+appeared: 1995
+creators: [Rasmus Lerdorf, Zeev Suraski, Andi Gutmans]
+type: web
+status: alive
+tagline: "Server-side scripting language for web pages and web applications."
+born_from: >-
+  In 1994 Rasmus Lerdorf wrote a set of small CGI programs in C to track visits to his online résumé. He called the collection Personal Home Page Tools and released its source publicly in June 1995. In 1997 Zeev Suraski and Andi Gutmans began rewriting its parser for an e-commerce application they were building for a university project, and PHP 3.0 was announced in June 1998.
+reacts_to: [c]
+tradeoffs:
+  memory: refcount
+  types: dynamic
+  run: interpreted
+  concurrency: [none]
+  cost: "Each request starts a script from scratch, so state that must survive between pages has to live in a database or cache."
+slots:
+  - slot: server
+    fit: strong
+    note: "WordPress and MediaWiki run on it."
+  - slot: browser
+    fit: none
+    note: "Only the HTML that PHP produces reaches the browser, never the code."
+  - slot: scripts
+    fit: ok
+    note: "Runs from the command line with the php binary."
+  - slot: data
+    fit: weak
+won_where:
+  - what: "WordPress runs on 39.5 % of all websites (W3Techs, 30 October 2026)"
+    source: https://w3techs.com/technologies/details/cm-wordpress
+  - what: "PHP is used by 69.2 % of websites with a known server-side language"
+    source: https://w3techs.com/technologies/details/pl-php
+  - what: "MediaWiki, the software Wikipedia runs on, requires PHP 8.3.0 for its latest stable release"
+    source: https://www.mediawiki.org/wiki/Manual:Installation_requirements
+  - what: "Facebook's Hack, a gradually typed language for HHVM that works with PHP (2014)"
+    source: https://engineering.fb.com/2014/04/10/developer-tools/hack-developer-day-recap
+alternatives: [python, ruby, javascript]
+timeline:
+  - year: 1994
+    what: "Rasmus Lerdorf writes CGI programs in C to track visits to his online résumé"
+    source: https://www.php.net/manual/en/history.php.php
+  - year: 1995
+    what: "Personal Home Page Tools is released to the public in June"
+    source: https://www.php.net/manual/en/history.php.php
+  - year: 1998
+    what: "PHP 3.0 is announced in June as the successor to PHP/FI 2.0"
+    source: https://www.php.net/manual/en/history.php.php
+  - year: 2015
+    what: "PHP 7.0 is released, up to twice as fast as PHP 5.6"
+    source: https://www.php.net/manual/en/history.php.php
+  - year: 2020
+    what: "PHP 8.0 is released with a JIT compiler and union types"
+    source: https://www.php.net/manual/en/history.php.php
+links:
+  website: https://www.php.net/
+  repo: https://github.com/php/php-src
+  docs: https://www.php.net/docs.php
+sources:
+  - https://www.php.net/manual/en/history.php.php
+  - https://w3techs.com/technologies/details/cm-wordpress
+  - https://w3techs.com/technologies/details/pl-php
+  - https://www.mediawiki.org/wiki/Manual:Installation_requirements
+  - https://www.mediawiki.org/wiki/MediaWiki
+  - https://engineering.fb.com/2014/04/10/developer-tools/hack-developer-day-recap
+  - https://wordpress.org/about/requirements/
+  - https://survey.stackoverflow.co/2025/technology/
+pldb: php
+verified: false
+last_reviewed: "2026-10-30"

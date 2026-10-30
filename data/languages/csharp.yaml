@@ -1,0 +1,79 @@
+id: csharp
+name: C#
+appeared: 2000
+creators: [Anders Hejlsberg]
+org: Microsoft
+type: backend
+status: alive
+tagline: "Language for building .NET applications, from web services and desktop apps to Unity game scripts."
+born_from: >-
+  In January 1999 Anders Hejlsberg, who had designed Turbo Pascal and Delphi and worked on Visual
+  J++, formed a team at Microsoft to build a new language for the .NET runtime, first called COOL.
+  Microsoft's own Java had been tied up in a lawsuit with Sun since the late 1990s, and the January
+  2001 settlement ended the 1996 Java licence, so .NET needed a managed language of its own. The
+  language was announced as C# in July 2000.
+reacts_to: [java, delphi]
+tradeoffs:
+  memory: gc
+  types: static
+  run: vm
+  concurrency: [threads, async]
+  cost: "The .NET runtime is large and garbage-collected, so latency-sensitive code needs tuning that C or Rust code avoids."
+slots:
+  - slot: games
+    fit: strong
+    note: "Unity uses C# for gameplay scripts."
+  - slot: server
+    fit: strong
+    note: "Stack Overflow's 2016 web tier ran on ASP.NET MVC."
+  - slot: cli
+    fit: ok
+  - slot: mobile
+    fit: weak
+  - slot: browser
+    fit: weak
+    note: "Blazor runs C# in the browser through WebAssembly, but JavaScript is the default."
+  - slot: systems
+    fit: none
+    note: "Kernels and drivers are written in C or C++, not in C#."
+won_where:
+  - what: "Unity, where gameplay scripts are written in C#"
+    source: https://docs.unity.com/en-us/engine/6000.3/manual/scripting/get-started/intro-to
+  - what: "Stack Overflow, whose 2016 web tier ran on ASP.NET MVC 5.2.3 and .NET 4.6.1"
+    source: https://netlify.nickcraver.com/blog/2016/02/17/stack-overflow-the-architecture-2016-edition/
+alternatives: [java, kotlin, go, dart]
+timeline:
+  - year: 1999
+    what: "Hejlsberg forms a team in January to build the language, then called COOL"
+    source: "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+  - year: 2000
+    what: "Microsoft's July 2000 Orlando release promotes C# as one of the .NET languages"
+    source: https://news.microsoft.com/source/2000/07/11/microsoft-announces-groundswell-of-support-for-net-platform
+  - year: 2001
+    what: "Settlement with Sun ends the 1996 Java license that Microsoft had used"
+    source: https://www.infoworld.com/article/2159673/sun-microsoft-settle-java-lawsuit.html
+  - year: 2002
+    what: "C# is standardized as ECMA-334, 2nd edition, in December 2002"
+    source: https://ecma-international.org/publications-and-standards/standards/ecma-334/
+  - year: 2014
+    what: "Microsoft announces that .NET Core will be open source, including the runtime"
+    source: https://devblogs.microsoft.com/dotnet/net-core-is-open-source
+  - year: 2023
+    what: "ECMA-334 7th edition, the latest C# specification, is published in December"
+    source: https://ecma-international.org/publications-and-standards/standards/ecma-334/
+links:
+  website: https://dotnet.microsoft.com
+  repo: https://github.com/dotnet/runtime
+pldb: csharp
+sources:
+  - https://en.wikipedia.org/wiki/C_Sharp_(programming_language)
+  - https://www.infoworld.com/article/2159673/sun-microsoft-settle-java-lawsuit.html
+  - https://www.theregister.com/2010/07/05/dot_net_anniversary/
+  - https://www.artima.com/intv/csdes.html
+  - https://news.microsoft.com/source/2000/07/11/microsoft-announces-groundswell-of-support-for-net-platform
+  - https://ecma-international.org/publications-and-standards/standards/ecma-334/
+  - https://devblogs.microsoft.com/dotnet/net-core-is-open-source
+  - https://docs.unity.com/en-us/engine/6000.3/manual/scripting/get-started/intro-to
+  - https://netlify.nickcraver.com/blog/2016/02/17/stack-overflow-the-architecture-2016-edition/
+verified: false
+last_reviewed: "2026-10-30"

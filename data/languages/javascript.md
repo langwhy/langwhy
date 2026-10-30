@@ -1,0 +1,11 @@
+## Why it exists
+
+In May 1995 Brendan Eich was building a scripting language for Netscape Navigator. Netscape decided it needed two languages for two mostly separate audiences, and management required the browser one to look like Java ([Eich, "Popularity", 2008](https://brendaneich.com/2008/04/popularity/)). Eich built the core from Scheme-style first-class functions and Self-style prototypes. His prototype, first called Mocha, was embedded in Netscape Navigator 2.0 ([Eich, 2008](https://brendaneich.com/2008/04/popularity/)). The design is dated to May 1995 at Netscape in the history Eich wrote with Allen Wirfs-Brock ([HOPL IV](https://hopl4.sigplan.org/details/hopl-4-papers/10/JavaScript-The-First-20-Years)).
+
+## What it trades away
+
+JavaScript runs wherever a browser runs, and that reach comes with a loose type system. A variable can hold any type at any time, so a large codebase depends on tests and tooling to catch mistakes that a compiler would catch elsewhere. Compatibility was a problem from the start: within a year of release, Netscape's implementation and Microsoft's reverse-engineered one disagreed ([HOPL IV](https://hopl4.sigplan.org/details/hopl-4-papers/10/JavaScript-The-First-20-Years)). Standardization at Ecma began in 1996, and the first edition came out in June 1997 ([Ecma International](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)). The standard is now revised every year, so an old engine and a new one can run the same page differently.
+
+## Where it won
+
+JavaScript won the browser first. W3Techs puts its share of websites that use it as the client-side language at 98.9 % ([W3Techs](https://w3techs.com/technologies/details/cp-javascript/)). It moved to servers through Node.js, and in November 2013 PayPal said its consumer web applications would be built on Node.js, starting with the account overview page ([InfoQ](https://www.infoq.com/news/2013/11/paypal-java-javascript)). Electron apps use it for desktop software, and the Electron showcase lists Visual Studio Code and Slack ([Electron](https://www.electronjs.org/apps)). React Native, which Meta released in 2015, builds native iOS and Android apps from JavaScript ([React Native](https://reactnative.dev/)).

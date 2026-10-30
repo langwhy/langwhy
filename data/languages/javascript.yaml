@@ -1,0 +1,71 @@
+id: javascript
+name: JavaScript
+appeared: 1995
+creators: [Brendan Eich]
+org: "Ecma International (TC39)"
+type: web
+status: alive
+tagline: "The language that runs inside web browsers, and on servers through Node.js."
+born_from: >-
+  In May 1995 Brendan Eich was building a scripting language for Netscape Navigator, a prototype first called Mocha that was embedded in Navigator 2.0. Netscape decided it needed two languages for two mostly separate audiences, and management required the browser one to look like Java. Eich built its core from Scheme-style first-class functions and Self-style prototypes.
+reacts_to: [scheme, self, java]
+tradeoffs:
+  memory: gc
+  types: dynamic
+  run: vm
+  concurrency: [async]
+  cost: "Variables can hold any type at any time, so large codebases rely on tests and tooling to catch mistakes that a compiler would catch in other languages."
+slots:
+  - slot: browser
+    fit: strong
+    note: "Used on the client side by 98.9 % of websites."
+  - slot: server
+    fit: ok
+    note: "Node.js runs it on servers; PayPal moved its consumer web apps to it in 2013."
+  - slot: mobile
+    fit: ok
+    note: "React Native builds native iOS and Android apps from JavaScript."
+  - slot: cli
+    fit: ok
+    note: "Node scripts run from the terminal."
+  - slot: systems
+    fit: none
+    note: "Engines like V8 are written in C++; JavaScript does not write kernels or drivers."
+won_where:
+  - what: "Browsers: JavaScript is the client-side language of 98.9 % of all websites"
+    source: https://w3techs.com/technologies/details/cp-javascript/
+  - what: "Electron desktop apps, among them Visual Studio Code and Slack"
+    source: https://www.electronjs.org/apps
+  - what: "PayPal moved its consumer web applications to Node.js, starting with the account overview page"
+    source: https://www.infoq.com/news/2013/11/paypal-java-javascript
+  - what: "React Native, released by Meta in 2015, for native iOS and Android apps"
+    source: https://reactnative.dev/
+alternatives: [typescript, dart, python]
+timeline:
+  - year: 1995
+    what: "Brendan Eich designs JavaScript at Netscape in May"
+    source: https://hopl4.sigplan.org/details/hopl-4-papers/10/JavaScript-The-First-20-Years
+  - year: 1997
+    what: "ECMA-262, the first ECMAScript standard, is published in June"
+    source: https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+  - year: 2009
+    what: "Ryan Dahl presents Node.js at JSConf EU"
+    source: https://blogs.igalia.com/ltilve/tag/javascript
+  - year: 2015
+    what: "The sixth edition of ECMA-262 is published in June"
+    source: https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+links:
+  website: https://tc39.es/
+  docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+sources:
+  - https://brendaneich.com/2008/04/popularity/
+  - https://hopl4.sigplan.org/details/hopl-4-papers/10/JavaScript-The-First-20-Years
+  - https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+  - https://blogs.igalia.com/ltilve/tag/javascript
+  - https://w3techs.com/technologies/details/cp-javascript/
+  - https://www.electronjs.org/apps
+  - https://www.infoq.com/news/2013/11/paypal-java-javascript
+  - https://reactnative.dev/
+pldb: javascript
+verified: false
+last_reviewed: "2026-10-30"

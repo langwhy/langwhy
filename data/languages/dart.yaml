@@ -1,0 +1,63 @@
+id: dart
+name: Dart
+appeared: 2011
+creators: [Lars Bak]
+org: Google
+type: mobile
+status: alive
+tagline: "Language for building Flutter apps, compiled ahead of time to native code or to JavaScript."
+born_from: >-
+  Google's 2011 launch post, by Lars Bak of the Dart team, set out to create a structured yet flexible language for web programming with high performance on all browsers. In 2015 the Dart team decided not to integrate the Dart VM into Chrome and kept Dart compiling to JavaScript for the web.
+reacts_to: [javascript]
+tradeoffs:
+  memory: gc
+  types: static
+  run: native
+  concurrency: [async, actors]
+  cost: "Outside Flutter, Dart has a small library ecosystem and hiring pool, so a Dart team is mostly a Flutter team."
+slots:
+  - slot: mobile
+    fit: strong
+    note: "Flutter apps are written in Dart."
+  - slot: browser
+    fit: weak
+    note: "Compiles to JavaScript; Chrome never shipped the Dart VM."
+  - slot: server
+    fit: weak
+  - slot: embedded
+    fit: none
+    note: "Dart has no standard runtime for microcontrollers."
+won_where:
+  - what: "Google Pay, a Flutter case study on the official showcase"
+    source: https://flutter.dev/showcase
+  - what: "BMW Group, a Flutter case study on scaling customer-facing product development"
+    source: https://flutter.dev/showcase
+  - what: "Alibaba, which scaled China's largest second-hand marketplace with Flutter"
+    source: https://flutter.dev/showcase
+alternatives: [kotlin, swift, typescript, javascript]
+timeline:
+  - year: 2011
+    what: "Google announces Dart on October 10 as a language for web applications"
+    source: https://googlecode.blogspot.com/2011/10/dart-language-for-structured-web.html
+  - year: 2015
+    what: "Google drops the plan to put the Dart VM in Chrome and focuses on compiling Dart to JavaScript"
+    source: https://news.dartlang.org/2015/03/dart-for-entire-web.html
+  - year: 2018
+    what: "Flutter 1.0 ships in December, alongside Dart 2.1"
+    source: https://www.infoq.com/news/2018/12/flutter-1.0-released
+  - year: 2023
+    what: "Dart 3 makes null safety fully sound and adds records, patterns and class modifiers"
+    source: https://dart.cn/blog/announcing-dart-3
+links:
+  website: https://dart.dev
+  repo: https://github.com/dart-lang/sdk
+pldb: dart
+sources:
+  - https://googlecode.blogspot.com/2011/10/dart-language-for-structured-web.html
+  - https://news.dartlang.org/2015/03/dart-for-entire-web.html
+  - https://www.infoq.com/news/2018/12/flutter-1.0-released
+  - https://dart.cn/blog/announcing-dart-3
+  - https://flutter.dev/showcase
+  - https://pldb.io/concepts/dart.html
+verified: false
+last_reviewed: "2026-10-30"

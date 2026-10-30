@@ -1,0 +1,76 @@
+id: ruby
+name: Ruby
+appeared: 1995
+creators: [Yukihiro Matsumoto]
+type: web
+status: alive
+tagline: "Object-oriented scripting language, best known for the Rails web framework."
+born_from: >-
+  Yukihiro Matsumoto, known as Matz, began Ruby in 1993 and released it publicly in 1995. He wanted a scripting language more capable than Perl and more object-oriented than Python, and he designed it so that programmers would be happy using it.
+reacts_to: [perl, python, smalltalk, lisp]
+tradeoffs:
+  memory: gc
+  types: dynamic
+  run: interpreted
+  concurrency: [threads, green]
+  cost: "Code can change at run time, which makes programs easy to bend and harder for tools to check, and the interpreter runs one thread of Ruby code at a time."
+slots:
+  - slot: server
+    fit: strong
+    note: "Rails is the main framework; GitHub and Shopify run on it."
+  - slot: scripts
+    fit: ok
+  - slot: cli
+    fit: ok
+    note: "Homebrew package definitions are Ruby files."
+  - slot: data
+    fit: weak
+    note: "Python dominates data work."
+  - slot: browser
+    fit: none
+    note: "The browser never runs Ruby; Rails sends HTML and JavaScript to it."
+won_where:
+  - what: "GitHub's main application moved to Rails 5.2.1 on August 15, 2018"
+    source: https://github.blog/engineering/upgrading-github-from-rails-3-2-to-5-2/
+  - what: "Shopify, which calls itself one of the largest Ruby on Rails codebases in existence"
+    source: https://shopify.engineering/deconstructing-monolith-designing-software-maximizes-developer-productivity
+  - what: "Homebrew, whose package definitions (formulae) are Ruby files"
+    source: https://docs.brew.sh/Formula-Cookbook
+alternatives: [python, php, javascript]
+timeline:
+  - year: 1993
+    what: "Matsumoto begins work on Ruby"
+    source: https://www.artima.com/intv/ruby.html
+  - year: 1995
+    what: "Ruby is released publicly"
+    source: https://www.ruby-lang.org/en/about/
+  - year: 2004
+    what: "David Heinemeier Hansson releases Rails as open source in July"
+    source: https://en.wikipedia.org/wiki/Ruby_on_Rails
+  - year: 2018
+    what: "GitHub's main application runs on Rails 5.2.1 from August 15"
+    source: https://github.blog/engineering/upgrading-github-from-rails-3-2-to-5-2/
+  - year: 2020
+    what: "Ruby 3.0.0 is released on December 25"
+    source: https://www.ruby-lang.org/en/news/2020/12/
+  - year: 2025
+    what: "Ruby 4.0.0 is released on December 25"
+    source: https://www.ruby-lang.org/en/news/2025/12
+links:
+  website: https://www.ruby-lang.org/en/about/
+  repo: https://github.com/ruby/ruby
+  docs: https://docs.ruby-lang.org/en/
+sources:
+  - https://www.artima.com/intv/ruby.html
+  - https://www.ruby-lang.org/en/about/
+  - https://en.wikipedia.org/wiki/Ruby_on_Rails
+  - https://github.blog/engineering/upgrading-github-from-rails-3-2-to-5-2/
+  - https://shopify.engineering/deconstructing-monolith-designing-software-maximizes-developer-productivity
+  - https://docs.brew.sh/Formula-Cookbook
+  - https://www.infoworld.com/article/3687219/whatever-happened-to-ruby.html
+  - https://www.ruby-lang.org/en/news/2020/12/
+  - https://www.ruby-lang.org/en/news/2025/12
+  - https://survey.stackoverflow.co/2025/technology/
+pldb: ruby
+verified: false
+last_reviewed: "2026-10-30"

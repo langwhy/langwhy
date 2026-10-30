@@ -1,0 +1,11 @@
+## Why it exists
+
+In December 1989 Guido van Rossum, a programmer on the Amoeba distributed operating system at CWI, started a hobby project to fill the week around Christmas ([Guido's foreword to Programming Python](https://www.python.org/doc/essays/foreword/)). Amoeba needed a scripting language ([Artima, The Making of Python](https://www.artima.com/articles/the-making-of-python)), and he wanted an interpreted language for writing and testing its administration scripts ([Linux Journal interview](https://www.linuxjournal.com/node/2959)). He drew on ABC, a language he had worked on, which was intended for non-technical users. The first public release, version 0.9.0, went to the alt.sources newsgroup in February 1991 ([Guido's Python timeline](https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html)).
+
+## What it trades away
+
+Python code is short and readable, and that comes at a cost in speed and parallelism. CPython, the reference implementation, has a global interpreter lock that stops threads from running Python code at the same time ([PEP 703](https://peps.python.org/pep-0703/)). CPU-heavy work therefore needs separate processes or C extensions. Dynamic typing has its own cost: type hints are optional and checked by external tools, so large codebases lean on those tools and on tests. The migration was slow too. Python 3.0 arrived in 2008, and Python 2 kept receiving support until January 1, 2020 ([python.org](https://www.python.org/doc/sunset-python-2/)).
+
+## Where it won
+
+Python won in scripting and data work. Dropbox's client had more than one million lines of Python logic, and in 2019 the company published how it moved that code to Python 3 ([Dropbox Tech](https://dropbox.tech/application/incrementally-migrating-over-one-million-lines-of-code-from-python-2-to-python-3)). NumPy calls itself the fundamental package for scientific computing with Python ([NumPy](https://numpy.org/)). In the 2025 Stack Overflow survey, 57.9 % of respondents used Python ([Stack Overflow](https://survey.stackoverflow.co/2025/technology/)). It never won the browser. Browsers run JavaScript, which 98.9 % of websites use on the client side ([W3Techs](https://w3techs.com/technologies/details/cp-javascript/)).

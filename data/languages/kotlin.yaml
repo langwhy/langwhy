@@ -1,0 +1,71 @@
+id: kotlin
+name: Kotlin
+appeared: 2011
+creators: [Andrey Breslav]
+org: JetBrains
+type: mobile
+status: alive
+tagline: "Statically typed language for JVM and Android apps that compiles alongside existing Java code."
+born_from: >-
+  In July 2011 JetBrains said that none of the existing JVM languages met its needs. Its development lead, Dmitry Jemerov, said that Scala has the right features but its most obvious deficiency is very slow compilation, so the new language had to be Java-compatible, more concise than Java and safer against null pointer errors.
+reacts_to: [java, scala]
+tradeoffs:
+  memory: gc
+  types: static
+  run: vm
+  concurrency: [threads, async]
+  cost: "It runs on the JVM and inherits Java's startup time and memory footprint, which weighs most on short-lived scripts and small tools."
+slots:
+  - slot: mobile
+    fit: strong
+    note: "Google recommends starting new Android apps in Kotlin."
+  - slot: server
+    fit: ok
+    note: "Spring Boot supports Kotlin and requires Kotlin 2.2 or later."
+  - slot: systems
+    fit: weak
+  - slot: embedded
+    fit: none
+    note: "Kotlin targets the JVM, Android and native platforms, not microcontrollers."
+won_where:
+  - what: "Android, where Google's developer guide recommends starting new apps in Kotlin"
+    source: https://developer.android.com/kotlin/first
+  - what: "Android, where over half of professional developers used Kotlin by May 2019"
+    source: https://android-developers.googleblog.com/2019/05/google-io-2019-empowering-developers-to-build-experiences-on-Android-Play.html
+  - what: "Gradle, which made the Kotlin DSL the default for new builds in 2023"
+    source: https://blog.gradle.org/kotlin-dsl-is-now-the-default-for-new-gradle-builds
+  - what: "Spring Boot, which supports Kotlin on the same JVM stack as Java"
+    source: https://docs.spring.io/spring-boot/reference/features/kotlin.html
+alternatives: [java, swift, dart, scala]
+timeline:
+  - year: 2011
+    what: "JetBrains introduces Kotlin in July as a new language for the JVM"
+    source: https://www.infoq.com/news/2011/07/kotlin/
+  - year: 2016
+    what: "Kotlin 1.0 ships as the first stable release, with backward compatibility promised"
+    source: https://www.infoq.com/news/2016/02/jetbrains-kotlin-1/
+  - year: 2017
+    what: "Google adds Kotlin as an officially supported language for Android at I/O"
+    source: https://www.infoq.com/news/2017/05/android-kotlin
+  - year: 2019
+    what: "Google makes Android development Kotlin-first in its May 2019 announcement"
+    source: https://android-developers.googleblog.com/2019/05/google-io-2019-empowering-developers-to-build-experiences-on-Android-Play.html
+  - year: 2023
+    what: "Gradle makes the Kotlin DSL the default choice for new builds"
+    source: https://blog.gradle.org/kotlin-dsl-is-now-the-default-for-new-gradle-builds
+links:
+  website: https://kotlinlang.org
+  repo: https://github.com/JetBrains/kotlin
+pldb: kotlin
+sources:
+  - https://www.infoworld.com/article/2183154/jetbrains-readies-jvm-language-kotlin.html
+  - https://www.infoq.com/news/2011/07/kotlin/
+  - https://www.infoq.com/news/2016/02/jetbrains-kotlin-1/
+  - https://www.infoq.com/news/2017/05/android-kotlin
+  - https://developer.android.com/kotlin/first
+  - https://android-developers.googleblog.com/2019/05/google-io-2019-empowering-developers-to-build-experiences-on-Android-Play.html
+  - https://blog.gradle.org/kotlin-dsl-is-now-the-default-for-new-gradle-builds
+  - https://docs.spring.io/spring-boot/reference/features/kotlin.html
+  - https://pldb.io/concepts/kotlin.html
+verified: false
+last_reviewed: "2026-10-30"

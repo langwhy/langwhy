@@ -1,0 +1,73 @@
+id: typescript
+name: TypeScript
+appeared: 2012
+creators: [Anders Hejlsberg]
+org: Microsoft
+type: web
+status: alive
+tagline: "Static types for JavaScript code, removed at compile time so the output is plain JavaScript."
+born_from: >-
+  In October 2012 Microsoft previewed TypeScript, a JavaScript-like language that compiles to plain JavaScript. Anders Hejlsberg argued that building large JavaScript applications successfully was simply too difficult, and that JavaScript's dynamic type system made it impossible to build an IDE like Visual Studio that worked with it. The language was built to add types on top of JavaScript, so any valid JavaScript is also valid TypeScript.
+reacts_to: [javascript]
+tradeoffs:
+  memory: gc
+  types: static
+  run: to-js
+  concurrency: [async]
+  cost: "Types exist only at compile time, so a value from a server or a user can break a type at run time, and every project keeps a compile step to maintain."
+slots:
+  - slot: browser
+    fit: strong
+    note: "Compiles to JavaScript, so it runs wherever JavaScript does."
+  - slot: server
+    fit: ok
+    note: "Runs on Node.js after compilation."
+  - slot: cli
+    fit: ok
+  - slot: embedded
+    fit: none
+    note: "It compiles to JavaScript, so it needs a JavaScript runtime that microcontrollers do not have."
+won_where:
+  - what: "Angular 2 announced as built with TypeScript in March 2015"
+    source: https://devblogs.microsoft.com/typescript/angular-2-built-on-typescript/
+  - what: "Slack's desktop app ported to TypeScript, which Slack called a boon to stability"
+    source: https://slack.engineering/typescript-at-slack/
+  - what: "Airbnb's frontend, 86 % converted to TypeScript (about 6 million lines) by August 2020"
+    source: https://www.infoq.com/news/2020/08/airbnb-typescript-migration
+  - what: "67 % of State of JS 2024 respondents wrote more TypeScript than JavaScript"
+    source: https://2024.stateofjs.com/en-US/usage/
+alternatives: [javascript, dart, go]
+timeline:
+  - year: 2012
+    what: "Microsoft previews TypeScript, a JavaScript-like language that compiles to JavaScript"
+    source: https://techcrunch.com/2012/10/01/microsoft-previews-new-javascript-like-programming-language-typescript/
+  - year: 2014
+    what: "TypeScript 1.0 is announced on April 2"
+    source: https://devblogs.microsoft.com/typescript/announcing-typescript-1-0/
+  - year: 2015
+    what: "Angular 2 is announced as built with TypeScript on March 5"
+    source: https://devblogs.microsoft.com/typescript/angular-2-built-on-typescript/
+  - year: 2017
+    what: "Slack publishes how it moved its desktop app to TypeScript"
+    source: https://slack.engineering/typescript-at-slack/
+  - year: 2023
+    what: "TypeScript 5.0 is released, aiming to make TypeScript smaller, simpler and faster"
+    source: https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/
+links:
+  website: https://www.typescriptlang.org/
+  repo: https://github.com/microsoft/TypeScript
+  docs: https://www.typescriptlang.org/docs/
+sources:
+  - https://techcrunch.com/2012/10/01/microsoft-previews-new-javascript-like-programming-language-typescript/
+  - https://www.theregister.com/software/2012/11/03/microsoft-typescript-isnt-a-javascript-killer/717785
+  - https://devblogs.microsoft.com/typescript/announcing-typescript-1-0/
+  - https://devblogs.microsoft.com/typescript/angular-2-built-on-typescript/
+  - https://slack.engineering/typescript-at-slack/
+  - https://www.infoq.com/news/2020/08/airbnb-typescript-migration
+  - https://2024.stateofjs.com/en-US/usage/
+  - https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/
+  - https://survey.stackoverflow.co/2025/technology/
+  - https://www.typescriptlang.org/
+pldb: typescript
+verified: false
+last_reviewed: "2026-10-30"

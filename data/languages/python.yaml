@@ -1,0 +1,79 @@
+id: python
+name: Python
+appeared: 1991
+creators: [Guido van Rossum]
+type: scripting
+status: alive
+tagline: "General-purpose language for scripts, automation, web backends and data analysis."
+born_from: >-
+  In December 1989 Guido van Rossum, a programmer on the Amoeba distributed operating system at CWI, started a hobby project to fill the week around Christmas. Amoeba needed a scripting language, and he wanted an interpreted language for writing and testing its administration scripts. He drew on ABC, a language he had worked on that was intended for non-technical users.
+reacts_to: [abc, c, modula-3]
+tradeoffs:
+  memory: refcount
+  types: dynamic
+  run: interpreted
+  concurrency: [threads, async]
+  cost: "The global interpreter lock stops threads from running Python code at the same time, so CPU-heavy work needs processes or C extensions."
+slots:
+  - slot: scripts
+    fit: strong
+    note: "The default language for system administration and automation scripts."
+  - slot: data
+    fit: strong
+    note: "NumPy and the scientific stack built on it."
+  - slot: server
+    fit: strong
+    note: "Django and Flask are the common web frameworks."
+  - slot: cli
+    fit: ok
+  - slot: systems
+    fit: weak
+    note: "CPython itself is written in C."
+  - slot: mobile
+    fit: weak
+  - slot: browser
+    fit: none
+    note: "Browsers run JavaScript, not Python."
+won_where:
+  - what: "Dropbox published how it moved over one million lines of Python from Python 2 to Python 3 (2019)"
+    source: https://dropbox.tech/application/incrementally-migrating-over-one-million-lines-of-code-from-python-2-to-python-3
+  - what: "NumPy, the fundamental package for scientific computing with Python"
+    source: https://numpy.org/
+alternatives: [javascript, go, r]
+timeline:
+  - year: 1989
+    what: "Guido van Rossum starts Python as a hobby project in the week around Christmas"
+    source: https://www.python.org/doc/essays/foreword/
+  - year: 1991
+    what: "Python 0.9.0 is released to the alt.sources newsgroup in February"
+    source: https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html
+  - year: 2000
+    what: "Python 2.0 is released on October 16"
+    source: https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html
+  - year: 2008
+    what: "Python 3.0 is released on December 3"
+    source: https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html
+  - year: 2020
+    what: "Python 2 reaches end of life on January 1"
+    source: https://www.python.org/doc/sunset-python-2/
+  - year: 2023
+    what: "PEP 703, Making the Global Interpreter Lock Optional in CPython, is accepted"
+    source: https://peps.python.org/pep-0703/
+links:
+  website: https://www.python.org/
+  repo: https://github.com/python/cpython
+  docs: https://docs.python.org/3/
+sources:
+  - https://www.python.org/doc/essays/foreword/
+  - https://www.artima.com/articles/the-making-of-python
+  - https://www.linuxjournal.com/node/2959
+  - https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html
+  - https://www.python.org/doc/sunset-python-2/
+  - https://peps.python.org/pep-0703/
+  - https://dropbox.tech/application/incrementally-migrating-over-one-million-lines-of-code-from-python-2-to-python-3
+  - https://numpy.org/
+  - https://survey.stackoverflow.co/2025/technology/
+  - https://w3techs.com/technologies/details/cp-javascript/
+pldb: python
+verified: false
+last_reviewed: "2026-10-30"
