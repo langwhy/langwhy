@@ -6,7 +6,7 @@
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #111111; --fg: #e9e9e9; --muted: #9c9c9c; --line: #2a2a2a; --soft: #1a1a1a;
+  :root { --bg: #1c1d1b; --fg: #e9e9e7; --muted: #a0a19c; --line: #34352f; --soft: #252622;
     --accent: #34d399; --alive: #34d399; --stable: #60a5fa; --declining: #fbbf24; --dead: #9c9c9c; }
 }
 * { box-sizing: border-box; }
@@ -14,6 +14,7 @@ html { font: 16px/1.55 var(--sans); background: var(--bg); color: var(--fg); -we
 body { margin: 0 auto; max-width: 720px; padding: 0 1rem 4rem; }
 a { color: var(--accent); text-decoration: none; }
 a:hover, a:focus-visible { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 code, kbd, .mono { font-family: var(--mono); font-size: .92em; }
 h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 .25rem; }
 h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; letter-spacing: .01em; }
@@ -59,3 +60,18 @@ footer.site a { color: var(--muted); text-decoration: underline; }
 .kbd { color: var(--muted); font-size: .8rem; margin-top: .5rem; }
 .kbd kbd { border: 1px solid var(--line); border-radius: .25rem; padding: 0 .3rem; }
 @media (max-width: 480px) { h1 { font-size: 1.45rem; } .timeline li { grid-template-columns: 3rem 1fr; } }
+/* Auto-links: language names look like links, glossary words stay readable with a dotted line. */
+a.term { color: inherit; text-decoration: underline dotted var(--muted); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+a.term:hover, a.term:focus-visible { text-decoration-color: var(--accent); text-decoration-style: solid; }
+a.reason { font-weight: 600; color: var(--fg); }
+.whynot { list-style: none; padding: 0; margin: 0; }
+.whynot li { padding: .5rem 0; border-bottom: 1px solid var(--line); }
+.whynot .slotname { display: block; font-size: .9rem; color: var(--muted); }
+.whynot .slotname a { color: var(--muted); }
+.reason-block { scroll-margin-top: 1rem; }
+.reason-block:target h3, dt:target { color: var(--accent); }
+.examples { font-size: .9rem; color: var(--muted); }
+.terms dt { font-weight: 600; margin-top: 1rem; scroll-margin-top: 1rem; }
+.terms dt .muted { font-weight: 400; font-size: .85rem; }
+.terms dd { margin: .15rem 0 0; }
+header.site nav { flex-wrap: wrap; }

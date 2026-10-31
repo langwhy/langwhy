@@ -118,6 +118,22 @@ stroji drží 3× menej ľudí ako Go, a človek si vyberie podľa svojho rozpo�
 a pole `hardware.gpu`; do budúcnosti pribudne stĺpec s inferenciou (tokens/s na rovnakej karte),
 keď bude verejný benchmark s rovnakou metodikou.
 
+### Prečo nie (2026-10-31)
+
+Karchi: „základná teória, prečo daný jazyk nemôžem použiť ako iný jazyk… je to pre lajkov“.
+Každá karta preto odpovedá na všetkých 13 slotov. Slot so zhodou `weak` alebo `none` má
+`reason` (jeden zo siedmich v `data/reasons.yaml`: nebeží tam, pomalý alebo ťažký, skrýva
+stroj, ľahko sa pomýliť nebezpečne, nikto nepostavil nástroje, stavaný na jednu prácu, viac
+než práca potrebuje), vetu pre laika a zdroj. Stránka `/basics/` vysvetľuje teóriu bez
+programovania a pod každým dôvodom ukazuje skutočné príklady z kariet.
+
+### Prelinkovanie ako wiki (2026-10-31)
+
+Každá zmienka jazyka s kartou v hocijakom texte je odkaz na jeho kartu, každé odborné slovo
+z `data/terms.yaml` je odkaz do slovníka `/terms/`. Odkazy nikto nepíše ručne, robí ich build
+(`src/lib/autolink.mjs`), vždy pri prvej zmienke na stránke. Karta ukazuje aj „Mentioned on“,
+teda ktoré karty ju spomínajú, a JSON karty má `mentions` a `mentioned_by`.
+
 ## 5. Stránky a SEO
 
 | URL | Čo | Index |
@@ -222,4 +238,5 @@ PHP, Ruby, Swift, Dart, SQL, Bash, Lua, Haskell, Elixir.
 ## 12. Rozhodnutia
 
 Hotové 2026-10-30: meno langwhy, organizácia aj doména kúpené, dáta CC0, prvých 20 jazykov
-podľa §9. Ďalšie rozhodnutia idú do inboxu.
+podľa §9. 2026-10-31: publikum sú laici, ktorí nikdy neprogramovali; každá karta vysvetľuje,
+prečo sa jazyk na niektoré sloty nehodí (§3, „Prečo nie“), texty sa prelinkujú samy. Ďalšie rozhodnutia idú do inboxu.

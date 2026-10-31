@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro";
+import { TERMS } from "../lib/data";
+import { linkHtml } from "../lib/autolink.mjs";
+
+const terms = [...TERMS].sort((a, b) => a.term.localeCompare(b.term, "en", { sensitivity: "base" }));
+---
+<Base title="Glossary: programming words in plain language" description="Compiler, garbage collector, WebAssembly, thread and the other words on langwhy, each explained in a sentence or two for someone who has never programmed." path="/terms/" pagefind>
+  <h1>Glossary</h1>
+  <p class="lead">The words that come up on the cards, each explained for someone who has never programmed. Wherever one appears on this site, it links here.</p>
+  <dl class="terms">
+    {terms.map((t) => (
+      <>
+        <dt id={t.id}>{t.term}{t.aliases?.length ? <span class="muted"> · {t.aliases.slice(0, 3).join(", ")}</span> : null}</dt>
+        <dd><Fragment set:html={linkHtml(t.plain, { self: `term:${t.id}`, seen: new Set() })} /> <a class="src" href={t.source}>source</a></dd>
+      </>
+    ))}
+  </dl>
+</Base>

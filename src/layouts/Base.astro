@@ -13,7 +13,7 @@ interface Props {
 }
 const { title, description, path, noindex = false, jsonld, pagefind = false } = Astro.props;
 const canonical = `${SITE}${path}`;
-const nav = [["/", "Map"], ["/slot/server/", "Slots"], ["/all/", "All"], ["/about/", "About"]] as const;
+const nav = [["/", "Map"], ["/basics/", "Basics"], ["/terms/", "Glossary"], ["/slot/server/", "Slots"], ["/all/", "All"], ["/about/", "About"]] as const;
 const current = (href: string) => (href === "/" ? path === "/" : path.startsWith("/" + href.split("/")[1] + "/")) ? "page" : undefined;
 ---
 <!doctype html>
@@ -32,7 +32,7 @@ const current = (href: string) => (href === "/" ? path === "/" : path.startsWith
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#1c1d1b" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="text/markdown" href={`${SITE}/llms.txt`} title="llms.txt" />

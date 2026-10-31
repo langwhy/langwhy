@@ -1,0 +1,40 @@
+---
+import Base from "../layouts/Base.astro";
+import { Content } from "../../data/basics.md";
+import { allCards, REASONS } from "../lib/data";
+import { linkHtml } from "../lib/autolink.mjs";
+import { SLOTS } from "../lib/vocab";
+
+const cards = await allCards();
+// Under each reason: every card that names it, grouped by slot, so the theory points at real cases.
+const reasons = REASONS.map((r) => ({
+  ...r,
+  bySlot: Object.keys(SLOTS)
+    .map((slot) => ({ slot, cards: cards.filter((c) => c.slots.some((s) => s.slot === slot && s.reason === r.id)) }))
+    .filter((g) => g.cards.length),
+}));
+const host = (url: string) => new URL(url).hostname.replace(/^www\./, "");
+---
+<Base title="Why are there so many programming languages? The basics" description="Why there are thousands of programming languages, how code gets run, who cleans up memory, and the seven reasons one language can't do everything. No programming knowledge needed." path="/basics/" pagefind>
+  <h1>The basics</h1>
+  <p class="lead">Why there are so many programming languages, and why you can't use one for everything. No programming knowledge needed.</p>
+  <div class="prose"><Content /></div>
+
+  {reasons.map((r, i) => (
+    <section class="reason-block" id={r.id}>
+      <h3>{i + 1}. {r.title}</h3>
+      <p set:html={linkHtml(r.explain, { seen: new Set() })} />
+      <p class="src">Sources: {r.sources.map((s, j) => <>{j > 0 && ", "}<a href={s}>{host(s)}</a></>)}</p>
+      {r.bySlot.length > 0 && (
+        <ul class="examples">
+          {r.bySlot.map((g) => (
+            <li><a href={`/slot/${g.slot}/`}>{g.slot}</a>: {g.cards.map((c, j) => <>{j > 0 && ", "}<a href={`/lang/${c.id}/#why-not`}>{c.name}</a></>)}</li>
+          ))}
+        </ul>
+      )}
+    </section>
+  ))}
+
+  <h2>Words you will meet</h2>
+  <p>Dotted words on this site link to the <a href="/terms/">glossary</a>, which explains each one in a sentence or two. Language names link to their cards.</p>
+</Base>

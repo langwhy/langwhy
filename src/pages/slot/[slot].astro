@@ -1,7 +1,8 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { allCards } from "../../lib/data";
-import { SLOTS, FIT_RANK, FIT_DOTS } from "../../lib/vocab";
+import { allCards, REASON } from "../../lib/data";
+import { linkHtml } from "../../lib/autolink.mjs";
+import { SLOTS, FIT_RANK, FIT_DOTS, FIT_WORD } from "../../lib/vocab";
 
 export function getStaticPaths() {
   return Object.keys(SLOTS).map((slot) => ({ params: { slot } }));
@@ -9,15 +10,16 @@ export function getStaticPaths() {
 const { slot } = Astro.params;
 const cards = await allCards();
 const rows = cards
-  .flatMap((card) => card.slots.filter((s) => s.slot === slot).map((s) => ({ card, fit: s.fit, note: s.note })))
+  .flatMap((card) => card.slots.filter((s) => s.slot === slot).map((s) => ({ card, fit: s.fit, note: s.note, reason: s.reason, source: s.source })))
   .sort((a, b) => FIT_RANK[b.fit] - FIT_RANK[a.fit] || (b.card.hardware?.multicore_users ?? 0) - (a.card.hardware?.multicore_users ?? 0) || a.card.name.localeCompare(b.card.name));
 const showHardware = slot === "server" && rows.some((r) => r.card.hardware?.multicore_users || r.card.hardware?.twelve_dollar_users);
-const title = `Slot: ${slot}. Which languages fit, and how well`;
+const title = `Slot: ${slot}. Which languages fit, and why the others don't`;
+const note = (r: (typeof rows)[number]) => linkHtml(r.note ?? "", { self: `lang:${r.card.id}`, seen: new Set() });
 ---
 <Base title={title} description={`${SLOTS[slot]} Which languages can fill this position in a real product, ranked by fit.`} path={`/slot/${slot}/`}>
   <h1>Slot: {slot}</h1>
   <p class="lead">{SLOTS[slot]}</p>
-  <p>A product is a set of slots to fill: browser, server, database, deploy. A language fills some of them well, some badly, some not at all. A stack is one pick per slot.</p>
+  <p>An online shop needs code in the browser, on the server and in the database. Those are slots. A language fills some slots well, some badly, some not at all, and where it doesn't fit, the row says why.</p>
   <p>{Object.keys(SLOTS).map((s) => <a class="tag" href={`/slot/${s}/`} aria-current={s === slot ? "page" : undefined}>{s}</a>)}</p>
 
   <h2>Who fits</h2>
@@ -28,13 +30,18 @@ const title = `Slot: ${slot}. Which languages fit, and how well`;
         {rows.map((r) => (
           <tr>
             <td><a href={`/lang/${r.card.id}/`}>{r.card.name}</a></td>
-            <td class="mono" title={r.fit}>{FIT_DOTS[r.fit]} {r.fit}</td>
+            <td class="mono" title={FIT_WORD[r.fit]}>{FIT_DOTS[r.fit]}</td>
             {showHardware && <td class="mono">{r.card.hardware?.multicore_users ? r.card.hardware.multicore_users.toLocaleString("en") : ""}</td>}
-            <td class="muted">{r.note ?? ""}</td>
+            <td class="muted">
+              {r.reason && <><a class="reason" href={`/basics/#${r.reason}`}>{REASON.get(r.reason)?.title}</a> </>}
+              <Fragment set:html={note(r)} />
+              {r.source && <> <a class="src" href={r.source}>source</a></>}
+            </td>
           </tr>
         ))}
       </tbody>
     </table>
   )}
+  <p class="src">●●● a usual pick · ●●○ works · ●○○ possible, with a catch · ○○○ practically never. <a href="/basics/">The basics</a> explain the reasons.</p>
   {showHardware && <p class="src">Users held: best entry per language in the <a href="https://github.com/arjaythedev/multicore-server-challenge">multicore-server-challenge</a>, the same API on the same 8 vCPU / 16 GB server with Postgres. A number says what hardware buys you, not which language is better.</p>}
 </Base>

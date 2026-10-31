@@ -14,13 +14,16 @@ answers four questions, each claim with a source:
 3. **Where it won.** Named deployments, not "many companies".
 4. **Alive?** Status and timeline.
 
-A language alone makes nothing, so every card also says which **slots** of a real product it can
-fill (browser, server, database, systems, mobile, ...) and how well, with benchmark numbers where
-they exist.
+A language alone makes nothing, so every card also answers all 13 **slots** of a real product
+(browser, server, database, systems, mobile, ...): how well it fits, and where it does not, which
+of seven reasons stops it, in words for someone who never programmed. Every language name and
+technical term on the site links to its card or to the glossary on its own, like a wiki.
 
 ## How it works
 
-- `data/languages/<id>.yaml` holds the facts, `<id>.md` the story. That is the whole database.
+- `data/languages/<id>.yaml` holds the facts, `<id>.md` the story. `data/reasons.yaml` (why a
+  language does not fit a slot), `data/terms.yaml` (the glossary) and `data/basics.md` (the theory
+  page) complete the database.
 - `data/schema/language.schema.json` is the contract; `pnpm validate` enforces it.
 - The site is generated from the data with Astro and served as static files from GitHub Pages.
 - Every page has a JSON and a Markdown twin (`/lang/rust.json`, `/lang/rust.md`), plus

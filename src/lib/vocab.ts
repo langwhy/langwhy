@@ -34,6 +34,16 @@ export const AXES: Record<string, Record<string, string>> = {
   concurrency: { threads: "threads", green: "green threads", actors: "actors", async: "async", none: "none", "n/a": "n/a" },
 };
 
+// Which glossary entry explains each axis value on a card.
+export const AXIS_TERMS: Record<string, Record<string, string>> = {
+  memory: { manual: "manual-memory", gc: "garbage-collector", refcount: "reference-counting", ownership: "ownership" },
+  types: { static: "static-typing", dynamic: "dynamic-typing", gradual: "gradual-typing" },
+  run: { native: "machine-code", vm: "virtual-machine", interpreted: "interpreter", "to-js": "transpile" },
+  concurrency: { threads: "thread", green: "green-threads", actors: "actor", async: "async" },
+};
+
+export const FIT_WORD: Record<string, string> = { strong: "a usual pick", ok: "works", weak: "possible, with a catch", none: "practically never" };
+
 export const FIT_RANK: Record<string, number> = { strong: 3, ok: 2, weak: 1, none: 0 };
 export const FIT_DOTS: Record<string, string> = { strong: "●●●", ok: "●●○", weak: "●○○", none: "○○○" };
 

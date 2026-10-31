@@ -10,6 +10,7 @@
     "validate": "node scripts/validate.mjs"
   },
   "devDependencies": {
+    "@astrojs/markdown-satteri": "0.4.6",
     "@astrojs/sitemap": "^3.7.4",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",

@@ -11,6 +11,7 @@ const cards = defineCollection({
   schema: z.object({
     id: slug,
     name: z.string(),
+    aliases: z.array(z.string()).optional(),
     appeared: z.number().int(),
     creators: z.array(z.string()).min(1),
     org: z.string().optional(),
@@ -30,7 +31,9 @@ const cards = defineCollection({
       slot: z.enum(["browser", "server", "database", "systems", "mobile", "cli", "scripts", "data", "compute", "embedded", "wasm", "config", "games"]),
       fit: z.enum(["strong", "ok", "weak", "none"]),
       note: z.string().optional(),
-    })).min(1),
+      reason: z.enum(["runs-elsewhere", "too-slow", "hides-machine", "too-risky", "no-tools", "one-job", "overkill"]).optional(),
+      source: uri.optional(),
+    })).length(13),
     won_where: z.array(z.object({ what: z.string(), source: uri })).min(1),
     alternatives: z.array(slug),
     timeline: z.array(z.object({ year: z.number().int(), what: z.string(), source: uri })).min(3),

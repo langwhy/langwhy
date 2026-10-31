@@ -1,9 +1,10 @@
 ---
 import { render, getEntry } from "astro:content";
 import Base from "../../layouts/Base.astro";
-import { allCards, childrenOf, cardUrl } from "../../lib/data";
+import { allCards, childrenOf, cardUrl, mentions, REASON } from "../../lib/data";
 import { icon } from "../../lib/icons";
-import { TYPES, STATUS, AXES, FIT_DOTS } from "../../lib/vocab";
+import { linkHtml } from "../../lib/autolink.mjs";
+import { TYPES, STATUS, AXES, AXIS_TERMS, FIT_DOTS, FIT_WORD } from "../../lib/vocab";
 
 export async function getStaticPaths() {
   const cards = await allCards();
@@ -18,6 +19,17 @@ const children = childrenOf(card.id, cards);
 const proseEntry = await getEntry("prose", card.id);
 const Content = proseEntry ? (await render(proseEntry)).Content : null;
 const t = card.tradeoffs;
+// Mentions of other languages and glossary terms link once per page, at their first appearance.
+const seen = new Set<string>();
+const linked = (text: string) => linkHtml(text, { self: `lang:${card.id}`, seen });
+const axis = (name: string, value: string) => {
+  const term = AXIS_TERMS[name]?.[value];
+  const label = AXES[name][value];
+  return term ? `<a class="term" href="/terms/#${term}">${label}</a>` : label;
+};
+const fits = card.slots.filter((s) => s.fit === "strong" || s.fit === "ok");
+const misfits = card.slots.filter((s) => s.fit === "weak" || s.fit === "none");
+const backlinks = ((await mentions()).get(card.id)?.mentionedBy ?? []).map((id) => byId.get(id)!).sort((a, b) => a.name.localeCompare(b.name));
 const hw = card.hardware;
 const title = `${card.name}: why it exists and what it is for`;
 const edit = (ext: string) => `https://github.com/langwhy/langwhy/edit/main/data/languages/${card.id}.${ext}`;
@@ -39,32 +51,43 @@ const jsonld = {
     · <span class={`status ${card.status}`}>{card.status}, {STATUS[card.status]}</span>
     · since {card.appeared} · {card.creators.join(", ")}{card.org && <> · {card.org}</>}
   </p>
-  <p class="lead">{card.tagline}</p>
+  <p class="lead" set:html={linked(card.tagline)} />
   {!card.verified && (
     <p class="draft">Draft from {card.last_reviewed}, not yet checked claim by claim against its sources. <a href={edit("yaml")}>Help verify it.</a></p>
   )}
 
   <h2>Born from</h2>
-  <p>{card.born_from}</p>
+  <p set:html={linked(card.born_from)} />
 
   <h2>What it trades away</h2>
   <div class="axes">
-    <div>{AXES.memory[t.memory]}<small>memory</small></div>
-    <div>{AXES.types[t.types]}<small>types</small></div>
-    <div>{AXES.run[t.run]}<small>runs as</small></div>
-    <div>{t.concurrency.map((c) => AXES.concurrency[c]).join(", ")}<small>concurrency</small></div>
+    <div><Fragment set:html={axis("memory", t.memory)} /><small>memory</small></div>
+    <div><Fragment set:html={axis("types", t.types)} /><small>types</small></div>
+    <div><Fragment set:html={axis("run", t.run)} /><small>runs as</small></div>
+    <div><Fragment set:html={t.concurrency.map((c) => axis("concurrency", c)).join(", ")} /><small>concurrency</small></div>
   </div>
-  <p><strong>Cost:</strong> {t.cost}</p>
+  <p><strong>Cost:</strong> <Fragment set:html={linked(t.cost)} /></p>
 
   <h2>Where it fits</h2>
   <table>
-    <thead><tr><th>Slot</th><th>Fit</th><th></th></tr></thead>
     <tbody>
-      {card.slots.map((s) => (
-        <tr><td><a href={`/slot/${s.slot}/`}>{s.slot}</a></td><td class="mono" title={s.fit}>{FIT_DOTS[s.fit]}</td><td class="muted">{s.note ?? ""}</td></tr>
+      {fits.map((s) => (
+        <tr><td><a href={`/slot/${s.slot}/`}>{s.slot}</a></td><td class="mono" title={FIT_WORD[s.fit]}>{FIT_DOTS[s.fit]}</td><td class="muted" set:html={linked(s.note ?? "")} /></tr>
       ))}
     </tbody>
   </table>
+
+  <h2 id="why-not">Where it doesn't, and why</h2>
+  <ul class="whynot">
+    {misfits.map((s) => (
+      <li>
+        <span class="slotname"><a href={`/slot/${s.slot}/`}>{s.slot}</a> <span class="mono" title={FIT_WORD[s.fit]}>{FIT_DOTS[s.fit]}</span></span>
+        <a class="reason" href={`/basics/#${s.reason}`}>{REASON.get(s.reason!)?.title}</a>
+        <span set:html={linked(s.note ?? "")} /> <a class="src" href={s.source}>source</a>
+      </li>
+    ))}
+  </ul>
+  <p class="src">●●● a usual pick · ●●○ works · ●○○ possible, with a catch · ○○○ practically never. <a href="/basics/">The basics</a> explain the seven reasons.</p>
   {hw && (hw.twelve_dollar_users || hw.multicore_users) && (
     <p class="src">
       Same API, same server, every language, in the <a href={hw.source}>arjaythedev benchmarks</a> ({hw.measured}):
@@ -77,16 +100,17 @@ const jsonld = {
   {Content && <div class="prose"><Content /></div>}
 
   <h2>Named wins</h2>
-  <ul>{card.won_where.map((w) => <li>{w.what} <a class="src" href={w.source}>source</a></li>)}</ul>
+  <ul>{card.won_where.map((w) => <li><Fragment set:html={linked(w.what)} /> <a class="src" href={w.source}>source</a></li>)}</ul>
 
   <h2>Evolution</h2>
   <p><strong>Reacts to:</strong> {parents.length ? parents.map((p, i) => <>{i > 0 && ", "}{p.href ? <a href={p.href}>{p.name}</a> : <span>{p.name}</span>}</>) : "–"}</p>
   {children.length > 0 && <p><strong>Led to:</strong> {children.map((c, i) => <>{i > 0 && ", "}<a href={`/lang/${c.id}/`}>{c.name}</a></>)}</p>}
+  {backlinks.length > 0 && <p><strong>Mentioned on:</strong> {backlinks.map((c, i) => <>{i > 0 && ", "}<a href={`/lang/${c.id}/`}>{c.name}</a></>)}</p>}
   <p><strong>Weigh it against:</strong> {alts.length ? alts.map((a, i) => <>{i > 0 && ", "}{a.href ? <a href={a.href}>{a.name}</a> : <span>{a.name}</span>}</>) : "–"}</p>
 
   <h2>Timeline</h2>
   <ul class="timeline">
-    {card.timeline.map((e) => <li><span class="year">{e.year}</span><span>{e.what} <a class="src" href={e.source}>source</a></span></li>)}
+    {card.timeline.map((e) => <li><span class="year">{e.year}</span><span><Fragment set:html={linked(e.what)} /> <a class="src" href={e.source}>source</a></span></li>)}
   </ul>
 
   <h2>Links</h2>
