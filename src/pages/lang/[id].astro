@@ -4,7 +4,7 @@ import Base from "../../layouts/Base.astro";
 import { allCards, childrenOf, cardUrl, mentions, REASON } from "../../lib/data";
 import { icon } from "../../lib/icons";
 import { linkHtml } from "../../lib/autolink.mjs";
-import { TYPES, STATUS, AXES, AXIS_TERMS, FIT_DOTS, FIT_WORD } from "../../lib/vocab";
+import { TYPES, STATUS, AXES, AXIS_TERMS, FIT_DOTS, FIT_WORD, reportUrl } from "../../lib/vocab";
 
 export async function getStaticPaths() {
   const cards = await allCards();
@@ -32,7 +32,6 @@ const misfits = card.slots.filter((s) => s.fit === "weak" || s.fit === "none");
 const backlinks = ((await mentions()).get(card.id)?.mentionedBy ?? []).map((id) => byId.get(id)!).sort((a, b) => a.name.localeCompare(b.name));
 const hw = card.hardware;
 const title = `${card.name}: why it exists and what it is for`;
-const edit = (ext: string) => `https://github.com/langwhy/langwhy/edit/main/data/languages/${card.id}.${ext}`;
 const jsonld = {
   "@context": "https://schema.org",
   "@type": "ComputerLanguage",
@@ -53,7 +52,7 @@ const jsonld = {
   </p>
   <p class="lead" set:html={linked(card.tagline)} />
   {!card.verified && (
-    <p class="draft">Draft from {card.last_reviewed}, not yet checked claim by claim against its sources. <a href={edit("yaml")}>Help verify it.</a></p>
+    <p class="draft">Draft from {card.last_reviewed}, not yet checked claim by claim against its sources. Spotted a mistake, or a sentence you don't understand? <a href={reportUrl(`/lang/${card.id}/`, card.name)}>Tell us in your own words.</a></p>
   )}
 
   <h2>Born from</h2>
@@ -124,6 +123,6 @@ const jsonld = {
 
   <p class="muted">
     {card.verified ? `Verified ${card.last_reviewed}.` : `Unverified draft, ${card.last_reviewed}.`}
-    <a href={edit("yaml")}>Edit the facts</a> · <a href={edit("md")}>edit the story</a> · <a href={`/lang/${card.id}.json`}>JSON</a> · <a href={`/lang/${card.id}.md`}>Markdown</a>
+    <a href={`/lang/${card.id}.json`}>JSON</a> · <a href={`/lang/${card.id}.md`}>Markdown</a>
   </p>
 </Base>

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: I'd rather edit the files myself
+    url: https://github.com/langwhy/langwhy/blob/main/data/README.md
+    about: The rules for cards, for people who know git and YAML.

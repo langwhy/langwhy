@@ -33,7 +33,12 @@ technical term on the site links to its card or to the glossary on its own, like
 
 ## Contribute
 
-Edit or add files under `data/languages/` and open a pull request. The rules and the field
+You don't need to know code. Every page links to a short form ("Tell us in your own words"):
+say what is wrong, missing or hard to understand. A maintainer reads it and adds the `agent`
+label, an AI agent drafts the fix with a source on a branch
+([.github/workflows/agent.yml](.github/workflows/agent.yml)), and a person merges it.
+
+To edit by hand, change or add files under `data/languages/` and open a pull request. The rules and the field
 reference are in [data/README.md](data/README.md). CI validates the schema and builds the site.
 
 ```sh

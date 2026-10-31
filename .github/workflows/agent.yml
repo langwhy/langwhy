@@ -1,0 +1,40 @@
+name: Agent answers a report
+
+# A maintainer adds the "agent" label to a reader's report (or a language request). Readers can't
+# add labels, so nobody outside the repo can start this, and a person reads every report before an
+# agent sees it. The agent pushes a branch and links it in a comment; a person opens and merges the PR.
+# Needs the CLAUDE_CODE_OAUTH_TOKEN secret (`claude setup-token`) and the Claude GitHub app.
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  id-token: write
+
+concurrency:
+  group: agent-${{ github.event.issue.number }}
+
+jobs:
+  answer:
+    if: github.event.label.name == 'agent'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          label_trigger: agent
+          claude_args: >-
+            --model claude-haiku-5-5
+            --effort xhigh
+            --allowedTools "WebFetch,WebSearch,Bash(pnpm validate:*),Bash(node scripts/validate.mjs:*)"
+            --append-system-prompt "The issue comes from a reader of langwhy.dev, a site for people who never programmed. It reports something wrong, missing or hard to understand on a page, or asks for a card about a new language. Follow data/README.md exactly. Check every fact you add or change against an official source and put that source in the card. Keep verified: false; never set it to true. A sentence the reader did not understand gets rewritten in plain words, without jargon. Run pnpm validate and fix every problem before you finish. If the report is wrong, change nothing and say why, with a source. Write your comment for the reader: plain words, what you changed and where."

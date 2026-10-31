@@ -36,8 +36,13 @@ site/   -> HTML + /lang/rust.json + /lang/rust.md + sitemap.xml + llms.txt + OG 
 
 - **Build:** Astro, statický výstup. Stránka jazyka pod 50 kB bez JS. Vyhľadávanie Pagefind
   (statický index, beží v prehliadači, bez servera).
-- **Prispievanie:** PR. CI odmietne kartu bez povinných polí alebo bez zdroja. Neoverené karty
-  majú `verified: false` a na webe viditeľný štítok „návrh od agenta, neoverené“.
+- **Prispievanie (2026-10-31):** človek nepíše YAML ani PR. Karchi: „všetko za nás robia agenti,
+  nech to UI vyzerá jednoducho a viem sa dobre prihlásiť“. Na každej stránke je odkaz „Tell us in
+  your own words“ na formulár na GitHube (prihlásenie GitHubom, účet sa dá založiť cez Google).
+  Hlásenie prečíta človek a dá štítok `agent`. Agent (`.github/workflows/agent.yml`, Haiku) opraví
+  kartu so zdrojom na vetve a človek zlúči PR. Ručný PR ostáva pre tých, čo vedia git. CI odmietne
+  kartu bez povinných polí alebo bez zdroja. Neoverené karty majú `verified: false` a štítok
+  „draft“.
 - **Hosting:** GitHub Pages stačí roky. Limit je mäkkých 100 GB prenosu mesačne, stránka má
   desiatky kB, to je milióny zobrazení. Keby to nestačilo, Cloudflare Pages je tiež zadarmo
   a prepnutie je jedno nastavenie DNS.
@@ -182,7 +187,8 @@ Jednoduchý a použiteľný, podľa Karchiho vkusu:
   (`LICENSE`). Rozdelíme až keď bude mať `data/` vlastný život.
 - **Actions:** `.github/workflows/deploy.yml`: na PR validácia a build; na `main` build + deploy na
   Pages. Týždenný import PLDB a leaderboardov príde vo F1/F3.
-- **Issues:** šablóny „navrhnúť jazyk“ a „oprava faktu“ prídu vo F2. Discussions zapnúť.
+- **Issues:** formuláre `fix.yml` (niečo nesedí, nerozumiem, chýba) a `language.yml` (pridať
+  jazyk), štítky `report`, `language`, `agent`. Discussions zapnúť.
 - **Doména:** `langwhy.dev` kúpená 2026-10-29 na Cloudflare Registrar, DNS na Cloudflare, web na
   GitHub Pages (CNAME v `public/`, custom domain nastavená cez API).
 

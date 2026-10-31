@@ -1,0 +1,22 @@
+name: Add a language
+description: Ask for a card about a language that isn't on the site yet.
+title: "Language: "
+labels: [language]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Which language?
+      placeholder: Elm
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Where did you meet it? (optional)
+      description: A repo, a job ad, a friend's project. It helps the agent find the right sources.
+  - type: input
+    id: link
+    attributes:
+      label: Its website (optional)
+      placeholder: https://elm-lang.org

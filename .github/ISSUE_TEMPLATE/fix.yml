@@ -1,0 +1,36 @@
+name: Something is wrong or hard to understand
+description: Tell us in your own words. An AI agent drafts the fix, a person checks it before it goes live.
+title: "Report: "
+labels: [report]
+body:
+  - type: markdown
+    attributes:
+      value: Write it the way you would tell a friend. You don't need to know any code, and you don't need to fix anything yourself.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it?
+      options:
+        - Something is wrong
+        - I don't understand it
+        - Something is missing
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What did you notice?
+      placeholder: The Python card says it can't run in a browser, but I used PyScript last week.
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: Filled in for you when you came from the site.
+      placeholder: https://langwhy.dev/lang/python/
+  - type: input
+    id: source
+    attributes:
+      label: Where can we check it? (optional)
+      description: A link to an official page, if you have one. If not, leave it empty and the agent looks it up.

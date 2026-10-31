@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import { icon } from "../lib/icons";
-import { SITE } from "../lib/vocab";
+import { SITE, reportUrl } from "../lib/vocab";
 
 interface Props {
   title: string;
@@ -50,6 +50,7 @@ const current = (href: string) => (href === "/" ? path === "/" : path.startsWith
       <slot />
     </main>
     <footer class="site">
+      <p>Something wrong, missing or hard to understand? <a href={reportUrl(path, title.split(":")[0])}>Tell us in your own words.</a></p>
       <p>Why each language exists, what it trades away, where it won. Data is <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>, code is MIT, both on <a href="https://github.com/langwhy/langwhy">GitHub</a>.
       For agents: <a href="/llms.txt">llms.txt</a>, <a href="/api/v1/languages.json">JSON</a>, every card as <code>.json</code> and <code>.md</code>.</p>
       <p class="kbd"><kbd>/</kbd> search · <kbd>j</kbd> <kbd>k</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> back</p>

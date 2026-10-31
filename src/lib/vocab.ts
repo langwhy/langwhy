@@ -1,6 +1,10 @@
 // Labels and one-line meanings for every enum in the card schema. Shown in the UI and in llms.txt.
 export const SITE = "https://langwhy.dev";
 
+/** The plain "tell us in your own words" form on GitHub, prefilled with the page it came from. */
+export const reportUrl = (path: string, subject: string) =>
+  `https://github.com/langwhy/langwhy/issues/new?${new URLSearchParams({ template: "fix.yml", title: `Report: ${subject}`, page: `${SITE}${path}` })}`;
+
 export const TYPES: Record<string, string> = {
   systems: "Systems", web: "Web", backend: "Backend", scripting: "Scripting", data: "Data",
   mobile: "Mobile", functional: "Functional", query: "Query", shell: "Shell", config: "Config",
