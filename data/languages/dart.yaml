@@ -19,14 +19,56 @@ slots:
   - slot: mobile
     fit: strong
     note: "Flutter apps are written in Dart."
+  - slot: server
+    fit: ok
+    note: "Shelf, Dart Frog and Serverpod are Dart server packages; Serverpod targets backends for Flutter apps."
+  - slot: cli
+    fit: ok
+    note: "dart compile exe builds a standalone program for the command line."
+  - slot: scripts
+    fit: ok
+    note: "dart run runs a single file without a project; the Dart SDK has to be installed first."
+  - slot: wasm
+    fit: ok
+    note: "Dart code can be compiled to WebAssembly as well as to JavaScript for the web."
+  - slot: games
+    fit: ok
+    note: "Flame is a game engine built on Flutter that runs on mobile, desktop and web."
   - slot: browser
     fit: weak
-    note: "Compiles to JavaScript; Chrome never shipped the Dart VM."
-  - slot: server
+    reason: runs-elsewhere
+    note: "Google decided not to put the Dart VM into Chrome, so Dart reaches web pages by compiling to JavaScript."
+    source: https://news.dartlang.org/2015/03/dart-for-entire-web.html
+  - slot: database
     fit: weak
+    reason: runs-elsewhere
+    note: "Dart apps reach relational databases through drift, a persistence library built on packages such as sqlite3."
+    source: https://drift.simonbinder.eu/
+  - slot: systems
+    fit: weak
+    reason: hides-machine
+    note: "Dart reclaims unused memory with a garbage collector, so programs do not free it by hand."
+    source: https://dart.dev/overview
+  - slot: data
+    fit: none
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python."
+    source: https://numpy.org/
+  - slot: compute
+    fit: none
+    reason: no-tools
+    note: "GPU programs are written with NVIDIA's CUDA in C++ or Python; Dart has no way into that work."
+    source: https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
   - slot: embedded
     fit: none
-    note: "Dart has no standard runtime for microcontrollers."
+    reason: too-slow
+    note: "Dart programs carry a runtime for type checks and garbage collection, too much for a chip with kilobytes of memory."
+    source: https://dart.dev/tools/dart-compile
+  - slot: config
+    fit: none
+    reason: no-tools
+    note: "Dart projects keep their settings in pubspec.yaml, a data file, and cloud setup tools such as Pulumi do not take Dart."
+    source: https://dart.dev/tools/pub/pubspec
 won_where:
   - what: "Google Pay, a Flutter case study on the official showcase"
     source: https://flutter.dev/showcase

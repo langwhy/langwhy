@@ -23,9 +23,61 @@ slots:
   - slot: data
     fit: strong
     note: "DuckDB embeds SQL in a host process and integrates with Python and R."
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "SQLite runs in browsers as a WebAssembly build, so SQL reaches a page only through an engine like that."
+    source: https://www.sqlite.org/wasm/doc/trunk/index.md
+  - slot: scripts
+    fit: weak
+    reason: one-job
+    note: "SQL manages data held in a database; a SQL file cannot copy files or call web services the way glue scripts do."
+    source: https://en.wikipedia.org/wiki/SQL
+  - slot: compute
+    fit: weak
+    reason: runs-elsewhere
+    note: "The RAPIDS plugin for Apache Spark uses GPUs through cuDF to speed up processing, so SQL reaches a GPU only inside that engine."
+    source: https://github.com/NVIDIA/spark-rapids
+  - slot: embedded
+    fit: weak
+    reason: too-slow
+    note: "SQLite runs in thermostats and drones, but a database engine needs far more memory than a microcontroller with kilobytes has."
+    source: https://www.sqlite.org/whentouse.html
   - slot: server
     fit: none
+    reason: one-job
     note: "SQL runs inside the database server; it is not a language for writing the server."
+    source: https://www.postgresql.org/docs/current/app-psql.html
+  - slot: systems
+    fit: none
+    reason: one-job
+    note: "SQL manages data held in a database; it has no way to write drivers or manage memory for the machine."
+    source: https://en.wikipedia.org/wiki/SQL
+  - slot: mobile
+    fit: none
+    reason: one-job
+    note: "Android apps are built with Kotlin or Java using Google's tools; SQL only manages data held in a database."
+    source: https://developer.android.com/kotlin/first
+  - slot: cli
+    fit: none
+    reason: one-job
+    note: "psql is the command-line program for PostgreSQL; it sends SQL typed or read from files to a database."
+    source: https://www.postgresql.org/docs/current/app-psql.html
+  - slot: wasm
+    fit: none
+    reason: one-job
+    note: "WebAssembly is a compilation target for languages such as C, C++ and Rust; SQL is a query language for databases."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: config
+    fit: none
+    reason: one-job
+    note: "SQL manages data held in a database; settings files use formats such as TOML, which is aimed at configuration."
+    source: https://toml.io/en/
+  - slot: games
+    fit: none
+    reason: one-job
+    note: "SQL manages data held in a database; a game draws each frame and reads the player's input in its own code."
+    source: https://en.wikipedia.org/wiki/SQL
 won_where:
   - what: "SQLite, on every Android device, iPhone, Mac, Windows 10/11 PC, and in Firefox, Chrome and Safari"
     source: https://sqlite.org/mostdeployed.html

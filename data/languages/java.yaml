@@ -19,17 +19,51 @@ slots:
   - slot: server
     fit: strong
     note: "Netflix runs about 2,800 Java applications, mostly microservices."
+  - slot: database
+    fit: ok
+  - slot: mobile
+    fit: ok
+    note: "Android still supports Java next to Kotlin, though Google calls Kotlin the first choice."
+  - slot: cli
+    fit: ok
   - slot: data
     fit: ok
     note: "Apache Hadoop is implemented in Java, though jobs can be written in other languages."
-  - slot: mobile
+  - slot: config
+    fit: ok
+    note: "Pulumi and AWS CDK describe cloud servers in Java code."
+  - slot: games
+    fit: ok
+  - slot: browser
     fit: weak
-    note: "Android still supports Java, but Google calls Kotlin the first choice."
+    reason: runs-elsewhere
+    note: "Java once ran in web pages as applets, but browsers dropped them and Java 26 removed the Applet API. Today Java needs a translator such as TeaVM."
+    source: https://openjdk.org/jeps/504
+  - slot: systems
+    fit: weak
+    reason: hides-machine
+    note: "Java's garbage collector reclaims unused memory automatically, so programs do not free memory by hand."
+    source: https://docs.oracle.com/en/java/javase/21/gctuning/introduction-garbage-collection-tuning.html
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "For years even a tiny Java program needed a class and a main method. Java 25 made small programs shorter, but a JDK still has to be installed."
+    source: https://openjdk.org/jeps/512
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "GPU programs are written with NVIDIA's CUDA in C++ or Python; Java reaches a GPU only through code written in those."
+    source: https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
   - slot: embedded
     fit: weak
-  - slot: browser
-    fit: none
-    note: "Applets ran as browser plugins, and no major browser runs them now."
+    reason: too-slow
+    note: "Java Card runs a small form of Java on smart cards and other devices with little memory."
+    source: https://en.wikipedia.org/wiki/Java_Card
+  - slot: wasm
+    fit: weak
+    reason: no-tools
+    note: "TeaVM, a separate compiler, turns Java bytecode into JavaScript and WebAssembly that runs in a browser."
+    source: https://teavm.org/
 won_where:
   - what: "Netflix, which runs about 2,800 Java applications, mostly microservices"
     source: https://www.infoq.com/presentations/netflix-java/

@@ -18,15 +18,54 @@ tradeoffs:
 slots:
   - slot: systems
     fit: strong
-  - slot: embedded
+    note: "Zig is designed to replace C, and its compiler moved from C++ to Zig in 2022."
+  - slot: server
     fit: ok
+  - slot: database
+    fit: ok
+    note: "TigerBeetle, a financial database, is written in Zig."
   - slot: cli
     fit: ok
+  - slot: embedded
+    fit: ok
+    note: "Zig code can run on small chips and uses no garbage collector."
   - slot: wasm
     fit: ok
   - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run only JavaScript and WebAssembly. Zig gets into a web page by being compiled to WebAssembly, and JavaScript still loads it."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: mobile
+    fit: weak
+    reason: no-tools
+    note: "Android's app tools are built for Kotlin and Java; Zig is not one of their languages."
+    source: https://developer.android.com/kotlin/first
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "A Zig program is built into an executable before it runs, as the Hello World example shows, so a quick task needs a build step."
+    source: https://ziglang.org/documentation/master/
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "GPU programs are written with NVIDIA's CUDA in C++ or Python; Zig reaches a GPU only through code written in those."
+    source: https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
+  - slot: games
+    fit: weak
+    reason: no-tools
+    note: "Unreal Engine, a major game engine, has gameplay classes written in C++, not Zig."
+    source: https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-with-cplusplus-in-unreal-engine
+  - slot: data
     fit: none
-    note: "Compiles to WebAssembly, but is not a browser language."
+    reason: no-tools
+    note: "Analysts use Python packages such as NumPy, the base of scientific computing with Python."
+    source: https://numpy.org/
+  - slot: config
+    fit: none
+    reason: no-tools
+    note: "Settings files are plain data, and cloud setup tools such as Pulumi take TypeScript, Python, Go, Java or C#, not Zig."
+    source: https://www.pulumi.com/docs/iac/languages-sdks/
 won_where:
   - what: "Ghostty, a terminal emulator whose shared core and Linux app are written in Zig"
     source: "https://ghostty.org/docs/about"

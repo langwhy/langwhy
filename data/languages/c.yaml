@@ -17,17 +17,53 @@ tradeoffs:
 slots:
   - slot: systems
     fit: strong
+    note: "The Linux kernel is written in C, and so was the Unix kernel after 1973."
   - slot: embedded
     fit: strong
+    note: "Microcontroller code is commonly written in C."
   - slot: server
     fit: ok
+    note: "Nginx, a web server, and Redis, a data store, are written in C."
+  - slot: database
+    fit: ok
+    note: "SQLite and PostgreSQL, two widely used databases, are written in C."
   - slot: cli
     fit: ok
+    note: "Core Unix tools such as ls and grep are C programs."
+  - slot: compute
+    fit: ok
+    note: "llama.cpp, which runs AI models on ordinary computers, is written in C and C++."
   - slot: wasm
     fit: ok
+    note: "Clang and Emscripten compile C to WebAssembly."
+  - slot: games
+    fit: ok
+    note: "Raylib, a small game library, is written in C."
   - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run only JavaScript and WebAssembly. C gets into a web page by being compiled to WebAssembly, and JavaScript still loads it."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: mobile
+    fit: weak
+    reason: no-tools
+    note: "Android apps use C code through the NDK, a separate native kit that Java code calls into."
+    source: https://developer.android.com/ndk/guides
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "C programs are compiled and linked into an executable before they run, so a quick task needs a build step first."
+    source: https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html
+  - slot: data
+    fit: weak
+    reason: overkill
+    note: "Data work means trying one small step after another; C needs a compile for every change. Analysts use Python, whose NumPy is C underneath."
+    source: https://numpy.org/
+  - slot: config
     fit: none
-    note: "Only through WebAssembly, not as a browser language."
+    reason: no-tools
+    note: "Settings files are plain data, and cloud setup tools such as Pulumi take TypeScript, Python, Go, Java or C#, not C."
+    source: https://www.pulumi.com/docs/iac/languages-sdks/
 won_where:
   - what: "Linux kernel, which its own documentation says is written in the C programming language"
     source: "https://docs.kernel.org/process/programming-language.html"

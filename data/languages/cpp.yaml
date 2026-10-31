@@ -17,17 +17,53 @@ tradeoffs:
 slots:
   - slot: systems
     fit: strong
+    note: "The LLVM and Clang compiler tools are written in C++."
+  - slot: compute
+    fit: strong
+    note: "CUDA GPU programs are written in C++, the language NVIDIA's CUDA guide teaches."
   - slot: games
     fit: strong
-  - slot: embedded
-    fit: ok
+    note: "Unreal Engine's gameplay classes are written in C++."
   - slot: server
     fit: ok
+    note: "Envoy, a network proxy used in service meshes, is written in C++."
+  - slot: database
+    fit: ok
+    note: "ClickHouse and MongoDB are database servers written in C++."
+  - slot: cli
+    fit: ok
+    note: "The Clang compiler is a command-line program written in C++."
+  - slot: embedded
+    fit: ok
+    note: "Arduino sketches are written in C++, which runs on many small boards."
   - slot: wasm
     fit: ok
+    note: "Emscripten compiles C++ to WebAssembly."
   - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run only JavaScript and WebAssembly. C++ gets into a web page by being compiled to WebAssembly, and JavaScript still loads it."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: mobile
+    fit: weak
+    reason: no-tools
+    note: "Android apps use C++ code through the NDK, a separate native kit that Java code calls into."
+    source: https://developer.android.com/ndk/guides
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "C++ programs are compiled and linked into an executable before they run, so a quick task needs a build step first."
+    source: https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html
+  - slot: data
+    fit: weak
+    reason: overkill
+    note: "Data work means trying one small step after another; C++ needs a compile for every change. Analysts use Python, whose NumPy is C underneath."
+    source: https://numpy.org/
+  - slot: config
     fit: none
-    note: "Chrome's JavaScript engine is C++, but pages reach C++ only through WebAssembly."
+    reason: no-tools
+    note: "Settings files are plain data, and cloud setup tools such as Pulumi take TypeScript, Python, Go, Java or C#, not C++."
+    source: https://www.pulumi.com/docs/iac/languages-sdks/
 won_where:
   - what: "V8, the JavaScript engine used in Chrome and Node.js, is written in C++"
     source: "https://v8.dev/docs"

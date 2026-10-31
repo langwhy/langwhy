@@ -15,25 +15,59 @@ tradeoffs:
   concurrency: [threads, async]
   cost: "The global interpreter lock stops threads from running Python code at the same time, so CPU-heavy work needs processes or C extensions."
 slots:
-  - slot: scripts
-    fit: strong
-    note: "The default language for system administration and automation scripts."
-  - slot: data
-    fit: strong
-    note: "NumPy and the scientific stack built on it."
   - slot: server
     fit: strong
     note: "Django and Flask are the common web frameworks."
+  - slot: scripts
+    fit: strong
+    note: "Short to write and ready on most Linux and macOS machines, so it is a usual pick for automation."
+  - slot: data
+    fit: strong
+    note: "NumPy, pandas and Jupyter are the everyday tools of data analysis."
   - slot: cli
     fit: ok
-  - slot: systems
+    note: "Fine for tools you run yourself; whoever runs them needs Python installed too."
+  - slot: compute
+    fit: ok
+    note: "PyTorch and NumPy hand the heavy math to code written in C, C++ and CUDA; Python steers it."
+  - slot: config
+    fit: ok
+    note: "AWS CDK and Pulumi describe cloud servers in Python code; plain settings files use TOML or YAML instead."
+  - slot: browser
     fit: weak
-    note: "CPython itself is written in C."
+    reason: runs-elsewhere
+    note: "Browsers run only JavaScript and WebAssembly. Python gets in only by shipping a whole interpreter compiled to WebAssembly, as Pyodide does."
+    source: https://pyodide.org/en/stable/
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases are asked in SQL. PostgreSQL can run Python functions inside it, but the queries stay SQL."
+    source: https://www.postgresql.org/docs/current/plpython.html
   - slot: mobile
     fit: weak
-  - slot: browser
+    reason: no-tools
+    note: "Android's own tools are built for Kotlin and Java; Python apps need third-party kits such as Kivy."
+    source: https://developer.android.com/kotlin/first
+  - slot: embedded
+    fit: weak
+    reason: too-slow
+    note: "MicroPython runs a subset of Python on microcontrollers; time-critical parts still drop to native code."
+    source: https://docs.micropython.org/en/latest/reference/speed_python.html
+  - slot: wasm
+    fit: weak
+    reason: too-slow
+    note: "Python reaches WebAssembly only by bringing its whole interpreter along, as Pyodide does."
+    source: https://pyodide.org/en/stable/
+  - slot: games
+    fit: weak
+    reason: too-slow
+    note: "Pygame is enough for small 2D games, but an interpreter makes it hard to draw a large game 60 times a second."
+    source: https://www.pygame.org/docs/
+  - slot: systems
     fit: none
-    note: "Browsers run JavaScript, not Python."
+    reason: hides-machine
+    note: "Python needs its interpreter underneath, and that interpreter is itself written in C."
+    source: https://github.com/python/cpython
 won_where:
   - what: "Dropbox published how it moved over one million lines of Python from Python 2 to Python 3 (2019)"
     source: https://dropbox.tech/application/incrementally-migrating-over-one-million-lines-of-code-from-python-2-to-python-3

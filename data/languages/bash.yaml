@@ -17,15 +17,64 @@ tradeoffs:
   concurrency: [none]
   cost: "It keeps the Bourne shell's quirks, quoting and grammar included, so old sh scripts still run and new ones inherit the dark corners."
 slots:
-  - slot: scripts
-    fit: strong
   - slot: cli
     fit: strong
     note: "Built for interactive use: job control, command-line editing and history."
-  - slot: server
+  - slot: scripts
+    fit: strong
+  - slot: config
     fit: ok
+    note: "Bash reads ~/.bashrc, a Bash script, when an interactive shell starts."
+  - slot: server
+    fit: weak
+    reason: one-job
+    note: "Google's shell style guide limits shell to small utilities and simple wrapper scripts, so backend code belongs in another language."
+    source: https://google.github.io/styleguide/shellguide.html
+  - slot: data
+    fit: weak
+    reason: one-job
+    note: "Bash does arithmetic only on whole numbers, so averages and statistics need awk or another tool."
+    source: https://man7.org/linux/man-pages/man1/bash.1.html
+  - slot: browser
+    fit: none
+    reason: runs-elsewhere
+    note: "Browsers run JavaScript and WebAssembly, so a Bash script cannot run inside a web page."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: database
+    fit: none
+    reason: runs-elsewhere
+    note: "Databases such as PostgreSQL take SQL, so a Bash script can only reach one by calling a client program such as psql."
+    source: https://www.postgresql.org/docs/current/app-psql.html
   - slot: systems
     fit: none
+    reason: one-job
+    note: "Bash is a command language interpreter that runs other programs and connects them with pipes; kernels and drivers need code that controls memory directly."
+    source: https://man7.org/linux/man-pages/man1/bash.1.html
+  - slot: mobile
+    fit: none
+    reason: runs-elsewhere
+    note: "Android apps are built with Kotlin or Java, using the tools Google provides for them."
+    source: https://developer.android.com/kotlin/first
+  - slot: compute
+    fit: none
+    reason: too-slow
+    note: "Bash is an interpreter that does math only on whole numbers, so GPU and simulation code needs native, fast code."
+    source: https://man7.org/linux/man-pages/man1/bash.1.html
+  - slot: embedded
+    fit: none
+    reason: too-slow
+    note: "Bash runs each step of a pipeline as a separate process, too much for a device with kilobytes of memory."
+    source: https://man7.org/linux/man-pages/man1/bash.1.html
+  - slot: wasm
+    fit: none
+    reason: runs-elsewhere
+    note: "WebAssembly is a compilation target for languages such as C, C++ and Rust; Bash runs commands as it reads them."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: games
+    fit: none
+    reason: too-slow
+    note: "Each step of a Bash pipeline runs as a separate process, too costly to redraw a game 60 times a second."
+    source: https://man7.org/linux/man-pages/man1/bash.1.html
 won_where:
   - what: "GitHub Actions runs run: steps in bash on Linux and macOS runners by default"
     source: https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions

@@ -1,0 +1,191 @@
+# Glossary. Every mention of a term or alias in any card text links to /terms/#<id>.
+# Aliases written in capitals (GC, API) match only in capitals; the rest match in any case.
+# `plain`: one or two sentences for someone who has never programmed.
+- id: compiler
+  term: compiler
+  aliases: [compilers, compile, compiles, compiled, compiling, compile time]
+  plain: "A program that translates code people write into instructions the processor runs, before the program starts. The result needs no translator alongside it."
+  source: https://developer.mozilla.org/en-US/docs/Glossary/Compile
+- id: interpreter
+  term: interpreter
+  aliases: [interpreters, interpreted]
+  plain: "A program that reads code and carries it out step by step while it runs. Nothing has to be built first, but the extra layer makes the code slower."
+  source: https://en.wikipedia.org/wiki/Interpreter_(computing)
+- id: virtual-machine
+  term: virtual machine
+  aliases: [virtual machines, VM, VMs]
+  plain: "A program that acts as a pretend computer. Code is compiled once for it and then runs on every real computer that has the virtual machine installed, as Java's JVM does."
+  source: https://en.wikipedia.org/wiki/Virtual_machine
+- id: bytecode
+  term: bytecode
+  plain: "Compact instructions a compiler writes for a virtual machine instead of for a real processor."
+  source: https://en.wikipedia.org/wiki/Bytecode
+- id: machine-code
+  term: machine code
+  aliases: [native code]
+  plain: "The instructions a processor understands directly. A program compiled to machine code runs without any helper program."
+  source: https://en.wikipedia.org/wiki/Machine_code
+- id: jit
+  term: JIT compiler
+  aliases: [JIT, just-in-time, just-in-time compiler]
+  plain: "A compiler that works while the program runs and turns the code used most often into machine code, which makes virtual machines and interpreters faster."
+  source: https://en.wikipedia.org/wiki/Just-in-time_compilation
+- id: transpile
+  term: transpile
+  aliases: [transpiles, transpiled, transpiler]
+  plain: "To compile from one programming language into another, as TypeScript is turned into JavaScript."
+  source: https://en.wikipedia.org/wiki/Source-to-source_compiler
+- id: runtime
+  term: runtime
+  aliases: [runtimes]
+  plain: "The support code a language brings along while a program runs, such as memory clean-up and thread handling. Some languages carry a large runtime, C carries almost none."
+  source: https://en.wikipedia.org/wiki/Runtime_system
+- id: garbage-collector
+  term: garbage collector
+  aliases: [garbage collectors, garbage collection, garbage collected, garbage-collected, GC]
+  plain: "Part of a language that finds memory the program no longer uses and frees it on its own. It removes a whole family of bugs, but it runs when it decides to, not when you do."
+  source: https://developer.mozilla.org/en-US/docs/Glossary/Garbage_collection
+- id: manual-memory
+  term: manual memory management
+  aliases: [manual memory]
+  plain: "The programmer asks for memory and gives it back in the code. Nothing runs in the background, but forgetting a step, or doing it twice, breaks the program."
+  source: https://en.wikipedia.org/wiki/Manual_memory_management
+- id: reference-counting
+  term: reference counting
+  aliases: [reference counted, reference-counted, automatic reference counting, ARC]
+  plain: "Each piece of memory counts how many parts of the program still use it and is freed when the count reaches zero."
+  source: https://en.wikipedia.org/wiki/Reference_counting
+- id: ownership
+  term: ownership
+  aliases: [borrow checker, ownership rules, ownership model]
+  plain: "Rust's rule that every piece of memory has exactly one owner. The compiler checks the rules and frees memory itself, so there is no garbage collector and no freeing by hand."
+  source: https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html
+- id: memory-safety
+  term: memory safety
+  aliases: [memory-safe, memory safe, memory unsafety, memory-unsafe, memory unsafe]
+  plain: "A guarantee that a program cannot read or write memory it should not touch. Without it, a small mistake can crash the program or let an attacker in."
+  source: https://www.chromium.org/Home/chromium-security/memory-safety/
+- id: undefined-behavior
+  term: undefined behavior
+  aliases: [undefined behaviour]
+  plain: "A mistake whose result the language does not define, mostly in C and C++. The program may seem to work, crash, or do something else entirely."
+  source: https://en.wikipedia.org/wiki/Undefined_behavior
+- id: static-typing
+  term: static typing
+  aliases: [statically typed, static types, static type, type checker, type checking]
+  plain: "Every value has a kind (number, text, list) that is checked before the program runs, so some mistakes never reach the user."
+  source: https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html
+- id: dynamic-typing
+  term: dynamic typing
+  aliases: [dynamically typed, dynamic types]
+  plain: "The kind of each value is checked only while the program runs. Code is quicker to write, and some mistakes show up only when that line runs."
+  source: https://en.wikipedia.org/wiki/Type_system#Dynamic_type_checking_and_runtime_type_information
+- id: gradual-typing
+  term: gradual typing
+  aliases: [gradually typed, gradual types, type hints, type annotations]
+  plain: "Types are optional: you add them where they help and leave them out elsewhere."
+  source: https://peps.python.org/pep-0484/
+- id: thread
+  term: thread
+  aliases: [threads, multithreading, multithreaded, multi-threaded]
+  plain: "One line of work inside a program. A program with several threads can use several processor cores at the same time."
+  source: https://en.wikipedia.org/wiki/Thread_(computing)
+- id: concurrency
+  term: concurrency
+  aliases: [concurrent]
+  plain: "Handling many tasks in overlapping time, such as thousands of website visitors at once."
+  source: https://en.wikipedia.org/wiki/Concurrency_(computer_science)
+- id: async
+  term: async
+  aliases: [async/await, asynchronous]
+  plain: "Starting a slow task, such as a network request, and doing other work until it finishes, without a separate thread for each task."
+  source: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing
+- id: actor
+  term: actor model
+  aliases: [actors]
+  plain: "Small independent workers that share nothing and talk only by sending each other messages. When one fails, the others keep running."
+  source: https://en.wikipedia.org/wiki/Actor_model
+- id: green-threads
+  term: green threads
+  aliases: [green thread, goroutine, goroutines, virtual threads, lightweight processes]
+  plain: "Threads managed by the language instead of the operating system. They are cheap, so one program can run hundreds of thousands of them."
+  source: https://go.dev/doc/effective_go
+- id: gil
+  term: global interpreter lock
+  aliases: [GIL]
+  plain: "A lock in Python's main interpreter that lets only one thread run Python code at a time, so threads alone cannot use several cores."
+  source: https://peps.python.org/pep-0703/
+- id: webassembly
+  term: WebAssembly
+  aliases: [Wasm]
+  plain: "A compact instruction format that browsers run next to JavaScript. C, C++, Rust and other languages compile to it to get into a web page."
+  source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+- id: standard-library
+  term: standard library
+  aliases: [standard libraries]
+  plain: "The ready-made code that comes with a language: reading files, handling text, talking to the network."
+  source: https://en.wikipedia.org/wiki/Standard_library
+- id: library
+  term: library
+  aliases: [libraries, package, packages]
+  plain: "Ready-made code someone else wrote that you add to your program, so you do not write everything yourself."
+  source: https://en.wikipedia.org/wiki/Library_(computing)
+- id: package-manager
+  term: package manager
+  aliases: [package managers]
+  plain: "A tool that downloads libraries and keeps their versions in order: npm for JavaScript, pip for Python, Cargo for Rust."
+  source: https://en.wikipedia.org/wiki/Package_manager
+- id: framework
+  term: framework
+  aliases: [frameworks]
+  plain: "A large library that gives a program its shape. You fill in the parts and the framework calls them: Django for websites, Flutter for apps."
+  source: https://en.wikipedia.org/wiki/Software_framework
+- id: api
+  term: API
+  aliases: [APIs]
+  plain: "The agreed way one program asks another for something, such as a weather service answering with today's forecast."
+  source: https://developer.mozilla.org/en-US/docs/Glossary/API
+- id: backend
+  term: backend
+  aliases: [back end, back-end, server-side]
+  plain: "The part of an app that runs on a server, out of sight: it stores data, checks logins and answers the app's requests."
+  source: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction
+- id: command-line
+  term: command line
+  aliases: [command-line, terminal, shell]
+  plain: "A window where you type commands to run programs instead of clicking. Command-line tools are programs used this way."
+  source: https://en.wikipedia.org/wiki/Command-line_interface
+- id: operating-system
+  term: operating system
+  aliases: [operating systems, kernel, kernels]
+  plain: "The base program that runs a computer and shares its memory, processor and devices among other programs. Linux, Windows and macOS are operating systems; the kernel is their core."
+  source: https://en.wikipedia.org/wiki/Operating_system
+- id: driver
+  term: device driver
+  aliases: [driver, drivers, device drivers]
+  plain: "Code that lets the operating system talk to one piece of hardware, such as a network card or a printer."
+  source: https://en.wikipedia.org/wiki/Device_driver
+- id: microcontroller
+  term: microcontroller
+  aliases: [microcontrollers]
+  plain: "A tiny computer on a single chip, with kilobytes of memory, inside things like washing machines, thermostats and car keys."
+  source: https://en.wikipedia.org/wiki/Microcontroller
+- id: gpu
+  term: GPU
+  aliases: [GPUs, graphics card, graphics cards]
+  plain: "A processor with thousands of small cores, built for drawing graphics and now used for AI and other heavy math."
+  source: https://en.wikipedia.org/wiki/Graphics_processing_unit
+- id: shader
+  term: shader
+  aliases: [shaders, shading language]
+  plain: "A small program that runs on the GPU, written in a language the GPU accepts."
+  source: https://en.wikipedia.org/wiki/Shader
+- id: infrastructure-as-code
+  term: infrastructure as code
+  plain: "Describing servers, networks and databases in files or code, so a tool can set them up the same way every time."
+  source: https://en.wikipedia.org/wiki/Infrastructure_as_code
+- id: open-source
+  term: open source
+  aliases: [open-source]
+  plain: "Software whose code anyone may read, change and share."
+  source: https://opensource.org/osd

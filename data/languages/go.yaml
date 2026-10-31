@@ -18,19 +18,59 @@ tradeoffs:
 slots:
   - slot: server
     fit: strong
+    note: "Google's web indexing services are written in Go."
   - slot: cli
     fit: strong
-  - slot: data
+    note: "Go builds each command-line tool into one program file that needs no installed runtime."
+  - slot: database
     fit: ok
+    note: "CockroachDB, a distributed SQL database, is written in Go."
+  - slot: wasm
+    fit: ok
+    note: "The standard Go compiler builds WebAssembly for browsers."
+  - slot: config
+    fit: ok
+    note: "Pulumi programs can be written in Go, next to TypeScript, Python and Java."
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run only JavaScript and WebAssembly. Go compiles to WebAssembly, but its runtime and garbage collector come along, so even small pages get heavy."
+    source: https://go.dev/wiki/WebAssembly
   - slot: systems
-    fit: ok
+    fit: weak
+    reason: hides-machine
+    note: "Go never frees memory by hand; a garbage collector does it, and its timing is hard to predict."
+    source: https://go.dev/doc/gc-guide
   - slot: mobile
     fit: weak
+    reason: no-tools
+    note: "Android's app tools are built for Kotlin and Java; Go is not one of their languages."
+    source: https://developer.android.com/kotlin/first
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "go run compiles a Go program and then runs it, so a quick one-line task needs a build step first."
+    source: https://pkg.go.dev/cmd/go
+  - slot: data
+    fit: weak
+    reason: no-tools
+    note: "Data analysts work in Python with packages such as NumPy; Go has few tools like them."
+    source: https://numpy.org/
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "GPU programs are written with NVIDIA's CUDA in C++ or Python; Go reaches a GPU only through code written in those."
+    source: https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
   - slot: embedded
     fit: weak
-  - slot: browser
-    fit: none
-    note: "Compiles to WebAssembly, but is not a browser language."
+    reason: hides-machine
+    note: "Small chips run Go through TinyGo, a separate compiler, on over 150 microcontroller boards."
+    source: https://tinygo.org/
+  - slot: games
+    fit: weak
+    reason: no-tools
+    note: "Unreal Engine, a major game engine, has gameplay classes written in C++, not Go."
+    source: https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-with-cplusplus-in-unreal-engine
 won_where:
   - what: "Google's web indexing services and Chrome optimization guide service, which are written in Go"
     source: "https://go.dev/solutions/google/"

@@ -22,11 +22,51 @@ slots:
   - slot: server
     fit: ok
     note: "Runs on Node.js after compilation."
+  - slot: mobile
+    fit: ok
+    note: "React Native apps can be written in TypeScript."
   - slot: cli
     fit: ok
+    note: "TypeScript command-line tools run on Node.js after compilation."
+  - slot: scripts
+    fit: ok
+    note: "Deno runs TypeScript files directly, without a separate compile step."
+  - slot: config
+    fit: ok
+    note: "AWS CDK and Pulumi describe cloud servers in TypeScript; Terraform uses its own HCL language."
+  - slot: games
+    fit: ok
+    note: "TypeScript can write games for Phaser and Three.js, which run in a browser."
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases such as PostgreSQL are queried in SQL, not TypeScript."
+    source: https://www.postgresql.org/docs/current/sql.html
+  - slot: data
+    fit: weak
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python, not TypeScript."
+    source: https://numpy.org/
+  - slot: compute
+    fit: weak
+    reason: runs-elsewhere
+    note: "Web pages reach the GPU through WebGPU, but the GPU code itself is written in WGSL, not TypeScript."
+    source: https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API
   - slot: embedded
+    fit: weak
+    reason: too-slow
+    note: "Espruino is an interpreter that brings JavaScript to microcontrollers, so the chip runs the code through it."
+    source: http://www.espruino.com/
+  - slot: wasm
+    fit: weak
+    reason: runs-elsewhere
+    note: "TypeScript compiles to JavaScript, not WebAssembly. AssemblyScript looks like TypeScript but is a separate language."
+    source: https://www.assemblyscript.org/
+  - slot: systems
     fit: none
-    note: "It compiles to JavaScript, so it needs a JavaScript runtime that microcontrollers do not have."
+    reason: hides-machine
+    note: "JavaScript frees memory on its own through garbage collection, so programs do not manage memory by hand."
+    source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Memory_management
 won_where:
   - what: "Angular 2 announced as built with TypeScript in March 2015"
     source: https://devblogs.microsoft.com/typescript/angular-2-built-on-typescript/

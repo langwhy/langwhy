@@ -22,15 +22,60 @@ slots:
   - slot: server
     fit: strong
     note: "Discord's core services are written in Elixir."
-  - slot: embedded
+  - slot: cli
     fit: ok
-    note: "Nerves builds production embedded systems on the BEAM and Elixir."
+    note: "Mix, the build tool that comes with Elixir, is a command-line program written in Elixir."
+  - slot: scripts
+    fit: ok
+    note: "Elixir runs .exs script files directly with the elixir command."
+  - slot: config
+    fit: ok
+    note: "Elixir projects set up builds and settings in Elixir files, such as mix.exs and config/config.exs."
   - slot: browser
     fit: weak
-    note: "Browsers still run JavaScript; Elixir sends updates to the page from the server."
+    reason: runs-elsewhere
+    note: "Phoenix LiveView keeps Elixir on the server and sends only the changed parts of a page to the browser."
+    source: https://phoenix-live-view.hexdocs.pm/welcome.html
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases such as PostgreSQL are queried in SQL, not Elixir."
+    source: https://www.postgresql.org/docs/current/sql.html
+  - slot: data
+    fit: weak
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python, not Elixir."
+    source: https://numpy.org/
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "Nx runs number crunching from Elixir on GPUs through Google's XLA, but most GPU and AI code is written for Python and C++."
+    source: https://github.com/elixir-nx/nx
+  - slot: embedded
+    fit: weak
+    reason: too-slow
+    note: "AtomVM brings Elixir to very small systems such as the ESP32 chip, through a tiny virtual machine."
+    source: https://github.com/atomvm/AtomVM
+  - slot: wasm
+    fit: weak
+    reason: too-slow
+    note: "Popcorn runs Elixir in the browser on a BEAM virtual machine compiled to WebAssembly."
+    source: https://github.com/software-mansion/popcorn
+  - slot: systems
+    fit: none
+    reason: hides-machine
+    note: "Elixir runs on the BEAM virtual machine, which runs garbage collection for each process."
+    source: https://www.erlang.org/doc/apps/erts/garbagecollection.html
   - slot: mobile
     fit: none
-    note: "Elixir has no mobile runtime; mobile apps use Swift, Kotlin or Dart."
+    reason: no-tools
+    note: "Android's own tools are built for Kotlin and Java, not Elixir."
+    source: https://developer.android.com/kotlin/first
+  - slot: games
+    fit: none
+    reason: no-tools
+    note: "Unity, a common game engine, uses C# code for its game scripts, not Elixir."
+    source: https://docs.unity.com/en-us/engine/current/manual/scripting/get-started/creating-scripts
 won_where:
   - what: "Discord, whose core services run on Elixir and which reported scaling it to 11 million concurrent users"
     source: https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users

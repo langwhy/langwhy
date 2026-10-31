@@ -18,14 +18,60 @@ slots:
   - slot: server
     fit: strong
     note: "WordPress and MediaWiki run on it."
-  - slot: browser
-    fit: none
-    note: "Only the HTML that PHP produces reaches the browser, never the code."
+  - slot: cli
+    fit: ok
+    note: "Composer, the PHP package manager, is a command-line tool written in PHP."
   - slot: scripts
     fit: ok
     note: "Runs from the command line with the php binary."
+  - slot: config
+    fit: ok
+    note: "WordPress's wp-config.php and Laravel's config files are PHP code."
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "PHP runs on the web server and sends finished HTML to the browser. Running PHP in the page needs PHP compiled to WebAssembly, as WordPress Playground does."
+    source: https://github.com/WordPress/wordpress-playground
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases such as PostgreSQL are queried in SQL, not PHP."
+    source: https://www.postgresql.org/docs/current/sql.html
   - slot: data
     fit: weak
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python, not PHP."
+    source: https://numpy.org/
+  - slot: wasm
+    fit: weak
+    reason: too-slow
+    note: "WordPress Playground runs WordPress in the browser with PHP built for WebAssembly."
+    source: https://github.com/WordPress/wordpress-playground
+  - slot: systems
+    fit: none
+    reason: hides-machine
+    note: "PHP scripts need the PHP parser to run, a program that sits between the script and the hardware."
+    source: https://www.php.net/manual/en/introduction.php
+  - slot: mobile
+    fit: none
+    reason: no-tools
+    note: "Android's own tools are built for Kotlin and Java, not PHP."
+    source: https://developer.android.com/kotlin/first
+  - slot: compute
+    fit: none
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python, not PHP."
+    source: https://numpy.org/
+  - slot: embedded
+    fit: none
+    reason: runs-elsewhere
+    note: "PHP needs its parser installed, plus a web server or the command line, to run any script."
+    source: https://www.php.net/manual/en/introduction.php
+  - slot: games
+    fit: none
+    reason: no-tools
+    note: "Unity, a common game engine, uses C# code for its game scripts, not PHP."
+    source: https://docs.unity.com/en-us/engine/current/manual/scripting/get-started/creating-scripts
 won_where:
   - what: "WordPress runs on 39.5 % of all websites (W3Techs, 30 October 2026)"
     source: https://w3techs.com/technologies/details/cm-wordpress

@@ -19,14 +19,59 @@ slots:
   - slot: mobile
     fit: strong
     note: "Google recommends starting new Android apps in Kotlin."
+  - slot: config
+    fit: strong
+    note: "Gradle has made the Kotlin DSL the default for new builds."
   - slot: server
     fit: ok
     note: "Spring Boot supports Kotlin and requires Kotlin 2.2 or later."
+  - slot: cli
+    fit: ok
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run JavaScript, so Kotlin reaches a page only through Kotlin/JS, which translates it to JavaScript."
+    source: https://kotlinlang.org/docs/js-overview.html
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases are asked in SQL; Kotlin code reaches them through Exposed, a lightweight SQL library for Kotlin."
+    source: https://github.com/JetBrains/Exposed
   - slot: systems
     fit: weak
+    reason: hides-machine
+    note: "Kotlin/Native compiles to native code but still uses a tracing garbage collector to free memory."
+    source: https://kotlinlang.org/docs/native-memory-manager.html
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "Kotlin code is compiled into a jar that runs on Java, so a quick task needs a compile step and a Java install first."
+    source: https://kotlinlang.org/docs/command-line.html
+  - slot: data
+    fit: weak
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python."
+    source: https://numpy.org/
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "GPU programs are written with NVIDIA's CUDA in C++ or Python; Kotlin reaches a GPU only through code written in those."
+    source: https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
+  - slot: wasm
+    fit: weak
+    reason: no-tools
+    note: "Kotlin/Wasm compiles Kotlin to WebAssembly, but Kotlin's own docs still label it Beta."
+    source: https://kotlinlang.org/docs/wasm-overview.html
+  - slot: games
+    fit: weak
+    reason: no-tools
+    note: "libGDX, a Java game framework, works from Kotlin, but the big engines are scripted in C# (Unity) and C++ (Unreal)."
+    source: https://libgdx.com/
   - slot: embedded
     fit: none
-    note: "Kotlin targets the JVM, Android and native platforms, not microcontrollers."
+    reason: runs-elsewhere
+    note: "Kotlin/Native builds programs for Linux, Windows, Android and Apple systems; bare microcontrollers are not on its list."
+    source: https://kotlinlang.org/docs/native-target-support.html
 won_where:
   - what: "Android, where Google's developer guide recommends starting new apps in Kotlin"
     source: https://developer.android.com/kotlin/first

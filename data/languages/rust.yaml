@@ -19,28 +19,53 @@ tradeoffs:
   concurrency: [threads, async]
   cost: Slow compiles and a learning curve measured in weeks, because the borrow checker refuses programs that other languages accept.
 slots:
-  - slot: systems
-    fit: strong
   - slot: server
     fit: strong
+    note: "Cloudflare's Pingora proxy, which serves over a trillion requests a day, is written in Rust."
+  - slot: systems
+    fit: strong
+    note: "The Linux kernel accepts Rust since version 6.1, next to C."
   - slot: cli
     fit: strong
-  - slot: wasm
-    fit: strong
-    note: "The most used language for WebAssembly outside the browser."
+    note: "Many fast command-line tools, such as ripgrep, are written in Rust."
   - slot: embedded
     fit: strong
-  - slot: games
+    note: "Rust runs on small chips with no garbage collector."
+  - slot: wasm
+    fit: strong
+    note: "Wasmtime, a WebAssembly runtime, is written in Rust."
+  - slot: database
     fit: ok
-    note: "Engines exist (Bevy), studios still ship C++."
+    note: "TiKV, a distributed key-value store, is written in Rust."
   - slot: data
     fit: ok
-    note: "Mostly as the fast core under Python tools (Polars, Ruff)."
+    note: "Polars, a fast data-frame library, is written in Rust and used from Python."
+  - slot: compute
+    fit: ok
+    note: "Candle, Hugging Face's machine learning library, is written in Rust."
+  - slot: games
+    fit: ok
+    note: "Bevy is a Rust game engine; big commercial studios still mostly ship C++."
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run only JavaScript and WebAssembly. Rust gets into a web page by being compiled to WebAssembly, with JavaScript glue around it."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm
   - slot: mobile
     fit: weak
-  - slot: browser
+    reason: no-tools
+    note: "Android's app tools are built for Kotlin and Java; Rust is not one of their languages."
+    source: https://developer.android.com/kotlin/first
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "Rust programs are compiled ahead of time with rustc, so a quick task needs a build step first."
+    source: https://doc.rust-lang.org/book/ch01-02-hello-world.html
+  - slot: config
     fit: none
-    note: "Only through WebAssembly, not as a browser language."
+    reason: no-tools
+    note: "Rust projects keep their own settings in Cargo.toml, a data file, and cloud setup tools such as Pulumi do not take Rust."
+    source: https://www.pulumi.com/docs/iac/languages-sdks/
 won_where:
   - what: "Linux kernel accepted Rust as a second language in 6.1"
     source: "https://lwn.net/Articles/910762/"

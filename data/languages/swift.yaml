@@ -19,11 +19,53 @@ slots:
   - slot: mobile
     fit: strong
   - slot: server
-    fit: weak
-    note: "Server frameworks such as Vapor exist, but server use is small."
+    fit: ok
+    note: "Vapor is a Swift framework for HTTP servers, backends and APIs, built on Apple's SwiftNIO."
+  - slot: cli
+    fit: ok
+  - slot: scripts
+    fit: ok
+    note: "A Swift file runs as a script with the swift command; outside a Mac the Swift toolchain has to be installed first."
+  - slot: config
+    fit: ok
+    note: "Swift packages describe their build in Package.swift, a Swift file."
+  - slot: games
+    fit: ok
   - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run only JavaScript and WebAssembly. Swift gets in through the Swift SDK for WebAssembly, which is still young."
+    source: https://www.swift.org/documentation/articles/wasm-getting-started.html
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases are asked in SQL; Swift apps reach SQLite through toolkits such as GRDB."
+    source: https://github.com/groue/GRDB.swift
+  - slot: systems
+    fit: weak
+    reason: hides-machine
+    note: "Swift manages memory automatically, so programmers do not free it by hand."
+    source: https://www.swift.org/about/
+  - slot: compute
+    fit: weak
+    reason: runs-elsewhere
+    note: "Swift drives Apple GPUs through Metal, but the GPU code itself is written in Metal's own shading language and runs only on Apple devices."
+    source: https://developer.apple.com/metal/
+  - slot: embedded
+    fit: weak
+    reason: no-tools
+    note: "Embedded Swift is a reduced Swift for microcontrollers and still young next to C, which chip makers' tools are built for."
+    source: https://www.swift.org/blog/embedded-swift-examples/
+  - slot: wasm
+    fit: weak
+    reason: no-tools
+    note: "Swift SDKs for Wasm cross-compile Swift to WebAssembly, though the work started as a community project."
+    source: https://www.swift.org/documentation/articles/wasm-getting-started.html
+  - slot: data
     fit: none
-    note: "Not a web page language."
+    reason: no-tools
+    note: "Google archived Swift for TensorFlow in 2021, and data and machine learning tools are built for Python."
+    source: https://github.com/tensorflow/swift
 won_where:
   - what: "Apple's platforms, for which Apple describes Swift as its language"
     source: "https://developer.apple.com/swift/"

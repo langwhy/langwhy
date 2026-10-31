@@ -20,22 +20,59 @@ tradeoffs:
   concurrency: [threads, async]
   cost: "The .NET runtime is large and garbage-collected, so latency-sensitive code needs tuning that C or Rust code avoids."
 slots:
-  - slot: games
-    fit: strong
-    note: "Unity uses C# for gameplay scripts."
   - slot: server
     fit: strong
     note: "Stack Overflow's 2016 web tier ran on ASP.NET MVC."
+  - slot: games
+    fit: strong
+    note: "Unity uses C# for gameplay scripts."
+  - slot: database
+    fit: ok
   - slot: cli
     fit: ok
-  - slot: mobile
-    fit: weak
+  - slot: config
+    fit: ok
+    note: "Pulumi and AWS CDK describe cloud servers in C# code."
   - slot: browser
     fit: weak
-    note: "Blazor runs C# in the browser through WebAssembly, but JavaScript is the default."
+    reason: runs-elsewhere
+    note: "Browsers run JavaScript and WebAssembly; Blazor runs C# there on a WebAssembly-based .NET runtime."
+    source: https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models
   - slot: systems
-    fit: none
-    note: "Kernels and drivers are written in C or C++, not in C#."
+    fit: weak
+    reason: hides-machine
+    note: "The .NET garbage collector decides the best time to free memory, and developers do not release it by hand."
+    source: https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals
+  - slot: mobile
+    fit: weak
+    reason: no-tools
+    note: "C# phone apps go through .NET MAUI, Microsoft's framework for Android, iOS, macOS and Windows."
+    source: https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "Since .NET 10 one C# file can run on its own, but the .NET SDK has to be installed and builds it first, a step Bash or Python skip."
+    source: https://learn.microsoft.com/en-us/dotnet/core/sdk/file-based-apps
+  - slot: data
+    fit: weak
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python."
+    source: https://numpy.org/
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "TorchSharp gives C# the engine behind PyTorch, but most GPU and AI code and examples are in Python and C++."
+    source: https://github.com/dotnet/TorchSharp
+  - slot: embedded
+    fit: weak
+    reason: too-slow
+    note: "nanoFramework runs C# on chips such as the ESP32 through a small .NET runtime that has to fit on the chip next to the program."
+    source: https://nanoframework.net/
+  - slot: wasm
+    fit: weak
+    reason: too-slow
+    note: "Blazor downloads the .NET runtime to the browser with the app, so the first load is larger."
+    source: https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models
 won_where:
   - what: "Unity, where gameplay scripts are written in C#"
     source: https://docs.unity.com/en-us/engine/6000.3/manual/scripting/get-started/intro-to

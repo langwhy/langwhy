@@ -20,16 +20,64 @@ tradeoffs:
   cost: "Laziness makes space use hard to predict, and even experienced programmers struggle with it, so the language later gained strict features."
 slots:
   - slot: server
-    fit: strong
-    note: "Facebook's Sigma rule engine runs in Haskell at more than one million requests per second."
+    fit: ok
+    note: "Facebook's Sigma rule engine was rewritten in Haskell and serves more than one million requests per second."
   - slot: cli
-    fit: strong
+    fit: ok
     note: "Pandoc is a Haskell library and a command-line tool for converting document formats."
   - slot: config
     fit: ok
     note: "xmonad, a tiling window manager, is written and configured in Haskell."
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run JavaScript and WebAssembly; GHC's JavaScript backend is still a technical preview, not for production."
+    source: https://downloads.haskell.org/ghc/latest/docs/users_guide/codegens.html
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases such as PostgreSQL are queried in SQL, so Haskell code reaches them through a separate client library."
+    source: https://www.postgresql.org/docs/current/app-psql.html
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "runghc runs a Haskell file without a separate compile step, but GHC itself has to be installed first."
+    source: https://downloads.haskell.org/ghc/latest/docs/users_guide/runghc.html
+  - slot: data
+    fit: weak
+    reason: no-tools
+    note: "Hasktorch brings tensors and neural networks to Haskell by reusing the C++ core that PyTorch uses."
+    source: https://github.com/hasktorch/hasktorch
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "Accelerate runs Haskell array code on GPUs, a separate path from the C++ and Python tools most GPU work uses."
+    source: https://www.acceleratehs.org/
+  - slot: wasm
+    fit: weak
+    reason: no-tools
+    note: "Haskell reaches WebAssembly only through a special build of the GHC compiler, not the one most people install."
+    source: https://downloads.haskell.org/ghc/latest/docs/users_guide/wasm.html
+  - slot: games
+    fit: weak
+    reason: hides-machine
+    note: "GHC uses a stop-the-world garbage collector, and its long pauses during major collections can cost a game its frame time."
+    source: https://downloads.haskell.org/ghc/latest/docs/users_guide/runtime_control.html
+  - slot: systems
+    fit: none
+    reason: hides-machine
+    note: "GHC uses a stop-the-world copying garbage collector that frees memory on its own schedule, not the programmer's."
+    source: https://downloads.haskell.org/ghc/latest/docs/users_guide/runtime_control.html
+  - slot: mobile
+    fit: none
+    reason: no-tools
+    note: "Android apps are built with Kotlin or Java, using the tools Google provides for them."
+    source: https://developer.android.com/kotlin/first
   - slot: embedded
     fit: none
+    reason: hides-machine
+    note: "GHC programs run a garbage collector that decides when memory is freed, a runtime that microcontrollers with kilobytes of memory cannot carry."
+    source: https://downloads.haskell.org/ghc/latest/docs/users_guide/runtime_control.html
 won_where:
   - what: "Facebook Sigma, an anti-abuse rule engine rewritten in Haskell, serving over one million requests per second"
     source: https://engineering.fb.com/2015/06/26/security/fighting-spam-with-haskell/

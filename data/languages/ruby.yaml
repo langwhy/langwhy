@@ -18,17 +18,60 @@ slots:
   - slot: server
     fit: strong
     note: "Rails is the main framework; GitHub and Shopify run on it."
-  - slot: scripts
-    fit: ok
   - slot: cli
     fit: ok
     note: "Homebrew package definitions are Ruby files."
+  - slot: scripts
+    fit: ok
+    note: "Run from the terminal with the ruby command."
+  - slot: config
+    fit: ok
+    note: "Vagrant setup files and Chef cookbooks are Ruby code."
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run only JavaScript and WebAssembly. Ruby gets in only by shipping its interpreter compiled to WebAssembly, as ruby.wasm does."
+    source: https://github.com/ruby/ruby.wasm
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases such as PostgreSQL are queried in SQL, not Ruby."
+    source: https://www.postgresql.org/docs/current/sql.html
+  - slot: mobile
+    fit: weak
+    reason: no-tools
+    note: "Android's own tools are built for Kotlin and Java, so Ruby apps need a third-party toolkit."
+    source: https://developer.android.com/kotlin/first
   - slot: data
     fit: weak
-    note: "Python dominates data work."
-  - slot: browser
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python, not Ruby."
+    source: https://numpy.org/
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python, not Ruby."
+    source: https://numpy.org/
+  - slot: embedded
+    fit: weak
+    reason: too-slow
+    note: "mruby/c runs Ruby on one-chip microprocessors with under 40 KB of RAM."
+    source: https://github.com/mrubyc/mrubyc
+  - slot: wasm
+    fit: weak
+    reason: too-slow
+    note: "ruby.wasm ports Ruby to WebAssembly, so Ruby applications can run in browsers."
+    source: https://github.com/ruby/ruby.wasm
+  - slot: games
+    fit: weak
+    reason: no-tools
+    note: "Unity, a common game engine, uses C# code for its game scripts, not Ruby."
+    source: https://docs.unity.com/en-us/engine/current/manual/scripting/get-started/creating-scripts
+  - slot: systems
     fit: none
-    note: "The browser never runs Ruby; Rails sends HTML and JavaScript to it."
+    reason: hides-machine
+    note: "Ruby programs run inside an interpreter, which sits between the code and the hardware."
+    source: https://github.com/ruby/ruby
 won_where:
   - what: "GitHub's main application moved to Rails 5.2.1 on August 15, 2018"
     source: https://github.blog/engineering/upgrading-github-from-rails-3-2-to-5-2/

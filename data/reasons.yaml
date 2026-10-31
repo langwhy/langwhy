@@ -1,0 +1,96 @@
+# Why a language does not fit a slot. Every slot with fit "weak" or "none" on a card names one of
+# these ids in `reason`. Shown on cards, on slot pages and on /basics/. Plain words: the reader
+# has never programmed.
+- id: runs-elsewhere
+  title: "It doesn't run there"
+  short: "The place only accepts certain languages, and this is not one of them."
+  explain: >-
+    Every place where code runs decides which languages it understands. A web browser runs
+    JavaScript and WebAssembly, so a Python or Ruby program cannot run in a web page unless it is
+    translated first or ships a whole interpreter along with it. Phone makers choose the tools for
+    their phones: Apple builds its app tools around Swift, and Google recommends Kotlin for
+    Android. A database engine takes SQL. When the place does not speak the language, you
+    translate the code, carry an interpreter with you, or pick the language the place speaks.
+  sources:
+    - https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+    - https://developer.apple.com/swift/
+    - https://developer.android.com/kotlin/first
+    - https://www.postgresql.org/docs/current/tutorial-concepts.html
+- id: too-slow
+  title: "Too slow or too heavy"
+  short: "It brings an interpreter or a virtual machine along, needs more memory or starts slowly, and the job can't afford that."
+  explain: >-
+    Some languages are run by another program, an interpreter or a virtual machine, instead of
+    being turned into machine code ahead of time. That makes them easier to write and to move
+    between computers, but every step in between costs time and memory. For a script that runs
+    once, nobody notices. For a game that has to draw a new picture 60 times a second, a cheap
+    device with little memory, or a server answering thousands of requests, the extra cost
+    decides. Python adds one more limit: its global interpreter lock lets only one thread run
+    Python code at a time.
+  sources:
+    - https://developer.mozilla.org/en-US/docs/Glossary/Compile
+    - https://peps.python.org/pep-0703/
+- id: hides-machine
+  title: "It hides the machine"
+  short: "It cleans up memory for you, so you can't control exactly what the hardware does and when."
+  explain: >-
+    Many languages clean up memory automatically with a garbage collector. You never free memory
+    by hand, and a whole family of bugs disappears. The price is control: the collector decides
+    when it runs, it needs memory of its own, and the program cannot reach an exact spot in the
+    hardware. An operating system, a device driver or a chip with a few kilobytes of memory needs
+    that control. That is why the Linux kernel is written in C and also accepts Rust, two
+    languages without a garbage collector.
+  sources:
+    - https://go.dev/doc/gc-guide
+    - https://docs.kernel.org/rust/index.html
+- id: too-risky
+  title: "Too easy to get dangerously wrong"
+  short: "Small mistakes can corrupt memory, and nothing stops you before the program runs."
+  explain: >-
+    In C and C++ the programmer manages memory by hand. Forget to check a length, or use memory
+    after giving it back, and the program may crash or let an attacker take it over. The compiler
+    does not catch these mistakes. The Chromium team at Google found that around 70 % of their
+    serious security bugs are memory safety problems. That is why new code that faces the
+    internet moves to languages that check memory for you: on Android, memory safety
+    vulnerabilities dropped as new code was written in such languages.
+  sources:
+    - https://www.chromium.org/Home/chromium-security/memory-safety/
+    - https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html
+- id: no-tools
+  title: "Nobody built the tools"
+  short: "The language could do it, but the libraries, frameworks and people for the job are elsewhere."
+  explain: >-
+    A language is only part of the work. The rest is libraries other people already wrote: code
+    that reads images, talks to a database, trains a neural network or draws a button. Machine
+    learning happens in Python because PyTorch and NumPy are there, not because Python is fast.
+    Android apps are built with the tools Google provides for Kotlin and Java. Another language
+    could in principle do the same work, but you would have to build the missing pieces yourself
+    and find people who know them.
+  sources:
+    - https://pytorch.org/
+    - https://numpy.org/
+    - https://developer.android.com/kotlin/first
+- id: one-job
+  title: "Built for one kind of job"
+  short: "It was designed for one task and lacks what general programs need."
+  explain: >-
+    Some languages are made for one task and do it well. SQL asks a database questions about its
+    data, but it cannot draw a window or serve a web page on its own. Bash starts other programs
+    and connects them, but it has few ways to structure data or handle errors, so long Bash
+    scripts get hard to keep correct. Google's style guide says a shell script longer than 100
+    lines should be rewritten in a more structured language.
+  sources:
+    - https://www.postgresql.org/docs/current/tutorial-concepts.html
+    - https://google.github.io/styleguide/shellguide.html
+- id: overkill
+  title: "More than the job needs"
+  short: "It works, but costs more effort than the job is worth."
+  explain: >-
+    Sometimes a language can do the job but asks more than the job is worth: a compile step, a
+    project to set up, or a page of code where another language needs three lines. Renaming a
+    folder of files is a few lines of Bash or Python; in C++ it needs a project, a compiler and a
+    build. Java's designers call this ceremony, and in Java 25 they made small programs shorter
+    to write so that beginners and script writers face less of it.
+  sources:
+    - https://openjdk.org/jeps/512
+    - https://google.github.io/styleguide/shellguide.html

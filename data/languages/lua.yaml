@@ -19,17 +19,61 @@ tradeoffs:
   concurrency: [green]
   cost: "Small by design: the official distribution ships few libraries, so the host program supplies most tools, and until Lua 5.0 the garbage collector could pause the program for long stretches."
 slots:
-  - slot: embedded
-    fit: strong
-  - slot: games
-    fit: strong
   - slot: config
     fit: strong
     note: "Neovim reads its configuration from init.lua."
+  - slot: games
+    fit: strong
+    note: "Roblox scripts are written in Luau, a dialect of Lua."
+  - slot: server
+    fit: ok
+    note: "OpenResty integrates LuaJIT, a Lua engine, into the nginx web server."
+  - slot: database
+    fit: ok
+    note: "Redis runs Lua scripts inside the database server and executes each script atomically."
+  - slot: embedded
+    fit: ok
+    note: "NodeMCU is Lua-based firmware for ESP8266 and ESP32 Wi-Fi chips."
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run JavaScript and WebAssembly, so Lua reaches a page only through a Lua engine written in JavaScript, such as Fengari."
+    source: https://github.com/fengari-lua/fengari
+  - slot: mobile
+    fit: weak
+    reason: no-tools
+    note: "Phone apps in Lua use Solar2D, a Lua engine that also targets iOS and Android."
+    source: https://solar2d.com/
+  - slot: cli
+    fit: weak
+    reason: no-tools
+    note: "LuaRocks is the package manager for Lua modules; a Lua program still needs a Lua interpreter on the user's machine."
+    source: https://luarocks.org/
   - slot: scripts
     fit: weak
-  - slot: browser
+    reason: one-job
+    note: "Lua is made to live inside other programs, so its own library is small: even listing a folder needs an add-on such as LuaFileSystem."
+    source: https://lunarmodules.github.io/luafilesystem/
+  - slot: data
+    fit: weak
+    reason: no-tools
+    note: "Lua's standard library covers strings, tables, math and files; statistics and data frames come from add-on libraries."
+    source: https://www.lua.org/manual/5.4/manual.html
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "LuaJIT is among the fastest dynamic language engines, but most GPU and AI libraries are built for C++ and Python."
+    source: https://luajit.org/luajit.html
+  - slot: wasm
+    fit: weak
+    reason: too-slow
+    note: "Lua reaches WebAssembly by bringing its whole interpreter along, as the wasmoon project does."
+    source: https://github.com/ceifa/wasmoon
+  - slot: systems
     fit: none
+    reason: hides-machine
+    note: "Lua performs automatic memory management, so programs cannot free memory by hand as an operating system kernel does."
+    source: https://www.lua.org/manual/5.4/manual.html
 won_where:
   - what: "Adobe Lightroom, where over 40 percent of the code was Lua, about 100,000 lines in 2007"
     source: https://www.lua.org/doc/hopl.pdf
