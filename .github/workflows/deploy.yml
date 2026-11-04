@@ -11,9 +11,8 @@ permissions:
   pages: write
   id-token: write
 
-# A PR build must never cancel the deploy from main.
 concurrency:
-  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
+  group: pages
   cancel-in-progress: true
 
 jobs:
