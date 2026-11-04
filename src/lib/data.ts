@@ -73,7 +73,7 @@ export function cardMarkdown(card: Card, prose: string): string {
     "",
     `> ${card.tagline}`,
     "",
-    "## Where it hurts in practice",
+    "## Problems in practice",
     "",
     ...card.hurts.map((h) => `- ${h.what} Source: "${h.quote}" (${h.source})`),
     "",

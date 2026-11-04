@@ -50,7 +50,7 @@ Other ids you may reference before a card exists: `algol`, `bcpl`, `simula`, `sm
 - `verified: false` until a human has checked every claim against its source. `last_reviewed` is
   the date of that check or of writing.
 
-## Where it hurts in practice (`hurts`)
+## Problems in practice (`hurts`)
 
 The part no textbook has: 3 to 6 problems a person only runs into once they really use the
 language. Installing libraries, moving to a new version, licences, waiting for builds, libraries

@@ -1,4 +1,4 @@
-// Downloads the source of every "Where it hurts in practice" item and checks that its quote is
+// Downloads the source of every "Problems in practice" item and checks that its quote is
 // really on that page. Comparison ignores case, spacing, typographic quotes and dashes, so a quote
 // copied from the rendered page matches the HTML. `node scripts/check-quotes.mjs` checks every
 // card, `node scripts/check-quotes.mjs go rust` only those. Exit 1 when a quote is missing or a

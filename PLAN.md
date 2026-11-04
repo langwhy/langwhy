@@ -135,7 +135,8 @@ pochopiť, prečo čo nefunguje, to čo sa nehovorí u ostatných“. Každá ka
 používaní (upgrade, knižnice, licencia, kompilácia, napadnuté balíčky, ľudia). Každý menuje
 verziu, firmu, číslo alebo dátum a má doslovnú citáciu zo zdroja z prvej ruky;
 `pnpm check:quotes` stiahne zdroje a citácie overí. Učebnicové časti ostávajú nižšie. Príbehy
-„kto odišiel a prečo“ Karchi zamietol ako AI klišé.
+„kto odišiel a prečo“ Karchi zamietol ako AI klišé. Nadpis na webe je „Problems in practice“; pôvodné
+„Where it hurts in practice“ bolo podľa Karchiho cringe.
 
 ### Prelinkovanie ako wiki (2026-10-31)
 

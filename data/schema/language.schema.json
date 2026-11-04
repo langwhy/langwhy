@@ -98,7 +98,7 @@
       "type": "array",
       "minItems": 3,
       "maxItems": 6,
-      "description": "Where it hurts in practice: problems people only hit once they really use the language. Plain words for someone who never programmed, each naming a version, company, number or date, each with a verbatim quote from a first-hand source.",
+      "description": "Problems in practice: problems people only hit once they really use the language. Plain words for someone who never programmed, each naming a version, company, number or date, each with a verbatim quote from a first-hand source.",
       "items": {
         "type": "object",
         "additionalProperties": false,

@@ -24,7 +24,7 @@ technical term on the site links to its card or to the glossary on its own, like
 - `data/languages/<id>.yaml` holds the facts, `<id>.md` the story. `data/reasons.yaml` (why a
   language does not fit a slot), `data/terms.yaml` (the glossary) and `data/basics.md` (the theory
   page) complete the database.
-- Each card opens with `hurts`, where it hurts in practice: problems you only meet once you use the
+- Each card opens with `hurts`, the problems you only meet once you use the
   language, each with a word-for-word quote from a first-hand source. `pnpm check:quotes`
   downloads every source and checks the quote is there.
 - `data/schema/language.schema.json` is the contract; `pnpm validate` enforces it.
