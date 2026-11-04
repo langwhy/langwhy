@@ -6,6 +6,16 @@ org: Rust Foundation
 type: systems
 status: alive
 tagline: Memory-safe systems programming without a garbage collector.
+hurts:
+  - what: "In the 2024 State of Rust survey, slow compilation topped the list of things that hold Rust users back. Every change to a big program means waiting for the compiler before you can try it."
+    quote: "Perhaps unsurprisingly, slow compilation was at the top of the list, as it seems to be a perennial concern of Rust users."
+    source: https://blog.rust-lang.org/2025/02/13/2024-State-Of-Rust-Survey-results/
+  - what: "A Rust library can name the oldest Rust it works with, for example 1.56, and Rust's build tool then refuses anything older. Updating one library can therefore force you to update Rust itself first."
+    quote: "When your package is compiled on an unsupported toolchain, Cargo will report that as an error to the user."
+    source: https://doc.rust-lang.org/cargo/reference/rust-version.html
+  - what: "In September 2025 people who publish Rust libraries on crates.io got fake emails that tried to steal their GitHub logins. A stolen login would let the attacker publish new versions of that person's libraries."
+    quote: "These emails are malicious and come from a domain name not controlled by the Rust Foundation (nor the Rust Project), seemingly with the purpose of stealing your GitHub credentials."
+    source: https://blog.rust-lang.org/2025/09/12/crates-io-phishing-campaign
 born_from: >-
   Graydon Hoare started Rust as a personal project in 2006 after yet another memory-safety crash,
   this time in the elevator software of his apartment building. Mozilla picked it up in 2009

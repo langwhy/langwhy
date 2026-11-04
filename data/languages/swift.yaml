@@ -6,6 +6,16 @@ org: Apple
 type: mobile
 status: alive
 tagline: Programming language for building apps on Apple platforms such as iOS and macOS.
+hurts:
+  - what: "Since 28 April 2026 Apple accepts app uploads only if they were built with Xcode 26 or later. An app made with an older Xcode has to be rebuilt with the new one before its next update can go out."
+    quote: "Apps uploaded to App Store Connect must be built with Xcode 26 or later using an SDK for iOS 26"
+    source: https://developer.apple.com/news/upcoming-requirements/
+  - what: "Swift 6 brought strict checks for data races, bugs where two parts of a program change the same data at once. A project can stay in the old mode, but switching means fixing everything the new checks find."
+    quote: "Strict concurrency checking in the Swift 6 language mode helps you find and fix data races at compile time."
+    source: https://developer.apple.com/documentation/swift/adoptingswift6.md
+  - what: "Many iPhone apps get their libraries through CocoaPods, a shared library store. On 2 December 2026 it stops taking new versions, so those apps get no more library updates until they switch to another way of adding libraries."
+    quote: "Making the switch will not break builds for people using CocoaPods in 2026 onwards, but at that point, you're not getting any more updates to dependencies which come though CocoaPods trunk."
+    source: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 born_from: >-
   Chris Lattner started Swift at Apple in July 2010. Objective-C sat on top of C, with C's pointers and unchecked memory, and Lattner later said that memory safety could not be added to Objective-C without removing the C underneath, which would no longer be Objective-C.
 reacts_to: [objective-c, rust, haskell, ruby, python, csharp]

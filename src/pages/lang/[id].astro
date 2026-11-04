@@ -52,6 +52,16 @@ const jsonld = {
     · since {card.appeared} · {card.creators.join(", ")}{card.org && <> · {card.org}</>}
   </p>
   <p class="lead" set:html={linked(card.tagline)} />
+
+  <h2 id="hurts">Where it hurts in practice</h2>
+  <ul class="hurts">
+    {card.hurts.map((h) => (
+      <li>
+        <span set:html={linked(h.what)} />
+        <span class="said"><q cite={h.source}>{h.quote}</q> <a href={h.source}>{new URL(h.source).hostname.replace(/^www\./, "")}</a></span>
+      </li>
+    ))}
+  </ul>
   {!card.verified && (
     <p class="draft">Draft from {card.last_reviewed}, not yet checked claim by claim against its sources. <a href={edit("yaml")}>Help verify it.</a></p>
   )}

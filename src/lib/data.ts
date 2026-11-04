@@ -37,7 +37,7 @@ export function mentions(): Promise<Map<string, { mentions: string[]; mentionedB
     const index = new Map(cards.map((c) => [c.id, { mentions: [] as string[], mentionedBy: [] as string[] }]));
     for (const c of cards) {
       const text = [
-        c.tagline, c.born_from, c.tradeoffs.cost,
+        c.tagline, ...c.hurts.map((h) => h.what), c.born_from, c.tradeoffs.cost,
         ...c.slots.map((s) => s.note ?? ""), ...c.won_where.map((w) => w.what), ...c.timeline.map((e) => e.what),
         await proseBody(c.id),
       ].join("\n");
@@ -72,6 +72,10 @@ export function cardMarkdown(card: Card, prose: string): string {
     `# ${card.name}`,
     "",
     `> ${card.tagline}`,
+    "",
+    "## Where it hurts in practice",
+    "",
+    ...card.hurts.map((h) => `- ${h.what} Source: "${h.quote}" (${h.source})`),
     "",
     line("Appeared", String(card.appeared)),
     line("Creators", card.creators.join(", ")),

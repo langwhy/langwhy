@@ -6,6 +6,16 @@ org: Google
 type: mobile
 status: alive
 tagline: "Language for building Flutter apps, compiled ahead of time to native code or to JavaScript."
+hurts:
+  - what: "Dart 3 made null safety, a rule that stops code from using an empty value by mistake, the only mode it runs. Code written without it had to be converted before it would run on Dart 3."
+    quote: "Sound null safety becomes the only supported mode."
+    source: https://dart.dev/blog/the-road-to-dart-3-a-fully-sound-null-safe-language
+  - what: "Dart 3 also removed old features that had been marked for removal for years, such as the old way of creating a list, so code that still used them stopped building."
+    quote: "Removed the deprecated List constructor, as it wasn't null safe."
+    source: https://dart.dev/resources/dart-3-migration
+  - what: "In Flutter 3.16 every app that had not picked a look switched on its own to the newer Material 3 design. Some screens then had to be fixed by hand, for example by moving to the new navigation bar."
+    quote: "The ThemeData.useMaterial3 flag is now set to true by default."
+    source: https://docs.flutter.dev/release/breaking-changes/material-3-default
 born_from: >-
   Google's 2011 launch post, by Lars Bak of the Dart team, set out to create a structured yet flexible language for web programming with high performance on all browsers. In 2015 the Dart team decided not to integrate the Dart VM into Chrome and kept Dart compiling to JavaScript for the web.
 reacts_to: [javascript]

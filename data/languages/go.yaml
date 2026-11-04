@@ -6,6 +6,16 @@ org: Google
 type: backend
 status: alive
 tagline: "Compiled language with garbage collection and goroutines, made for networked servers and cloud tools."
+hurts:
+  - what: "When a Go library publishes version 2, its name changes: it gets /v2 at the end. Every program that wants the new version has to edit its own code to use the new name before it can upgrade."
+    quote: "Your module's users must also update their import paths if they want to upgrade to the new major version."
+    source: https://go.dev/doc/modules/major-version
+  - what: "Go cleans up unused memory on its own, and does so at least every 2 minutes. In 2020 Discord found that this caused regular slowdowns in one of its busiest services, and rewrote that service in Rust."
+    quote: "After digging through the Go source code, we learned that Go will force a garbage collection run every 2 minutes at minimum."
+    source: https://discord.com/blog/why-discord-is-switching-from-go-to-rust
+  - what: "In Go, nearly every step that can fail is followed by its own few lines that check for an error. In the Go team's 2024 survey this was the second most named challenge, picked by 13% of developers."
+    quote: "The top responses in the closed-form were learning how to write Go effectively (15%) and the verbosity of error handling (13%)."
+    source: https://go.dev/blog/survey2024-h1-results
 born_from: >-
   In 2007 a large Google program took 45 minutes to build, and Rob Pike's account of Go's origin puts its conception during one of those builds. The team wanted fast compilation, efficient execution and ease of programming, which its FAQ says no single mainstream language offered at the time.
 reacts_to: [c, cpp]

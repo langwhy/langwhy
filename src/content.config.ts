@@ -34,6 +34,7 @@ const cards = defineCollection({
       reason: z.enum(["runs-elsewhere", "too-slow", "hides-machine", "too-risky", "no-tools", "one-job", "overkill"]).optional(),
       source: uri.optional(),
     })).length(13),
+    hurts: z.array(z.object({ what: z.string(), quote: z.string(), source: uri })).min(3),
     won_where: z.array(z.object({ what: z.string(), source: uri })).min(1),
     alternatives: z.array(slug),
     timeline: z.array(z.object({ year: z.number().int(), what: z.string(), source: uri })).min(3),

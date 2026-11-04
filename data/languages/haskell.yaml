@@ -9,6 +9,16 @@ org: haskell.org community
 type: functional
 status: alive
 tagline: "Purely functional, lazily evaluated language for writing programs as typed functions."
+hurts:
+  - what: "Haskell computes a value only when something needs it. Values that are still waiting can quietly hold on to memory, and the GHC 9.14 user guide warns that such space leaks slow a program down and can make it run out of memory."
+    quote: "Space leaks lead to slower execution due to heavy garbage collector activity, and may even cause the program to run out of memory altogether."
+    source: https://downloads.haskell.org/ghc/latest/docs/users_guide/profiling.html
+  - what: "Haskell is known for catching mistakes before a program runs, yet head, the basic function that takes the first item of a list, crashes on an empty list. The base 4.22 documentation warns about it, and the program fails only once that empty list shows up."
+    quote: "This is a partial function, it throws an error on empty lists."
+    source: https://hackage-content.haskell.org/package/base-4.22.0.0/docs/Data-List.html
+  - what: "New versions of GHC, the main Haskell compiler, regularly turn old code into errors. In GHC 9.10, for example, using forall as a name stopped compiling, so libraries that used it had to change before anyone could upgrade."
+    quote: "Using forall as an identifier is now a parse error"
+    source: https://downloads.haskell.org/ghc/9.10.1/docs/users_guide/9.10.1-notes.html
 born_from: >-
   In September 1987 a meeting at the FPCA conference in Portland, Oregon, faced more than a dozen non-strict, purely functional languages with similar power and agreed that a committee should design one common language. The most mature of them, Miranda, was a commercial product of David Turner's company, and Turner declined to let the committee adopt it as the starting point.
 reacts_to: [miranda, ml]

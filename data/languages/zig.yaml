@@ -6,6 +6,16 @@ org: Zig Software Foundation
 type: systems
 status: alive
 tagline: "Systems language meant to replace C, with no hidden control flow or hidden allocations."
+hurts:
+  - what: "Zig got its first official package manager, the tool that fetches other people's code, only in version 0.11. The Zig team itself said it was in its early stages and would likely change a lot before version 1.0."
+    quote: "The package manager is in its early stages, and will likely undergo significant changes before 1.0."
+    source: https://ziglang.org/download/0.11.0/release-notes.html
+  - what: "Zig has not reached version 1.0, and new releases break code that worked before. The notes for Zig 0.16 say outright that it brings a lot of breaking changes, so every update means editing your project."
+    quote: "Although it's a lot of breaking changes, unlike \"writergate\", this changeset is expected to be generally easy for Zig programmers to manage, because it does not require much critical thinking."
+    source: https://ziglang.org/download/0.16.0/release-notes.html
+  - what: "Zig's release notes for 0.15 say the compiler still has known bugs, including ones that build wrong programs. They add that a serious project may need you to take part in Zig's own development."
+    quote: "Even with Zig 0.15.x, working on a non-trivial project using Zig may require participating in the development process."
+    source: https://ziglang.org/download/0.15.1/release-notes.html
 born_from: >-
   Andrew Kelley designed Zig to replace C while keeping C's binary interface, so existing C libraries still link. The Zig project argues that C++, Rust and D have so many features that programmers end up debugging their knowledge of the language instead of the application.
 reacts_to: [c, cpp, rust, d]

@@ -5,6 +5,16 @@ creators: [Rasmus Lerdorf, Zeev Suraski, Andi Gutmans]
 type: web
 status: alive
 tagline: "Server-side scripting language for web pages and web applications."
+hurts:
+  - what: "Each PHP version gets two years of full fixes and then two years of security fixes only. PHP 8.2, released in December 2022, gets security fixes until 31 December 2026, so every PHP site has to plan an upgrade every few years."
+    quote: "After this two year period of active support, each branch is then supported for two additional years for critical security issues only."
+    source: https://www.php.net/supported-versions.php
+  - what: "PHP 8.0 removed create_function() and other old features, so older code can stop working right after an upgrade."
+    quote: "create_function() has been removed."
+    source: https://www.php.net/manual/en/migration80.incompatible.php
+  - what: "In 2024 Patchstack, a WordPress security company, counted 7,966 new security holes in the WordPress world, most of them in third-party plugins, the add-ons that site owners install themselves."
+    quote: "In 2024, 7,966 new vulnerabilities were found in the WordPress ecosystem, primarily in third-party plugins."
+    source: https://patchstack.com/whitepaper/state-of-wordpress-security-in-2025/
 born_from: >-
   In 1994 Rasmus Lerdorf wrote a set of small CGI programs in C to track visits to his online résumé. He called the collection Personal Home Page Tools and released its source publicly in June 1995. In 1997 Zeev Suraski and Andi Gutmans began rewriting its parser for an e-commerce application they were building for a university project, and PHP 3.0 was announced in June 1998.
 reacts_to: [c]

@@ -18,6 +18,8 @@ const validate = ajv.compile(schema);
 const SLOTS = schema.properties.slots.items.properties.slot.enum;
 const REQUIRED_HEADINGS = ["## Why it exists", "## What it trades away", "## Where it won"];
 const MARKETING = /\b(modern|powerful|elegant|blazing(ly)?|robust|beloved|cutting-edge|next-generation)\b/i;
+// Words that make a "hurts" item read like a blog post instead of a plain account.
+const DRAMA = /\b(nightmares?|hell|notorious(ly)?|infamous(ly)?|dreaded|plagues?|headaches?|gotchas?|footguns?|pitfalls?|beware|crucial|game[- ]changer|delve|landscape|journey|seamless(ly)?)\b/i;
 const isUri = (s) => typeof s === "string" && /^https?:\/\/\S+$/.test(s);
 
 let failures = 0;
@@ -83,6 +85,15 @@ for (const file of files) {
   if (twice.length) fail(file, `slots listed twice: ${twice.join(", ")}`);
   const texts = { tagline: card.tagline, born_from: card.born_from, cost: card.tradeoffs?.cost };
   for (const s of card.slots ?? []) texts[`slots/${s.slot}`] = s.note;
+  (card.hurts ?? []).forEach((h, i) => {
+    texts[`hurts/${i}`] = h.what;
+    if (!/\d/.test(h.what ?? "")) fail(file, `hurts/${i} names no version, number or date`);
+    const d = h.what?.match(DRAMA);
+    if (d) fail(file, `hurts/${i} uses "${d[0]}": say what happens instead`);
+    if (/!/.test(h.what ?? "")) fail(file, `hurts/${i} has an exclamation mark`);
+  });
+  const hurtSources = (card.hurts ?? []).map((h) => h.source);
+  if (new Set(hurtSources).size < Math.min(3, hurtSources.length)) fail(file, `hurts need at least 3 different sources`);
   for (const [field, text] of Object.entries(texts)) {
     const m = text?.match(MARKETING);
     if (m) fail(file, `${field} uses a marketing word: "${m[0]}"`);

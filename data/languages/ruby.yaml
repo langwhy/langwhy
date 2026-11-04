@@ -5,6 +5,16 @@ creators: [Yukihiro Matsumoto]
 type: web
 status: alive
 tagline: "Object-oriented scripting language, best known for the Rails web framework."
+hurts:
+  - what: "Ruby's first speed-up engine, added in Ruby 2.6 in 2018, did not make real business websites faster. Shopify, which runs its online stores on Ruby, built a faster one, YJIT, which shipped with Ruby 3.1 in 2021."
+    quote: "But even though the Optcarrot benchmark has shown impressive speedups, the JIT has not benefited real world business applications."
+    source: https://www.ruby-lang.org/en/news/2021/12/25/ruby-3-1-0-released/
+  - what: "Rails 8.0 and 8.1, the main web framework for Ruby, need Ruby 3.2.0 or newer. An app on an older Ruby has to upgrade Ruby first, and only then Rails."
+    quote: "Rails 8.0 and 8.1 require Ruby 3.2.0 or newer."
+    source: https://guides.rubyonrails.org/upgrading_ruby_on_rails.html
+  - what: "Each Ruby version gets fixes for only a few years. Ruby 3.0 reached end-of-life on 23 April 2024, and since then it gets no fixes at all, not even for security holes."
+    quote: "eol (end-of-life): Branch is not supported by the ruby-core team any longer and does not receive any fixes."
+    source: https://www.ruby-lang.org/en/downloads/branches/
 born_from: >-
   Yukihiro Matsumoto, known as Matz, began Ruby in 1993 and released it publicly in 1995. He wanted a scripting language more capable than Perl and more object-oriented than Python, and he designed it so that programmers would be happy using it.
 reacts_to: [perl, python, smalltalk, lisp]

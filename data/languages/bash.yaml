@@ -7,6 +7,19 @@ org: "GNU Project, maintained by Chet Ramey"
 type: shell
 status: stable
 tagline: "Command language and shell of the GNU Project, for running programs and writing scripts."
+hurts:
+  - what: "In 2014 a hole called Shellshock (CVE-2014-6271) in Bash 4.3 and older let attackers run their own commands on a server just by sending it text that Bash read as a setting."
+    quote: "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment"
+    source: https://ubuntu.com/security/CVE-2014-6271
+  - what: "Bash splits text at spaces unless it is inside double quotes, so a file named 2025 report.txt reaches a command as two names, 2025 and report.txt. A script that forgets the quotes breaks on the first file with a space in its name."
+    quote: "The shell scans the results of parameter expansion, command substitution, and arithmetic expansion that did not occur within double quotes for word splitting."
+    source: https://www.gnu.org/software/bash/manual/bash.html
+  - what: "Many scripts start with set -e so they stop at the first failed command. The Bash 5.3 manual lists cases where it does not stop, for example when the failed command is the test of an if, and the script carries on as if nothing happened."
+    quote: "The shell does not exit if the command that fails is part of the command list immediately following a while or until reserved word, part of the test in an if statement"
+    source: https://www.gnu.org/software/bash/manual/bash.html
+  - what: "Since macOS 10.15 a Mac's default command shell is zsh, not Bash, and Apple says zsh is only mostly compatible with Bash. A script that works on a Linux server can behave differently on a Mac."
+    quote: "zsh is highly compatible with the Bourne shell (sh) and mostly compatible with bash, with some differences."
+    source: https://support.apple.com/en-us/HT208050
 born_from: >-
   In 1989 Brian Fox, an employee of the Free Software Foundation, began Bash as a free alternative to the Bourne shell for the GNU Project. The Bourne shell, sh, came from Steve Bourne at Bell Labs, and Bash was meant to stay compatible with it while adding the interactive features of the Korn shell (ksh) and the C shell (csh).
 reacts_to: [sh, ksh]

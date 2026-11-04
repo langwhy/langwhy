@@ -6,6 +6,16 @@ org: Oracle
 type: backend
 status: alive
 tagline: "Language for server and enterprise software, compiled to bytecode that runs on the Java virtual machine."
+hurts:
+  - what: "Oracle sells its Java SE subscription, the paid licence with updates, per employee rather than per computer. For a company with 3,000 or more employees the price starts at $10.50 per employee per month."
+    quote: "For organizations with 3,000 or more employees, Enterprise Pricing starts at $10.50 per employee per month."
+    source: https://www.oracle.com/java/technologies/java-se-subscription-faq.html
+  - what: "In 2021 a hole called Log4Shell (CVE-2021-44228) was found in Log4j, a logging library inside a huge number of Java programs. An attacker could make a server run their code, so companies had to find and update every program that contained Log4j."
+    quote: "JNDI lookup can be exploited to execute arbitrary code loaded from an LDAP server"
+    source: https://logging.apache.org/log4j/2.x/security.html
+  - what: "Java 11 removed nine parts that used to come with Java, such as the tools for XML web services. Old programs that used them stopped starting until someone added those parts back as separate libraries."
+    quote: "In Java SE 11, the nine modules that are listed above will be removed: Their source code will be deleted from the OpenJDK repository."
+    source: https://openjdk.org/jeps/320
 born_from: >-
   James Gosling started Oak at Sun Microsystems in April 1991 for the Green Project, which was looking for a use for smart consumer electronics such as cable set-top boxes. The devices used different processors and had very little memory. The team began with C++ with some fixes, and Gosling later said the way they addressed programming was causing cost issues for many of the manufacturers.
 reacts_to: [cpp]

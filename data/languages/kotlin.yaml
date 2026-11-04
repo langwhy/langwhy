@@ -6,6 +6,16 @@ org: JetBrains
 type: mobile
 status: alive
 tagline: "Statically typed language for JVM and Android apps that compiles alongside existing Java code."
+hurts:
+  - what: "A Kotlin project is built with Gradle, a separate tool, and each Kotlin version works only with certain Gradle versions. Kotlin 2.4.21 needs at least Gradle 7.6.3, so updating one often means updating the other, and Android's build plugin too."
+    quote: "For example, the Kotlin Gradle plugin and the kotlin-multiplatform plugin 2.4.21 require the minimum Gradle version of 7.6.3 for your project to compile."
+    source: https://kotlinlang.org/docs/gradle-configure-project.html
+  - what: "Kotlin 2.0 came with a new compiler, K2, and slightly different rules. Some code that built without errors on Kotlin 1.9 stops building on 2.0, so a team has to work through a list of changes before it can upgrade."
+    quote: "source-incompatible change stops code that used to compile fine (without errors or warnings) from compiling anymore"
+    source: https://kotlinlang.org/docs/compatibility-guide-20.html
+  - what: "Kotlin Multiplatform lets one team write an app for both Android and iPhone, but the iPhone version can only be built on a Mac with Xcode, Apple's tool. A team that works on Windows or Linux computers still needs at least 1 Mac."
+    quote: "To create iOS applications, you need a macOS machine with Xcode installed."
+    source: https://kotlinlang.org/docs/multiplatform/quickstart.html
 born_from: >-
   In July 2011 JetBrains said that none of the existing JVM languages met its needs. Its development lead, Dmitry Jemerov, said that Scala has the right features but its most obvious deficiency is very slow compilation, so the new language had to be Java-compatible, more concise than Java and safer against null pointer errors.
 reacts_to: [java, scala]

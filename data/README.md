@@ -50,6 +50,28 @@ Other ids you may reference before a card exists: `algol`, `bcpl`, `simula`, `sm
 - `verified: false` until a human has checked every claim against its source. `last_reviewed` is
   the date of that check or of writing.
 
+## Where it hurts in practice (`hurts`)
+
+The part no textbook has: 3 to 6 problems a person only runs into once they really use the
+language. Installing libraries, moving to a new version, licences, waiting for builds, libraries
+taken over by attackers, finding people who know it, a platform that only one company controls.
+Not "it is slow" or "it has a garbage collector": that is the textbook part of the card.
+`data/languages/python.yaml` is the reference.
+
+- `what`: one or two sentences, as you would tell a friend who never programmed. Say what
+  happens, when, and what it costs. Name a version, company, number or date (the validator wants
+  a digit). No drama words (nightmare, hell, notorious, footgun, pitfall), no exclamation marks.
+- `quote`: a sentence copied word for word from the source that backs the claim, 20 to 300
+  characters. Shorten it only by cutting the start or the end, never the middle.
+- `source`: first hand. The language's own docs or release notes, its issue tracker or mailing
+  list, the company that hit the problem, a survey. Not news sites, not Wikipedia, not AI summaries.
+- At least 3 different sources per card. Put `hurts` right after `tagline`.
+
+`pnpm check:quotes` downloads every source and checks each quote is on the page (`node
+scripts/check-quotes.mjs go` for one card). To pick a quote, list the sentences that contain a
+word: `node scripts/check-quotes.mjs --find <url> <word>`. A page that only renders in the browser,
+blocks the download or sits behind a login can't be checked: find another source.
+
 ## Slots
 
 | Slot | What it covers |
@@ -105,4 +127,5 @@ Flow style (`- { what: ..., source: ... }`) breaks on the first comma inside a v
 ```
 pnpm validate            # everything
 node scripts/validate.mjs go rust   # only these cards
+pnpm check:quotes        # every hurts quote is on its source page (needs the network)
 ```

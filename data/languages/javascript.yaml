@@ -6,6 +6,16 @@ org: "Ecma International (TC39)"
 type: web
 status: alive
 tagline: "The language that runs inside web browsers, and on servers through Node.js."
+hurts:
+  - what: "On 22 March 2016 the author of left-pad, a tiny library, removed it from npm, the shared store for JavaScript libraries. Projects that used it, often without knowing, failed to build at a rate of hundreds per minute."
+    quote: "Shortly after 2:30 PM (Pacific Time) on Tuesday, March 22, we began observing hundreds of failures per minute, as dependent projects — and their dependents, and their dependents… — all failed when requesting the now-unpublished package."
+    source: https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm
+  - what: "In October 2021 an attacker published three versions of ua-parser-js, an npm library, with malware inside. GitHub's advisory says any computer that installed or ran it should be considered fully compromised."
+    quote: "The npm package ua-parser-js had three versions published with malicious code."
+    source: https://github.com/advisories/GHSA-pjwm-rvh2-c87w
+  - what: "Each Node.js version, the program that runs JavaScript on servers, gets fixes for 36 months. Node.js 18 reached end of life on 30 April 2025, so apps still on it had to move to a newer version or run without security fixes."
+    quote: "Every release line receives 30 months of Long Term Support, for a total of 36 months from its first Current release to End-of-Life."
+    source: https://github.com/nodejs/Release
 born_from: >-
   In May 1995 Brendan Eich was building a scripting language for Netscape Navigator, a prototype first called Mocha that was embedded in Navigator 2.0. Netscape decided it needed two languages for two mostly separate audiences, and management required the browser one to look like Java. Eich built its core from Scheme-style first-class functions and Self-style prototypes.
 reacts_to: [scheme, self, java]

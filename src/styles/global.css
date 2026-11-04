@@ -64,6 +64,10 @@ footer.site a { color: var(--muted); text-decoration: underline; }
 a.term { color: inherit; text-decoration: underline dotted var(--muted); text-decoration-thickness: 1px; text-underline-offset: .2em; }
 a.term:hover, a.term:focus-visible { text-decoration-color: var(--accent); text-decoration-style: solid; }
 a.reason { font-weight: 600; color: var(--fg); }
+.hurts { list-style: none; padding: 0; margin: 0; }
+.hurts li { padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.hurts .said { display: block; margin-top: .25rem; color: var(--muted); font-size: .9rem; }
+.hurts .said a { color: var(--muted); }
 .whynot { list-style: none; padding: 0; margin: 0; }
 .whynot li { padding: .5rem 0; border-bottom: 1px solid var(--line); }
 .whynot .slotname { display: block; font-size: .9rem; color: var(--muted); }

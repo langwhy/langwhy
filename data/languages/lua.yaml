@@ -9,6 +9,16 @@ org: "PUC-Rio, Rio de Janeiro"
 type: scripting
 status: alive
 tagline: "Embeddable scripting language for adding logic and configuration to a host program."
+hurts:
+  - what: "In Lua 5.4, asking for the length of a list with a gap in it can give more than one right answer. The manual's own example, the values 10, 20, 30, nothing, 50, may report a length of 3 or of 5."
+    quote: "The table {10,20,30,nil,50} has two borders (3 and 5), and therefore it is not a sequence."
+    source: https://www.lua.org/manual/5.4/manual.html
+  - what: "Many games and tools use LuaJIT, a much faster version of Lua, and LuaJIT stays compatible with Lua 5.1 on purpose. Code written for a newer Lua, such as 5.4, often won't run there, so a project has to pick one side."
+    quote: "LuaJIT is API+ABI-compatible with Lua 5.1, which prevents implementing features that would otherwise break the Lua/C API and ABI"
+    source: https://luajit.org/extensions.html
+  - what: "Luau, the Lua variant used by Roblox, is based on Lua 5.1 but leaves out some features to keep scripts locked in. Code written for standard Lua may need changes before it runs in a Roblox game."
+    quote: "Luau is based on Lua 5.1, and as such incorporates all features of 5.1, except for ones that had to be taken out due to sandboxing limitations."
+    source: https://luau.org/compatibility
 born_from: >-
   In 1992 Petrobras, the Brazilian oil company, asked Tecgraf, the graphics lab at PUC-Rio, for data-entry front-ends for its engineers, and by 1993 Tecgraf had two small languages, DEL and SOL, for the job. DEL grew heavier each time users asked for conditionals and loops, and Brazil's market reserve, in force from 1977 to 1992, made buying customized software from abroad hard, so Tecgraf built its own tools and merged the two into one embeddable language.
 reacts_to: [scheme, modula]

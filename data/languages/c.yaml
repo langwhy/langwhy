@@ -5,6 +5,16 @@ creators: [Dennis Ritchie]
 type: systems
 status: stable
 tagline: Programming language for operating systems and other code that has to work close to the hardware.
+hurts:
+  - what: "In April 2014 a missing check in OpenSSL, the C library that encrypts much of the web's traffic, let anyone on the internet read pieces of a server's memory. Those pieces could hold users' passwords and the secret keys that protect the connection."
+    quote: "This compromises the secret keys used to identify the service providers and to encrypt the traffic, the names and passwords of the users and the actual content."
+    source: https://heartbleed.com/
+  - what: "In 2022 the US National Security Agency advised moving away from languages like C that let a program touch memory it should not. Its press release says Microsoft and Google each trace about 70 percent of their security holes to such memory bugs."
+    quote: "Microsoft and Google have each stated that software memory safety issues are behind around 70 percent of their vulnerabilities."
+    source: https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/3215760/nsa-releases-guidance-on-how-to-protect-against-software-memory-safety-issues/
+  - what: "When a whole number in C grows past the largest value it can hold, the C standard does not say what happens. The LLVM compiler team explained in 2011 that compilers use this freedom to make programs faster, so a program with such a bug can do things its author never wrote."
+    quote: "If arithmetic on an 'int' type (for example) overflows, the result is undefined. One example is that \"INT_MAX+1\" is not guaranteed to be INT_MIN. This behavior enables certain classes of optimizations that are important for some code."
+    source: https://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html
 born_from: >-
   In 1969 Ken Thompson created the B language at Bell Labs, and B had no types. The PDP-11's byte addressing exposed B's limits, so Dennis Ritchie added types, int and char, and wrote C, and in 1973 the Unix kernel was rewritten in it.
 reacts_to: [b, bcpl]

@@ -6,6 +6,16 @@ org: Microsoft
 type: backend
 status: alive
 tagline: "Language for building .NET applications, from web services and desktop apps to Unity game scripts."
+hurts:
+  - what: "Microsoft supports odd-numbered .NET versions, such as .NET 9, for only two years. A team on one of them has to move to a newer .NET within that time to keep getting security fixes."
+    quote: "Odd numbered releases are STS releases that get free support and patches for two years."
+    source: https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core
+  - what: "Microsoft retired Visual Studio for Mac, its C# editor for Apple computers, on 31 August 2024. It gets no security fixes since then, so people who wrote C# on a Mac had to move to another editor."
+    quote: "Visual Studio for Mac has been retired as of August 31, 2024 in accordance with Microsoft’s Modern Lifecycle Policy."
+    source: https://learn.microsoft.com/en-sg/lifecycle/announcements/visual-studio-mac-end-of-servicing
+  - what: "Unity, the engine many C# games are made with, planned a new charge called the Runtime Fee, which studios had to budget for. Unity cancelled the fee for games on 12 September 2024, after what it calls deep consultation with its community."
+    quote: "Unity Pro and Unity Enterprise: We’ll be modifying subscription pricing and the qualifying annual revenue thresholds, effective January 1, 2025."
+    source: https://unity.com/blog/unity-is-canceling-the-runtime-fee
 born_from: >-
   In January 1999 Anders Hejlsberg, who had designed Turbo Pascal and Delphi and worked on Visual
   J++, formed a team at Microsoft to build a new language for the .NET runtime, first called COOL.

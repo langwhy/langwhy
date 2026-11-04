@@ -12,6 +12,7 @@
     "type",
     "status",
     "tagline",
+    "hurts",
     "born_from",
     "reacts_to",
     "tradeoffs",
@@ -92,6 +93,40 @@
       "minLength": 20,
       "maxLength": 140,
       "description": "One sentence: what it is for. No adjectives like modern, powerful, elegant."
+    },
+    "hurts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "description": "Where it hurts in practice: problems people only hit once they really use the language. Plain words for someone who never programmed, each naming a version, company, number or date, each with a verbatim quote from a first-hand source.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "what",
+          "quote",
+          "source"
+        ],
+        "properties": {
+          "what": {
+            "type": "string",
+            "minLength": 40,
+            "maxLength": 300,
+            "description": "One or two plain sentences: what goes wrong, when, and what it costs you."
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 300,
+            "description": "A sentence copied word for word from the source that backs the claim. scripts/check-quotes.mjs finds it on the page."
+          },
+          "source": {
+            "type": "string",
+            "format": "uri",
+            "description": "First-hand: official docs, the issue tracker, the company that hit it, or a survey."
+          }
+        }
+      }
     },
     "born_from": {
       "type": "string",

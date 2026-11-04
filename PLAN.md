@@ -127,6 +127,16 @@ stroj, ľahko sa pomýliť nebezpečne, nikto nepostavil nástroje, stavaný na 
 než práca potrebuje), vetu pre laika a zdroj. Stránka `/basics/` vysvetľuje teóriu bez
 programovania a pod každým dôvodom ukazuje skutočné príklady z kariet.
 
+### Kde to v praxi bolí (2026-11-04)
+
+Karchi: „okrem toho, že vysvetľuje všetky veci ako učebnica, čo nikto nepotrebuje, potrebuje
+pochopiť, prečo čo nefunguje, to čo sa nehovorí u ostatných“. Každá karta preto začína hneď pod
+úvodnou vetou sekciou `hurts`: 3 až 6 problémov, na ktoré človek narazí až pri skutočnom
+používaní (upgrade, knižnice, licencia, kompilácia, napadnuté balíčky, ľudia). Každý menuje
+verziu, firmu, číslo alebo dátum a má doslovnú citáciu zo zdroja z prvej ruky;
+`pnpm check:quotes` stiahne zdroje a citácie overí. Učebnicové časti ostávajú nižšie. Príbehy
+„kto odišiel a prečo“ Karchi zamietol ako AI klišé.
+
 ### Prelinkovanie ako wiki (2026-10-31)
 
 Každá zmienka jazyka s kartou v hocijakom texte je odkaz na jeho kartu, každé odborné slovo

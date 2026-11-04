@@ -5,6 +5,19 @@ creators: [Guido van Rossum]
 type: scripting
 status: alive
 tagline: "General-purpose language for scripts, automation, web backends and data analysis."
+hurts:
+  - what: "On Debian 12 (2023), pip install, the usual command for adding a Python library, stops with an error. You first have to set up a separate folder for each project's libraries, called a virtual environment."
+    quote: "The Debian provided python3 interpreter packages (python3.11 and pypy3) are now marked as being externally-managed, following PEP-668."
+    source: https://www.debian.org/releases/bookworm/amd64/release-notes/ch-information.en.html
+  - what: "Python 3 came out in 2008, and code written for Python 2 needed changes to run on it. The Python team planned to stop fixing Python 2 in 2015, then had to wait until 1 January 2020 because so many projects had not moved."
+    quote: "So, in 2008, we announced that we would sunset Python 2 in 2015, and asked people to upgrade before then."
+    source: https://www.python.org/doc/sunset-python-2/
+  - what: "Anyone can publish a library on PyPI, the shared store that pip installs from. In May 2023 fake libraries carrying malware arrived faster than PyPI's administrators could remove them, so PyPI stopped accepting new accounts and new projects until the next day."
+    quote: "The volume of malicious users and malicious projects being created on the index in the past week has outpaced our ability to respond to it in a timely fashion"
+    source: https://status.python.org/incidents/qy2t9mjjcc7g
+  - what: "A Python program runs its Python code on one processor core at a time, even on a laptop with 12 cores, because of a lock called the GIL. Python 3.13 (2024) offers a version without the lock, but only as an experiment."
+    quote: "CPython's global interpreter lock (\"GIL\") prevents multiple threads from executing Python code at the same time."
+    source: https://peps.python.org/pep-0703/
 born_from: >-
   In December 1989 Guido van Rossum, a programmer on the Amoeba distributed operating system at CWI, started a hobby project to fill the week around Christmas. Amoeba needed a scripting language, and he wanted an interpreted language for writing and testing its administration scripts. He drew on ABC, a language he had worked on that was intended for non-technical users.
 reacts_to: [abc, c, modula-3]

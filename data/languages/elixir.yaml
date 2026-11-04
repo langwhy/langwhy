@@ -5,6 +5,16 @@ creators: [José Valim]
 type: backend
 status: alive
 tagline: "Functional language for concurrent server applications that runs on the Erlang virtual machine (BEAM)."
+hurts:
+  - what: "Elixir doesn't check types before a program runs. Elixir 1.17 (June 2024) started adding type checks, but for now they only show warnings, so many mistakes still turn up while the program is running."
+    quote: "At the moment, Elixir developers will interact with set-theoretic types only through warnings found by the type system."
+    source: https://elixir-lang.org/blog/2024/06/12/elixir-v1-17-0-released/
+  - what: "For number-heavy work such as machine learning, Elixir programmers have to add Nx, a separate library that only became public in February 2021."
+    quote: "Nx is a multi-dimensional tensors library for Elixir with multi-staged compilation to the CPU/GPU."
+    source: https://dashbit.co/blog/nx-numerical-elixir-is-now-publicly-available
+  - what: "Elixir runs on Erlang's runtime, which releases a new major version every year. Each Elixir version supports only a few of them, Elixir 1.17 supports Erlang/OTP 25 to 27, so upgrading Elixir can force an Erlang upgrade too."
+    quote: "Erlang releases a new major version yearly."
+    source: https://hexdocs.pm/elixir/compatibility-and-deprecations.html
 born_from: >-
   In 2010 José Valim, a member of the Rails core team, was working on Rails thread-safety
   guarantees and came out convinced that solving concurrency problems in Ruby was too hard to keep

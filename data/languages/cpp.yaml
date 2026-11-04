@@ -5,6 +5,16 @@ creators: [Bjarne Stroustrup]
 type: systems
 status: alive
 tagline: "Compiled language that adds classes, templates and manual memory control to C."
+hurts:
+  - what: "In January 2025 CISA, the US cyber-defence agency, listed starting a new product for critical systems, such as power or water networks, in C or C++ as a dangerous practice when a memory-safe language would do the job."
+    quote: "The development of new product lines for use in service of critical infrastructure or NCFs in a memory-unsafe language (e.g., C or C++) where readily available alternative memory-safe languages could be used is dangerous"
+    source: https://www.cisa.gov/resources-tools/resources/product-security-bad-practices
+  - what: "C++ has no standard tool for installing libraries, which most newer languages come with. A 2018 paper to the C++ standards committee, P1254R0, points this out, and each team still chooses its own way to bring in other people's code."
+    quote: "C++ is notable among modern languages in not providing a package management system by which developers can easily install and reuse code developed by others into their own projects."
+    source: https://open-std.org/JTC1/SC22/WG21/docs/papers/2018/p1254r0.html
+  - what: "In the Standard C++ Foundation's 2024 survey of C++ developers, 45% called managing the libraries their program depends on a major pain, and 43% said the same about how long builds take."
+    quote: "Managing libraries my application depends on 45.43% 36.44% 18.14% 571 458 228 1,257 2.27 Build times 42.86%"
+    source: https://isocpp.org/files/papers/CppDevSurvey-2024-summary.pdf
 born_from: >-
   In 1979 Bjarne Stroustrup was using Simula, which had the classes he wanted, to simulate a distributed operating system. Simula ran too slowly for the job, so he set out to combine its classes with the speed of C, and the first version was called C with Classes.
 reacts_to: [c, simula]
