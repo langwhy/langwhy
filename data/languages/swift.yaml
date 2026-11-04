@@ -7,7 +7,7 @@ type: mobile
 status: alive
 tagline: Programming language for building apps on Apple platforms such as iOS and macOS.
 hurts:
-  - what: "Since 28 April 2026 Apple accepts app uploads only if they were built with Xcode 26 or later. An app made with an older Xcode has to be rebuilt with the new one before its next update can go out."
+  - what: "Since 28 April 2026 Apple accepts iPhone app uploads only if they were built with Xcode 26 or later, Xcode being Apple's tool for building apps. An app made with an older Xcode has to be rebuilt with the new one before its next update can go out."
     quote: "Apps uploaded to App Store Connect must be built with Xcode 26 or later using an SDK for iOS 26"
     source: https://developer.apple.com/news/upcoming-requirements/
   - what: "Swift 6 brought strict checks for data races, bugs where two parts of a program change the same data at once. A project can stay in the old mode, but switching means fixing everything the new checks find."

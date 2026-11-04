@@ -7,7 +7,7 @@ type: backend
 status: alive
 tagline: "Language for building .NET applications, from web services and desktop apps to Unity game scripts."
 hurts:
-  - what: "Microsoft supports odd-numbered .NET versions, such as .NET 9, for only two years. A team on one of them has to move to a newer .NET within that time to keep getting security fixes."
+  - what: "C# programs run on .NET, Microsoft's platform, and Microsoft supports odd-numbered .NET versions, such as .NET 9, for only two years. A team on one of them has to move to a newer .NET within that time to keep getting security fixes."
     quote: "Odd numbered releases are STS releases that get free support and patches for two years."
     source: https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core
   - what: "Microsoft retired Visual Studio for Mac, its C# editor for Apple computers, on 31 August 2024. It gets no security fixes since then, so people who wrote C# on a Mac had to move to another editor."

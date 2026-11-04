@@ -13,7 +13,7 @@ hurts:
   - what: "In 2021 a hole called Log4Shell (CVE-2021-44228) was found in Log4j, a logging library inside a huge number of Java programs. An attacker could make a server run their code, so companies had to find and update every program that contained Log4j."
     quote: "JNDI lookup can be exploited to execute arbitrary code loaded from an LDAP server"
     source: https://logging.apache.org/log4j/2.x/security.html
-  - what: "Java 11 removed nine parts that used to come with Java, such as the tools for XML web services. Old programs that used them stopped starting until someone added those parts back as separate libraries."
+  - what: "Java 11 removed nine parts that used to come with Java, such as the tools for exchanging data with other programs over the web. Old programs that used them stopped starting until someone added those parts back as separate libraries."
     quote: "In Java SE 11, the nine modules that are listed above will be removed: Their source code will be deleted from the OpenJDK repository."
     source: https://openjdk.org/jeps/320
 born_from: >-

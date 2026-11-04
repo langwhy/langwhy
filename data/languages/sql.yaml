@@ -9,13 +9,13 @@ type: query
 status: alive
 tagline: "Declarative language for defining, changing and querying data in relational databases."
 hurts:
-  - what: "In a database a missing value is called NULL, and in PostgreSQL 7 = NULL gives NULL, meaning unknown, not false. A search for rows equal to 7 silently skips every row where the value is missing, and no error tells you."
+  - what: "In a database a missing value is called NULL, and in the PostgreSQL database 7 = NULL gives NULL, meaning unknown, not false. A search for rows equal to 7 silently skips every row where the value is missing, and no error tells you."
     quote: "For example, 7 = NULL yields null, as does 7 <> NULL."
     source: https://www.postgresql.org/docs/current/functions-comparison.html
-  - what: "SQL injection happens when a program pastes text typed by a user straight into a database command and that text changes the command. In OWASP's 2021 list of web security risks injection is third, and 94% of the apps tested were checked for some form of it."
+  - what: "SQL injection happens when a program pastes text typed by a user straight into a database command and that text changes the command. In the 2021 list of web security risks from OWASP, a security nonprofit, injection is third, and 94% of the apps tested were checked for some form of it."
     quote: "94% of the applications were tested for some form of injection"
     source: https://owasp.org/Top10/2021/A03_2021-Injection/index.html
-  - what: "Moving a PostgreSQL database to the next big version, such as from 16 to 17, can change how the data is stored on disk, so the upgrade takes a dump and reload or a special tool rather than a simple update."
+  - what: "Moving a PostgreSQL database to the next big version, such as from 16 to 17, can change how the data is stored on disk, so you have to export and re-import all the data or run a special upgrade tool instead of a simple update."
     quote: "For major releases of PostgreSQL, the internal data storage format is subject to change, thus complicating upgrades."
     source: https://www.postgresql.org/docs/current/upgrading.html
   - what: "In Oracle Database 23 an empty piece of text is stored as NULL, so empty and missing can't be told apart, and code written for another database can behave differently on Oracle."

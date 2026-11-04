@@ -7,13 +7,13 @@ type: web
 status: alive
 tagline: "Static types for JavaScript code, removed at compile time so the output is plain JavaScript."
 hurts:
-  - what: "TypeScript checks a big project slowly: on the 1.5 million lines of VS Code its compiler takes 77.8 seconds. In March 2025 Microsoft started rewriting the compiler in Go to make most builds about 10 times faster."
+  - what: "TypeScript checks a big project slowly: on the 1.5 million lines of VS Code, Microsoft's code editor, its compiler takes 77.8 seconds. In March 2025 Microsoft started rewriting the compiler in Go to make most builds about 10 times faster."
     quote: "The native implementation will drastically improve editor startup, reduce most build times by 10x, and substantially reduce memory usage."
     source: https://devblogs.microsoft.com/typescript/typescript-native-port/
   - what: "TypeScript 6.0 turned on its stricter checks by default. A project that relied on the old, looser default has to switch them off in its settings file, tsconfig.json, or fix every new error."
     quote: "If you were relying on the previous default of false, you’ll need to explicitly set \"strict\": false in your tsconfig.json."
     source: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html
-  - what: "Since Node.js 24.12 you can run a TypeScript file directly, but Node.js only blanks out the types and checks nothing. The checking still needs its own step, and while the program runs, nothing compares data from a form or a server with the types."
+  - what: "Since version 24.12, Node.js, the program that runs JavaScript on servers, can run a TypeScript file directly, but it only blanks out the types and checks nothing. The checking still needs its own step, and while the program runs, nothing compares data from a form or a server with the types."
     quote: "Node.js will replace TypeScript syntax with whitespace, and no type checking is performed."
     source: https://nodejs.org/api/typescript.html
 born_from: >-
