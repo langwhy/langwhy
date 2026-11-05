@@ -1,0 +1,12 @@
+id: elm
+pldb: elm
+rank: 58
+appeared:
+  value: 2012
+  source: https://pldb.io/concepts/elm.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Evan Czaplicki
+  source: https://pldb.io/concepts/elm.html
+  checked: 2026-11-05

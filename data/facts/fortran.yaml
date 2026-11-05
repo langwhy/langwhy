@@ -1,0 +1,12 @@
+id: fortran
+pldb: fortran
+rank: 49
+appeared:
+  value: 1957
+  source: https://pldb.io/concepts/fortran.html
+  checked: 2026-11-05
+creators:
+  value:
+    - John Backus
+  source: https://pldb.io/concepts/fortran.html
+  checked: 2026-11-05

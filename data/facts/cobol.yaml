@@ -1,0 +1,18 @@
+id: cobol
+pldb: cobol
+rank: 40
+appeared:
+  value: 1959
+  source: https://pldb.io/concepts/cobol.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Howard Bromberg
+    - Norman Discount
+    - Vernon Reeves
+    - Jean E. Sammet
+    - William Selden
+    - Gertrude Tierney
+    - Grace Hopper
+  source: https://pldb.io/concepts/cobol.html
+  checked: 2026-11-05

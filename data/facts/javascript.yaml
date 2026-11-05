@@ -1,0 +1,13 @@
+id: javascript
+pldb: javascript
+rank: 1
+card: javascript
+appeared:
+  value: 1995
+  source: https://pldb.io/concepts/javascript.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Brendan Eich
+  source: https://pldb.io/concepts/javascript.html
+  checked: 2026-11-05

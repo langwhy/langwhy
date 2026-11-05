@@ -1,0 +1,13 @@
+id: solidity
+pldb: solidity
+rank: 38
+appeared:
+  value: 2014
+  source: https://pldb.io/concepts/solidity.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Christian Reitwiessner
+    - Alex Beregszaszi
+  source: https://pldb.io/concepts/solidity.html
+  checked: 2026-11-05

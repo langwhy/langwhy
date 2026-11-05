@@ -1,0 +1,12 @@
+id: ocaml
+pldb: ocaml
+rank: 67
+appeared:
+  value: 1996
+  source: https://pldb.io/concepts/ocaml.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Xavier Leroy
+  source: https://pldb.io/concepts/ocaml.html
+  checked: 2026-11-05

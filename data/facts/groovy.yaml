@@ -1,0 +1,12 @@
+id: groovy
+pldb: groovy
+rank: 64
+appeared:
+  value: 2003
+  source: https://pldb.io/concepts/groovy.html
+  checked: 2026-11-05
+creators:
+  value:
+    - James Strachan
+  source: https://pldb.io/concepts/groovy.html
+  checked: 2026-11-05

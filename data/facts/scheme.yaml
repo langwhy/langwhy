@@ -1,0 +1,13 @@
+id: scheme
+pldb: scheme
+rank: 61
+appeared:
+  value: 1975
+  source: https://pldb.io/concepts/scheme.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Guy Steele
+    - Gerald Jay Sussman
+  source: https://pldb.io/concepts/scheme.html
+  checked: 2026-11-05

@@ -1,0 +1,12 @@
+id: git
+pldb: git
+rank: 79
+appeared:
+  value: 2005
+  source: https://pldb.io/concepts/git.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Linus Torvalds
+  source: https://pldb.io/concepts/git.html
+  checked: 2026-11-05

@@ -1,0 +1,12 @@
+id: idris
+pldb: idris
+rank: 85
+appeared:
+  value: 2014
+  source: https://pldb.io/concepts/idris.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Edwin Brady
+  source: https://pldb.io/concepts/idris.html
+  checked: 2026-11-05

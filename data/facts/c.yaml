@@ -1,0 +1,13 @@
+id: c
+pldb: c
+rank: 2
+card: c
+appeared:
+  value: 1972
+  source: https://pldb.io/concepts/c.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Dennis Ritchie
+  source: https://pldb.io/concepts/c.html
+  checked: 2026-11-05

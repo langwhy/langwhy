@@ -1,0 +1,12 @@
+id: mathematica
+pldb: mathematica
+rank: 36
+appeared:
+  value: 1988
+  source: https://pldb.io/concepts/mathematica.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Stephen Wolfram
+  source: https://pldb.io/concepts/mathematica.html
+  checked: 2026-11-05

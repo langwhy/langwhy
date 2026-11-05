@@ -1,0 +1,15 @@
+id: go
+pldb: go
+rank: 11
+card: go
+appeared:
+  value: 2009
+  source: https://pldb.io/concepts/go.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Rob Pike
+    - Ken Thompson
+    - Robert Griesemer
+  source: https://pldb.io/concepts/go.html
+  checked: 2026-11-05

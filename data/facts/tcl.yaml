@@ -1,0 +1,12 @@
+id: tcl
+pldb: tcl
+rank: 77
+appeared:
+  value: 1988
+  source: https://pldb.io/concepts/tcl.html
+  checked: 2026-11-05
+creators:
+  value:
+    - John Ousterhout
+  source: https://pldb.io/concepts/tcl.html
+  checked: 2026-11-05

@@ -1,0 +1,13 @@
+id: php
+pldb: php
+rank: 10
+card: php
+appeared:
+  value: 1995
+  source: https://pldb.io/concepts/php.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Rasmus Lerdorf
+  source: https://pldb.io/concepts/php.html
+  checked: 2026-11-05

@@ -1,0 +1,13 @@
+id: arm
+pldb: arm
+rank: 100
+appeared:
+  value: 1985
+  source: https://pldb.io/concepts/arm.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Sophie Wilson
+    - Steve Furber
+  source: https://pldb.io/concepts/arm.html
+  checked: 2026-11-05

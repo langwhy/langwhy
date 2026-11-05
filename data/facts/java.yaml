@@ -1,0 +1,13 @@
+id: java
+pldb: java
+rank: 4
+card: java
+appeared:
+  value: 1995
+  source: https://pldb.io/concepts/java.html
+  checked: 2026-11-05
+creators:
+  value:
+    - James Gosling
+  source: https://pldb.io/concepts/java.html
+  checked: 2026-11-05

@@ -1,0 +1,13 @@
+id: elixir
+pldb: elixir
+rank: 29
+card: elixir
+appeared:
+  value: 2011
+  source: https://pldb.io/concepts/elixir.html
+  checked: 2026-11-05
+creators:
+  value:
+    - José Valim
+  source: https://pldb.io/concepts/elixir.html
+  checked: 2026-11-05

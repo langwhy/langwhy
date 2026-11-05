@@ -1,0 +1,12 @@
+id: perl
+pldb: perl
+rank: 8
+appeared:
+  value: 1987
+  source: https://pldb.io/concepts/perl.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Larry Wall
+  source: https://pldb.io/concepts/perl.html
+  checked: 2026-11-05

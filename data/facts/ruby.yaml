@@ -1,0 +1,13 @@
+id: ruby
+pldb: ruby
+rank: 9
+card: ruby
+appeared:
+  value: 1995
+  source: https://pldb.io/concepts/ruby.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Yukihiro Matsumoto
+  source: https://pldb.io/concepts/ruby.html
+  checked: 2026-11-05

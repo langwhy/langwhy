@@ -1,0 +1,12 @@
+id: brainfuck
+pldb: brainfuck
+rank: 98
+appeared:
+  value: 1993
+  source: https://pldb.io/concepts/brainfuck.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Urban Müller
+  source: https://pldb.io/concepts/brainfuck.html
+  checked: 2026-11-05

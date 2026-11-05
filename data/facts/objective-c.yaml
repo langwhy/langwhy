@@ -1,0 +1,12 @@
+id: objective-c
+pldb: objective-c
+rank: 34
+appeared:
+  value: 1984
+  source: https://pldb.io/concepts/objective-c.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Brad Cox
+  source: https://pldb.io/concepts/objective-c.html
+  checked: 2026-11-05

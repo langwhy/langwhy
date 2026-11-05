@@ -1,0 +1,13 @@
+id: python
+pldb: python
+rank: 3
+card: python
+appeared:
+  value: 1991
+  source: https://pldb.io/concepts/python.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Guido van Rossum
+  source: https://pldb.io/concepts/python.html
+  checked: 2026-11-05

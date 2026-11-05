@@ -1,0 +1,12 @@
+id: postgresql
+pldb: postgresql
+rank: 52
+appeared:
+  value: 1986
+  source: https://pldb.io/concepts/postgresql.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Marc G. Fournier
+  source: https://pldb.io/concepts/postgresql.html
+  checked: 2026-11-05

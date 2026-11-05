@@ -1,0 +1,12 @@
+id: deno
+pldb: deno
+rank: 90
+appeared:
+  value: 2018
+  source: https://pldb.io/concepts/deno.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Ryan Dahl
+  source: https://pldb.io/concepts/deno.html
+  checked: 2026-11-05

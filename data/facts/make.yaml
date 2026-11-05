@@ -1,0 +1,12 @@
+id: make
+pldb: make
+rank: 96
+appeared:
+  value: 1976
+  source: https://pldb.io/concepts/make.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Stuart Feldman
+  source: https://pldb.io/concepts/make.html
+  checked: 2026-11-05

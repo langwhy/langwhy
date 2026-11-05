@@ -1,0 +1,12 @@
+id: prolog
+pldb: prolog
+rank: 32
+appeared:
+  value: 1972
+  source: https://pldb.io/concepts/prolog.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Alain Colmerauer
+  source: https://pldb.io/concepts/prolog.html
+  checked: 2026-11-05

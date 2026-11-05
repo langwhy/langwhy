@@ -1,0 +1,12 @@
+id: purescript
+pldb: purescript
+rank: 75
+appeared:
+  value: 2013
+  source: https://pldb.io/concepts/purescript.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Phil Freeman
+  source: https://pldb.io/concepts/purescript.html
+  checked: 2026-11-05

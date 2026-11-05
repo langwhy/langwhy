@@ -1,0 +1,12 @@
+id: json5
+pldb: json5
+rank: 82
+appeared:
+  value: 2012
+  source: https://pldb.io/concepts/json5.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Aseem Kishore
+  source: https://pldb.io/concepts/json5.html
+  checked: 2026-11-05

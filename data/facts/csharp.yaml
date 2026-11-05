@@ -1,0 +1,13 @@
+id: csharp
+pldb: csharp
+rank: 16
+card: csharp
+appeared:
+  value: 2000
+  source: https://pldb.io/concepts/csharp.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Anders Hejlsberg
+  source: https://pldb.io/concepts/csharp.html
+  checked: 2026-11-05

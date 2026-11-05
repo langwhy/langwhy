@@ -1,0 +1,12 @@
+id: coq
+pldb: coq
+rank: 65
+appeared:
+  value: 1989
+  source: https://pldb.io/concepts/coq.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Thierry Coquand
+  source: https://pldb.io/concepts/coq.html
+  checked: 2026-11-05

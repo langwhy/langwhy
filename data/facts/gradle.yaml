@@ -1,0 +1,12 @@
+id: gradle
+pldb: gradle
+rank: 93
+appeared:
+  value: 2008
+  source: https://pldb.io/concepts/gradle.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Hans Dockter
+  source: https://pldb.io/concepts/gradle.html
+  checked: 2026-11-05

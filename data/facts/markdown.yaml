@@ -1,0 +1,13 @@
+id: markdown
+pldb: markdown
+rank: 43
+appeared:
+  value: 2004
+  source: https://pldb.io/concepts/markdown.html
+  checked: 2026-11-05
+creators:
+  value:
+    - John Gruber
+    - Aaron Swartz
+  source: https://pldb.io/concepts/markdown.html
+  checked: 2026-11-05

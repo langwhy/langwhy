@@ -1,0 +1,13 @@
+id: swift
+pldb: swift
+rank: 21
+card: swift
+appeared:
+  value: 2014
+  source: https://pldb.io/concepts/swift.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Chris Lattner
+  source: https://pldb.io/concepts/swift.html
+  checked: 2026-11-05

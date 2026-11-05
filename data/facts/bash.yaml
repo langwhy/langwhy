@@ -1,0 +1,13 @@
+id: bash
+pldb: bash
+rank: 19
+card: bash
+appeared:
+  value: 1989
+  source: https://pldb.io/concepts/bash.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Brian Fox
+  source: https://pldb.io/concepts/bash.html
+  checked: 2026-11-05

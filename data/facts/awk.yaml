@@ -1,0 +1,14 @@
+id: awk
+pldb: awk
+rank: 63
+appeared:
+  value: 1977
+  source: https://pldb.io/concepts/awk.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Alfred Aho
+    - Peter J. Weinberger
+    - Brian Kernighan
+  source: https://pldb.io/concepts/awk.html
+  checked: 2026-11-05

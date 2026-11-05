@@ -1,0 +1,14 @@
+id: haskell
+pldb: haskell
+rank: 26
+card: haskell
+appeared:
+  value: 1990
+  source: https://pldb.io/concepts/haskell.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Paul Hudak
+    - John Hughes
+  source: https://pldb.io/concepts/haskell.html
+  checked: 2026-11-05

@@ -1,0 +1,12 @@
+id: pascal
+pldb: pascal
+rank: 46
+appeared:
+  value: 1970
+  source: https://pldb.io/concepts/pascal.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Niklaus Wirth
+  source: https://pldb.io/concepts/pascal.html
+  checked: 2026-11-05

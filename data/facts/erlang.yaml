@@ -1,0 +1,14 @@
+id: erlang
+pldb: erlang
+rank: 31
+appeared:
+  value: 1986
+  source: https://pldb.io/concepts/erlang.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Joe Armstrong
+    - Robert Virding
+    - Mike Williams
+  source: https://pldb.io/concepts/erlang.html
+  checked: 2026-11-05

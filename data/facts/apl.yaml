@@ -1,0 +1,12 @@
+id: apl
+pldb: apl
+rank: 97
+appeared:
+  value: 1964
+  source: https://pldb.io/concepts/apl.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Kenneth E. Iverson
+  source: https://pldb.io/concepts/apl.html
+  checked: 2026-11-05

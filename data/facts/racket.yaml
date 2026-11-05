@@ -1,0 +1,15 @@
+id: racket
+pldb: racket
+rank: 42
+appeared:
+  value: 1994
+  source: https://pldb.io/concepts/racket.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Matthias Felleisen
+    - Matthew Flatt
+    - Robert Bruce Findler
+    - Shriram Krishnamurthi
+  source: https://pldb.io/concepts/racket.html
+  checked: 2026-11-05

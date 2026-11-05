@@ -1,0 +1,13 @@
+id: dart
+pldb: dart
+rank: 37
+card: dart
+appeared:
+  value: 2011
+  source: https://pldb.io/concepts/dart.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Lars Bak
+  source: https://pldb.io/concepts/dart.html
+  checked: 2026-11-05

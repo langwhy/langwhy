@@ -1,0 +1,12 @@
+id: wasm
+pldb: wasm
+rank: 45
+appeared:
+  value: 2015
+  source: https://pldb.io/concepts/wasm.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Alon Zakai
+  source: https://pldb.io/concepts/wasm.html
+  checked: 2026-11-05

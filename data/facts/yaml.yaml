@@ -1,0 +1,14 @@
+id: yaml
+pldb: yaml
+rank: 48
+appeared:
+  value: 2001
+  source: https://pldb.io/concepts/yaml.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Clark Evans
+    - Oren Ben-Kiki
+    - Ingy döt Net
+  source: https://pldb.io/concepts/yaml.html
+  checked: 2026-11-05

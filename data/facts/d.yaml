@@ -1,0 +1,13 @@
+id: d
+pldb: d
+rank: 57
+appeared:
+  value: 2001
+  source: https://pldb.io/concepts/d.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Walter Bright
+    - Andrei Alexandrescu
+  source: https://pldb.io/concepts/d.html
+  checked: 2026-11-05

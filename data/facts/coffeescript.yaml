@@ -1,0 +1,12 @@
+id: coffeescript
+pldb: coffeescript
+rank: 28
+appeared:
+  value: 2009
+  source: https://pldb.io/concepts/coffeescript.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Jeremy Ashkenas
+  source: https://pldb.io/concepts/coffeescript.html
+  checked: 2026-11-05

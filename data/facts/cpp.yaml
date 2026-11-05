@@ -1,0 +1,13 @@
+id: cpp
+pldb: cpp
+rank: 5
+card: cpp
+appeared:
+  value: 1985
+  source: https://pldb.io/concepts/cpp.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Bjarne Stroustrup
+  source: https://pldb.io/concepts/cpp.html
+  checked: 2026-11-05

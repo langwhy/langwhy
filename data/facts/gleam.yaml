@@ -1,0 +1,12 @@
+id: gleam
+pldb: gleam
+rank: 71
+appeared:
+  value: 2016
+  source: https://pldb.io/concepts/gleam.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Louis Pilfold
+  source: https://pldb.io/concepts/gleam.html
+  checked: 2026-11-05

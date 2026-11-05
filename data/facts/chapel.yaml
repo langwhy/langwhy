@@ -1,0 +1,15 @@
+id: chapel
+pldb: chapel
+rank: 62
+appeared:
+  value: 2004
+  source: https://pldb.io/concepts/chapel.html
+  checked: 2026-11-05
+creators:
+  value:
+    - David Callahan
+    - Hans Zima
+    - Brad Chamberlain
+    - John Plevyak
+  source: https://pldb.io/concepts/chapel.html
+  checked: 2026-11-05

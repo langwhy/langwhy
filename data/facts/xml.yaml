@@ -1,0 +1,17 @@
+id: xml
+pldb: xml
+rank: 12
+appeared:
+  value: 1996
+  source: https://pldb.io/concepts/xml.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Tim Bray
+    - Jean Paoli
+    - C. M. Sperberg-McQueen
+    - Eve Maler
+    - François Yergeau
+    - John W. Cowan
+  source: https://pldb.io/concepts/xml.html
+  checked: 2026-11-05

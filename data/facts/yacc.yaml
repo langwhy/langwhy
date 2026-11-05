@@ -1,0 +1,12 @@
+id: yacc
+pldb: yacc
+rank: 99
+appeared:
+  value: 1975
+  source: https://pldb.io/concepts/yacc.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Stephen C. Johnson
+  source: https://pldb.io/concepts/yacc.html
+  checked: 2026-11-05

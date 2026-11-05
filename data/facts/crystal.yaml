@@ -1,0 +1,14 @@
+id: crystal
+pldb: crystal
+rank: 53
+appeared:
+  value: 2014
+  source: https://pldb.io/concepts/crystal.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Ary Borenszweig
+    - Juan Wajnerman
+    - Brian Cardiff
+  source: https://pldb.io/concepts/crystal.html
+  checked: 2026-11-05

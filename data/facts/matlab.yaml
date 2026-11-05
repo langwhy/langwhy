@@ -1,0 +1,12 @@
+id: matlab
+pldb: matlab
+rank: 22
+appeared:
+  value: 1984
+  source: https://pldb.io/concepts/matlab.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Cleve Moler
+  source: https://pldb.io/concepts/matlab.html
+  checked: 2026-11-05

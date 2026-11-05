@@ -1,0 +1,12 @@
+id: json
+pldb: json
+rank: 13
+appeared:
+  value: 2001
+  source: https://pldb.io/concepts/json.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Douglas Crockford
+  source: https://pldb.io/concepts/json.html
+  checked: 2026-11-05

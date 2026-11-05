@@ -1,0 +1,13 @@
+id: mongodb
+pldb: mongodb
+rank: 83
+appeared:
+  value: 2009
+  source: https://pldb.io/concepts/mongodb.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Eliot Horowitz
+    - Dwight Merriman
+  source: https://pldb.io/concepts/mongodb.html
+  checked: 2026-11-05

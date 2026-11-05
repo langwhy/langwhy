@@ -1,0 +1,12 @@
+id: ada
+pldb: ada
+rank: 51
+appeared:
+  value: 1980
+  source: https://pldb.io/concepts/ada.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Jean Ichbiah
+  source: https://pldb.io/concepts/ada.html
+  checked: 2026-11-05

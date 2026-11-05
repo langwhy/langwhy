@@ -1,0 +1,12 @@
+id: liquid
+pldb: liquid
+rank: 81
+appeared:
+  value: 2008
+  source: https://pldb.io/concepts/liquid.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Tobias Lütke
+  source: https://pldb.io/concepts/liquid.html
+  checked: 2026-11-05

@@ -1,0 +1,12 @@
+id: rescript
+pldb: rescript
+rank: 84
+appeared:
+  value: 2020
+  source: https://pldb.io/concepts/rescript.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Hongbo Zhang
+  source: https://pldb.io/concepts/rescript.html
+  checked: 2026-11-05

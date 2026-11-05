@@ -1,0 +1,12 @@
+id: powershell
+pldb: powershell
+rank: 18
+appeared:
+  value: 2006
+  source: https://pldb.io/concepts/powershell.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Jeffrey Snover
+  source: https://pldb.io/concepts/powershell.html
+  checked: 2026-11-05

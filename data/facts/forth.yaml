@@ -1,0 +1,12 @@
+id: forth
+pldb: forth
+rank: 88
+appeared:
+  value: 1970
+  source: https://pldb.io/concepts/forth.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Charles H. Moore
+  source: https://pldb.io/concepts/forth.html
+  checked: 2026-11-05

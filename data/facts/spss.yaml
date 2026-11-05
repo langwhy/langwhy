@@ -1,0 +1,14 @@
+id: spss
+pldb: spss
+rank: 68
+appeared:
+  value: 1968
+  source: https://pldb.io/concepts/spss.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Norman H. Nie
+    - C. Hadlai Hull
+    - Dale H. Bent
+  source: https://pldb.io/concepts/spss.html
+  checked: 2026-11-05

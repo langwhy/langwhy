@@ -1,0 +1,14 @@
+id: smalltalk
+pldb: smalltalk
+rank: 74
+appeared:
+  value: 1972
+  source: https://pldb.io/concepts/smalltalk.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Alan Kay
+    - Dan Ingalls
+    - Adele Goldberg
+  source: https://pldb.io/concepts/smalltalk.html
+  checked: 2026-11-05

@@ -1,0 +1,12 @@
+id: toml
+pldb: toml
+rank: 50
+appeared:
+  value: 2013
+  source: https://pldb.io/concepts/toml.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Tom Preston-Werner
+  source: https://pldb.io/concepts/toml.html
+  checked: 2026-11-05

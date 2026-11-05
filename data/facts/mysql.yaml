@@ -1,0 +1,13 @@
+id: mysql
+pldb: mysql
+rank: 54
+appeared:
+  value: 1995
+  source: https://pldb.io/concepts/mysql.html
+  checked: 2026-11-05
+creators:
+  value:
+    - David Axmark
+    - Michael Widenius
+  source: https://pldb.io/concepts/mysql.html
+  checked: 2026-11-05

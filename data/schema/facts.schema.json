@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://langwhy.dev/schema/facts.json",
+  "title": "langwhy facts: sourced data for a language, no prose",
+  "description": "data/facts/<id>.yaml. Facts only: every value has a source URL and the date it was checked against that source. The pain, the trade-off and the users are verbatim quotes from the source, so no wording of ours goes in. Prose for the card is written later from these facts. A fact without a source stays out.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "pldb", "rank"],
+  "definitions": {
+    "checked": { "type": "string", "format": "date", "description": "When the fact was checked against its source." },
+    "source": { "type": "string", "format": "uri" },
+    "quote": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 400,
+      "description": "Copied word for word from the source; shortened only by cutting the start or the end. scripts/check-quotes.mjs --facts finds it on the page."
+    },
+    "quoted": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["quote", "source", "checked"],
+        "properties": {
+          "quote": { "$ref": "#/definitions/quote" },
+          "source": { "$ref": "#/definitions/source" },
+          "checked": { "$ref": "#/definitions/checked" }
+        }
+      }
+    }
+  },
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "langwhy id, also the file name and /lang/<id>." },
+    "pldb": { "type": "string", "description": "PLDB concept id." },
+    "rank": { "type": "integer", "minimum": 1, "description": "PLDB rank when the file was made." },
+    "appeared": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source", "checked"],
+      "properties": {
+        "value": { "type": "integer", "minimum": 1800, "maximum": 2100 },
+        "source": { "$ref": "#/definitions/source" },
+        "checked": { "$ref": "#/definitions/checked" }
+      }
+    },
+    "creators": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source", "checked"],
+      "properties": {
+        "value": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "source": { "$ref": "#/definitions/source" },
+        "checked": { "$ref": "#/definitions/checked" }
+      }
+    },
+    "born_from": { "$ref": "#/definitions/quoted", "description": "The pain it was built for, in the words of its creators or official history." },
+    "trades_away": { "$ref": "#/definitions/quoted", "description": "What it gives up, as stated by its docs, creators or a first-hand source." },
+    "used_by": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["who", "quote", "source", "checked"],
+        "properties": {
+          "who": { "type": "string", "minLength": 2, "maxLength": 60, "description": "Name of the company, project or product." },
+          "quote": { "$ref": "#/definitions/quote" },
+          "source": { "$ref": "#/definitions/source" },
+          "checked": { "$ref": "#/definitions/checked" }
+        }
+      }
+    },
+    "card": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Set when a card in data/languages already covers this language; born_from, trades_away and used_by then live in the card." }
+  }
+}

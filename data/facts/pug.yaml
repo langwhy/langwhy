@@ -1,0 +1,12 @@
+id: pug
+pldb: pug
+rank: 60
+appeared:
+  value: 2010
+  source: https://pldb.io/concepts/pug.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Tj Holowaychuk
+  source: https://pldb.io/concepts/pug.html
+  checked: 2026-11-05

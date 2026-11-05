@@ -1,0 +1,13 @@
+id: typescript
+pldb: typescript
+rank: 15
+card: typescript
+appeared:
+  value: 2012
+  source: https://pldb.io/concepts/typescript.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Anders Hejlsberg
+  source: https://pldb.io/concepts/typescript.html
+  checked: 2026-11-05

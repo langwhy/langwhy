@@ -1,0 +1,12 @@
+id: tex
+pldb: tex
+rank: 66
+appeared:
+  value: 1978
+  source: https://pldb.io/concepts/tex.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Donald Knuth
+  source: https://pldb.io/concepts/tex.html
+  checked: 2026-11-05

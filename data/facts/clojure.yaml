@@ -1,0 +1,12 @@
+id: clojure
+pldb: clojure
+rank: 27
+appeared:
+  value: 2007
+  source: https://pldb.io/concepts/clojure.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Rich Hickey
+  source: https://pldb.io/concepts/clojure.html
+  checked: 2026-11-05

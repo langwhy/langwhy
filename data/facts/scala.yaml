@@ -1,0 +1,12 @@
+id: scala
+pldb: scala
+rank: 23
+appeared:
+  value: 2004
+  source: https://pldb.io/concepts/scala.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Martin Odersky
+  source: https://pldb.io/concepts/scala.html
+  checked: 2026-11-05

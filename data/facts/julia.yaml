@@ -1,0 +1,15 @@
+id: julia
+pldb: julia
+rank: 35
+appeared:
+  value: 2012
+  source: https://pldb.io/concepts/julia.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Jeff Bezanson
+    - Alan Edelman
+    - Stefan Karpinski
+    - Viral B. Shah
+  source: https://pldb.io/concepts/julia.html
+  checked: 2026-11-05

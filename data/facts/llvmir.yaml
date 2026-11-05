@@ -1,0 +1,12 @@
+id: llvmir
+pldb: llvmir
+rank: 70
+appeared:
+  value: 2003
+  source: https://pldb.io/concepts/llvmir.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Chris Lattner
+  source: https://pldb.io/concepts/llvmir.html
+  checked: 2026-11-05

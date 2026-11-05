@@ -1,0 +1,12 @@
+id: nim
+pldb: nim
+rank: 47
+appeared:
+  value: 2008
+  source: https://pldb.io/concepts/nim.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Andreas Rumpf
+  source: https://pldb.io/concepts/nim.html
+  checked: 2026-11-05

@@ -1,0 +1,14 @@
+id: sql
+pldb: sql
+rank: 14
+card: sql
+appeared:
+  value: 1974
+  source: https://pldb.io/concepts/sql.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Donald D. Chamberlin
+    - Raymond F. Boyce
+  source: https://pldb.io/concepts/sql.html
+  checked: 2026-11-05

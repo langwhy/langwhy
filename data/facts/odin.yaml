@@ -1,0 +1,12 @@
+id: odin
+pldb: odin
+rank: 86
+appeared:
+  value: 2016
+  source: https://pldb.io/concepts/odin.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Bill Hall
+  source: https://pldb.io/concepts/odin.html
+  checked: 2026-11-05

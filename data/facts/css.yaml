@@ -1,0 +1,12 @@
+id: css
+pldb: css
+rank: 7
+appeared:
+  value: 1996
+  source: https://pldb.io/concepts/css.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Håkon Wium Lie
+  source: https://pldb.io/concepts/css.html
+  checked: 2026-11-05

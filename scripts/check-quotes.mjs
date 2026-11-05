@@ -1,7 +1,8 @@
 // Downloads the source of every "Problems in practice" item and checks that its quote is
 // really on that page. Comparison ignores case, spacing, typographic quotes and dashes, so a quote
 // copied from the rendered page matches the HTML. `node scripts/check-quotes.mjs` checks every
-// card, `node scripts/check-quotes.mjs go rust` only those. Exit 1 when a quote is missing or a
+// card, `node scripts/check-quotes.mjs go rust` only those. With `--facts` it checks the quotes in
+// data/facts/ instead (`node scripts/check-quotes.mjs --facts perl`). Exit 1 when a quote is missing or a
 // source can't be downloaded. Needs the network, so CI doesn't run it.
 import { readdirSync, readFileSync, writeFileSync, mkdtempSync, rmSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -11,8 +12,9 @@ import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const dir = join(root, "data", "languages");
-const only = process.argv.slice(2);
+const facts = process.argv[2] === "--facts";
+const dir = join(root, "data", facts ? "facts" : "languages");
+const only = process.argv.slice(facts ? 3 : 2);
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 langwhy-quote-check";
 
 const ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ndash: "-", mdash: "-", hellip: "...", rsquo: "'", lsquo: "'", rdquo: '"', ldquo: '"', shy: "", "#39": "'" };
@@ -83,7 +85,8 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".yaml")).sort()) {
   const id = file.replace(/\.yaml$/, "");
   if (only.length && !only.includes(id)) continue;
   const card = parse(readFileSync(join(dir, file), "utf8"));
-  (card.hurts ?? []).forEach((h, i) => items.push({ id, i, ...h }));
+  const lists = facts ? ["born_from", "trades_away", "used_by"] : ["hurts"];
+  for (const list of lists) (card[list] ?? []).forEach((h, i) => items.push({ id, i, list, ...h }));
 }
 
 const pages = new Map();
@@ -100,7 +103,7 @@ let missing = 0;
 const perCard = new Map();
 for (const h of items) {
   const page = pages.get(h.source);
-  const where = `${h.id}.yaml hurts[${h.i}]`;
+  const where = `${h.id}.yaml ${h.list}[${h.i}]`;
   let ok = false;
   if (page instanceof Error) console.error(`✗ ${where}: can't download ${h.source} (${page.message})`);
   else if (!(ok = page.some((text) => text.includes(norm(h.quote ?? ""))))) console.error(`✗ ${where}: quote not found on ${h.source}\n    "${h.quote}"`);
@@ -110,5 +113,5 @@ for (const h of items) {
   perCard.set(h.id, c);
 }
 for (const [id, c] of perCard) console.log(`${c.found === c.total ? "✓" : "✗"} ${id}: ${c.found}/${c.total} quotes found`);
-console.log(`\n${items.length} quote(s) on ${perCard.size} card(s) from ${urls.length} source(s), ${missing} missing.`);
+console.log(`\n${items.length} quote(s) in ${perCard.size} file(s) from ${urls.length} source(s), ${missing} missing.`);
 process.exit(missing ? 1 : 0);

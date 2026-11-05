@@ -1,0 +1,12 @@
+id: lisp
+pldb: lisp
+rank: 30
+appeared:
+  value: 1958
+  source: https://pldb.io/concepts/lisp.html
+  checked: 2026-11-05
+creators:
+  value:
+    - John McCarthy
+  source: https://pldb.io/concepts/lisp.html
+  checked: 2026-11-05

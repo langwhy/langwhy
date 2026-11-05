@@ -1,0 +1,13 @@
+id: lua
+pldb: lua
+rank: 24
+card: lua
+appeared:
+  value: 1993
+  source: https://pldb.io/concepts/lua.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Roberto Ierusalimschy
+  source: https://pldb.io/concepts/lua.html
+  checked: 2026-11-05

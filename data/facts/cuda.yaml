@@ -1,0 +1,7 @@
+id: cuda
+pldb: cuda
+rank: 39
+appeared:
+  value: 2007
+  source: https://pldb.io/concepts/cuda.html
+  checked: 2026-11-05

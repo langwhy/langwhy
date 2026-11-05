@@ -1,0 +1,13 @@
+id: rust
+pldb: rust
+rank: 20
+card: rust
+appeared:
+  value: 2010
+  source: https://pldb.io/concepts/rust.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Graydon Hoare
+  source: https://pldb.io/concepts/rust.html
+  checked: 2026-11-05

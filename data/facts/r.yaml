@@ -1,0 +1,13 @@
+id: r
+pldb: r
+rank: 17
+appeared:
+  value: 1993
+  source: https://pldb.io/concepts/r.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Ross Ihaka
+    - Robert Gentleman
+  source: https://pldb.io/concepts/r.html
+  checked: 2026-11-05

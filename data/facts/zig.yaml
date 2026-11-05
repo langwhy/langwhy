@@ -1,0 +1,13 @@
+id: zig
+pldb: zig
+rank: 41
+card: zig
+appeared:
+  value: 2015
+  source: https://pldb.io/concepts/zig.html
+  checked: 2026-11-05
+creators:
+  value:
+    - Andrew Kelley
+  source: https://pldb.io/concepts/zig.html
+  checked: 2026-11-05
