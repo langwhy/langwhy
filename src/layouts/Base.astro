@@ -13,7 +13,7 @@ interface Props {
 }
 const { title, description, path, noindex = false, jsonld, pagefind = false } = Astro.props;
 const canonical = `${SITE}${path}`;
-const nav = [["/", "Map"], ["/basics/", "Basics"], ["/terms/", "Glossary"], ["/slot/server/", "Slots"], ["/all/", "All"], ["/about/", "About"]] as const;
+const nav = [["/", "Map"], ["/basics/", "Basics"], ["/terms/", "Glossary"], ["/slot/server/", "Slots"], ["/all/", "All"], ["/tree/", "Tree"], ["/about/", "About"]] as const;
 const current = (href: string) => (href === "/" ? path === "/" : path.startsWith("/" + href.split("/")[1] + "/")) ? "page" : undefined;
 ---
 <!doctype html>

@@ -16,6 +16,15 @@ const facts = process.argv[2] === "--facts";
 const dir = join(root, "data", facts ? "facts" : "languages");
 const only = process.argv.slice(facts ? 3 : 2);
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 langwhy-quote-check";
+// Some hosts (w3.org) refuse browser-like agents from scripts but serve a plain one.
+const PLAIN_UA = "langwhy-quote-check (+https://langwhy.dev)";
+
+/** fetch with the browser-like agent, and once more with the plain one on HTTP 403. */
+async function get(url, accept = "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8") {
+  const go = (ua) => fetch(url, { headers: { "User-Agent": ua, Accept: accept }, redirect: "follow", signal: AbortSignal.timeout(30_000) });
+  const res = await go(UA);
+  return res.status === 403 ? go(PLAIN_UA) : res;
+}
 
 const ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ndash: "-", mdash: "-", hellip: "...", rsquo: "'", lsquo: "'", rdquo: '"', ldquo: '"', shy: "", "#39": "'" };
 const decode = (s) => s
@@ -62,7 +71,7 @@ async function download(url) {
 }
 
 async function downloadOnce(url) {
-  const res = await fetch(url, { headers: { "User-Agent": UA, Accept: "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8" }, redirect: "follow", signal: AbortSignal.timeout(30_000) });
+  const res = await get(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const type = res.headers.get("content-type") ?? "";
   if (type.includes("pdf")) return [norm(pdfText(Buffer.from(await res.arrayBuffer())))];
@@ -72,7 +81,7 @@ async function downloadOnce(url) {
 // `--find <url> <word>`: print the sentences on that page that contain the word, to copy a quote from.
 if (only[0] === "--find") {
   const [, url, ...words] = only;
-  const res = await fetch(url, { headers: { "User-Agent": UA }, redirect: "follow", signal: AbortSignal.timeout(30_000) });
+  const res = await get(url, "*/*");
   if (!res.ok) { console.error(`HTTP ${res.status}`); process.exit(1); }
   const raw = (res.headers.get("content-type") ?? "").includes("pdf") ? pdfText(Buffer.from(await res.arrayBuffer())) : decode((await res.text()).replace(/<(script|style|noscript)\b[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " "));
   const sentences = raw.replace(/\s+/g, " ").split(/(?<=[.!?])\s+/);

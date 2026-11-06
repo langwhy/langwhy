@@ -122,10 +122,23 @@ won_where:
 
 Flow style (`- { what: ..., source: ... }`) breaks on the first comma inside a value.
 
+## PLDB and facts
+
+- `data/pldb/` is the import from [PLDB](https://pldb.io) (CC0), pinned to one commit in
+  `source.json`. `node scripts/import-pldb.mjs` re-imports that commit (a second run changes
+  nothing); `--update` moves the pin to PLDB's newest commit. Every entry gets `/lang/<id>/`; an
+  entry without a card shows PLDB data with `noindex`.
+- `data/facts/<id>.yaml` holds sourced facts for languages without a card yet, by the schema in
+  `schema/facts.schema.json`: year and creators, and `born_from`, `trades_away`, `used_by` as
+  word-for-word quotes, each with its source URL and the date it was checked. No wording of ours;
+  a fact without a source stays out. `node scripts/seed-facts.mjs [n]` starts files for the top n
+  by PLDB rank.
+
 ## Validate
 
 ```
 pnpm validate            # everything
 node scripts/validate.mjs go rust   # only these cards
 pnpm check:quotes        # every hurts quote is on its source page (needs the network)
+node scripts/check-quotes.mjs --facts   # the same for the quotes in data/facts
 ```

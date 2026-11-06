@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import { allCards, cardUrl } from "../lib/data";
 import { SITE, SLOTS } from "../lib/vocab";
+import { PLDB } from "../lib/pldb";
 
 export const GET: APIRoute = async () => {
   const cards = await allCards();
@@ -22,6 +23,8 @@ export const GET: APIRoute = async () => {
     "",
     "## Data",
     `- [All cards as JSON](${SITE}/api/v1/languages.json)`,
+    `- [All ${PLDB.length} languages from PLDB](${SITE}/all/): every one has /lang/<id>/, /lang/<id>.json and /lang/<id>.md; without a card the data comes from PLDB (CC0) and is not verified`,
+    `- [Family tree](${SITE}/tree/): who came from whom, from PLDB influencedBy, successorOf, forkOf and the cards' reacts_to`,
     `- [Everything as one Markdown file](${SITE}/llms-full.txt)`,
     `- [Repository, schema and contribution rules](https://github.com/langwhy/langwhy)`,
     "",
