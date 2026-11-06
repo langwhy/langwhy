@@ -113,6 +113,37 @@ for (const file of files) {
   const m = md.match(MARKETING);
   if (m) fail(`${id}.md`, `uses a marketing word: "${m[0]}"`);
 }
+// The PLDB import: every language gets a page from it, so it has to be there and its ids unique.
+const pldbPath = join(root, "data", "pldb", "languages.json");
+let pldbIds = new Set();
+if (!existsSync(pldbPath)) fail("pldb/languages.json", "missing: run node scripts/import-pldb.mjs");
+else {
+  const pldb = JSON.parse(readFileSync(pldbPath, "utf8"));
+  pldbIds = new Set(pldb.map((p) => p.pldb));
+  const pageIds = pldb.map((p) => p.id);
+  if (new Set(pageIds).size !== pageIds.length) fail("pldb/languages.json", "duplicate ids");
+  for (const p of pldb) if (!/^[a-z0-9][a-z0-9-]*$/.test(p.id)) fail("pldb/languages.json", `id "${p.id}" is not a valid URL slug`);
+  for (const file of files) {
+    const card = parse(readFileSync(join(dir, file), "utf8"));
+    if (card?.pldb && !pldbIds.has(card.pldb)) fail(file, `pldb "${card.pldb}" is not in data/pldb/languages.json`);
+  }
+}
+
+// Facts: data/facts/<id>.yaml against data/schema/facts.schema.json.
+const factsDir = join(root, "data", "facts");
+const factFiles = existsSync(factsDir) ? readdirSync(factsDir).filter((f) => f.endsWith(".yaml")).sort() : [];
+const validateFacts = ajv.compile(JSON.parse(readFileSync(join(root, "data", "schema", "facts.schema.json"), "utf8")));
+for (const file of factFiles) {
+  const label = `facts/${file}`;
+  const facts = load(join(factsDir, file), label);
+  if (!facts) continue;
+  if (!validateFacts(facts)) for (const e of validateFacts.errors) fail(label, `${e.instancePath || "/"} ${e.message}`);
+  if (facts.id !== file.replace(/\.yaml$/, "")) fail(label, `id "${facts.id}" must equal the file name`);
+  if (pldbIds.size && !pldbIds.has(facts.pldb)) fail(label, `pldb "${facts.pldb}" is not in data/pldb/languages.json`);
+  if (facts.card && !ids.has(facts.card)) fail(label, `card "${facts.card}" does not exist`);
+  if (facts.card && ["born_from", "trades_away", "used_by"].some((k) => facts[k])) fail(label, "a language with a card keeps born_from, trades_away and used_by in the card");
+}
+
 const checked = only.length || files.length;
-console.log(`${checked} card(s), ${reasons.length} reasons, ${terms.length} terms checked, ${failures} problem(s).`);
+console.log(`${checked} card(s), ${factFiles.length} facts file(s), ${pldbIds.size} PLDB entries, ${reasons.length} reasons, ${terms.length} terms checked, ${failures} problem(s).`);
 if (failures) process.exit(1);
