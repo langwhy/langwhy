@@ -1,0 +1,18 @@
+---
+// Pagefind search box. The index is built after Astro, by `pagefind --site dist`.
+interface Props { autofocus?: boolean }
+const { autofocus = false } = Astro.props;
+---
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script is:inline src="/pagefind/pagefind-ui.js"></script>
+<div id="search" data-autofocus={autofocus ? "" : undefined}></div>
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    const el = document.getElementById("search");
+    if (typeof PagefindUI === "undefined") { el.textContent = "Search index is built with the site; run pnpm build."; return; }
+    new PagefindUI({ element: "#search", showSubResults: false, showImages: false, autofocus: el.hasAttribute("data-autofocus") });
+  });
+</script>
+<style is:global>
+  :root { --pagefind-ui-primary: var(--accent); --pagefind-ui-text: var(--fg); --pagefind-ui-background: var(--bg); --pagefind-ui-border: var(--line); --pagefind-ui-tag: var(--soft); --pagefind-ui-font: var(--sans); --pagefind-ui-border-radius: .5rem; --pagefind-ui-scale: .9; }
+</style>

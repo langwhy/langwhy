@@ -1,0 +1,79 @@
+---
+// A language without a card: /lang/<id>/ from PLDB data and the sourced facts, noindex.
+import Base from "../layouts/Base.astro";
+import type { Card } from "../lib/data";
+import { FACTS, PLDB_BY_ID, family, pageUrl, pldbUrl, typeWords, type Edge, type Pldb } from "../lib/pldb";
+
+interface Props { pldb: Pldb; tree: Edge[]; cards: Card[] }
+const { pldb: p, tree } = Astro.props;
+const f = FACTS.get(p.id);
+const { parents, children } = family(p.id, tree);
+const name = (id: string) => PLDB_BY_ID.get(id)?.name ?? id;
+const VIA = { successorOf: "successor of", forkOf: "fork of", influencedBy: "influenced by", card: "reacts to" } as const;
+const year = f?.appeared?.value ?? p.appeared;
+const creators = f?.creators?.value ?? p.creators?.split(/\s+and\s+/);
+const description = p.description?.replace(/\[\d+\]/g, "").trim();
+const host = (url: string) => new URL(url).hostname.replace(/^www\./, "");
+const title = `${p.name} (${year}): ${typeWords(p.type)}`;
+const summary = `${p.name}, ${typeWords(p.type)} from ${year}${creators ? ` by ${creators.join(", ")}` : ""}. Data from PLDB; no langwhy card yet.`;
+const numbers: [string, string][] = [
+  ["PLDB rank", `#${p.rank}`],
+  ...(p.usersEstimate ? [["Users, PLDB estimate", p.usersEstimate.toLocaleString("en")] as [string, string]] : []),
+  ...(p.stars ? [["GitHub stars", p.stars.toLocaleString("en")] as [string, string]] : []),
+  ...(p.lastCommit ? [["Last commit", String(p.lastCommit)] as [string, string]] : []),
+  ...(p.openSource !== undefined ? [["Open source", p.openSource ? "yes" : "no"] as [string, string]] : []),
+  ...(p.fileExtensions?.length ? [["File extensions", p.fileExtensions.map((e) => `.${e}`).join(" ")] as [string, string]] : []),
+  ...(p.aka ? [["Also known as", p.aka] as [string, string]] : []),
+  ...(p.lab ? [["Lab", p.lab] as [string, string]] : []),
+  ...(p.country ? [["Country", p.country] as [string, string]] : []),
+];
+const links = Object.entries({ website: p.website, repo: p.repo, wikipedia: p.wikipedia, PLDB: pldbUrl(p) }).filter(([, v]) => v) as [string, string][];
+const newCard = `https://github.com/langwhy/langwhy/new/main/data/languages?filename=${p.id}.yaml`;
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "ComputerLanguage",
+  name: p.name,
+  url: pageUrl(p.id),
+  dateCreated: String(year),
+  ...(creators ? { creator: creators.map((n) => ({ "@type": "Person", name: n })) } : {}),
+  sameAs: links.map(([, v]) => v),
+};
+---
+<Base title={title} description={summary} path={`/lang/${p.id}/`} noindex jsonld={jsonld} pagefind>
+  <h1>{p.name}</h1>
+  <p class="muted">{typeWords(p.type)} · since {year}{creators && <> · {creators.join(", ")}</>}</p>
+  <p class="draft">Data from <a href={pldbUrl(p)}>PLDB</a>, no langwhy card yet. Nobody has checked it here, so search engines don't index this page. <a href={newCard}>Write the card</a>.</p>
+  {description && <p>{description} <span class="src">(PLDB)</span></p>}
+
+  {(f?.born_from?.length ?? 0) > 0 && <>
+    <h2>Born from</h2>
+    <ul class="hurts">{f.born_from.map((q) => <li><q cite={q.source}>{q.quote}</q> <span class="said"><a href={q.source}>{host(q.source)}</a>, checked {q.checked}</span></li>)}</ul>
+  </>}
+  {(f?.trades_away?.length ?? 0) > 0 && <>
+    <h2>What it trades away</h2>
+    <ul class="hurts">{f.trades_away.map((q) => <li><q cite={q.source}>{q.quote}</q> <span class="said"><a href={q.source}>{host(q.source)}</a>, checked {q.checked}</span></li>)}</ul>
+  </>}
+  {(f?.used_by?.length ?? 0) > 0 && <>
+    <h2>Who uses it</h2>
+    <ul class="hurts">{f.used_by.map((u) => <li><strong>{u.who}:</strong> <q cite={u.source}>{u.quote}</q> <span class="said"><a href={u.source}>{host(u.source)}</a>, checked {u.checked}</span></li>)}</ul>
+  </>}
+  {f && <p class="src">Quotes only, each from its source; the card text comes later.</p>}
+
+  {(parents.length > 0 || children.length > 0) && <>
+    <h2>Family</h2>
+    {parents.length > 0 && <p><strong>Comes from:</strong> {parents.map((e, i) => <>{i > 0 && ", "}<a href={`/lang/${e.id}/`}>{name(e.id)}</a> <span class="muted">({VIA[e.via]})</span></>)}</p>}
+    {children.length > 0 && <p><strong>Led to:</strong> {children.map((e, i) => <>{i > 0 && ", "}<a href={`/lang/${e.id}/`}>{name(e.id)}</a></>)}</p>}
+    <p class="src"><a href={`/tree/#${p.id}`}>See it in the family tree</a>.</p>
+  </>}
+
+  <h2>Numbers</h2>
+  <table><tbody>{numbers.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody></table>
+
+  <h2>Links</h2>
+  <p>{links.map(([k, v], i) => <>{i > 0 && " · "}<a href={v}>{k}</a></>)}</p>
+
+  <p class="muted">
+    PLDB data is CC0. <a href={`/lang/${p.id}.json`}>JSON</a> · <a href={`/lang/${p.id}.md`}>Markdown</a>
+    {f && <> · <a href={`https://github.com/langwhy/langwhy/edit/main/data/facts/${p.id}.yaml`}>edit the facts</a></>}
+  </p>
+</Base>

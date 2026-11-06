@@ -1,0 +1,57 @@
+---
+import Base from "../layouts/Base.astro";
+import { allCards } from "../lib/data";
+import { PLDB_BY_ID, edges } from "../lib/pldb";
+
+// The family tree: every language with a known parent or child, as nested lists from the oldest
+// roots down. A language with two parents is drawn in full under the first one it meets and as
+// a short link (↑) under the others.
+const cards = await allCards();
+const carded = new Set(cards.map((c) => c.pldb ?? c.id));
+const tree = edges(cards);
+const nodes = new Set(tree.flatMap((e) => [e.child, e.parent]));
+const year = (id: string) => PLDB_BY_ID.get(id)?.appeared ?? 9999;
+const name = (id: string) => PLDB_BY_ID.get(id)?.name ?? id;
+const order = (a: string, b: string) => year(a) - year(b) || name(a).localeCompare(name(b));
+const kids = new Map<string, string[]>();
+for (const e of tree) kids.set(e.parent, [...(kids.get(e.parent) ?? []), e.child]);
+for (const list of kids.values()) list.sort(order);
+const hasParent = new Set(tree.map((e) => e.child));
+const roots = [...nodes].filter((id) => !hasParent.has(id)).sort(order);
+
+const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const drawn = new Set<string>();
+let depth = 0;
+function node(id: string, level: number): string {
+  depth = Math.max(depth, level);
+  const label = `<a href="/lang/${id}/"${carded.has(id) ? ' class="card"' : ""}>${esc(name(id))}</a> <span class="y">${year(id) === 9999 ? "" : year(id)}</span>`;
+  if (drawn.has(id)) return `<li>${label} <a class="up" href="#${id}" title="drawn above">↑</a></li>`;
+  drawn.add(id);
+  const children = kids.get(id) ?? [];
+  return `<li id="${id}">${label}${children.length ? `<ul>${children.map((c) => node(c, level + 1)).join("")}</ul>` : ""}</li>`;
+}
+// Roots first; anything left over sits in a loop of parents and is drawn from its oldest member.
+let html = roots.map((r) => node(r, 0)).join("");
+for (const id of [...nodes].sort(order)) if (!drawn.has(id)) html += node(id, 0);
+const pldbEdges = tree.filter((e) => e.via !== "card").length;
+---
+<Base title="Family tree of programming languages" description={`Which language came from which: ${nodes.size} languages and ${tree.length} links from PLDB and the langwhy cards.`} path="/tree/">
+  <h1>Family tree</h1>
+  <p class="muted">
+    Who came from whom: {nodes.size} languages, {tree.length} links. {pldbEdges} come from <a href="https://pldb.io">PLDB</a> (influenced by, successor of, fork of), {tree.length - pldbEdges} from the cards. PLDB records this for few languages, so
+    most of the {PLDB_BY_ID.size.toLocaleString("en")} on <a href="/all/">All</a> are not here yet.
+  </p>
+  <p class="src">Oldest first. <strong>Bold</strong> has a langwhy card. ↑ means the language is drawn in full under another parent.</p>
+  <ul class="tree" set:html={html} />
+</Base>
+<style>
+  .tree, .tree :global(ul) { list-style: none; margin: 0; padding: 0; }
+  .tree :global(ul) { padding-left: .9rem; border-left: 1px solid var(--line); margin-left: .3rem; }
+  .tree :global(li) { padding: .1rem 0; }
+  .tree > :global(li) { padding: .5rem 0; border-bottom: 1px solid var(--line); }
+  .tree :global(a) { color: var(--fg); }
+  .tree :global(a.card) { font-weight: 600; color: var(--accent); }
+  .tree :global(.y) { color: var(--muted); font-size: .85rem; font-family: var(--mono); }
+  .tree :global(a.up) { color: var(--muted); }
+  .tree :global(li:target) > :global(a) { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+</style>

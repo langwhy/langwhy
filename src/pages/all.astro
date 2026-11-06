@@ -1,13 +1,20 @@
 ---
 import Base from "../layouts/Base.astro";
+import Search from "../components/Search.astro";
 import { allCards } from "../lib/data";
 import { icon } from "../lib/icons";
 import { TYPES } from "../lib/vocab";
+import { PLDB, typeWords } from "../lib/pldb";
 const cards = await allCards();
+const carded = new Set(cards.map((c) => c.pldb ?? c.id));
+const byRank = [...PLDB].sort((a, b) => a.rank - b.rank);
 ---
-<Base title="All languages on langwhy" description="Every language card, in one list: name, year, type, status." path="/all/">
-  <h1>All cards</h1>
-  <p class="muted">{cards.length} languages. Thousands more will come from the PLDB import; a card is published to search engines only once a human verified it.</p>
+<Base title="All languages on langwhy" description={`All ${PLDB.length} languages from PLDB in one list: name, year, type. ${cards.length} of them have a langwhy card.`} path="/all/">
+  <h1>All languages</h1>
+  <p class="muted">{PLDB.length.toLocaleString("en")} languages from <a href="https://pldb.io">PLDB</a>, {cards.length} of them with a langwhy card. A page goes to search engines only once a human verified its card. Who came from whom: <a href="/tree/">family tree</a>.</p>
+  <Search />
+
+  <h2>Cards</h2>
   <ul class="list">
     {cards.map((c) => (
       <li>
@@ -16,4 +23,14 @@ const cards = await allCards();
       </li>
     ))}
   </ul>
+
+  <h2>Everything in PLDB, by rank</h2>
+  <p class="src">Rank is PLDB's: how much a language is used and written about. Pages without a card show PLDB data only.</p>
+  <ol class="list rank">
+    {byRank.map((p) => <li><a href={`/lang/${p.id}/`}>{p.name}</a><span class="meta">{p.appeared} · {typeWords(p.type)}{carded.has(p.pldb) && " · card"}</span></li>)}
+  </ol>
 </Base>
+<style is:global>
+  /* Thousands of rows, so the long list stays dense. */
+  .list.rank li { padding: .2rem 0; }
+</style>
