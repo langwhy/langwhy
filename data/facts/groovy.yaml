@@ -10,3 +10,19 @@ creators:
     - James Strachan
   source: https://pldb.io/concepts/groovy.html
   checked: 2026-11-05
+born_from:
+  - quote: "Apart from beanshell, most of them are languages designed with other use cases or criteria in mind and the bridge to the JVM was an afterthought and so don't quite sit nicely in a Java (platform & language) developers toolkit - even if thats just some minor syntax things (like __init__ and self in Jython)."
+    source: https://web.archive.org/web/20041212222900/http://radio.weblogs.com/0112098/2003/08/29.html
+    checked: 2026-11-06
+  - quote: "Also there does seem to be some baggage when writing unit tests in java."
+    source: https://web.archive.org/web/20041212222900/http://radio.weblogs.com/0112098/2003/08/29.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "Static compilation can be used when the dynamic features of Groovy are not necessary and that the performance of the dynamic runtime is too low."
+    source: https://groovy.apache.org/wiki/GEP-10.html
+    checked: 2026-11-06
+used_by:
+  - who: Jenkins
+    quote: "Most functionality provided by the Groovy language is made available to users of Scripted Pipeline, which means it can be a very expressive and flexible tool with which one can author continuous delivery pipelines."
+    source: https://www.jenkins.io/doc/book/pipeline/syntax/
+    checked: 2026-11-06

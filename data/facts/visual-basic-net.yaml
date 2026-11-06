@@ -5,3 +5,10 @@ appeared:
   value: 2001
   source: https://pldb.io/concepts/visual-basic.net.html
   checked: 2026-11-05
+trades_away:
+  - quote: "When C# or the .NET Runtime introduce new features that would require language support, Visual Basic will generally adopt a consumption-only approach and avoid new syntax."
+    source: https://learn.microsoft.com/dotnet/visual-basic/getting-started/strategy
+    checked: 2026-11-06
+  - quote: "It's unlikely that support for new workloads, such as web front ends or cross-platform UI frameworks, will be added."
+    source: https://learn.microsoft.com/dotnet/visual-basic/getting-started/strategy
+    checked: 2026-11-06

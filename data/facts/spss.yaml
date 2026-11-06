@@ -12,3 +12,16 @@ creators:
     - Dale H. Bent
   source: https://pldb.io/concepts/spss.html
   checked: 2026-11-05
+born_from:
+  - quote: "SPSS, or Statistical Package for the Social Sciences, started development in 1965 from a group of researchers who were frustrated in serving the teaching and research needs of the political science department at Stanford University."
+    source: https://community.ibm.com/community/user/blogs/douglas-stauber/2018/04/05/spss-50-years-of-innovation
+    checked: 2026-11-06
+used_by:
+  - who: Honda R&D
+    quote: "Honda unlocked hidden insights from new sources of big data by deploying IBM SPSS Modeler and training their enginneers on a suite of advanced IBM Analytics tools"
+    source: https://www.ibm.com/products/spss
+    checked: 2026-11-06
+  - who: University of Louisville
+    quote: "With SPSS Modeler, the University of Louisville was able to investigate causes of injuries in their women's basketball team, and was able to predict causes, avoid new injuries and improve player availability."
+    source: https://www.ibm.com/products/spss
+    checked: 2026-11-06

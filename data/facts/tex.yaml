@@ -10,3 +10,16 @@ creators:
     - Donald Knuth
   source: https://pldb.io/concepts/tex.html
   checked: 2026-11-05
+born_from:
+  - quote: "It is not that their mathematical content is unsatisfactory, rather that the old and well-developed traditions of typesetting have become too expensive."
+    source: https://dept.math.lsa.umich.edu/~millerpd/docs/501_Winter13/Knuth79.pdf
+    checked: 2026-11-06
+trades_away:
+  - quote: "Indeed, there is a fundamental problem with applying WYSIWYG techniques to TeX: the complexity of TeX makes it hard to get the equivalent of TeX’s output without actually running TeX over the whole of the document being prepared."
+    source: https://texfaq.org/FAQ-notWYSIWYG
+    checked: 2026-11-06
+used_by:
+  - who: arXiv
+    quote: "arXiv offers currently TeX Live 2023 and 2025 (the default)."
+    source: https://info.arxiv.org/help/submit_tex.html
+    checked: 2026-11-06

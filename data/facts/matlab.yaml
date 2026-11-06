@@ -10,3 +10,19 @@ creators:
     - Cleve Moler
   source: https://pldb.io/concepts/matlab.html
   checked: 2026-11-05
+born_from:
+  - quote: "In the 1970s and early 1980s, I was teaching Linear Algebra and Numerical Analysis at the University of New Mexico and wanted my students to have easy access to LINPACK and EISPACK without writing Fortran programs."
+    source: https://mathworks.com/company/newsletters/articles/a-brief-history-of-matlab.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "To add another function, you had to get the source code from me, write a Fortran subroutine, add your function name to the parse table, and recompile MATLAB."
+    source: https://mathworks.com/company/newsletters/articles/a-brief-history-of-matlab.html
+    checked: 2026-11-06
+  - quote: "I wrote the first MATLAB—an acronym for Matrix Laboratory—in Fortran, with matrix as the only data type."
+    source: https://mathworks.com/company/newsletters/articles/a-brief-history-of-matlab.html
+    checked: 2026-11-06
+used_by:
+  - who: JetZero
+    quote: "Engineered with MATLAB and Simulink See how JetZero is transforming aircraft design with a blended-wing body, reducing drag, increasing lift, and enabling significant fuel savings."
+    source: https://www.mathworks.com/company/customer-stories.html
+    checked: 2026-11-06

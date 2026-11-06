@@ -81,3 +81,25 @@ Na rozhodnutie (nič neblokuje):
 - Niektoré citácie sú z druhej ruky, hoci na oficiálnom webe (napr. PayPal z oznámenia Node.js
   Foundation, XML z kópie na xml.coverpages.org, lebo w3.org vracia 403). Pri overovaní karty ich treba
   pozrieť.
+
+## Doplnenie cez deň (2026-11-06, na Karchiho pokyn „dokonči, čo treba“)
+
+- Fakty: zvyšných 7 jazykov (groovy, tex, ini, matlab, spss, visual-basic-net, svg) dostalo citácie.
+  Teraz má **všetkých 80 jazykov bez karty 250 citácií** (born_from 86, trades_away 81, used_by 83),
+  `check-quotes --facts`: 250 nájdených, 0 chýba. Citácie kariet: 63, 0 chýba.
+- `check-quotes` pri HTTP 403 skúsi ešte jednoduchý user agent (w3.org odmieta agenta, ktorý sa tvári ako
+  prehliadač). XML preto teraz cituje priamo w3.org, nie kópiu na xml.coverpages.org.
+- V navigácii pribudol odkaz „Tree“. HTML každej z 20 kariet sa od stavu pred F1 líši len týmto
+  jedným riadkom (`<a href="/tree/">Tree</a>`); `.json` a `.md` kariet sú rovnaké.
+- `llms.txt` uvádza `/all` a `/tree`; `about` a `data/README.md` opisujú stránky z PLDB a `data/facts`.
+- `.github/workflows/import-pldb.yml`: raz týždenne (pondelok 04:17 UTC) `import-pldb --update`. Keď sa
+  dáta zmenili a `pnpm validate` aj `pnpm build` prejdú, commitne `data/pldb` do `main` a spustí deploy.
+  Beží až po zlúčení do `main`; na vetve sa nedal vyskúšať, lebo ručné spustenie deploy.yml by nasadilo
+  na Pages.
+- Build po zmenách: 7,5 s (Astro 5,1 s, Pagefind 1,3 s), 5 166 stránok jazykov, medián 5,2 kB.
+  Snímky prerobené s novou navigáciou.
+
+Ostáva na kontrolu pri overovaní kariet (citácie sú z oficiálnych stránok, ale nie z prvej ruky):
+PayPal pri Node.js (oznámenie Node.js Foundation; PayPal blog vracia 403), Pascal (Wirthov text
+na zrkadle informatika-21.ru), TeX (Knuthov článok z kópie na umich.edu), Groovy (Strachanov blog cez
+web.archive.org), SPSS (príspevok zamestnanca IBM, nie zakladateľov).

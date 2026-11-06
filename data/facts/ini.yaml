@@ -5,3 +5,18 @@ appeared:
   value: 1987
   source: https://pldb.io/concepts/ini.html
   checked: 2026-11-05
+trades_away:
+  - quote: "INI files don’t support Unicode."
+    source: https://devblogs.microsoft.com/oldnewthing/20071126-00/?p=24383
+    checked: 2026-11-06
+  - quote: "An INI file consists of sections, and each section consists of strings. You can’t put sections inside other sections."
+    source: https://devblogs.microsoft.com/oldnewthing/20071126-00/?p=24383
+    checked: 2026-11-06
+  - quote: "These functions are provided only for compatibility with 16-bit versions of Windows. New applications should use the registry."
+    source: https://learn.microsoft.com/windows/win32/sysinfo/registry-functions
+    checked: 2026-11-06
+used_by:
+  - who: Gammu
+    quote: "This file use ini file syntax, with comment parts being marked with both ; and #."
+    source: https://wammu.eu/docs/manual/formats/ini.html
+    checked: 2026-11-06

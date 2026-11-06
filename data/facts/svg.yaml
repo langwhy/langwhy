@@ -5,3 +5,19 @@ appeared:
   value: 2001
   source: https://pldb.io/concepts/svg.html
   checked: 2026-11-05
+born_from:
+  - quote: "which can be widely implemented in browsers and authoring tools and which is suitable for widespread adoption by the content authoring community as a replacement for many current uses of raster graphics."
+    source: https://www.w3.org/TR/1998/WD-SVGReq-19981029
+    checked: 2026-11-06
+trades_away:
+  - quote: "The working group decided that identification of a transparency/blue-screen/chromaKey color will not be supported for shapes and text because the opacity features are sufficient."
+    source: https://www.w3.org/TR/1998/WD-SVGReq-19981029
+    checked: 2026-11-06
+  - quote: "Having a text string determine the dimensions of a parent graphical object (e.g., a box is drawn to fit around a text string) is too high-level of a construct and is not planned for version 1 of SVG."
+    source: https://www.w3.org/TR/1998/WD-SVGReq-19981029
+    checked: 2026-11-06
+used_by:
+  - who: Inkscape
+    quote: "What sets Inkscape apart is its use of Scalable Vector Graphics (SVG), an open XML-based W3C standard, as the native format."
+    source: https://inkscape.org/learn/faq
+    checked: 2026-11-06
