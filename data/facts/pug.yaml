@@ -10,3 +10,10 @@ creators:
     - Tj Holowaychuk
   source: https://pldb.io/concepts/pug.html
   checked: 2026-11-05
+trades_away:
+  - quote: "Filters are rendered at compile time. This makes them fast, but it also means that they cannot support dynamic content or options."
+    source: https://pugjs.org/language/filters.html
+    checked: 2026-11-06
+  - quote: "Pug does not have any special syntax for conditional comments."
+    source: https://pugjs.org/language/comments.html
+    checked: 2026-11-06

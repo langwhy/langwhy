@@ -10,3 +10,23 @@ creators:
     - Bill Hall
   source: https://pldb.io/concepts/odin.html
   checked: 2026-11-05
+born_from:
+  - quote: "The project started one evening in late July 2016 when Ginger Bill was annoyed with programming in C++."
+    source: https://odin-lang.org/docs/faq/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Coupling exceptions to a control structure, as in the try-catch-finally idiom, complicates the understanding of the program."
+    source: https://odin-lang.org/docs/faq/
+    checked: 2026-11-06
+  - quote: "Subtype polymorphism is possible through the use of using but Odin does not offer methods."
+    source: https://odin-lang.org/docs/faq/
+    checked: 2026-11-06
+used_by:
+  - who: Reaper
+    quote: "Reaper Monitor is a native macOS process and resource explorer written in Odin."
+    source: https://odin-lang.org/showcase/
+    checked: 2026-11-06
+  - who: ChiAha
+    quote: "ChiAha™ Digital Twin Toolkit by ChiAha Written in Odin."
+    source: https://odin-lang.org/showcase/
+    checked: 2026-11-06

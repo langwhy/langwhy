@@ -10,3 +10,7 @@ creators:
     - Jeffrey Snover
   source: https://pldb.io/concepts/powershell.html
   checked: 2026-11-05
+born_from:
+  - quote: "While the basic model is extremely powerful, its intrinsic flaw is the tight binding of these operations and the use of unstructured text for integration."
+    source: https://www.jsnover.com/Docs/MonadManifesto.pdf
+    checked: 2026-11-06

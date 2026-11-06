@@ -11,3 +11,27 @@ creators:
     - Andrei Alexandrescu
   source: https://pldb.io/concepts/d.html
   checked: 2026-11-05
+born_from:
+  - quote: "These features can be difficult to retrofit into existing languages, and when there are enough of these, a new language is justified."
+    source: https://dlang.org/overview.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "No consideration is given in D for mixed near/far pointers and all the machinations necessary to generate good 16 bit code."
+    source: https://dlang.org/overview.html
+    checked: 2026-11-06
+  - quote: "Realistically, nobody is going to convert million line legacy programs into D."
+    source: https://dlang.org/overview.html
+    checked: 2026-11-06
+used_by:
+  - who: AdRoll
+    quote: "Integral parts of AdRoll’s business are built on D."
+    source: https://dlang.org/orgs-using-d.html
+    checked: 2026-11-06
+  - who: Ahrefs
+    quote: "Ahrefs is processing petabytes of data to build a web search engine with D."
+    source: https://dlang.org/orgs-using-d.html
+    checked: 2026-11-06
+  - who: Remedy Games
+    quote: "First Triple-A game Quantum Break with D code."
+    source: https://dlang.org/orgs-using-d.html
+    checked: 2026-11-06

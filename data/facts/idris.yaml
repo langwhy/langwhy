@@ -10,3 +10,11 @@ creators:
     - Edwin Brady
   source: https://pldb.io/concepts/idris.html
   checked: 2026-11-05
+born_from:
+  - quote: "As yet, however, there has not been a full-scale programming language with which to experiment with these ideas."
+    source: https://arxiv.org/pdf/2104.00480
+    checked: 2026-11-06
+trades_away:
+  - quote: "This does influence some design choices and implementation priorities, and means that some things are not as polished as we’d like."
+    source: https://idris2.readthedocs.io/en/latest/faq/faq.html
+    checked: 2026-11-06

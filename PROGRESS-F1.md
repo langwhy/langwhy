@@ -1,6 +1,6 @@
 # F1 progress
 
-Stav: rozrobené
+Stav: hotové
 
 Nočná úloha: `~/nocny-worker/ulohy/langwhy-f1.md`. Vetva `worker/langwhy-f1`, nič do `main`.
 
@@ -43,3 +43,41 @@ Zistené:
    Spraviť snímky `/all` a `/tree` na desktope aj mobile.
 6. Fakty pre 80 jazykov bez karty: dávky po 10 pre agentov, iba prvotné zdroje, bez Wikipédie;
    každú citáciu overí `check-quotes --facts`.
+
+## Noc 2 (2026-11-06)
+
+Začiatok 02:30, koniec okolo 03:00. Všetkých 7 bodov z `ulohy/langwhy-f1.md` je splnených.
+
+1. Import: `node scripts/import-pldb.mjs` znova na pine 8a70543, `data/pldb/` bez zmeny.
+2. `pnpm validate` prejde (20 kariet, 100 súborov faktov, 5 166 hesiel PLDB, 0 problémov). Validácia
+   teraz kontroluje aj `facts.schema.json`, existenciu `data/pldb/languages.json`, unikátne id a to, že
+   `pldb` z kariet aj faktov v PLDB existuje. `pnpm build` prejde: **5 166 stránok jazykov** v `dist/lang`,
+   k tomu 5 166 `.json` a 5 166 `.md`. Pagefind zaindexoval 5 168 stránok.
+3. Jazyk bez karty: `/lang/<id>/` z `src/components/PldbPage.astro`, `noindex`, štítok „Data from PLDB,
+   no langwhy card yet“, citácie z faktov, rodina, čísla, odkazy. Karta: markup sa presunul do
+   `src/components/CardPage.astro` bez zmeny. HTML všetkých 20 kariet (aj ich `.json` a `.md`) je pred
+   zmenou a po nej **bajt po bajte rovnaké** (`cmp`, build na 51dedcc proti poslednému commitu).
+   Sitemap obsahuje z `/lang/` len overené karty, teraz žiadnu.
+4. `/all`: 5 166 riadkov podľa PLDB rank, hore karty a hľadanie Pagefind. `/tree`: 275 jazykov,
+   345 väzieb (299 z PLDB, 46 z `reacts_to` kariet), vnorené zoznamy od najstarších koreňov, jazyk
+   s dvoma rodičmi je druhýkrát len odkaz ↑. Snímky (desktop 1280 px, mobil 390 px) na asuse:
+   `~/inbox/worker/langwhy-f1-shots/` (`all-*.png`, `tree-*.png`, `lang-erlang-*.png`). Do repa som
+   ich nedal.
+5. Výkon: stránka jazyka bez karty má 4,7 až 7,8 kB HTML (medián 5,2 kB), najväčšia karta (Rust)
+   25,6 kB, žiadna nemá JS okrem klávesnice v layoute. `/all` má 550 kB HTML (77 kB gzip), `/tree`
+   56 kB. Celý build (Astro + Pagefind) trvá **7 s**, z toho Astro 4,8 s a Pagefind 1,3 s; `dist` 105 MB
+   (Pagefind 22 MB).
+6. Fakty top 100: 20 jazykov s kartou má rok a autorov (zvyšok je v karte). Zo 80 bez karty má 73
+   citácie: **226 citácií** (born_from 80, trades_away 70, used_by 76), všetky nájdené na zdroji
+   (`node scripts/check-quotes.mjs --facts`: 0 chýba), bez Wikipédie. Bez citácie ostalo 7: groovy,
+   tex, ini, matlab, spss, visual-basic-net, svg (zdroj chýba alebo vracia 403). Dva útržky z PDF
+   (fortran, make) som vyhodil. Zbierali ich agenti po 10 jazykoch, každý overil svoje citácie,
+   potom som všetky overil ešte raz naraz.
+7. Vetva pushnutá, nič do `main`, žiadne PR.
+
+Na rozhodnutie (nič neblokuje):
+- V hlavnej navigácii nie je odkaz „Tree“, lebo by zmenil HTML všetkých kariet. `/tree` je zatiaľ
+  prelinkovaný z `/all` a zo stránok jazykov bez karty.
+- Niektoré citácie sú z druhej ruky, hoci na oficiálnom webe (napr. PayPal z oznámenia Node.js
+  Foundation, XML z kópie na xml.coverpages.org, lebo w3.org vracia 403). Pri overovaní karty ich treba
+  pozrieť.

@@ -10,3 +10,19 @@ creators:
     - Brad Cox
   source: https://pldb.io/concepts/objective-c.html
   checked: 2026-11-05
+born_from:
+  - quote: "The roots of Objective-C began at ITT in the early 1980s in a research group led by Tom Love investigating improving programmer productivity by an order of magnitude, a concern motivated by the perceived “software crisis” articulated in the late 1960s."
+    source: https://hopl4.sigplan.org/details/hopl-4-papers/18/The-Origins-of-Objective-C-at-PPI-Stepstone-and-its-Evolution-at-NeXT
+    checked: 2026-11-06
+  - quote: "It was a reaction to C not C++, and to limitations of C for building reusable components."
+    source: https://a-z.readthedocs.io/en/latest/objective-c.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "Lack of garbage collection was a known issue from the beginning, but an inescapable one without sacrificing the reasons people choose C in the first place."
+    source: https://a-z.readthedocs.io/en/latest/objective-c.html
+    checked: 2026-11-06
+used_by:
+  - who: Apple
+    quote: "Naroff and others at Apple added additional features to the language in the late 2000s as the iPhone App Store greatly expanded Objective-C’s user base."
+    source: https://hopl4.sigplan.org/details/hopl-4-papers/18/The-Origins-of-Objective-C-at-PPI-Stepstone-and-its-Evolution-at-NeXT
+    checked: 2026-11-06

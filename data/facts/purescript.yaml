@@ -10,3 +10,14 @@ creators:
     - Phil Freeman
   source: https://pldb.io/concepts/purescript.html
   checked: 2026-11-05
+born_from:
+  - quote: "but I had a few relatively minor concerns about that too, mostly around the treatment of side-effects in code."
+    source: https://survivejs.com/blog/purescript-interview/
+    checked: 2026-11-06
+trades_away:
+  - quote: "PureScript does not provide syntactic sugar for list types."
+    source: https://github.com/purescript/documentation/blob/master/language/Differences-from-Haskell.md
+    checked: 2026-11-06
+  - quote: "At the moment, it is not possible to declare default member implementations for type classes."
+    source: https://github.com/purescript/documentation/blob/master/language/Differences-from-Haskell.md
+    checked: 2026-11-06

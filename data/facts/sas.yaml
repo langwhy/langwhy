@@ -10,3 +10,12 @@ creators:
     - Anthony James Barr
   source: https://pldb.io/concepts/sas.html
   checked: 2026-11-05
+born_from:
+  - quote: "They had a big room full of ladies and gentlemen who would do the calculations by hand."
+    source: https://blogs.sas.com/content/sascom/2026/04/27/sas-born-on-a-farm-raised-on-drugs-and-grew-up-in-the-industry/
+    checked: 2026-11-06
+used_by:
+  - who: State Farm
+    quote: "Merrill led State Farm (a leading insurance company) to become SAS’ first corporate customer."
+    source: https://blogs.sas.com/content/sascom/2026/04/27/sas-born-on-a-farm-raised-on-drugs-and-grew-up-in-the-industry/
+    checked: 2026-11-06

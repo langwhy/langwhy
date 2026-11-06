@@ -10,3 +10,27 @@ creators:
     - Rich Hickey
   source: https://pldb.io/concepts/clojurescript.html
   checked: 2026-11-05
+born_from:
+  - quote: "writing robust JavaScript programs, while possible, requires a combination of extensive discipline and convention, and conventions differ between development shops, communities and libraries."
+    source: https://clojurescript.org/about/rationale
+    checked: 2026-11-06
+trades_away:
+  - quote: "Unlike in Clojure, ClojureScript macro definitions and their use cannot be intermixed in the same compilation stage."
+    source: https://clojurescript.org/about/differences
+    checked: 2026-11-06
+  - quote: ":private metadata is not enforced by the compiler"
+    source: https://clojurescript.org/about/differences
+    checked: 2026-11-06
+used_by:
+  - who: Pisano
+    quote: "We’ve been using Clojure and ClojureScript at Pisano in production for a year."
+    source: https://clojure.org/stories/pisano
+    checked: 2026-11-06
+  - who: Signal
+    quote: "Signal has been working with Clojure since 2014 and with ClojureScript since 2016."
+    source: https://clojure.org/stories/signal
+    checked: 2026-11-06
+  - who: Plumatic
+    quote: "We’re happy to say that ClojureScript has matured substantially since we first looked at it and we are now running it in our production web app."
+    source: https://plumatic.github.io/bringing-functional-to-the-frontend-clojure-clojurescript-for-the-web
+    checked: 2026-11-06

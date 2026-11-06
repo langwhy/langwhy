@@ -10,3 +10,11 @@ creators:
     - Charles H. Moore
   source: https://pldb.io/concepts/forth.html
   checked: 2026-11-05
+born_from:
+  - quote: "Moore developed the first complete, stand-alone implementation of Forth in 1971 for the 11-meter radio telescope operated by the National Radio Astronomy Observatory (NRAO) at Kitt Peak, Arizona."
+    source: https://www.forth.com/resources/forth-programming-language/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Do not leave hooks on which you can hang extensions."
+    source: https://www.forth.com/resources/forth-programming-language/
+    checked: 2026-11-06

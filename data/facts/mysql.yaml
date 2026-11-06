@@ -11,3 +11,24 @@ creators:
     - Michael Widenius
   source: https://pldb.io/concepts/mysql.html
   checked: 2026-11-05
+born_from:
+  - quote: "However, after some testing, we came to the conclusion that mSQL was not fast enough or flexible enough for our needs."
+    source: https://dev.mysql.com/doc/refman/8.4/en/history.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "We are not targeting real-time support, although MySQL replication capabilities offer significant functionality."
+    source: https://dev.mysql.com/doc/refman/8.4/en/compatibility.html
+    checked: 2026-11-06
+used_by:
+  - who: GitHub
+    quote: "GitHub uses MySQL to store vast amounts of relational data."
+    source: https://github.blog/engineering/infrastructure/upgrading-github-com-to-mysql-8-0/
+    checked: 2026-11-06
+  - who: Shopify
+    quote: "A key component of the current infrastructure is the underlying fleet of MySQL database shards that together persist every shop’s critical data."
+    source: https://shopify.engineering/mysql-database-shard-balancing-terabyte-scale
+    checked: 2026-11-06
+  - who: Slack
+    quote: "Slack started as a simple LAMP stack: Linux, Apache, MySQL, and PHP."
+    source: https://slack.engineering/scaling-datastores-at-slack-with-vitess/
+    checked: 2026-11-06

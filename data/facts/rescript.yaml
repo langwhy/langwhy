@@ -10,3 +10,7 @@ creators:
     - Hongbo Zhang
   source: https://pldb.io/concepts/rescript.html
   checked: 2026-11-05
+born_from:
+  - quote: "newcomers dropped out at the sheer amount of extra incongruent tools and learning overhead from having to understand OCaml concepts, Reason concepts, and BuckleScript's concepts."
+    source: https://rescript-lang.org/bucklescript-rebranding
+    checked: 2026-11-06

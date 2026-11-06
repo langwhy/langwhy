@@ -1,6 +1,29 @@
 id: protobuf
 pldb: protobuf
 rank: 89
+born_from:
+  - quote: "As nice as XML is, it isn't going to be efficient enough for this scale."
+    source: https://opensource.googleblog.com/2008/07/protocol-buffers-googles-data.html
+    checked: 2026-11-06
+  - quote: "When all of your machines and network links are running at capacity, XML is an extremely expensive proposition."
+    source: https://opensource.googleblog.com/2008/07/protocol-buffers-googles-data.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "Protobuf tends to assume that entire messages can be loaded into memory at once and are not larger than an object graph."
+    source: https://protobuf.dev/overview/
+    checked: 2026-11-06
+  - quote: "Messages are not compressed."
+    source: https://protobuf.dev/overview/
+    checked: 2026-11-06
+used_by:
+  - who: Google
+    quote: "Protobuf is the most commonly-used data format at Google."
+    source: https://protobuf.dev/overview/
+    checked: 2026-11-06
+  - who: gRPC
+    quote: "Many projects use Protobuf, including the following: gRPC Google Cloud Envoy Proxy"
+    source: https://protobuf.dev/overview/
+    checked: 2026-11-06
 appeared:
   value: 2008
   source: https://pldb.io/concepts/protobuf.html

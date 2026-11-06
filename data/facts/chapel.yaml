@@ -13,3 +13,20 @@ creators:
     - John Plevyak
   source: https://pldb.io/concepts/chapel.html
   checked: 2026-11-05
+born_from:
+  - quote: "The Chapel team attributes much of the lack of productivity and generality within HPC programming to this restriction since it forces users to take a process-centric view of their computation rather than describing and orchestrating the parallelism as a whole."
+    source: https://chapel-lang.org/publications/PMfPC-Chapel.pdf
+    checked: 2026-11-06
+trades_away:
+  - quote: "yet intentionally avoids basing the language on a pure object-oriented paradigm (as with Smalltalk or Java)"
+    source: https://chapel-lang.org/publications/PMfPC-Chapel.pdf
+    checked: 2026-11-06
+used_by:
+  - who: Coral Reef Alliance
+    quote: "The Coral Reef Alliance uses Chapel to analyze satellite imagery of the Mesoamerican Barrier Reef System, providing biodiversity measurements 5 orders of magnitude faster than the previous solution."
+    source: https://chapel-lang.org/overview.html
+    checked: 2026-11-06
+  - who: Arkouda
+    quote: "Familiar Python/Jupyter client interface, powered by a Chapel server that scales to compute and memory resources beyond any comparable tool."
+    source: https://chapel-lang.org/overview.html
+    checked: 2026-11-06

@@ -10,3 +10,7 @@ creators:
     - Thierry Coquand
   source: https://pldb.io/concepts/coq.html
   checked: 2026-11-05
+born_from:
+  - quote: "The salient feature which clearly distinguishes our proof assistant from say LCF or Boyer and Moore’s, is its possibility to extract programs from the constructive contents of proofs."
+    source: https://rocq-prover.org/refman/history.html
+    checked: 2026-11-06

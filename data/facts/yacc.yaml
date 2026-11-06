@@ -10,3 +10,11 @@ creators:
     - Stephen C. Johnson
   source: https://pldb.io/concepts/yacc.html
   checked: 2026-11-05
+born_from:
+  - quote: "Yacc provides a general tool for imposing structure on the input to a computer program."
+    source: https://www.cs.utexas.edu/~novak/yaccpaper.htm
+    checked: 2026-11-06
+trades_away:
+  - quote: "In some cases, Yacc fails to produce a parser when given a set of specifications."
+    source: https://www.cs.utexas.edu/~novak/yaccpaper.htm
+    checked: 2026-11-06

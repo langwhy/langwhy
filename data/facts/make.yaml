@@ -10,3 +10,11 @@ creators:
     - Stuart Feldman
   source: https://pldb.io/concepts/make.html
   checked: 2026-11-05
+born_from:
+  - quote: "recompiling everything in sight just to be safe is very wasteful."
+    source: https://www.nikhef.nl/pdp/files/doc/UnixManuals/v7vol2a.pdf
+    checked: 2026-11-06
+trades_away:
+  - quote: "Make is most useful for medium-sized programming projects; it does not solve the problems of maintaining multiple source versions or of describing huge programs."
+    source: https://www.nikhef.nl/pdp/files/doc/UnixManuals/v7vol2a.pdf
+    checked: 2026-11-06

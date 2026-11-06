@@ -1,6 +1,17 @@
 id: visual-basic
 pldb: visual-basic
 rank: 44
+born_from:
+  - quote: "Although it is designed to be an approachable and easy-to-learn language, it is also powerful enough to satisfy the needs of experienced programmers."
+    source: https://learn.microsoft.com/en-us/dotnet/visual-basic/reference/language-specification/introduction
+    checked: 2026-11-06
+trades_away:
+  - quote: "It's unlikely that support for new workloads, such as web front ends or cross-platform UI frameworks, will be added."
+    source: https://learn.microsoft.com/en-us/dotnet/visual-basic/getting-started/strategy
+    checked: 2026-11-06
+  - quote: "A consumption-only approach means Visual Basic code can access .NET APIs and types built on new .NET runtime features, but the language won't add syntax to define types that use those features."
+    source: https://learn.microsoft.com/en-us/dotnet/visual-basic/getting-started/strategy
+    checked: 2026-11-06
 appeared:
   value: 1991
   source: https://pldb.io/concepts/visual-basic.html

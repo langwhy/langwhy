@@ -10,3 +10,20 @@ creators:
     - Xavier Leroy
   source: https://pldb.io/concepts/ocaml.html
   checked: 2026-11-05
+trades_away:
+  - quote: "The native code compiler is slower, but it produces more efficient machine code, whose performance meets the highest standards of modern compilers."
+    source: https://ocaml.org/about
+    checked: 2026-11-06
+used_by:
+  - who: Jane Street
+    quote: "Jane Street is the largest commercial user of OCaml, using it for everything from research tools to trading systems to systems infrastructure to accounting systems."
+    source: https://ocaml.org/success-stories/large-scale-trading-system
+    checked: 2026-11-06
+  - who: Facebook
+    quote: "Facebook has built a number of major development tools using OCaml"
+    source: https://ocaml.org/industrial-users
+    checked: 2026-11-06
+  - who: Nitrokey
+    quote: "Using OCaml and MirageOS to build NetHSM has been a game-changer for us."
+    source: https://ocaml.org/industrial-users
+    checked: 2026-11-06

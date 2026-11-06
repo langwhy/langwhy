@@ -10,3 +10,11 @@ creators:
     - Larry Wall
   source: https://pldb.io/concepts/perl.html
   checked: 2026-11-05
+born_from:
+  - quote: "When I started designing Perl, I explicitly set out to deconstruct all the computer languages I knew and recombine or reconstruct them in a different way, because there were many things I liked about other languages, and many things I disliked."
+    source: https://www.perl.com/pub/1999/03/pm.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "It doesn't try to tell the programmer how to program."
+    source: https://www.perl.com/pub/1999/03/pm.html
+    checked: 2026-11-06

@@ -10,3 +10,16 @@ creators:
     - Hampton Lintorn-Catlin
   source: https://pldb.io/concepts/haml.html
   checked: 2026-11-05
+born_from:
+  - quote: "Haml (HTML abstraction markup language) is based on one primary principle: markup should be beautiful."
+    source: https://haml.info/
+    checked: 2026-11-06
+trades_away:
+  - quote: "tags like pre and textarea are whitespace-sensitive; indenting the text makes them render wrong."
+    source: https://haml.info/docs/yardoc/file.REFERENCE.html
+    checked: 2026-11-06
+used_by:
+  - who: Unspace Interactive
+    quote: "Unspace Interactive and several other professional Rails shops use Haml exclusively for their projects, valuing its focus on cleanliness, readability, and production speed."
+    source: https://haml.info/
+    checked: 2026-11-06

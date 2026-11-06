@@ -13,3 +13,16 @@ creators:
     - Viral B. Shah
   source: https://pldb.io/concepts/julia.html
   checked: 2026-11-05
+born_from:
+  - quote: "For the work we do — scientific computing, machine learning, data mining, large-scale linear algebra, distributed and parallel computing — each one is perfect for some aspects of the work and terrible for others."
+    source: https://julialang.org/blog/2012/02/why-we-created-julia/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Julia does not have an analog of MATLAB's clear function; once a name is defined in a Julia session (technically, in module Main), it is always present."
+    source: https://docs.julialang.org/en/v1/manual/faq/
+    checked: 2026-11-06
+used_by:
+  - who: Invenia
+    quote: "Invenia had recently ported over their entire code base from Matlab to Julia"
+    source: https://julialang.org/blog/2022/02/10years/
+    checked: 2026-11-06

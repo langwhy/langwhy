@@ -10,3 +10,14 @@ creators:
     - Alain Colmerauer
   source: https://pldb.io/concepts/prolog.html
   checked: 2026-11-05
+born_from:
+  - quote: "The programming language, Prolog, was born of a project aimed not at producing a programming language but at processing natural languages; in this case, French."
+    source: http://alain.colmerauer.free.fr/alcol/ArchivesPublications/PrologHistory/19november92.pdf
+    checked: 2026-11-06
+trades_away:
+  - quote: "A draconian decision was made: at the cost of incompleteness, we chose linear resolution with unification only between the heads of clauses."
+    source: http://alain.colmerauer.free.fr/alcol/ArchivesPublications/PrologHistory/19november92.pdf
+    checked: 2026-11-06
+  - quote: "We observe in passing that this was also the time when the ‘occur check’ disappeared as it was found to be too costly."
+    source: http://alain.colmerauer.free.fr/alcol/ArchivesPublications/PrologHistory/19november92.pdf
+    checked: 2026-11-06

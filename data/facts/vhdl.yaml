@@ -1,6 +1,10 @@
 id: vhdl
 pldb: vhdl
 rank: 80
+born_from:
+  - quote: "The complexity of designing chips at 0.25-micrometer dimensions made informal schematic capture inadequate; engineers needed a formal, hierarchical way to specify, simulate, and document hardware."
+    source: https://technav.ieee.org/topic/very-high-speed-integrated-circuits/
+    checked: 2026-11-06
 appeared:
   value: 1983
   source: https://pldb.io/concepts/vhdl.html

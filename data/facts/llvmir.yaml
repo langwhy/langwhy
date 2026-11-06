@@ -10,3 +10,16 @@ creators:
     - Chris Lattner
   source: https://pldb.io/concepts/llvmir.html
   checked: 2026-11-05
+born_from:
+  - quote: "a compiler framework designed to support transparent, lifelong program analysis and transformation for arbitrary programs"
+    source: https://llvm.org/pubs/2004-01-30-CGO-LLVM.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "LLVM is not intended to be a universal compiler IR"
+    source: https://llvm.org/pubs/2004-01-30-CGO-LLVM.pdf
+    checked: 2026-11-06
+used_by:
+  - who: Apple
+    quote: "All of Apple’s operating systems, iOS, macOS, tvOS and watchOS, are built with LLVM technologies."
+    source: https://llvm.org/Users.html
+    checked: 2026-11-06

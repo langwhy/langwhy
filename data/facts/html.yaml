@@ -10,3 +10,11 @@ creators:
     - Tim Berners-Lee
   source: https://pldb.io/concepts/html.html
   checked: 2026-11-05
+born_from:
+  - quote: "The current incompatibilities of the platforms and tools make it impossible to access existing information through a common interface, leading to waste of time, frustration and obsolete answers to simple data lookup."
+    source: https://info.cern.ch/hypertext/WWW/Proposal.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "The scope of this specification does not include providing mechanisms for media-specific customization of presentation (although default rendering rules for web browsers are included at the end of this specification, and several mechanisms for hooking into CSS are provided as part of the language)."
+    source: https://html.spec.whatwg.org/multipage/introduction.html
+    checked: 2026-11-06

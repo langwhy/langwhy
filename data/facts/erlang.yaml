@@ -12,3 +12,23 @@ creators:
     - Mike Williams
   source: https://pldb.io/concepts/erlang.html
   checked: 2026-11-05
+born_from:
+  - quote: "Telecoms switching systems have demanding requirements in terms of reliability, fault-tolerance etc."
+    source: https://erlang.org/download/armstrong_thesis_2003.pdf
+    checked: 2026-11-06
+trades_away:
+  - quote: "The most common class of 'less suitable' problems is characterised by performance being a prime requirement and constant-factors having a large effect on performance."
+    source: https://www.erlang.org/faq/introduction.html
+    checked: 2026-11-06
+  - quote: "Another class of problem is characterised by a wide interface to existing C code."
+    source: https://www.erlang.org/faq/introduction.html
+    checked: 2026-11-06
+used_by:
+  - who: Ericsson
+    quote: "The largest user of Erlang is Ericsson."
+    source: https://www.erlang.org/faq/introduction.html
+    checked: 2026-11-06
+  - who: Facebook
+    quote: "Facebook (Facebook chat backend)"
+    source: https://www.erlang.org/faq/introduction.html
+    checked: 2026-11-06

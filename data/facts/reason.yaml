@@ -5,3 +5,16 @@ appeared:
   value: 2016
   source: https://pldb.io/concepts/reason.html
   checked: 2026-11-05
+born_from:
+  - quote: "Reason lets you write simple, fast and quality type safe code while leveraging both the JavaScript & OCaml ecosystems."
+    source: https://reasonml.github.io/
+    checked: 2026-11-06
+trades_away:
+  - quote: "We allow opt-in side-effect, mutation and object for familiarity & interop, while keeping the rest of the language pure, immutable and functional."
+    source: https://reasonml.github.io/docs/en/what-and-why
+    checked: 2026-11-06
+used_by:
+  - who: Messenger
+    quote: "Most of the messenger core team's new features are now developed in Reason."
+    source: https://reasonml.github.io/blog/2017/09/08/messenger-50-reason
+    checked: 2026-11-06

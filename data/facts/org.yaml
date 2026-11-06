@@ -10,3 +10,7 @@ creators:
     - Carsten Dominik
   source: https://pldb.io/concepts/org.html
   checked: 2026-11-05
+trades_away:
+  - quote: "Authoring Org files is best supported by Emacs, but you can view, understand, and change them with any text editor."
+    source: https://orgmode.org/manual/Summary.html
+    checked: 2026-11-06

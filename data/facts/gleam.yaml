@@ -10,3 +10,11 @@ creators:
     - Louis Pilfold
   source: https://pldb.io/concepts/gleam.html
   checked: 2026-11-05
+born_from:
+  - quote: "I always miss sum types when I am coding in Erlang."
+    source: https://blog.lambdaclass.com/an-interview-with-the-creator-of-gleam-an-ml-like-language-for-the-erlang-vm-with-a-compiler/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Gleam will always be a small and cohesive language with a minimal feature set, so there are many features popular in other languages which will not be added to Gleam."
+    source: https://gleam.run/frequently-asked-questions/
+    checked: 2026-11-06

@@ -10,3 +10,11 @@ creators:
     - Håkon Wium Lie
   source: https://pldb.io/concepts/css.html
   checked: 2026-11-05
+born_from:
+  - quote: "By separating the presentation style of documents from the content of documents, CSS simplifies Web authoring and site maintenance."
+    source: https://drafts.csswg.org/css2/
+    checked: 2026-11-06
+trades_away:
+  - quote: "CSS is used to describe the presentation of document languages and CSS does not change the underlying semantics of the document languages."
+    source: https://drafts.csswg.org/css2/
+    checked: 2026-11-06

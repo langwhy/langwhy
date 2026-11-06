@@ -11,3 +11,8 @@ creators:
     - Robert Gentleman
   source: https://pldb.io/concepts/r.html
   checked: 2026-11-05
+used_by:
+  - who: "Statistics Denmark"
+    quote: "This paper presents a case study of the transition of Statistics Denmark's Data Consultancy team from SAS to R as its primary programming language."
+    source: https://www.dst.dk/ext/3592516640556/0/direktion/4-7-Transitioning-from-SAS-to-R-A-Case-Study-from-Customised-Statistics-(pdf)--pdf
+    checked: 2026-11-06

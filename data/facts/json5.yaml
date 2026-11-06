@@ -10,3 +10,11 @@ creators:
     - Aseem Kishore
   source: https://pldb.io/concepts/json5.html
   checked: 2026-11-05
+born_from:
+  - quote: "JSON5 is an extension to the popular JSON file format that aims to be easier to write and maintain by hand (e.g. for config files)."
+    source: https://json5.org/
+    checked: 2026-11-06
+trades_away:
+  - quote: "It is not intended to be used for machine-to-machine communication."
+    source: https://json5.org/
+    checked: 2026-11-06

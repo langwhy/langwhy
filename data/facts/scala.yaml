@@ -10,3 +10,16 @@ creators:
     - Martin Odersky
   source: https://pldb.io/concepts/scala.html
   checked: 2026-11-05
+born_from:
+  - quote: "I wanted to start with a clean sheet, and see whether I could design something that's better than Java."
+    source: https://www.artima.com/articles/the-origins-of-scala
+    checked: 2026-11-06
+used_by:
+  - who: "Twitter"
+    quote: "Robey Pointer at Twitter has moved their main message queue from Ruby to Scala for improved performance."
+    source: https://www.scala-lang.org/old/node/1658.html
+    checked: 2026-11-06
+  - who: "EDFT"
+    quote: "EDFT has seen a significant increase in development productivity and much improved interfaces for their users, the Power traders."
+    source: https://www.scala-lang.org/old/node/1658.html
+    checked: 2026-11-06

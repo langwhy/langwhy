@@ -15,3 +15,11 @@ creators:
     - John W. Cowan
   source: https://pldb.io/concepts/xml.html
   checked: 2026-11-05
+born_from:
+  - quote: "Its goal is to enable generic SGML to be served, received, and processed on the Web in the way that is now possible with HTML."
+    source: https://xml.coverpages.org/REC-xml-19980210.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "Terseness in XML markup is of minimal importance."
+    source: https://xml.coverpages.org/REC-xml-19980210.html
+    checked: 2026-11-06

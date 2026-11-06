@@ -10,3 +10,11 @@ creators:
     - Douglas Crockford
   source: https://pldb.io/concepts/json.html
   checked: 2026-11-05
+born_from:
+  - quote: "Unfortunately, XML is not well suited to data-interchange, much as a wrench is not well-suited to driving nails."
+    source: https://json.org/xml.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "JSON is not extensible because it does not need to be."
+    source: https://json.org/xml.html
+    checked: 2026-11-06

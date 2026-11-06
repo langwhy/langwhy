@@ -10,3 +10,16 @@ creators:
     - Don Syme
   source: https://pldb.io/concepts/f-sharp.html
   checked: 2026-11-05
+born_from:
+  - quote: "F# was one of several responses by advocates of strongly-typed functional programming to the “object-oriented tidal wave” of the mid-1990s."
+    source: https://fsharp.org/history/hopl-final/hopl-fsharp.pdf
+    checked: 2026-11-06
+trades_away:
+  - quote: "A notable omission from the design was the functorial module system of OCaml."
+    source: https://fsharp.org/history/hopl-final/hopl-fsharp.pdf
+    checked: 2026-11-06
+used_by:
+  - who: 15below Ltd
+    quote: "F#’s excellent interoperability with the rest of .NET allows us to use it for components where it’s particular strength’s shine without having to discard or rewrite our existing code."
+    source: https://fsharp.org/testimonials/
+    checked: 2026-11-06

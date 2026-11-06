@@ -10,3 +10,19 @@ creators:
     - Linus Torvalds
   source: https://pldb.io/concepts/git.html
   checked: 2026-11-05
+born_from:
+  - quote: "In 2005, the relationship between the community that developed the Linux kernel and the commercial company that developed BitKeeper broke down, and the tool’s free-of-charge status was revoked."
+    source: https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git
+    checked: 2026-11-06
+  - quote: "This prompted the Linux development community (and in particular Linus Torvalds, the creator of Linux) to develop their own tool based on some of the lessons they learned while using BitKeeper."
+    source: https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git
+    checked: 2026-11-06
+trades_away:
+  - quote: "Git intentionally does not (and will not) provide a configuration variable, such as commit.signoff, to automatically add --signoff by default."
+    source: https://git-scm.com/docs/gitfaq
+    checked: 2026-11-06
+used_by:
+  - who: Microsoft
+    quote: "We have all the code from 40+ Windows Source Depot servers in a single Git repo hosted on VS Team Services – and it’s very usable."
+    source: https://devblogs.microsoft.com/bharry/scaling-git-and-some-back-story/
+    checked: 2026-11-06

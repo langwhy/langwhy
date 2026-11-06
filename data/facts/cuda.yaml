@@ -5,3 +5,12 @@ appeared:
   value: 2007
   source: https://pldb.io/concepts/cuda.html
   checked: 2026-11-05
+born_from:
+  - quote: "This started the era of GPGPU: general purpose computing on GPUs that were originally designed to accelerate only specific workloads like gaming and graphics."
+    source: https://developer.nvidia.com/blog/cuda-refresher-reviewing-the-origins-of-gpu-computing
+    checked: 2026-11-06
+used_by:
+  - who: Colorfront
+    quote: "Colorfront On-Set Dailies relies exclusively on GPU image processing in CUDA, including deBayer, color grading, look up tables, burn-ins, etc."
+    source: https://www.nvidia.com/content/cuda/spotlights/mark-jaszberenyi-colorfront.html
+    checked: 2026-11-06

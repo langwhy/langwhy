@@ -10,3 +10,23 @@ creators:
     - John Ousterhout
   source: https://pldb.io/concepts/tcl.html
   checked: 2026-11-05
+born_from:
+  - quote: "Each tool needed to have a command language (in those days people tended to invoke tools by typing commands; graphical user interfaces weren't yet in widespread use)."
+    source: https://www.tcl-lang.org/about/history.html
+    checked: 2026-11-06
+  - quote: "However, our primary interest was in the tools, not their command languages."
+    source: https://www.tcl-lang.org/about/history.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "there were almost no development tools for Tcl, and professional services such as training and support were only sporadically available."
+    source: https://www.tcl-lang.org/about/history.html
+    checked: 2026-11-06
+used_by:
+  - who: Cisco
+    quote: "Tcl is easy to use, is embeddable and extensible, and has allowed us to automate our testing tasks to a much higher degree than we otherwise could."
+    source: https://www.tcl-lang.org/about/audience.html
+    checked: 2026-11-06
+  - who: NBC
+    quote: "Tcl runs the operator interface of a Shell Oil drilling rig, runs the NBC network control system 24x7, has been used to program the Hubble Space Telescope and prototype the Mars Pathfinder, is hiding in every Tivo box and many Oracle products."
+    source: https://www.tcl-lang.org/about/audience.html
+    checked: 2026-11-06

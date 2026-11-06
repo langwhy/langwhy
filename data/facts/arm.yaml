@@ -11,3 +11,15 @@ creators:
     - Steve Furber
   source: https://pldb.io/concepts/arm.html
   checked: 2026-11-05
+born_from:
+  - quote: "But when Acorn began dreaming of more powerful machines, the company decided to build its own processor"
+    source: https://newsroom.arm.com/blog/40-year-anniversary-of-arm-architecture
+    checked: 2026-11-06
+  - quote: "We were worried about power dissipation. We needed to be extremely careful for something that would be mass manufactured and put into cheap machines without heat sinks and that sort of thing."
+    source: https://archive.computerhistory.org/resources/access/text/2012/06/102746190-05-01-acc.pdf
+    checked: 2026-11-06
+used_by:
+  - who: Amazon Web Services
+    quote: "AWS Graviton2 processors are custom designed by AWS using 64-bit Arm Neoverse cores."
+    source: https://aws.amazon.com/blogs/compute/tag/aws-graviton/
+    checked: 2026-11-06

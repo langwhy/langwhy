@@ -12,3 +12,28 @@ creators:
     - Brian Cardiff
   source: https://pldb.io/concepts/crystal.html
   checked: 2026-11-05
+born_from:
+  - quote: "Null pointer exceptions, also known as NPEs, are pretty common errors."
+    source: https://crystal-lang.org/2013/07/13/null-pointer-exception/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Although Crystal has a Ruby-like syntax, Crystal is a different language, not another Ruby implementation."
+    source: https://crystal-lang.org/reference/crystal_for_rubyists/index.html
+    checked: 2026-11-06
+used_by:
+  - who: Nikola Motor Company
+    quote: "their vehicles are equipped with a state-of-the-art digital cockpit: most of their vehicles’ functions and driver controls are operated via a central 17” touchscreen Infotainment & 12.8” Instrument cluster, developed in Crystal."
+    source: https://crystal-lang.org/2020/02/11/nikola-motor-company/
+    checked: 2026-11-06
+  - who: Bright Security
+    quote: "However, the need for performance and safety made them quickly switch to Crystal."
+    source: https://crystal-lang.org/2024/02/02/crystal-the-lingua-franca/
+    checked: 2026-11-06
+  - who: PlaceOS
+    quote: "We’re effectively a Crystal-lang house for all things backend."
+    source: https://crystal-lang.org/2023/01/24/placeos-environments/
+    checked: 2026-11-06
+  - who: 84codes
+    quote: "Crystal is efficiently compiled thanks to its LLVM backend."
+    source: https://crystal-lang.org/2024/05/22/lavinmq-understanding-code/
+    checked: 2026-11-06

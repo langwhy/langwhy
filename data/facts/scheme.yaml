@@ -11,3 +11,7 @@ creators:
     - Gerald Jay Sussman
   source: https://pldb.io/concepts/scheme.html
   checked: 2026-11-05
+born_from:
+  - quote: "Inspired by ACTORS, we have implemented an interpreter for a LISP-like language, SCHEME, based on the lambda calculus, but extended for side effects, multiprocessing, and process synchronization"
+    source: https://research.scheme.org/lambda-papers/
+    checked: 2026-11-06

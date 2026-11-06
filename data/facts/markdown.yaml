@@ -11,3 +11,30 @@ creators:
     - Aaron Swartz
   source: https://pldb.io/concepts/markdown.html
   checked: 2026-11-05
+born_from:
+  - quote: "Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid HTML."
+    source: https://daringfireball.net/projects/markdown/
+    checked: 2026-11-06
+  - quote: "The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible."
+    source: https://daringfireball.net/projects/markdown/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Markdown is not a replacement for HTML, or even close to it."
+    source: https://daringfireball.net/projects/markdown/syntax
+    checked: 2026-11-06
+  - quote: "HTML is a publishing format; Markdown is a writing format."
+    source: https://daringfireball.net/projects/markdown/syntax
+    checked: 2026-11-06
+used_by:
+  - who: GitHub
+    quote: "GitHub Flavored Markdown, often shortened as GFM, is the dialect of Markdown that is currently supported for user content on GitHub.com and GitHub Enterprise."
+    source: https://github.github.com/gfm/
+    checked: 2026-11-06
+  - who: GitLab
+    quote: "When you enter text in the GitLab UI, GitLab assumes the text is in GitLab Flavored Markdown."
+    source: https://docs.gitlab.com/user/markdown/
+    checked: 2026-11-06
+  - who: Obsidian
+    quote: "Obsidian stores your notes locally as plain text Markdown files."
+    source: https://obsidian.md/
+    checked: 2026-11-06

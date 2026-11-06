@@ -10,3 +10,16 @@ creators:
     - Ryan Dahl
   source: https://pldb.io/concepts/deno.html
   checked: 2026-11-05
+born_from:
+  - quote: "it was kind of a litany of grievances that I have against my project, namely that it just hasn't really kept up with the times and evolved."
+    source: https://stackoverflow.blog/2024/08/20/ryan-dahl-deno-20-scale-improve-npm-nodejs/
+    checked: 2026-11-06
+trades_away:
+  - quote: "It is not possible for different modules to have different privilege levels within the same thread."
+    source: https://docs.deno.com/runtime/fundamentals/security/
+    checked: 2026-11-06
+used_by:
+  - who: Netlify
+    quote: "Netlify, a leading Composable Web Platform, successfully launched edge functions powered by Deno Subhosting to enable advanced website customizations."
+    source: https://deno.com/blog/netlify-subhosting
+    checked: 2026-11-06

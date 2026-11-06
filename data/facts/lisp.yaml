@@ -10,3 +10,16 @@ creators:
     - John McCarthy
   source: https://pldb.io/concepts/lisp.html
   checked: 2026-11-05
+born_from:
+  - quote: "My desire for an algebraic list processing language for artificial intelligence work on the IBM 704 computer arose in the summer of 1956 during the Dartmouth Summer Research Project on Artificial Intelligence which was the first organized study of AI."
+    source: https://www-formal.stanford.edu/jmc/history/lisp/node2.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "As a programming language LISP had many limitations. Some of the most evident in the early 1960s were ultra-slow numerical computation, inability to represent objects by blocks of registers and garbage collect the blocks, and lack of a good system for input-output of symbolic expressions in conventional notations."
+    source: https://www-formal.stanford.edu/jmc/history/lisp/node5.html
+    checked: 2026-11-06
+used_by:
+  - who: Grammarly
+    quote: "At Grammarly, the foundation of our business, our core grammar engine, is written in Common Lisp."
+    source: https://www.grammarly.com/blog/engineering/running-lisp-in-production/
+    checked: 2026-11-06

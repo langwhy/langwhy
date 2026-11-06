@@ -10,3 +10,15 @@ creators:
     - John Backus
   source: https://pldb.io/concepts/fortran.html
   checked: 2026-11-05
+born_from:
+  - quote: "overcoming the difficulties of these computers and cramming programs and data into little tiny stores made programming really a black art."
+    source: https://www.softwarepreservation.org/projects/FORTRAN/paper/p45-backus.pdf
+    checked: 2026-11-06
+  - quote: "About December 1953 I wrote a letter to my boss, Cuthbert Hurd, proposing that IBM should develop a practical automatic programming system for what was then the recently announced 704."
+    source: https://www.softwarepreservation.org/projects/FORTRAN/paper/p45-backus.pdf
+    checked: 2026-11-06
+used_by:
+  - who: ECMWF
+    quote: "A subset of IFS auxiliary routines required by multiple other packages has been released as FIAT (Fortran IFS and Arpège Toolkit)."
+    source: https://www.ecmwf.int/node/25084
+    checked: 2026-11-06

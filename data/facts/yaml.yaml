@@ -12,3 +12,17 @@ creators:
     - Ingy döt Net
   source: https://pldb.io/concepts/yaml.html
   checked: 2026-11-05
+born_from:
+  - quote: "The project was initially rooted in Clark and Oren’s work on the SML-DEV 6 mailing list (for simplifying XML) and Ingy’s plain text serialization module 7 for Perl."
+    source: https://yaml.org/spec/1.2.2/
+    checked: 2026-11-06
+  - quote: "YAML data should be portable between programming languages."
+    source: https://yaml.org/spec/1.2.2/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Since in a YAML representation , mapping keys are unordered and nodes may be referenced more than once (have more than one incoming “arrow”), the serialization process is required to impose an ordering on the mapping keys"
+    source: https://yaml.org/spec/1.2.2/
+    checked: 2026-11-06
+  - quote: "In particular, mapping key order, comments and tag handles should not be referenced during construction."
+    source: https://yaml.org/spec/1.2.2/
+    checked: 2026-11-06

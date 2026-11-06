@@ -1,6 +1,19 @@
 id: hcl
 pldb: hcl
 rank: 72
+born_from:
+  - quote: "Whereas JSON and YAML are formats for serializing data structures, HCL is a syntax and API specifically designed for building structured configuration formats."
+    source: https://github.com/hashicorp/hcl/blob/main/README.md
+    checked: 2026-11-06
+trades_away:
+  - quote: "The HCL information model is designed to support multiple concrete syntaxes for configuration, but this native syntax is considered the primary format and is optimized for human authoring and maintenance, as opposed to machine generation of configuration."
+    source: https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md
+    checked: 2026-11-06
+used_by:
+  - who: Terraform
+    quote: "HCL and HIL originate in HashiCorp Terraform, with the original parsers for each written by Mitchell Hashimoto."
+    source: https://github.com/hashicorp/hcl
+    checked: 2026-11-06
 appeared:
   value: 2014
   source: https://pldb.io/concepts/hcl.html

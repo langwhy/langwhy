@@ -13,3 +13,16 @@ creators:
     - Shriram Krishnamurthi
   source: https://pldb.io/concepts/racket.html
   checked: 2026-11-05
+born_from:
+  - quote: "In 1995, we set out to create an outreach project for novice programmers."
+    source: https://drops.dagstuhl.de/storage/00lipics/lipics-vol032-snapl2015/LIPIcs.SNAPL.2015.113/LIPIcs.SNAPL.2015.113.pdf
+    checked: 2026-11-06
+trades_away:
+  - quote: "While Racket does not automatically protect such flows of values, it comes with the tools to build invariant-enforcement mechanisms."
+    source: https://drops.dagstuhl.de/storage/00lipics/lipics-vol032-snapl2015/LIPIcs.SNAPL.2015.113/LIPIcs.SNAPL.2015.113.pdf
+    checked: 2026-11-06
+used_by:
+  - who: Cloudflare
+    quote: "Whenever an engineer changes one of these programs, we run all the programs through our custom model checker (written in Racket + Rosette) to check for certain bugs (e.g., one program overshadowing another) before the programs are deployed."
+    source: https://blog.cloudflare.com/topaz-policy-engine-design/
+    checked: 2026-11-06

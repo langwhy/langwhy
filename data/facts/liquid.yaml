@@ -10,3 +10,16 @@ creators:
     - Tobias Lütke
   source: https://pldb.io/concepts/liquid.html
   checked: 2026-11-05
+born_from:
+  - quote: "You want to allow your users to edit the appearance of your application but don't want them to run insecure code on your server."
+    source: https://github.com/Shopify/liquid
+    checked: 2026-11-06
+trades_away:
+  - quote: "render_length_limit only bounds generated output and does not by itself limit CPU work for output-free loops."
+    source: https://github.com/Shopify/liquid
+    checked: 2026-11-06
+used_by:
+  - who: Shopify
+    quote: "Liquid has been in production use at Shopify since 2006 and is now used by many other hosted web applications."
+    source: https://shopify.github.io/liquid/
+    checked: 2026-11-06

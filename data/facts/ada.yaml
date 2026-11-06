@@ -10,3 +10,28 @@ creators:
     - Jean Ichbiah
   source: https://pldb.io/concepts/ada.html
   checked: 2026-11-05
+born_from:
+  - quote: "Ada is a modern programming language designed for large, long-lived applications – and embedded systems in particular – where reliability and efficiency are essential."
+    source: https://www.adaic.org/advantages/ada-overview/
+    checked: 2026-11-06
+trades_away:
+  - quote: "However, the full language is inappropriate in a safety-critical application, since the generality and flexibility may interfere with traceability / certification requirements."
+    source: https://www.adaic.org/advantages/ada-overview/
+    checked: 2026-11-06
+used_by:
+  - who: Raytheon
+    quote: "Raytheon has delivered the Ship Self-Defense System (SSDS) Mk 2 using GNAT Pro for LynxOS within its multi-language software development environment."
+    source: https://www.adaic.org/advantages/case-studies/
+    checked: 2026-11-06
+  - who: Thales
+    quote: "This case study describes Thales UK’s state-of-the-art non-hull-penetrating optronic mast for the United Kingdom Royal Navy’s new Astute-class submarines, which provides greater flexibility in boat design and improved surface visibility while reducing the probability of detection."
+    source: https://www.adaic.org/advantages/case-studies/
+    checked: 2026-11-06
+  - who: Lockheed Martin
+    quote: "Lockheed Martin – En Route Automation Modernization (ERAM)"
+    source: https://www.adaic.org/advantages/projects/
+    checked: 2026-11-06
+  - who: Honeywell
+    quote: "Honeywell – Modular Azimuth Position System"
+    source: https://www.adaic.org/advantages/projects/
+    checked: 2026-11-06

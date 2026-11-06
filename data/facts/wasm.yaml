@@ -10,3 +10,26 @@ creators:
     - Alon Zakai
   source: https://pldb.io/concepts/wasm.html
   checked: 2026-11-05
+born_from:
+  - quote: "Yet JavaScript has inconsistent performance and a number of other pitfalls, especially as a compilation target."
+    source: https://research.google/pubs/bringing-the-web-up-to-speed-with-webassembly/
+    checked: 2026-11-06
+  - quote: "There are two main benefits WebAssembly provides: The kind of binary format being considered for WebAssembly can be natively decoded much faster than JavaScript can be parsed ( experiments show more than 20× faster)."
+    source: https://webassembly.org/docs/faq/
+    checked: 2026-11-06
+trades_away:
+  - quote: "WebAssembly is designed to be a complement to, not replacement of, JavaScript."
+    source: https://webassembly.org/docs/faq/
+    checked: 2026-11-06
+  - quote: "The WebAssembly spec itself will not try to define any large portable libc-like library."
+    source: https://webassembly.org/docs/non-web/
+    checked: 2026-11-06
+used_by:
+  - who: Figma
+    quote: "The biggest benefit we saw from using WebAssembly at Figma was faster load time."
+    source: https://www.figma.com/blog/webassembly-cut-figmas-load-time-by-3x/
+    checked: 2026-11-06
+  - who: Google Earth
+    quote: "Now we're starting to switch to WebAssembly, which lets us take that same code and run it across browsers."
+    source: https://web.dev/case-studies/earth-webassembly?hl=en
+    checked: 2026-11-06

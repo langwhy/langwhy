@@ -11,3 +11,16 @@ creators:
     - Dwight Merriman
   source: https://pldb.io/concepts/mongodb.html
   checked: 2026-11-05
+born_from:
+  - quote: "Using databases sucked, and someone needed to fix it and if no one else was going to do it, it might as well be me and Dwight."
+    source: https://www.infoworld.com/article/3570729/why-mongodb-is-fundamentally-better-for-developers.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "The maximum BSON document size is 16 mebibytes."
+    source: https://www.mongodb.com/docs/manual/reference/limits/
+    checked: 2026-11-06
+used_by:
+  - who: Glassdoor
+    quote: "Atlas Search gives our engineering team significantly more time back compared to the previous search engine."
+    source: https://mongodb.com/solutions/customer-case-studies/glassdoor
+    checked: 2026-11-06

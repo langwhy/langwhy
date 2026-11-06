@@ -10,3 +10,19 @@ creators:
     - Jeremy Ashkenas
   source: https://pldb.io/concepts/coffeescript.html
   checked: 2026-11-05
+born_from:
+  - quote: "CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way."
+    source: https://coffeescript.org/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Since CoffeeScript takes care of all variable declaration, it is not possible to declare variables with ES2015’s let or const."
+    source: https://coffeescript.org/
+    checked: 2026-11-06
+  - quote: "This is intentional; we feel that the simplicity gained by not having to think about variable declaration outweighs the benefit of having three separate ways to declare variables."
+    source: https://coffeescript.org/
+    checked: 2026-11-06
+used_by:
+  - who: Shopify
+    quote: "Since joining the Shopify team in early August, I have been working on Batman.js, a single-page app micro-framework written purely in CoffeeScript."
+    source: https://shopify.engineering/three-months-of-coffeescript
+    checked: 2026-11-06

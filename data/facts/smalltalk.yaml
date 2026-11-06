@@ -12,3 +12,16 @@ creators:
     - Adele Goldberg
   source: https://pldb.io/concepts/smalltalk.html
   checked: 2026-11-05
+born_from:
+  - quote: "Though it has noble ancestors indeed, Smalltalk's contribution is a new design paradigm-which I called object-oriented -for attacking large problems of the professional programmer, and making small ones possible for the novice user."
+    source: https://worrydream.com/EarlyHistoryOfSmalltalk/
+    checked: 2026-11-06
+used_by:
+  - who: Thales
+    quote: "Pierre Laborde, engineer at Thales."
+    source: https://pharo.org/success/WhenCompaniesCodeWithPharo.html
+    checked: 2026-11-06
+  - who: Lifeware
+    quote: "Vincent Blondeau, software engineer at Lifeware."
+    source: https://pharo.org/success/WhenCompaniesCodeWithPharo.html
+    checked: 2026-11-06

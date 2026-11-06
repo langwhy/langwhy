@@ -10,3 +10,20 @@ creators:
     - Lee Byron
   source: https://pldb.io/concepts/graphql.html
   checked: 2026-11-05
+born_from:
+  - quote: "We were frustrated with the differences between the data we wanted to use in our apps and the server queries they required."
+    source: https://engineering.fb.com/2015/09/14/core-data/graphql-a-data-query-language/
+    checked: 2026-11-06
+trades_away:
+  - quote: "Does GraphQL support offline usage? No, or at least not natively."
+    source: https://graphql.org/faq/
+    checked: 2026-11-06
+used_by:
+  - who: GitHub
+    quote: "Today, we’re excited to announce our biggest change to the API since we snubbed XML in favor of JSON: we’re making the GitHub API available through GraphQL."
+    source: https://github.blog/2016-09-14-the-github-graphql-api/
+    checked: 2026-11-06
+  - who: Facebook
+    quote: "GraphQL was our opportunity to rethink mobile app data-fetching from the perspective of product designers and developers."
+    source: https://engineering.fb.com/2015/09/14/core-data/graphql-a-data-query-language/
+    checked: 2026-11-06

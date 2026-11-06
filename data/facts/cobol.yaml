@@ -16,3 +16,14 @@ creators:
     - Grace Hopper
   source: https://pldb.io/concepts/cobol.html
   checked: 2026-11-05
+born_from:
+  - quote: "The data processors did not like symbols, abbreviations that didn't convey anything to them. They were totally accustomed to writing things in words. So why not give them a word-oriented language?"
+    source: https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf
+    checked: 2026-11-06
+  - quote: "What I was after in beginning English language was to bring another whole group of people able to use the computer easily."
+    source: https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf
+    checked: 2026-11-06
+trades_away:
+  - quote: "And the first COBOL, the early COBOL's, were built for the dedicated computer, where there was no such thing as interrelationship with an operating system or anything else."
+    source: https://archive.computerhistory.org/resources/text/Oral_History/Hopper_Grace/102702026.05.01.pdf
+    checked: 2026-11-06

@@ -1,6 +1,15 @@
 id: cmake
 pldb: cmake
 rank: 87
+born_from:
+  - quote: "CMake was created in 2000 in response to the need for a powerful, cross-platform build environment for The Insight Toolkit (ITK) and the Visualization Toolkit (VTK)."
+    source: https://cmake.org/history/
+    checked: 2026-11-06
+used_by:
+  - who: Korg
+    quote: "Such an approach to electronic and software technologies led us to CMake and so we started thinking whether it would be a good replacement for our old build system and work-flow."
+    source: https://www.kitware.com/how-cmake-plays-music/
+    checked: 2026-11-06
 appeared:
   value: 2000
   source: https://pldb.io/concepts/cmake.html

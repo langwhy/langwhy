@@ -11,3 +11,14 @@ creators:
     - Alex Beregszaszi
   source: https://pldb.io/concepts/solidity.html
   checked: 2026-11-05
+born_from:
+  - quote: "Solidity is a curly-bracket language designed to target the Ethereum Virtual Machine (EVM)."
+    source: https://docs.soliditylang.org/en/latest/index.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "Fixed point numbers are not fully supported by Solidity yet."
+    source: https://docs.soliditylang.org/en/latest/types.html
+    checked: 2026-11-06
+  - quote: "Lambda or inline functions are planned but not yet supported."
+    source: https://docs.soliditylang.org/en/latest/types.html
+    checked: 2026-11-06

@@ -10,3 +10,10 @@ creators:
     - Niklaus Wirth
   source: https://pldb.io/concepts/pascal.html
   checked: 2026-11-05
+born_from:
+  - quote: "But in my opinion Algol W was not perfectly satisfactory. It still contained too many compromises, having emerged from a committee."
+    source: https://informatika-21.ru/wirth/Pascal50E.pdf
+    checked: 2026-11-06
+  - quote: "The language was strongly influenced by the new discipline of structured programming, advocated primarily by E.W. Dijkstra to fight the threatening software crisis (1968)."
+    source: https://informatika-21.ru/wirth/Pascal50E.pdf
+    checked: 2026-11-06

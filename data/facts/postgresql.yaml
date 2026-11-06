@@ -10,3 +10,16 @@ creators:
     - Marc G. Fournier
   source: https://pldb.io/concepts/postgresql.html
   checked: 2026-11-05
+trades_away:
+  - quote: "PostgreSQL tries to conform with the SQL standard where such conformance does not contradict traditional features or could lead to poor architectural decisions."
+    source: https://www.postgresql.org/about/
+    checked: 2026-11-06
+used_by:
+  - who: Notion
+    quote: "sharding Notion’s PostgreSQL monolith into a horizontally-partitioned database fleet."
+    source: https://www.notion.com/blog/sharding-postgres-at-notion
+    checked: 2026-11-06
+  - who: Figma
+    quote: "In 2020, we were running a single Postgres database hosted on AWS’s largest physical instance, and by the end of 2022, we had built out a distributed architecture with caching, read replicas, and a dozen vertically partitioned databases."
+    source: https://www.figma.com/blog/how-figmas-databases-team-lived-to-tell-the-scale/
+    checked: 2026-11-06

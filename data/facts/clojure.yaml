@@ -10,3 +10,24 @@ creators:
     - Rich Hickey
   source: https://pldb.io/concepts/clojure.html
   checked: 2026-11-05
+born_from:
+  - quote: "Basically because I wanted: A Lisp for Functional Programming symbiotic with an established Platform designed for Concurrency and couldn’t find one."
+    source: https://clojure.org/about/rationale
+    checked: 2026-11-06
+trades_away:
+  - quote: "Clojure models its data structures as immutable objects represented by interfaces, and otherwise does not offer its own class system."
+    source: https://clojure.org/about/rationale
+    checked: 2026-11-06
+used_by:
+  - who: "LendUp"
+    quote: "LendUp uses Clojure to power data pipelines and core real-time decisioning & servicing infrastructure."
+    source: https://clojure.org/community/success_stories
+    checked: 2026-11-06
+  - who: "GO-JEK"
+    quote: "At GO-JEK , we rewrote our Allocation Engine in Clojure which enabled us to serve millions of customers to find a suitable driver for them."
+    source: https://clojure.org/community/success_stories
+    checked: 2026-11-06
+  - who: "AnyChart"
+    quote: "AnyChart chose Clojure and ClojureScript to power their JavaScript (HTML5) charting libraries’ technical documentation ecosystem: user’s guide, API reference, and chart playground."
+    source: https://clojure.org/community/success_stories
+    checked: 2026-11-06

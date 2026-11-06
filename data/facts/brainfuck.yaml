@@ -10,3 +10,7 @@ creators:
     - Urban Müller
   source: https://pldb.io/concepts/brainfuck.html
   checked: 2026-11-05
+trades_away:
+  - quote: "Who can program anything useful with it?"
+    source: https://aminet.net/dev/lang/brainfuck-2.readme
+    checked: 2026-11-06

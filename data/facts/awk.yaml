@@ -12,3 +12,7 @@ creators:
     - Brian Kernighan
   source: https://pldb.io/concepts/awk.html
   checked: 2026-11-05
+born_from:
+  - quote: "Most of the programming effort involves trivial details"
+    source: https://awk.dev/awk.spe.pdf
+    checked: 2026-11-06

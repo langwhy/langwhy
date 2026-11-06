@@ -10,3 +10,12 @@ creators:
     - Kenneth E. Iverson
   source: https://pldb.io/concepts/apl.html
   checked: 2026-11-05
+born_from:
+  - quote: "The thesis of the present paper is that the advantages of executability and universality found in programming languages can be effectively combined, in a single coherent language, with the advantages offered by mathematical notation."
+    source: https://www.eecg.utoronto.ca/~jzhu/csc326/readings/iverson.pdf
+    checked: 2026-11-06
+used_by:
+  - who: Jersie Data ApS
+    quote: "Using Dyalog, Jersie Data ApS in Denmark has developed a comprehensive online lunch shop"
+    source: https://www.dyalog.com/case-studies.htm
+    checked: 2026-11-06

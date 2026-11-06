@@ -10,3 +10,12 @@ creators:
     - Hans Dockter
   source: https://pldb.io/concepts/gradle.html
   checked: 2026-11-05
+born_from:
+  - quote: "However, Maven provides a very rigid model that makes customization tedious and sometimes impossible."
+    source: https://gradle.org/maven-and-gradle/
+    checked: 2026-11-06
+used_by:
+  - who: Google
+    quote: "Google chose Gradle as the official build tool for Android"
+    source: https://gradle.org/maven-and-gradle/
+    checked: 2026-11-06

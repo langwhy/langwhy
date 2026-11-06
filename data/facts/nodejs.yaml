@@ -10,3 +10,16 @@ creators:
     - Ryan Dahl
   source: https://pldb.io/concepts/nodejs.html
   checked: 2026-11-05
+born_from:
+  - quote: "As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications."
+    source: https://nodejs.org/en/about
+    checked: 2026-11-06
+trades_away:
+  - quote: "Node.js being designed without threads doesn't mean you can't take advantage of multiple cores in your environment."
+    source: https://nodejs.org/en/about
+    checked: 2026-11-06
+used_by:
+  - who: PayPal
+    quote: "larger incumbents started to transition their stacks with Node.js as a core technology, notable names include PayPal, Condé Nast, and Costa."
+    source: https://nodejs.org/en/blog/announcements/foundation-advances-growth
+    checked: 2026-11-06

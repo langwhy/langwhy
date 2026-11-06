@@ -10,3 +10,16 @@ creators:
     - Andreas Rumpf
   source: https://pldb.io/concepts/nim.html
   checked: 2026-11-05
+born_from:
+  - quote: "Nim is one of the very few programmable statically typed languages, and combines the speed and memory efficiency of C, an expressive syntax, memory safety and multiple target languages."
+    source: https://nim-lang.org/faq.html
+    checked: 2026-11-06
+trades_away:
+  - quote: "JVM/CLR support is not in the nearest plans."
+    source: https://nim-lang.org/faq.html
+    checked: 2026-11-06
+used_by:
+  - who: Status
+    quote: "We have chosen to implement Nimbus in the programming language Nim because it is lightweight and therefore well suited to running efficiently on resource-restricted devices."
+    source: https://our.status.im/introducing-nimbus-an/
+    checked: 2026-11-06

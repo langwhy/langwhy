@@ -10,3 +10,22 @@ creators:
     - Tom Preston-Werner
   source: https://pldb.io/concepts/toml.html
   checked: 2026-11-05
+born_from:
+  - quote: "TOML aims to be a minimal configuration file format that's easy to read due to obvious semantics."
+    source: https://toml.io/en/
+    checked: 2026-11-06
+  - quote: "TOML differs in combining these, allowing comments (unlike JSON) but preserving simplicity (unlike YAML)."
+    source: https://github.com/toml-lang/toml
+    checked: 2026-11-06
+trades_away:
+  - quote: "Because TOML is explicitly intended as a configuration file format, parsing it is easy, but it is not intended for serializing arbitrary data structures."
+    source: https://github.com/toml-lang/toml
+    checked: 2026-11-06
+  - quote: "TOML always has a hash table at the top level of the file, which can easily have data nested inside its keys, but it doesn't permit top-level arrays or floats, so it cannot directly serialize some data."
+    source: https://github.com/toml-lang/toml
+    checked: 2026-11-06
+used_by:
+  - who: Cargo (Rust package manager)
+    quote: "The Cargo.toml file for each package is called its manifest. It is written in the TOML format."
+    source: https://doc.rust-lang.org/cargo/reference/manifest.html
+    checked: 2026-11-06
