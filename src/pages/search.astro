@@ -42,6 +42,8 @@ const names = [
         }));
       };
       document.getElementById("search").addEventListener("input", (ev) => show(ev.target.value));
+      // Pagefind's Clear button empties the box without an input event.
+      document.getElementById("search").addEventListener("click", (ev) => { if (ev.target.closest(".pagefind-ui__search-clear")) show(""); });
       const q = new URLSearchParams(location.search).get("q");
       if (q) { ui.triggerSearch(q); show(q); }
     });
