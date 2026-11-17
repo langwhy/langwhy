@@ -59,3 +59,11 @@ export const ROADS: { want: string; ids: string[] }[] = [
   { want: "Script inside another program", ids: ["lua"] },
   { want: "Think differently", ids: ["haskell", "elixir"] },
 ];
+
+/** GitHub Linguist's four kinds of language, as a phrase that follows "is" or "counts it as". */
+export const GITHUB_KINDS: Record<string, string> = {
+  programming: "a programming language",
+  markup: "a markup language, which describes a document or a page instead of computing things",
+  data: "a data format, which stores data or settings",
+  prose: "a kind of written text",
+};

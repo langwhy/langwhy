@@ -1,18 +1,53 @@
 ---
 import Base from "../layouts/Base.astro";
+import { githubLanguages, allCards } from "../lib/data";
+
+// Name lookup on top of the full-text search: a language's name, the name GitHub gives it, its other
+// names and its file endings all find its page, so "Shell", "C" or ".mdx" land on the right one.
+const github = await githubLanguages();
+const cards = await allCards();
+const names = [
+  ...github.map((l) => ({
+    n: l.card?.name ?? l.name, u: `/lang/${l.id}/`, c: l.card ? 1 : 0,
+    k: [l.name, ...(l.card ? [l.card.name, ...(l.card.aliases ?? [])] : []), ...(l.aliases ?? []), ...(l.extensions ?? []), ...(l.filenames ?? [])],
+  })),
+  ...cards.filter((c) => !github.some((l) => l.card?.id === c.id)).map((c) => ({ n: c.name, u: `/lang/${c.id}/`, c: 1, k: [c.name, ...(c.aliases ?? [])] })),
+].map((e) => ({ ...e, k: [...new Set(e.k.map((k) => k.toLowerCase()))] }));
 ---
 <Base title="Search langwhy" description="Search every language card." path="/search/" noindex>
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script is:inline src="/pagefind/pagefind-ui.js"></script>
   <h1>Search</h1>
   <div id="search"></div>
+  <ul class="list" id="names" aria-label="Languages with this name"></ul>
+  <script is:inline type="application/json" id="name-index" set:html={JSON.stringify(names)} />
   <script is:inline>
     window.addEventListener("DOMContentLoaded", () => {
       if (typeof PagefindUI === "undefined") { document.getElementById("search").textContent = "Search index is built with the site; run pnpm build."; return; }
-      new PagefindUI({ element: "#search", showSubResults: false, showImages: false, autofocus: true });
+      const ui = new PagefindUI({ element: "#search", showSubResults: false, showImages: false, autofocus: true });
+      const names = JSON.parse(document.getElementById("name-index").textContent);
+      const list = document.getElementById("names");
+      // Name matches sit between the search box and the full-text results.
+      document.querySelector("#search .pagefind-ui__search-clear")?.after(list);
+      // Exact name, other name or file ending first, then names that start with the query, cards before the rest.
+      const rank = (e, q) => e.k.includes(q) ? 0 : e.n.toLowerCase().startsWith(q) ? 1 : e.k.some((k) => k.startsWith(q)) ? 2 : -1;
+      const show = (raw) => {
+        const q = raw.trim().toLowerCase();
+        const hits = q ? names.map((e) => ({ e, r: rank(e, q) })).filter((h) => h.r >= 0)
+          .sort((a, b) => a.r - b.r || b.e.c - a.e.c || a.e.n.length - b.e.n.length || a.e.n.localeCompare(b.e.n)).slice(0, 6) : [];
+        list.replaceChildren(...hits.map(({ e }) => {
+          const li = document.createElement("li"), a = document.createElement("a"), meta = document.createElement("span");
+          a.href = e.u; a.textContent = e.n; meta.className = "meta"; meta.textContent = e.c ? "card" : "on GitHub, no card yet";
+          li.append(a, meta); return li;
+        }));
+      };
+      document.getElementById("search").addEventListener("input", (ev) => show(ev.target.value));
+      const q = new URLSearchParams(location.search).get("q");
+      if (q) { ui.triggerSearch(q); show(q); }
     });
   </script>
   <style is:global>
     :root { --pagefind-ui-primary: var(--accent); --pagefind-ui-text: var(--fg); --pagefind-ui-background: var(--bg); --pagefind-ui-border: var(--line); --pagefind-ui-tag: var(--soft); --pagefind-ui-font: var(--sans); --pagefind-ui-border-radius: .5rem; --pagefind-ui-scale: .9; }
+    #names:not(:empty) { margin: .75rem 0 1.25rem; }
   </style>
 </Base>

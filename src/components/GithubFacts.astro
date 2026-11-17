@@ -1,0 +1,24 @@
+---
+// What GitHub knows about a language: its name there, kind, other names, files, group. On cards
+// and on the pages of languages without a card.
+import { GITHUB_KINDS } from "../lib/vocab";
+import type { GithubLanguage } from "../lib/data";
+
+interface Props { lang: GithubLanguage; github: GithubLanguage[] }
+const { lang, github } = Astro.props;
+const byName = new Map(github.map((l) => [l.name, l]));
+const group = lang.group ? byName.get(lang.group) : undefined;
+const members = github.filter((l) => l.group === lang.name);
+const q = encodeURIComponent(`language:"${lang.name}"`);
+const files = [...(lang.extensions ?? []), ...(lang.filenames ?? [])];
+---
+<h2 id="github">On GitHub</h2>
+<ul class="facts">
+  {lang.card && lang.card.name !== lang.name && <li><strong>Name on GitHub:</strong> <span data-pagefind-weight="7">{lang.name}</span></li>}
+  <li><strong>GitHub counts it as</strong> {GITHUB_KINDS[lang.type]}</li>
+  {lang.aliases && <li><strong>Also called:</strong> <span data-pagefind-weight="5">{lang.aliases.join(", ")}</span></li>}
+  {files.length > 0 && <li><strong>Files:</strong> <span class="mono">{files.join(" ")}</span></li>}
+  {group && <li><strong>GitHub counts it as part of:</strong> <a href={`/lang/${group.id}/`}>{group.name}</a></li>}
+  {members.length > 0 && <li><strong>GitHub counts these as part of it:</strong> {members.map((m, i) => <>{i > 0 && ", "}<a href={`/lang/${m.id}/`}>{m.name}</a></>)}</li>}
+  <li><strong>Find it:</strong> <a href={`https://github.com/search?q=${q}&type=repositories`}>repositories</a> · <a href={`https://github.com/search?q=${q}&type=code`}>code</a></li>
+</ul>

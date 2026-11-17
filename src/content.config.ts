@@ -12,6 +12,7 @@ const cards = defineCollection({
     id: slug,
     name: z.string(),
     aliases: z.array(z.string()).optional(),
+    github: z.string().optional(),
     appeared: z.number().int(),
     creators: z.array(z.string()).min(1),
     org: z.string().optional(),

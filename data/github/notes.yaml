@@ -1,0 +1,45 @@
+# What a GitHub language without a card is, in one or two plain sentences, keyed by its exact
+# Linguist name (data/github/languages.yaml). Same rules as cards: plain words, one source that
+# states the claim. A language with a card needs no note here.
+- name: MDX
+  what: "Markdown, the plain-text way to write formatted documents, with pieces of a web page's code (JSX) mixed in. Documentation sites use it so a page can hold a live example or a button next to the text."
+  source: https://mdxjs.com/docs/what-is-mdx/
+- name: Astro
+  what: "The file format of Astro, a tool that builds websites. One .astro file is one piece of a page: its HTML, plus JavaScript or TypeScript that runs while the site is built."
+  source: https://docs.astro.build/en/basics/astro-components/
+- name: HTML
+  what: "The language every web page is written in. It marks what on the page is a heading, a paragraph, a link or an image; it does not compute anything."
+  source: https://developer.mozilla.org/en-US/docs/Web/HTML
+- name: CSS
+  what: "The language that sets how a web page looks: colors, fonts, spacing and layout. The HTML says what is on the page, the CSS says how it looks."
+  source: https://developer.mozilla.org/en-US/docs/Web/CSS
+- name: Vue
+  what: "A file for Vue, a JavaScript tool for building web pages. One .vue file holds one piece of the page with its HTML, its JavaScript and its CSS together."
+  source: https://vuejs.org/guide/scaling-up/sfc.html
+- name: Svelte
+  what: "A file for Svelte, a tool for building web pages. One .svelte file holds one piece of the page with its HTML, JavaScript and CSS, and Svelte turns it into plain JavaScript when the site is built."
+  source: https://svelte.dev/docs/svelte/svelte-files
+- name: QML
+  what: "The language of Qt, a toolkit for app screens. A QML file describes what is on the screen and how it reacts; the logic inside is written in JavaScript."
+  source: https://doc.qt.io/qt-6/qmlapplications.html
+- name: Dockerfile
+  what: "A list of steps Docker follows to build an image: a packed copy of a program with everything it needs to run, so it runs the same on any server."
+  source: https://docs.docker.com/reference/dockerfile/
+- name: CMake
+  what: "Build instructions for C and C++ projects. CMake reads them and writes the files that the actual build tools on each system need."
+  source: https://cmake.org/cmake/help/latest/manual/cmake.1.html
+- name: Nix
+  what: "The language of Nix, a package manager. A Nix file describes exactly how to build a program and what it needs, so the same build comes out on every machine."
+  source: https://nix.dev/tutorials/nix-language
+- name: NSIS
+  what: "Scripts for NSIS, a tool that makes Windows installers: the setup program you run to install an app."
+  source: https://nsis.sourceforge.io/Main_Page
+- name: PowerShell
+  what: "Microsoft's command line and scripting language, for automating tasks on Windows, and also on Linux and macOS."
+  source: https://learn.microsoft.com/en-us/powershell/scripting/overview
+- name: Objective-C
+  what: "C with objects added. Apple's guide called it the main language for writing Mac and iPhone software."
+  source: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html
+- name: Objective-C++
+  what: "Objective-C and C++ mixed in one file, so code for Apple's systems can call C++ libraries directly."
+  source: https://en.wikipedia.org/wiki/Objective-C

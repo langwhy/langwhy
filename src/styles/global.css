@@ -79,3 +79,6 @@ a.reason { font-weight: 600; color: var(--fg); }
 .terms dt .muted { font-weight: 400; font-size: .85rem; }
 .terms dd { margin: .15rem 0 0; }
 header.site nav { flex-wrap: wrap; }
+.inline-list { list-style: none; padding: 0; line-height: 1.9; }
+.inline-list li { display: inline; white-space: nowrap; }
+.inline-list li:not(:last-child)::after { content: " · "; color: var(--muted); }

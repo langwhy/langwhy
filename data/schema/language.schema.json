@@ -44,6 +44,11 @@
       "uniqueItems": true,
       "description": "Other names the auto-linker should link to this card, written exactly as they appear in text (case-sensitive)."
     },
+    "github": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The language's name in GitHub Linguist (data/github/languages.yaml), when it differs from name."
+    },
     "appeared": {
       "type": "integer",
       "minimum": 1940,

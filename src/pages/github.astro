@@ -1,0 +1,18 @@
+---
+import Base from "../layouts/Base.astro";
+import { githubLanguages, LINGUIST } from "../lib/data";
+import { GITHUB_KINDS } from "../lib/vocab";
+
+const all = await githubLanguages();
+const kinds = Object.keys(GITHUB_KINDS).map((kind) => ({ kind, langs: all.filter((l) => l.type === kind) }));
+---
+<Base title="Every language GitHub recognizes" description="All the languages GitHub can show on a repository, each linked to its langwhy card or to a short page about it." path="/github/">
+  <h1>Every language on GitHub</h1>
+  <p class="lead">Every name GitHub can show in a repository's language bar: {all.length} of them, from <a href={`https://github.com/github-linguist/linguist/blob/${LINGUIST}/lib/linguist/languages.yml`}>GitHub Linguist {LINGUIST}</a>. <strong>Bold</strong> ones have a full card; the others have a short page with what GitHub knows about them.</p>
+  {kinds.map(({ kind, langs }) => (
+    <>
+      <h2 id={kind}>{GITHUB_KINDS[kind].split(",")[0].replace(/^an? /, "").replace(/^./, (c) => c.toUpperCase())}s ({langs.length})</h2>
+      <ul class="inline-list">{langs.map((l) => <li><a href={`/lang/${l.id}/`}>{l.card ? <strong>{l.name}</strong> : l.name}</a></li>)}</ul>
+    </>
+  ))}
+</Base>

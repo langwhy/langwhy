@@ -1,0 +1,22 @@
+---
+// The page of a language GitHub recognizes but langwhy has no card for yet.
+import Base from "../layouts/Base.astro";
+import GithubFacts from "./GithubFacts.astro";
+import { LINGUIST, type GithubLanguage } from "../lib/data";
+import { linkHtml } from "../lib/autolink.mjs";
+import { GITHUB_KINDS } from "../lib/vocab";
+
+interface Props { lang: GithubLanguage; github: GithubLanguage[] }
+const { lang, github } = Astro.props;
+const files = [...(lang.extensions ?? []), ...(lang.filenames ?? [])];
+const fallback = `GitHub shows ${lang.name} on a repository${files.length ? ` for files like ${files.slice(0, 3).join(", ")}` : ""}. GitHub counts it as ${GITHUB_KINDS[lang.type]}.`;
+const description = lang.note?.what ?? fallback;
+---
+<Base title={`${lang.name}: what it is`} description={description} path={`/lang/${lang.id}/`} noindex pagefind>
+  <h1>{lang.name}</h1>
+  {lang.note
+    ? <p class="lead"><span set:html={linkHtml(lang.note.what, { self: `lang:${lang.id}`, seen: new Set() })} /> <a class="src" href={lang.note.source}>source</a></p>
+    : <p class="lead">{fallback}</p>}
+  <GithubFacts lang={lang} github={github} />
+  <p class="draft">No card yet: langwhy has not written why {lang.name} exists or what it trades away. The facts above come from <a href={`https://github.com/github-linguist/linguist/blob/${LINGUIST}/lib/linguist/languages.yml`}>GitHub Linguist {LINGUIST}</a>, the list GitHub uses to name the languages of a repository. Cards are files in a public repo: <a href="https://github.com/langwhy/langwhy/tree/main/data/languages">add one</a>.</p>
+</Base>

@@ -62,6 +62,11 @@ for (const t of terms) {
 if (new Set(terms.map((t) => t?.id)).size !== terms.length) fail("terms.yaml", "duplicate ids");
 if (!existsSync(join(root, "data", "basics.md"))) fail("basics.md", "missing");
 
+// GitHub's languages: a card's GitHub name must exist there, a note only for a language without a card.
+const github = load(join(root, "data", "github", "languages.yaml"), "github/languages.yaml")?.languages ?? [];
+const githubNames = new Set(github.map((l) => l.name));
+const cardGithubNames = new Set();
+
 // Cards.
 const only = process.argv.slice(2);
 for (const id of only) if (!ids.has(id)) fail(`${id}.yaml`, "no such card");
@@ -74,6 +79,8 @@ for (const file of files) {
     names.set(n, id);
     if (termNames.has(String(n).toLowerCase())) fail(file, `name "${n}" collides with a glossary term`);
   }
+  if (card.github && !githubNames.has(card.github)) fail(file, `github "${card.github}" is not a language in data/github/languages.yaml`);
+  cardGithubNames.add(card.github ?? card.name);
   if (only.length && !only.includes(id)) continue;
 
   if (!validate(card)) for (const e of validate.errors) fail(file, `${e.instancePath || "/"} ${e.message}`);
@@ -113,6 +120,17 @@ for (const file of files) {
   const m = md.match(MARKETING);
   if (m) fail(`${id}.md`, `uses a marketing word: "${m[0]}"`);
 }
+const notes = load(join(root, "data", "github", "notes.yaml"), "github/notes.yaml") ?? [];
+for (const n of notes) {
+  if (!githubNames.has(n?.name)) fail("github/notes.yaml", `"${n?.name}" is not a language in data/github/languages.yaml`);
+  if (cardGithubNames.has(n?.name)) fail("github/notes.yaml", `"${n.name}" has a card; say it there`);
+  if (typeof n?.what !== "string" || !n.what.trim()) fail("github/notes.yaml", `${n?.name}: missing what`);
+  if (!isUri(n?.source)) fail("github/notes.yaml", `${n?.name}: needs a source URL`);
+  const m = n?.what?.match(MARKETING);
+  if (m) fail("github/notes.yaml", `${n.name} uses a marketing word: "${m[0]}"`);
+}
+if (new Set(notes.map((n) => n?.name)).size !== notes.length) fail("github/notes.yaml", "a language has two notes");
+
 const checked = only.length || files.length;
-console.log(`${checked} card(s), ${reasons.length} reasons, ${terms.length} terms checked, ${failures} problem(s).`);
+console.log(`${checked} card(s), ${reasons.length} reasons, ${terms.length} terms, ${notes.length} GitHub notes checked, ${failures} problem(s).`);
 if (failures) process.exit(1);

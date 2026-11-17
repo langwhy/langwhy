@@ -11,6 +11,14 @@ Other ids you may reference before a card exists: `algol`, `bcpl`, `simula`, `sm
 `tcl`, `scheme`, `miranda`, `standard-ml`, `nim`, `d`, `crystal`, `julia`, `r`, `matlab`, `groovy`,
 `visual-basic`, `delphi`, `vbscript`, `actionscript`, `coffeescript`, `flow`, `hack`, `prolog`.
 
+## Languages without a card
+
+`data/github/languages.yaml` lists every language GitHub recognizes (GitHub Linguist, regenerated with
+`node scripts/import-github.mjs [tag]`; do not edit it by hand). Each one without a card gets a short
+page at `/lang/<id>/` with what GitHub knows, and is found by search. A card links to its GitHub entry by
+`name`, or by `github` when GitHub names it differently (Bash is `Shell`). `data/github/notes.yaml`
+adds one plain, sourced sentence on what a language without a card is.
+
 ## The four questions every card answers
 
 1. **Born from**: the concrete pain that made someone build it. Name the people, the year, the

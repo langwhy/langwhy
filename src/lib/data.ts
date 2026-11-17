@@ -105,3 +105,29 @@ export function cardMarkdown(card: Card, prose: string): string {
   ];
   return out.join("\n");
 }
+
+export type GithubNote = { name: string; what: string; source: string };
+export type GithubLanguage = {
+  name: string; id: string; type: "programming" | "markup" | "data" | "prose";
+  group?: string; aliases?: string[]; extensions?: string[]; filenames?: string[];
+  /** The card for this language, when langwhy has one; its page is then the card. */
+  card?: Card;
+  note?: GithubNote;
+};
+
+const GITHUB = parse(readFileSync("data/github/languages.yaml", "utf8")) as { linguist: string; languages: GithubLanguage[] };
+const NOTES = new Map((parse(readFileSync("data/github/notes.yaml", "utf8")) as GithubNote[]).map((n) => [n.name, n]));
+/** The Linguist release the GitHub list comes from. */
+export const LINGUIST = GITHUB.linguist;
+
+/** Every language GitHub recognizes, each with its card or its note, in Linguist's (alphabetical) order. */
+export async function githubLanguages(): Promise<GithubLanguage[]> {
+  const cards = await allCards();
+  const byGithubName = new Map(cards.map((c) => [c.github ?? c.name, c]));
+  const cardIds = new Set(cards.map((c) => c.id));
+  return GITHUB.languages.map((l) => {
+    const card = byGithubName.get(l.name);
+    if (!card && cardIds.has(l.id)) throw new Error(`GitHub language "${l.name}" would take the URL of card "${l.id}"; set that card's github field or rename`);
+    return { ...l, id: card?.id ?? l.id, card, note: NOTES.get(l.name) };
+  });
+}
