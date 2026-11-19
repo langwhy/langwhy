@@ -7,7 +7,7 @@ const cards = await allCards();
 ---
 <Base title="All languages on langwhy" description="Every language card, in one list: name, year, type, status." path="/all/">
   <h1>All cards</h1>
-  <p class="muted">{cards.length} languages with a full card; a card is published to search engines only once a human verified it. Every other language GitHub recognizes has a short page: <a href="/github/">all of them</a>.</p>
+  <p class="muted">{cards.length} languages with a full card; a card is published to search engines only once every claim was checked against its source. Every other language GitHub recognizes has a short page: <a href="/github/">all of them</a>.</p>
   <ul class="list">
     {cards.map((c) => (
       <li>

@@ -55,8 +55,8 @@ adds one plain, sourced sentence on what a language without a card is.
   choosing it would weigh it against today.
 - `timeline`: 3 to 8 events: first commit or paper, first release, 1.0, the moment it won a big
   deployment, a foundation or ownership change, a major version that changed the language.
-- `verified: false` until a human has checked every claim against its source. `last_reviewed` is
-  the date of that check or of writing.
+- `verified: false` until every claim has been checked against its source (see Verifying a card).
+  `last_reviewed` is the date of that check or of writing.
 
 ## Problems in practice (`hurts`)
 
@@ -79,6 +79,30 @@ Not "it is slow" or "it has a garbage collector": that is the textbook part of t
 scripts/check-quotes.mjs go` for one card). To pick a quote, list the sentences that contain a
 word: `node scripts/check-quotes.mjs --find <url> <word>`. A page that only renders in the browser,
 blocks the download or sits behind a login can't be checked: find another source.
+
+## Verifying a card
+
+A person or an AI agent may verify a card. Either one:
+
+1. Opens every source the card cites, in the YAML and in the `.md` story, and checks that the page
+   says what the card claims. A claim the source doesn't back gets fixed, gets a better source, or
+   is cut.
+2. Runs `pnpm check:quotes <id>`, which must report 0 missing.
+3. Sets `verified: true`, `last_reviewed` to that day, and `verified_by`:
+
+```yaml
+verified: true
+verified_by:
+  agent: claude-opus-5-5   # the model id; a person writes `person: <GitHub username>`
+last_reviewed: "2026-11-20"
+```
+
+`pnpm validate` rejects `verified: true` without `verified_by`, and `verified_by` on a draft. The
+card page shows who verified it.
+
+People spot-check the cards an agent verified: pick a few claims and open their sources. One claim
+its source doesn't back sends the card back to draft: set `verified: false`, remove `verified_by`,
+fix the claim, and verify it again.
 
 ## Slots
 

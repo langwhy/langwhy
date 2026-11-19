@@ -2,7 +2,7 @@
 import { render, getEntry } from "astro:content";
 import Base from "../layouts/Base.astro";
 import GithubFacts from "./GithubFacts.astro";
-import { childrenOf, cardUrl, mentions, REASON, type Card, type GithubLanguage } from "../lib/data";
+import { childrenOf, cardUrl, mentions, verifier, REASON, type Card, type GithubLanguage } from "../lib/data";
 import { icon } from "../lib/icons";
 import { linkHtml } from "../lib/autolink.mjs";
 import { TYPES, STATUS, AXES, AXIS_TERMS, FIT_DOTS, FIT_WORD } from "../lib/vocab";
@@ -134,7 +134,7 @@ const jsonld = {
   <ol class="src">{card.sources.map((s) => <li><a href={s}>{s}</a></li>)}</ol>
 
   <p class="muted">
-    {card.verified ? `Verified ${card.last_reviewed}.` : `Unverified draft, ${card.last_reviewed}.`}
+    {card.verified ? `Verified ${card.last_reviewed} by ${verifier(card)}.` : `Unverified draft, ${card.last_reviewed}.`}
     <a href={edit("yaml")}>Edit the facts</a> · <a href={edit("md")}>edit the story</a> · <a href={`/lang/${card.id}.json`}>JSON</a> · <a href={`/lang/${card.id}.md`}>Markdown</a>
   </p>
 </Base>

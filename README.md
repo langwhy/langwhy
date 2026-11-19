@@ -32,7 +32,8 @@ technical term on the site links to its card or to the glossary on its own, like
 - Every page has a JSON and a Markdown twin (`/lang/rust.json`, `/lang/rust.md`), plus
   `/llms.txt`, `/llms-full.txt` and `/api/v1/languages.json` for agents and tools.
 - A card starts as a draft, often written by an agent from primary sources. It becomes `verified`
-  only after a person checked every claim. Drafts are visible but `noindex`.
+  once a person or an agent opened every source and checked each claim (`verified_by` says who);
+  people spot-check what agents verified. Drafts are visible but `noindex`.
 
 ## Contribute
 

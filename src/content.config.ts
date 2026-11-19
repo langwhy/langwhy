@@ -50,6 +50,7 @@ const cards = defineCollection({
     pldb: z.string().optional(),
     sources: z.array(uri).min(2),
     verified: z.boolean(),
+    verified_by: z.union([z.object({ person: z.string() }), z.object({ agent: z.string() })]).optional(),
     last_reviewed: z.string(),
   }),
 });

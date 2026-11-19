@@ -21,12 +21,12 @@ import Base from "../layouts/Base.astro";
   <p>Every language name on the site links to its card, and every technical word links to the <a href="/terms/">glossary</a>, without anyone adding the links by hand. Each card also lists the cards that mention it.</p>
 
   <h2>How the data works</h2>
-  <p>Every card is two files in a public git repository: a YAML file with the facts and a Markdown file with the story. Every claim has a source URL. A card starts as a draft, often written by an AI agent from primary sources, and is marked <em>verified</em> only after a person checked each claim against its source. Drafts are visible but kept out of search engines.</p>
+  <p>Every card is two files in a public git repository: a YAML file with the facts and a Markdown file with the story. Every claim has a source URL. A card starts as a draft, often written by an AI agent from primary sources, and is marked <em>verified</em> once a person or an AI agent opened every source and checked each claim against it. The card says who did. People spot-check the cards an agent verified, and a wrong claim sends the card back to draft. Drafts are visible but kept out of search engines.</p>
   <p>The data is <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>: take it, copy it, build on it. The site code is MIT. Facts about release years, repos and popularity will be imported from <a href="https://pldb.io">PLDB</a>, which is also public domain, and fixes flow back there.</p>
 
   <h2>For agents</h2>
   <p>Read <a href="/llms.txt">/llms.txt</a> for the index, <a href="/llms-full.txt">/llms-full.txt</a> for everything, <a href="/api/v1/languages.json">/api/v1/languages.json</a> for the data, and every card as <code>/lang/&lt;id&gt;.json</code> or <code>/lang/&lt;id&gt;.md</code>. Or clone <a href="https://github.com/langwhy/langwhy">the repo</a>.</p>
 
   <h2>Contribute</h2>
-  <p>Fix a fact, add a source, or write a card: edit the files under <code>data/languages/</code> and open a pull request. The rules are in <a href="https://github.com/langwhy/langwhy/blob/main/data/README.md">data/README.md</a>. Started in October 2026 by Karchi, written with AI agents, verified by people.</p>
+  <p>Fix a fact, add a source, or write a card: edit the files under <code>data/languages/</code> and open a pull request. The rules are in <a href="https://github.com/langwhy/langwhy/blob/main/data/README.md">data/README.md</a>. Started in October 2026 by Karchi, written and checked with AI agents, spot-checked by people.</p>
 </Base>

@@ -99,6 +99,8 @@ for (const file of files) {
     if (d) fail(file, `hurts/${i} uses "${d[0]}": say what happens instead`);
     if (/!/.test(h.what ?? "")) fail(file, `hurts/${i} has an exclamation mark`);
   });
+  if (card.verified === true && !card.verified_by) fail(file, "verified: true needs verified_by (person: <GitHub username> or agent: <model id>)");
+  if (card.verified !== true && card.verified_by) fail(file, "a draft has no verified_by: remove it, or set verified: true");
   const hurtSources = (card.hurts ?? []).map((h) => h.source);
   if (new Set(hurtSources).size < Math.min(3, hurtSources.length)) fail(file, `hurts need at least 3 different sources`);
   for (const [field, text] of Object.entries(texts)) {

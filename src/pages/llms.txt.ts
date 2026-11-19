@@ -9,7 +9,7 @@ export const GET: APIRoute = async () => {
     "",
     "> Why every programming language exists, what it trades away, and where it won. One card per language with sources. Data is CC0 (public domain).",
     "",
-    "Each card answers: born from (the concrete pain), trades away (memory, types, run, concurrency, cost), where it won (named deployments with sources), alive (status, timeline), and for each of 13 slots how well the language fits. Every weak or none fit names a reason (runs-elsewhere, too-slow, hides-machine, too-risky, no-tools, one-job, overkill), a plain note and a source. Cards marked draft were written by an agent and not yet verified by a human. The site is written for people who have never programmed.",
+    "Each card answers: born from (the concrete pain), trades away (memory, types, run, concurrency, cost), where it won (named deployments with sources), alive (status, timeline), and for each of 13 slots how well the language fits. Every weak or none fit names a reason (runs-elsewhere, too-slow, hides-machine, too-risky, no-tools, one-job, overkill), a plain note and a source. Cards marked draft have not yet been checked claim by claim against their sources; a verified card says whether a person or an AI agent checked it. The site is written for people who have never programmed.",
     "",
     "## Start here",
     `- [The basics](${SITE}/basics.md): how code gets run, who cleans up memory, types, concurrency, the seven reasons a language does not fit a slot, and a plain-language glossary`,

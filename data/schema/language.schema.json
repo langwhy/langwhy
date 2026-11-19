@@ -415,7 +415,18 @@
     },
     "verified": {
       "type": "boolean",
-      "description": "true only after a human checked every claim against its source."
+      "description": "true once a person or an agent opened every source and checked each claim against it (data/README.md, Verifying a card)."
+    },
+    "verified_by": {
+      "type": "object",
+      "description": "Who verified the card: a person (GitHub username) or an agent (model id). Required when verified is true, absent on drafts.",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1,
+      "properties": {
+        "person": { "type": "string", "pattern": "^[A-Za-z0-9-]+$" },
+        "agent": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" }
+      }
     },
     "last_reviewed": {
       "type": "string",

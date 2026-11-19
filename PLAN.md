@@ -206,8 +206,10 @@ Písanie, nočná úloha na asuse (bez GPU, API model stačí, cena za kartu v h
 1. Zdroje nových jazykov: diff PLDB, GitHub trending podľa jazyka, issue „navrhnúť jazyk“.
 2. Agent stiahne README, Wikipediu a PLDB fakty, napíše draft karty v našom formáte, každé tvrdenie
    so zdrojom, inak pole nechá prázdne.
-3. Otvorí PR s `verified: false`. Človek (Karchi alebo Claude v inom vlákne) skontroluje, opraví,
-   zlúči. Na webe je draft viditeľný, ale `noindex` a so štítkom.
+3. Otvorí PR s `verified: false`. Na webe je draft viditeľný, ale `noindex` a so štítkom. Overí ho
+   človek alebo agent, ktorý otvorí každý zdroj karty (`data/README.md`, Verifying a card), a zapíše
+   sa do `verified_by`. Karty overené agentom ľudia namátkovo kontrolujú; chybné tvrdenie vráti
+   kartu do draftu.
 4. Mesačne agent prejde overené karty a navrhne zmeny stavu (žije / stagnuje / mŕtvy) podľa
    `lastActivity` z PLDB a GitHubu.
 
@@ -250,4 +252,5 @@ PHP, Ruby, Swift, Dart, SQL, Bash, Lua, Haskell, Elixir.
 
 Hotové 2026-10-30: meno langwhy, organizácia aj doména kúpené, dáta CC0, prvých 20 jazykov
 podľa §9. 2026-10-31: publikum sú laici, ktorí nikdy neprogramovali; každá karta vysvetľuje,
-prečo sa jazyk na niektoré sloty nehodí (§3, „Prečo nie“), texty sa prelinkujú samy. Ďalšie rozhodnutia idú do inboxu.
+prečo sa jazyk na niektoré sloty nehodí (§3, „Prečo nie“), texty sa prelinkujú samy. 2026-11-20 (Karchi): `verified: true` smie dať aj agent, ktorý overil
+každý zdroj karty, človek to potom namátkovo kontroluje. Ďalšie rozhodnutia idú do inboxu.

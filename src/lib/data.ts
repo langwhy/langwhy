@@ -52,6 +52,13 @@ export function mentions(): Promise<Map<string, { mentions: string[]; mentionedB
   return mentionIndex;
 }
 
+/** Who verified a card, for display: the person's GitHub username or "an AI agent (<model>)". */
+export function verifier(card: Card): string {
+  const by = card.verified_by;
+  if (!by) return "";
+  return "agent" in by ? `an AI agent (${by.agent})` : by.person;
+}
+
 export function cardUrl(id: string, ext = ""): string {
   return ext ? `${SITE}/lang/${id}${ext}` : `${SITE}/lang/${id}/`;
 }
@@ -94,7 +101,7 @@ export function cardMarkdown(card: Card, prose: string): string {
     line("Links", Object.entries(card.links).map(([k, v]) => `[${k}](${v})`).join(", ")),
     ...(card.pldb ? [line("PLDB", `https://pldb.io/concepts/${card.pldb}.html`)] : []),
     line("Sources", card.sources.join(", ")),
-    line("Verified", card.verified ? `yes, reviewed ${card.last_reviewed}` : `no, draft of ${card.last_reviewed}`),
+    line("Verified", card.verified ? `yes, ${card.last_reviewed}, by ${verifier(card)}` : `no, draft of ${card.last_reviewed}`),
     line("Canonical", cardUrl(card.id)),
     "",
     prose.trim(),
