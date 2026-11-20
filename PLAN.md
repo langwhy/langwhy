@@ -82,7 +82,7 @@ sources: [...]
 verified: true
 verified_by:
   person: Gooder24                 # alebo agent: <model id>, data/README.md
-last_reviewed: 2026-10-29
+last_reviewed: "2026-10-29"
 ```
 
 `rust.md` je próza: tri odseky „prečo vznikol“, „čo obetoval“, „kde vyhral“, každý s odkazom na
