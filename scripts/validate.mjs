@@ -83,7 +83,8 @@ for (const file of files) {
   cardGithubNames.add(card.github ?? card.name);
   if (only.length && !only.includes(id)) continue;
 
-  if (!validate(card)) for (const e of validate.errors) fail(file, `${e.instancePath || "/"} ${e.message}`);
+  // The schema's verified/verified_by if-then-else is reported below in plain words.
+  if (!validate(card)) for (const e of validate.errors) if (!/^#\/(if|then|else)\b/.test(e.schemaPath)) fail(file, `${e.instancePath || "/"} ${e.message}`);
   if (card.id !== id) fail(file, `id "${card.id}" must equal file name "${id}"`);
   const seen = (card.slots ?? []).map((s) => s.slot);
   const missing = SLOTS.filter((s) => !seen.includes(s));

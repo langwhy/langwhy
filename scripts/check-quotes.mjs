@@ -79,6 +79,9 @@ if (only[0] === "--find") {
 }
 
 const items = [];
+const known = readdirSync(dir).filter((f) => f.endsWith(".yaml")).map((f) => f.replace(/\.yaml$/, ""));
+const unknown = only.filter((id) => !known.includes(id));
+if (unknown.length) { console.error(`✗ no such card: ${unknown.join(", ")}`); process.exit(1); }
 for (const file of readdirSync(dir).filter((f) => f.endsWith(".yaml")).sort()) {
   const id = file.replace(/\.yaml$/, "");
   if (only.length && !only.includes(id)) continue;

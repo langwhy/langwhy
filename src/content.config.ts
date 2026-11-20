@@ -50,8 +50,13 @@ const cards = defineCollection({
     pldb: z.string().optional(),
     sources: z.array(uri).min(2),
     verified: z.boolean(),
-    verified_by: z.union([z.object({ person: z.string() }), z.object({ agent: z.string() })]).optional(),
+    verified_by: z.union([
+      z.object({ person: z.string().regex(/^[A-Za-z0-9-]+$/) }).strict(),
+      z.object({ agent: z.string().regex(/^[a-z0-9][a-z0-9.-]*$/) }).strict(),
+    ]).optional(),
     last_reviewed: z.string(),
+  }).refine((c) => c.verified === Boolean(c.verified_by), {
+    message: "verified: true needs verified_by, and a draft has none (data/README.md, Verifying a card)",
   }),
 });
 

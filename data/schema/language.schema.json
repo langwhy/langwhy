@@ -25,6 +25,9 @@
     "verified",
     "last_reviewed"
   ],
+  "if": { "properties": { "verified": { "const": true } }, "required": ["verified"] },
+  "then": { "required": ["verified_by"] },
+  "else": { "not": { "required": ["verified_by"] } },
   "properties": {
     "id": {
       "type": "string",

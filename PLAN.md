@@ -80,6 +80,8 @@ hardware:                          # §4, z benchmarkov, nie z názoru
 pldb: rust                         # kľúč do PLDB, odtiaľ fakty: repo, hviezdy, joby, balíky
 sources: [...]
 verified: true
+verified_by:
+  person: Gooder24                 # alebo agent: <model id>, data/README.md
 last_reviewed: 2026-10-29
 ```
 
