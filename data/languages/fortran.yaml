@@ -18,9 +18,6 @@ hurts:
   - what: "Older Fortran code is written in fixed form, where the compiler ignores characters after column 72 of a line, so a long statement loses its end unless it is split. The GNU Fortran manual names 72 as the standard column."
     quote: "Set column after which characters are ignored in typical fixed-form lines in the source file"
     source: https://gcc.gnu.org/onlinedocs/gfortran/Fortran-Dialect-Options.html
-  - what: "ECMWF's IFS forecast model needed a GPU build mode written beside its Fortran source, and the GPU recipes built for IFS Cycle 49r1 were carried over to Cycle 50r1 when the model moved on."
-    quote: "The sustainability of this approach – and the effectiveness of separation of concerns – was demonstrated when the GPU-adaptation recipes developed for IFS Cycle 49r1 were migrated successfully to the next version, Cycle 50r1."
-    source: https://www.ecmwf.int/node/31071
 born_from: >-
   Before Fortran, programmers wrote computer instructions as rows of zeros and ones, and according to IBM the cost of programmers was usually at least as great as the cost of the computers. John Backus at IBM set out to build a language that expressed a program in something resembling mathematical notation, and its first compiler was released in 1957 for the IBM 704.
 reacts_to: []
@@ -61,7 +58,7 @@ slots:
   - slot: wasm
     fit: weak
     reason: no-tools
-    note: "LFortran, a newer Fortran compiler, has a WebAssembly backend that quickly generates WASM for browsers."
+    note: "The usual Fortran compilers do not build WebAssembly. LFortran does, but it is still before its first beta: its makers say it can reliably compile 9 of their 10 test projects."
     source: https://lfortran.org/
   - slot: games
     fit: weak

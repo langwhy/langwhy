@@ -14,13 +14,13 @@ hurts:
   - what: "In a 2025 GAO review of 69 federal legacy systems, one agency's finance office said it has the IT skills to maintain its system today, but finds it extremely hard to recruit COBOL programmers for ongoing maintenance."
     quote: "Officials from the Office of the Chief Financial Officer stated that they currently have the IT skills needed to maintain the system; however, it is extremely difficult to recruit COBOL programmers to support ongoing maintenance."
     source: https://files.gao.gov/reports/GAO-25-107795/index.html
-  - what: "GAO's 2025 review of 69 federal legacy systems warns that relying on COBOL and assembly language carries risks, including rising procurement and operating costs and fewer people with the skills to support them."
+  - what: "GAO's 2025 review of 69 federal legacy systems warns that relying on COBOL and assembly language carries risks, including rising costs to buy and run them and fewer people with the skills to support them."
     quote: "Relying on assembly language code and COBOL has risks, such as a rise in procurement and operating costs, and fewer individuals with the proper skill sets."
     source: https://files.gao.gov/reports/GAO-25-107795/index.html
   - what: "GCC's COBOL compiler, gcobol, follows the 2023 standard plus extra features for older code, and its authors note that a strict COBOL-85 compiler would not compile most existing COBOL code."
     quote: "The authors are well aware that a complete, pure COBOL-85 compiler won't compile most existing COBOL code."
     source: https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcobol/gcobol.html
-  - what: "IBM's Enterprise COBOL 3 and later follow the 2002 and 2014 COBOL standards, and IBM keeps a list of changes that can potentially affect existing programs, such as letters that now mean picture symbols."
+  - what: "IBM's Enterprise COBOL 3 and later follow the 2002 and 2014 COBOL standards, and IBM keeps a list of changes that can potentially affect existing programs, such as letters that now count as formatting codes in the descriptions of data fields."
     quote: "This topic lists those changes that will potentially affect existing COBOL programs and those changes that will not affect existing COBOL programs."
     source: https://www.ibm.com/docs/en/SS6SG3_6.5/lr/ref/rlstdim.html
 born_from: >-
@@ -40,9 +40,9 @@ slots:
     fit: ok
   - slot: cli
     fit: weak
-    reason: overkill
-    note: "A COBOL program is compiled into an executable first, one step that a short script does not need; GCC's gcobol produces such executables."
-    source: https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcobol/gcobol.html
+    reason: one-job
+    note: "COBOL was built for business records, and its main compiler, IBM Enterprise COBOL, runs on z/OS mainframes, not on the laptops and servers where people install command-line tools."
+    source: https://www.ibm.com/products/cobol-compiler-zos
   - slot: scripts
     fit: weak
     reason: overkill
