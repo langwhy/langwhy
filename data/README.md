@@ -4,9 +4,10 @@ One language = two files in `data/languages/`: `<id>.yaml` (facts) and `<id>.md`
 `<id>` is a lowercase slug and becomes the URL `langwhy.dev/lang/<id>`.
 
 Ids in use: `c`, `cpp`, `rust`, `zig`, `go`, `java`, `kotlin`, `csharp`, `python`, `javascript`,
-`typescript`, `php`, `ruby`, `swift`, `dart`, `sql`, `bash`, `lua`, `haskell`, `elixir`.
-Other ids you may reference before a card exists: `algol`, `bcpl`, `simula`, `smalltalk`, `lisp`,
-`scheme`, `ml`, `ocaml`, `erlang`, `perl`, `fortran`, `cobol`, `pascal`, `modula`, `oberon`,
+`typescript`, `php`, `ruby`, `swift`, `dart`, `sql`, `bash`, `lua`, `haskell`, `elixir`, `fortran`,
+`cobol`, `lisp`.
+Other ids you may reference before a card exists: `algol`, `bcpl`, `simula`, `smalltalk`,
+`scheme`, `ml`, `ocaml`, `erlang`, `perl`, `pascal`, `modula`, `oberon`,
 `objective-c`, `scala`, `clojure`, `fsharp`, `cyclone`, `self`, `hypertalk`, `awk`, `sh`, `ksh`,
 `tcl`, `scheme`, `miranda`, `standard-ml`, `nim`, `d`, `crystal`, `julia`, `r`, `matlab`, `groovy`,
 `visual-basic`, `delphi`, `vbscript`, `actionscript`, `coffeescript`, `flow`, `hack`, `prolog`.

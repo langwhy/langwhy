@@ -1,0 +1,143 @@
+id: fortran
+name: Fortran
+github: Fortran
+appeared: 1957
+creators:
+  - John Backus
+org: "fortran-lang community, with the ISO/IEC JTC1/SC22/WG5 standards committee"
+type: data
+status: alive
+tagline: "Programming language for formula-heavy number crunching in science and engineering."
+hurts:
+  - what: "Fortran gives a variable that was never declared a type from its first letter, so a one-letter typo compiles without any error. In the fortran-lang guide's example the misspelled name makes the program print 0, and implicit none, introduced in Fortran 90, switches this default off."
+    quote: "The program compiles and the execution gives: number of children : 0"
+    source: https://fortran-lang.org/learn/quickstart/gotchas/
+  - what: "GNU Fortran, the free compiler, implements most of Fortran 2003 and Fortran 2008 and a significant number of the Fortran 2018 features, with only initial support for Fortran 2023. The newest parts of the language may not be there yet."
+    quote: "most of Fortran 2003, Fortran 2008, and a significant number of Fortran 2018 features are implemented, along with initial support for Fortran 2023."
+    source: https://gcc.gnu.org/fortran/
+  - what: "Older Fortran code is written in fixed form, where the compiler ignores characters after column 72 of a line, so a long statement loses its end unless it is split. The GNU Fortran manual names 72 as the standard column."
+    quote: "Set column after which characters are ignored in typical fixed-form lines in the source file"
+    source: https://gcc.gnu.org/onlinedocs/gfortran/Fortran-Dialect-Options.html
+  - what: "ECMWF's IFS forecast model needed a GPU build mode written beside its Fortran source, and the GPU recipes built for IFS Cycle 49r1 were carried over to Cycle 50r1 when the model moved on."
+    quote: "The sustainability of this approach – and the effectiveness of separation of concerns – was demonstrated when the GPU-adaptation recipes developed for IFS Cycle 49r1 were migrated successfully to the next version, Cycle 50r1."
+    source: https://www.ecmwf.int/node/31071
+born_from: >-
+  Before Fortran, programmers wrote computer instructions as rows of zeros and ones, and according to IBM the cost of programmers was usually at least as great as the cost of the computers. John Backus at IBM set out to build a language that expressed a program in something resembling mathematical notation, and its first compiler was released in 1957 for the IBM 704.
+reacts_to: []
+tradeoffs:
+  memory: manual
+  types: static
+  run: native
+  concurrency:
+    - threads
+  cost: "Legacy code support where practical keeps old rules alive, so new programs still meet fixed-form layout and implicit typing."
+slots:
+  - slot: compute
+    fit: strong
+    note: "Numerical weather and ocean prediction and computational fluid dynamics are the classic uses of Fortran."
+    source: https://fortran-lang.org/
+  - slot: cli
+    fit: ok
+    note: "Compiled Fortran programs run in a terminal like any other program, though few everyday command-line tools are written in it."
+  - slot: data
+    fit: ok
+    note: "Fortran code is used for statistics and applied math, but Python and R are the usual pick for notebooks and data cleaning."
+    source: https://fortran-lang.org/
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Browsers run JavaScript, so Fortran code reaches a web page through a WebAssembly module that JavaScript loads."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "Databases such as PostgreSQL are asked questions in SQL, so Fortran code reaches them through a separate client library."
+    source: https://www.postgresql.org/docs/current/tutorial-sql-intro.html
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "Fortran must be compiled into a program before it runs, so a one-off script needs a build step first."
+    source: https://developer.mozilla.org/en-US/docs/Glossary/Compile
+  - slot: wasm
+    fit: weak
+    reason: no-tools
+    note: "LFortran, a newer Fortran compiler, has a WebAssembly backend that quickly generates WASM for browsers."
+    source: https://lfortran.org/
+  - slot: games
+    fit: weak
+    reason: one-job
+    note: "Fortran is made for fast arithmetic over large numeric arrays, not for drawing a new frame 60 times a second."
+    source: https://fortran-lang.org/
+  - slot: server
+    fit: none
+    reason: one-job
+    note: "Fortran is made for fast arithmetic over large numeric arrays, so web servers and APIs are written in other languages."
+    source: https://fortran-lang.org/
+  - slot: systems
+    fit: none
+    reason: one-job
+    note: "Fortran is made for fast arithmetic over large numeric arrays, not for the low-level code of operating systems and drivers."
+    source: https://fortran-lang.org/
+  - slot: mobile
+    fit: none
+    reason: no-tools
+    note: "Android apps are written in Kotlin or Java, the languages Android's developer pages teach, and Fortran is not one of them."
+    source: https://developer.android.com/kotlin/first
+  - slot: embedded
+    fit: none
+    reason: one-job
+    note: "Fortran is made for fast arithmetic over large numeric arrays, not for microcontrollers with kilobytes of memory."
+    source: https://fortran-lang.org/
+  - slot: config
+    fit: none
+    reason: one-job
+    note: "Fortran is made for fast arithmetic over large numeric arrays, not for the settings and infrastructure files that config tools handle."
+    source: https://fortran-lang.org/
+won_where:
+  - what: "ECMWF's IFS forecast model, run operationally, whose Fortran source gained a GPU build mode"
+    source: https://www.ecmwf.int/node/31071
+  - what: "LAPACK, the linear algebra library, written in Fortran 90"
+    source: https://www.netlib.org/lapack/
+  - what: "CP2K, a package for atomistic simulations, written in Fortran 2008"
+    source: https://www.cp2k.org/
+alternatives:
+  - c
+  - cpp
+  - python
+  - julia
+timeline:
+  - year: 1957
+    what: "IBM's Mathematical Formula Translating System, or Fortran, debuts"
+    source: https://www.ibm.com/history/fortran
+  - year: 1966
+    what: "FORTRAN 66, ANSI X3.9-1966, is issued as a standard edition of the language"
+    source: https://wg5-fortran.org/fearlier.html
+  - year: 1978
+    what: "FORTRAN 77, ANSI X3J3-1978, is issued as a standard edition of the language"
+    source: https://wg5-fortran.org/fearlier.html
+  - year: 1991
+    what: "Fortran 90, ISO/IEC 1539:1991, is issued as a standard edition of the language"
+    source: https://wg5-fortran.org/fearlier.html
+links:
+  website: https://fortran-lang.org/
+  docs: https://fortran-lang.org/learn/
+  wikipedia: https://en.wikipedia.org/wiki/Fortran
+sources:
+  - https://www.ibm.com/history/fortran
+  - https://softwarepreservation.computerhistory.org/FORTRAN/
+  - https://fortran-lang.org/learn/quickstart/gotchas/
+  - https://fortran-lang.org/
+  - https://gcc.gnu.org/fortran/
+  - https://gcc.gnu.org/onlinedocs/gfortran/Fortran-Dialect-Options.html
+  - https://www.ecmwf.int/node/31071
+  - https://wg5-fortran.org/fearlier.html
+  - https://www.netlib.org/lapack/
+  - https://www.cp2k.org/
+  - https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - https://www.postgresql.org/docs/current/tutorial-sql-intro.html
+  - https://developer.mozilla.org/en-US/docs/Glossary/Compile
+  - https://lfortran.org/
+  - https://developer.android.com/kotlin/first
+pldb: fortran
+verified: false
+last_reviewed: "2026-11-21"

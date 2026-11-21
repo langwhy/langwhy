@@ -1,0 +1,139 @@
+id: cobol
+name: COBOL
+aliases:
+  - "Common Business Oriented Language"
+github: COBOL
+appeared: 1959
+creators:
+  - "CODASYL committee"
+  - "Jean Sammet"
+type: backend
+status: alive
+tagline: "A language for business data processing, written in English-like words."
+hurts:
+  - what: "In a 2025 GAO review of 69 federal legacy systems, one agency's finance office said it has the IT skills to maintain its system today, but finds it extremely hard to recruit COBOL programmers for ongoing maintenance."
+    quote: "Officials from the Office of the Chief Financial Officer stated that they currently have the IT skills needed to maintain the system; however, it is extremely difficult to recruit COBOL programmers to support ongoing maintenance."
+    source: https://files.gao.gov/reports/GAO-25-107795/index.html
+  - what: "GAO's 2025 review of 69 federal legacy systems warns that relying on COBOL and assembly language carries risks, including rising procurement and operating costs and fewer people with the skills to support them."
+    quote: "Relying on assembly language code and COBOL has risks, such as a rise in procurement and operating costs, and fewer individuals with the proper skill sets."
+    source: https://files.gao.gov/reports/GAO-25-107795/index.html
+  - what: "GCC's COBOL compiler, gcobol, follows the 2023 standard plus extra features for older code, and its authors note that a strict COBOL-85 compiler would not compile most existing COBOL code."
+    quote: "The authors are well aware that a complete, pure COBOL-85 compiler won't compile most existing COBOL code."
+    source: https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcobol/gcobol.html
+  - what: "IBM's Enterprise COBOL 3 and later follow the 2002 and 2014 COBOL standards, and IBM keeps a list of changes that can potentially affect existing programs, such as letters that now mean picture symbols."
+    quote: "This topic lists those changes that will potentially affect existing COBOL programs and those changes that will not affect existing COBOL programs."
+    source: https://www.ibm.com/docs/en/SS6SG3_6.5/lr/ref/rlstdim.html
+born_from: >-
+  On May 28, 1959, a committee formed at the Pentagon to design a business language that was easy to read, and its designers hoped a program would run on any computer with a compiler, with only minimal changes. Grace Hopper's A-0 compiler work led to FLOW-MATIC, the first English-language business compiler, and Jean Sammet was a key member of the committee that developed COBOL.
+reacts_to: []
+tradeoffs:
+  memory: n/a
+  types: static
+  run: native
+  concurrency: [n/a]
+  cost: "Programs are wordy, because COBOL trades short code for readability, with an emphasis on verbosity."
+slots:
+  - slot: server
+    fit: strong
+    note: "Banks and government agencies run business programs in COBOL on IBM mainframes, such as CIBC's 40,000 applications."
+  - slot: database
+    fit: ok
+  - slot: cli
+    fit: weak
+    reason: overkill
+    note: "A COBOL program is compiled into an executable first, one step that a short script does not need; GCC's gcobol produces such executables."
+    source: https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcobol/gcobol.html
+  - slot: scripts
+    fit: weak
+    reason: overkill
+    note: "Every COBOL program is built from four divisions, and the identification division is mandatory, so even a short script needs a lot of setup."
+    source: https://www.ibm.com/think/topics/cobol
+  - slot: systems
+    fit: none
+    reason: one-job
+    note: "COBOL was designed for business data processing, so operating systems and device drivers are outside what it was built for."
+    source: https://www.ibm.com/think/topics/cobol
+  - slot: mobile
+    fit: none
+    reason: no-tools
+    note: "Google says Android development is increasingly Kotlin-first, and COBOL is not one of the languages it names for phone apps."
+    source: https://developer.android.com/kotlin/first
+  - slot: browser
+    fit: none
+    reason: runs-elsewhere
+    note: "Browsers run JavaScript and WebAssembly modules, not COBOL programs."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: data
+    fit: none
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is a Python package that scientists working in Python draw on."
+    source: https://numpy.org/
+  - slot: compute
+    fit: none
+    reason: no-tools
+    note: "PyTorch, used for GPU and AI work, offers Python and C++ interfaces, not COBOL."
+    source: https://pytorch.org/
+  - slot: embedded
+    fit: none
+    reason: one-job
+    note: "COBOL was designed for business data processing, not for code that runs a chip with only kilobytes of memory."
+    source: https://www.ibm.com/think/topics/cobol
+  - slot: wasm
+    fit: none
+    reason: runs-elsewhere
+    note: "WebAssembly runs in browsers and other hosts, but IBM's main COBOL compiler is for the z/OS mainframe system."
+    source: https://www.ibm.com/products/cobol-compiler-zos
+  - slot: games
+    fit: none
+    reason: one-job
+    note: "COBOL was designed for business data processing, not for game loops that redraw the screen many times a second."
+    source: https://www.ibm.com/think/topics/cobol
+  - slot: config
+    fit: none
+    reason: overkill
+    note: "A settings file holds a few values as plain text, while COBOL builds even a short program from four divisions."
+    source: https://www.ibm.com/think/topics/cobol
+won_where:
+  - what: "Canadian Imperial Bank of Commerce (CIBC) upgraded 40,000 COBOL applications to Enterprise COBOL for z/OS 6"
+    source: https://www.ibm.com/products/cobol-compiler-zos
+  - what: "US Department of Agriculture personnel and payroll system, 41 years old, uses COBOL (GAO, 2025)"
+    source: https://files.gao.gov/reports/GAO-25-107795/index.html
+  - what: "Two US Treasury systems in GAO's 2025 review run on COBOL and assembly language"
+    source: https://files.gao.gov/reports/GAO-25-107795/index.html
+alternatives: [java, python]
+timeline:
+  - year: 1959
+    what: "A committee forms at the Pentagon on May 28 to develop COBOL"
+    source: https://www.computerhistory.org/tdih/may/28/
+  - year: 1960
+    what: "The first version of the COBOL programming language is released"
+    source: https://www.ibm.com/think/topics/cobol
+  - year: 1968
+    what: "COBOL is standardized as a computer language"
+    source: https://www.ibm.com/think/topics/cobol
+  - year: 2002
+    what: "The 2002 COBOL Standard, which IBM's Enterprise COBOL 3 later follows"
+    source: https://www.ibm.com/docs/en/SS6SG3_6.5/lr/ref/rlstdim.html
+  - year: 2023
+    what: "ISO/IEC 1989:2023 is the reference standard for GCC's COBOL compiler, gcobol"
+    source: https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcobol/gcobol.html
+links:
+  website: "https://www.ibm.com/think/topics/cobol"
+  docs: "https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcobol/gcobol.html"
+sources:
+  - https://www.ibm.com/think/topics/cobol
+  - https://www.ibm.com/products/cobol-compiler-zos
+  - https://www.ibm.com/docs/en/SS6SG3_6.5/lr/ref/rlstdim.html
+  - https://files.gao.gov/reports/GAO-25-107795/index.html
+  - https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcobol/gcobol.html
+  - https://www.computerhistory.org/tdih/may/28/
+  - https://www.computerhistory.org/timeline/1957/
+  - https://www.computerhistory.org/timeline/1960/
+  - https://www.computerhistory.org/profile/jean-sammet/
+  - https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - https://developer.android.com/kotlin/first
+  - https://numpy.org/
+  - https://pytorch.org/
+pldb: cobol
+verified: false
+last_reviewed: "2026-11-21"

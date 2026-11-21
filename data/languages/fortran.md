@@ -1,0 +1,11 @@
+## Why it exists
+
+Before Fortran, a programmer wrote a computer's instructions as rows of zeros and ones, and IBM's own history says the cost of programmers was usually at least as great as the cost of the computers, with programmers spending up to half their time debugging ([IBM](https://www.ibm.com/history/fortran)). John Backus, Fortran's primary author, wanted a language that let people write a program in something close to mathematical notation and leave the translation to the machine. The name is short for formula translation. The first compiler was released in 1957 for the IBM 704, and the software preservation collection keeps its source code, manuals and memos online ([software preservation](https://softwarepreservation.computerhistory.org/FORTRAN/)).
+
+## What it trades away
+
+Fortran's old rules stayed in the language, and they still catch people out. A variable nobody declared gets its type from its first letter, so a one-letter typo compiles without an error. In the fortran-lang guide's example the misspelled name makes the program print 0, and `implicit none`, introduced in Fortran 90, turns that default off ([fortran-lang guide](https://fortran-lang.org/learn/quickstart/gotchas/)). Older code is written in fixed form, where characters after column 72 of a line are ignored, and free form arrived only with Fortran 90 ([GNU Fortran manual](https://gcc.gnu.org/onlinedocs/gfortran/Fortran-Dialect-Options.html)). Compilers also lag the standard: GNU Fortran has only initial support for Fortran 2023 ([GCC](https://gcc.gnu.org/fortran/)).
+
+## Where it won
+
+Weather and ocean prediction is the clearest case. ECMWF's IFS forecast model is written in Fortran, and ECMWF's newsletter describes adding a GPU build mode beside that Fortran source so the model can run on graphics processors ([ECMWF](https://www.ecmwf.int/node/31071)). LAPACK, the linear algebra library, is written in Fortran 90 ([Netlib](https://www.netlib.org/lapack/)). CP2K, a quantum chemistry and solid state physics package, is written in Fortran 2008 ([CP2K](https://www.cp2k.org/)). The fortran-lang community describes the language as mostly used in science and engineering, including numerical weather and ocean prediction ([fortran-lang](https://fortran-lang.org/)).

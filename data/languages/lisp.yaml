@@ -1,0 +1,147 @@
+id: lisp
+name: Lisp
+github: Common Lisp
+appeared: 1960
+creators: [John McCarthy]
+type: functional
+status: stable
+tagline: "Family of languages built on lists, with Common Lisp as the main standard; first made for AI research."
+hurts:
+  - what: "Quicklisp, the library installer for Common Lisp, publishes new library versions about once a month, so a fix you need can wait weeks. Its page showed the libraries last updated on 1 January 2026 when checked on 21 November 2026."
+    quote: "Software updates are usually available about once per month."
+    source: https://www.quicklisp.org/beta/
+  - what: "The free LispWorks Personal Edition exits after 5 hours in one session, possibly without saving your work, because the limit is built into the edition."
+    quote: "There is a time limit of 5 hours for each session, after which LispWorks Personal exits, possibly without saving your work or performing cleanups such as removing temporary files."
+    source: https://www.lispworks.com/downloads
+  - what: "Grammarly's engineering post, updated on 2 November 2020, says there are very few guides for running Lisp on cloud infrastructure, so the team wrote up its own experience of deploying a Lisp service."
+    quote: "We noticed that there are very few, if any, accounts of how to deploy Lisp software to modern cloud infrastructure"
+    source: https://www.grammarly.com/blog/engineering/running-lisp-in-production/
+  - what: "Common Lisp The Language, 2nd Edition described features that were removed when the ANSI standard was written, and SBCL's sb-cltl2 module brings some of them back for code that still uses them."
+    quote: "which were removed from the language during the ANSI standardization process."
+    source: https://www.sbcl.org/manual/
+born_from: >-
+  In the summer of 1956, at the Dartmouth AI meeting, John McCarthy wanted an algebraic list processing language for AI work on the IBM 704 computer. The existing list language built on FORTRAN, FLPL, had no conditional expressions and no recursion, so McCarthy designed his own, and its implementation began at MIT in the fall of 1958.
+reacts_to: [fortran]
+tradeoffs:
+  memory: gc
+  types: dynamic
+  run: native
+  concurrency: [threads]
+  cost: "Each Common Lisp system adds extras beyond the 1994 standard, so code that uses them does not move cleanly to another system."
+slots:
+  - slot: config
+    fit: strong
+    note: "Emacs, the text editor, is customized by writing Emacs Lisp code in its settings file."
+  - slot: server
+    fit: ok
+    note: "Grammarly runs its core grammar engine as Common Lisp services in production, as its engineering blog describes."
+  - slot: cli
+    fit: ok
+    note: "SBCL can save a Lisp program as one stand-alone executable file, so people who run it need no Lisp installed."
+    source: https://www.sbcl.org/manual/
+  - slot: scripts
+    fit: ok
+    note: "SBCL runs a Lisp file as a script with its --script option, so no separate build step is needed."
+    source: https://www.sbcl.org/manual/
+  - slot: games
+    fit: ok
+    note: "Naughty Dog designed GOAL, a Lisp dialect, for the development of its games."
+    source: https://franz.com/success/customer_apps/animation_graphics/naughtydog.lhtml
+  - slot: systems
+    fit: weak
+    reason: hides-machine
+    note: "Lisp leaves memory cleanup to its runtime: SBCL starts garbage collection after a set amount of memory is allocated."
+    source: https://www.sbcl.org/manual/
+  - slot: browser
+    fit: weak
+    reason: runs-elsewhere
+    note: "Parenscript translates an extended subset of Common Lisp into JavaScript, so Lisp code runs in a browser only after translation."
+    source: https://parenscript.common-lisp.dev/
+  - slot: database
+    fit: weak
+    reason: runs-elsewhere
+    note: "PostgreSQL ships four procedural languages for stored functions, PL/pgSQL, PL/Tcl, PL/Perl and PL/Python, and none is Lisp."
+    source: https://www.postgresql.org/docs/current/xplang.html
+  - slot: data
+    fit: weak
+    reason: no-tools
+    note: "NumPy, the fundamental package for scientific computing, is built for Python, not Common Lisp."
+    source: https://numpy.org/
+  - slot: compute
+    fit: weak
+    reason: no-tools
+    note: "NVIDIA's CUDA guide defines GPU code as CUDA C++, which extends C++ with kernels that run on many threads at once."
+    source: https://docs.nvidia.com/cuda/archive/11.4.0/cuda-c-programming-guide/index.html
+  - slot: wasm
+    fit: weak
+    reason: no-tools
+    note: "WebAssembly is designed as a compile target for languages such as C, C++ and Rust, so a Lisp program needs a compiler that targets it."
+    source: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - slot: embedded
+    fit: none
+    reason: hides-machine
+    note: "Lisp runs with a runtime that starts garbage collection once a set amount of memory is used, so the program cannot time memory use itself."
+    source: https://www.sbcl.org/manual/
+  - slot: mobile
+    fit: none
+    reason: no-tools
+    note: "Google describes Android as Kotlin-first, so the tools it provides for Android are built around Kotlin."
+    source: https://developer.android.com/kotlin/first
+won_where:
+  - what: "ITA Software picked Allegro CL as the original development environment for its airfare shopping engine"
+    source: https://franz.com/success/customer_apps/data_mining/itastory.lhtml
+  - what: "Grammarly's core grammar engine, written in Common Lisp, processes more than a thousand sentences per second"
+    source: https://www.grammarly.com/blog/engineering/running-lisp-in-production/
+  - what: "GOAL, the Lisp dialect Naughty Dog designed for the development of its games"
+    source: https://franz.com/success/customer_apps/animation_graphics/naughtydog.lhtml
+  - what: "GNU Emacs, whose core is an interpreter for Emacs Lisp, a dialect of Lisp"
+    source: https://www.gnu.org/software/emacs/
+  - what: "AutoLISP, the Lisp-based programming interface Autodesk introduced for AutoCAD in the mid-1980s"
+    source: https://help.autodesk.com/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-49AAEA0E-C422-48C4-87F0-52FCA491BF2C.htm
+alternatives: [scheme, clojure]
+timeline:
+  - year: 1958
+    what: "Implementation of LISP begins at MIT in the fall of 1958"
+    source: http://www-formal.stanford.edu/jmc/history/lisp/node3.html
+  - year: 1960
+    what: "McCarthy's paper is the first journal publication about Lisp"
+    source: http://www-formal.stanford.edu/jmc/history/lisp/node5.html
+  - year: 1986
+    what: "The X3J13 committee is formed to turn Common Lisp into a formal standard"
+    source: https://www.lispworks.com/documentation/lw51/CLHS/Front/Help.htm
+  - year: 1990
+    what: "Common Lisp The Language, 2nd edition, appears as an expanded edition of the de facto standard"
+    source: https://www.cs.cmu.edu/Groups/AI/lang/lisp/doc/cltl/readme.txt
+  - year: 1994
+    what: "ANSI standard X3.226-1994 for Common Lisp is the formal result of the X3J13 work"
+    source: https://www.lispworks.com/documentation/lw51/CLHS/Front/Help.htm
+  - year: 2015
+    what: "Grammarly publishes its experience running Lisp in production"
+    source: https://www.grammarly.com/blog/engineering/running-lisp-in-production/
+links:
+  website: https://lisp-lang.org/
+  wikipedia: https://en.wikipedia.org/wiki/Lisp_(programming_language)
+  docs: https://www.lispworks.com/documentation/HyperSpec/Front/index.htm
+sources:
+  - http://www-formal.stanford.edu/jmc/history/lisp/node2.html
+  - http://www-formal.stanford.edu/jmc/history/lisp/node3.html
+  - http://www-formal.stanford.edu/jmc/history/lisp/node5.html
+  - https://www.lispworks.com/documentation/lw51/CLHS/Front/Help.htm
+  - https://www.quicklisp.org/beta/
+  - https://www.lispworks.com/downloads
+  - https://www.grammarly.com/blog/engineering/running-lisp-in-production/
+  - https://www.sbcl.org/manual/
+  - https://parenscript.common-lisp.dev/
+  - https://www.postgresql.org/docs/current/xplang.html
+  - https://numpy.org/
+  - https://docs.nvidia.com/cuda/archive/11.4.0/cuda-c-programming-guide/index.html
+  - https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+  - https://developer.android.com/kotlin/first
+  - https://franz.com/success/customer_apps/data_mining/itastory.lhtml
+  - https://franz.com/success/customer_apps/animation_graphics/naughtydog.lhtml
+  - https://www.gnu.org/software/emacs/
+  - https://help.autodesk.com/cloudhelp/2015/ENU/AutoCAD-AutoLISP/files/GUID-49AAEA0E-C422-48C4-87F0-52FCA491BF2C.htm
+  - https://www.cs.cmu.edu/Groups/AI/lang/lisp/doc/cltl/readme.txt
+pldb: lisp
+verified: false
+last_reviewed: "2026-11-21"
